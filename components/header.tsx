@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
+import Link from "next/link";
 import { gsap } from "gsap"
 
 export function Header() {
@@ -137,22 +138,34 @@ export function Header() {
                 <button className="flex items-center gap-1 text-[#1C232F] text-base md:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
                   <span>Nos solutions</span>
                 </button>
-                <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40">
-                  <div className="py-2">
-                    <a href="#universel" className="block px-4 py-2 text-sm hover:bg-gray-50 rounded">
-                      Lahalex Universel
-                    </a>
-                    <a href="#avocat" className="block px-4 py-2 text-sm hover:bg-gray-50 rounded">
-                      Lahalex Avocat
-                    </a>
-                    <a href="#notaire" className="block px-4 py-2 text-sm hover:bg-gray-50 rounded">
-                      Lahalex Notaire
-                    </a>
-                    <a href="#commissaire" className="block px-4 py-2 text-sm hover:bg-gray-50 rounded">
-                      Lahalex Commissaire de justice
-                    </a>
-                  </div>
+                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link
+                    href="/lahalex-universel"
+                    className="block px-4 py-3 text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                  >
+                    Lahalex Universel
+                  </Link>
+                  <Link
+                    href="/lahalex-avocat"
+                    className="block px-4 py-3 text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                  >
+                    Lahalex Avocat
+                  </Link>
+                  <Link
+                    href="/lahalex-notaire"
+                    className="block px-4 py-3 text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                  >
+                    Lahalex Notaire
+                  </Link>
+                  <Link
+                    href="/lahalex-commissaire-justice"
+                    className="block px-4 py-3 text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                  >
+                    Lahalex Commissaire de justice
+                  </Link>
                 </div>
+              </div>
               </div>
               <a
                 href="#"
