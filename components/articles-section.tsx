@@ -45,10 +45,9 @@ const ChevronRight = ({ className }: { className?: string }) => (
 
 export function ArticlesSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [itemsPerView, setItemsPerView] = useState(3) // par défaut desktop
 
-  // Détecte la taille d’écran pour adapter le nombre d’items visibles
+  // Détecte la taille d'écran pour adapter le nombre d'items visibles
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -63,32 +62,25 @@ export function ArticlesSection() {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
+  // Défilement automatique continu sans interruption
   useEffect(() => {
-    if (!isAutoPlaying) return
-
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % articles.length)
     }, 4000)
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying, articles.length])
+  }, [articles.length])
 
   const nextSlide = () => {
-    setIsAutoPlaying(false)
     setCurrentIndex((prevIndex) => (prevIndex + 1) % articles.length)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
   }
 
   const prevSlide = () => {
-    setIsAutoPlaying(false)
     setCurrentIndex((prevIndex) => (prevIndex - 1 + articles.length) % articles.length)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
   }
 
   const goToSlide = (index: number) => {
-    setIsAutoPlaying(false)
     setCurrentIndex(index)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
   }
 
   return (

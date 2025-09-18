@@ -1,5 +1,7 @@
 "use client"
 
+import { Counter } from "./counter"
+
 export function HeroSection() {
   return (
     <section className="relative w-full h-[560px] md:h-[720px] bg-gradient-to-b from-[#FAF5EF] to-[#FAF5EF] overflow-hidden">
@@ -19,7 +21,7 @@ export function HeroSection() {
           <div className="space-y-4 md:space-y-8">
             <div>
               <div className="text-white text-[24px] md:text-[39px] font-normal leading-tight tracking-[0.45px] font-['Gratelos']">
-                +15h
+                +<Counter target={15} duration={2000} className="inline" />h
               </div>
               <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.45px] font-['Gratelos'] w-[80px] md:w-[99px]">
                 de travail économisé par semaine
@@ -28,7 +30,7 @@ export function HeroSection() {
 
             <div>
               <div className="text-white text-[24px] md:text-[39px] font-normal leading-tight tracking-[0.54px] font-['Gratelos']">
-                +17.000
+                +<Counter target={17000} duration={2500} separator="." className="inline" />
               </div>
               <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.54px] font-['Gratelos'] w-[100px] md:w-[150px]">
                 professionnels du droit convaincus
@@ -40,7 +42,7 @@ export function HeroSection() {
           <div className="space-y-4 md:space-y-8 text-right">
             <div>
               <div className="text-white text-[24px] md:text-[39px] font-normal leading-tight tracking-[0.40px] font-['Gratelos']">
-                +500.000
+                +<Counter target={500000} duration={3000} separator="." className="inline" />
               </div>
               <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.40px] font-['Gratelos'] w-[100px] md:w-[121px] ml-auto">
                 Livres numériques pluridisciplinaire
@@ -49,7 +51,7 @@ export function HeroSection() {
 
             <div>
               <div className="text-white text-[24px] md:text-[39px] font-normal leading-tight tracking-[0.44px] font-['Gratelos']">
-                +2.000.000
+                +<Counter target={2000000} duration={3500} separator="." className="inline" />
               </div>
               <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.44px] font-['Gratelos'] w-[80px] md:w-[91px] ml-auto">
                 Ressources juridiques
