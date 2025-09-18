@@ -78,43 +78,42 @@ export function SolutionsSection() {
   <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
     {/* Bloc Laptop + Connexions */}
     <div className="relative flex-1 min-h-[240px] sm:min-h-[360px] lg:min-h-[480px]">
-      {/* Laptop centré */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+      <div className="absolute left-1/2 lg:left-[45%] top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
         <Image
           src="/images/universel-laptop.png"
           alt="Lahalex Universel Interface"
           width={480}
           height={300}
-          className="object-contain w-[220px] sm:w-[360px] lg:w-[480px] h-auto"
+          className="object-contain w-[180px] sm:w-[280px] lg:w-[400px] h-auto"
         />
       </div>
 
-      {/* Connexions gauche */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col justify-center h-full z-20 pointer-events-none">
-        <div className="flex items-center mb-[80px]">
-          <span className="text-black text-[14px] font-bold w-[120px] text-right mr-2">
-            Associations
-          </span>
-          <div className="w-[140px] h-[2px] bg-[#770D28] ml-2"></div>
-          <div className="w-5 h-5 bg-[#770D28] rounded-full ml-2"></div>
-        </div>
+{/* Connexions gauche - hidden on mobile */}
+<div className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col justify-center h-full z-20 pointer-events-none">
+  <div className="flex items-center mb-[80px]">
+    <span className="text-black text-[14px] font-bold w-[120px] text-right mr-2">Associations</span> {/* texte */}
+    <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div> {/* point rouge */}
+    <div className="w-[70px] h-[2px] bg-[#770D28]"></div> {/* ligne vers le laptop */}
+  </div>
 
-        <div className="flex items-center">
-          <span className="text-black text-[14px] font-bold w-[80px] text-right mr-2 leading-[17px]">
-            Praticiens
-            <br />
-            (ennes)
-          </span>
-          <div className="w-[140px] h-[2px] bg-[#770D28] ml-2"></div>
-          <div className="w-5 h-5 bg-[#770D28] rounded-full ml-2"></div>
-        </div>
-      </div>
+  <div className="flex items-center">
+    <span className="text-black text-[14px] font-bold w-[80px] text-right leading-[17px] mr-2">
+      Praticiens
+      <br />
+      (ennes)
+    </span>
+    <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div> {/* point rouge */}
+    <div className="w-[70px] h-[2px] bg-[#770D28]"></div> {/* ligne vers le laptop */}
+  </div>
+</div>
 
-      {/* Connexions droite */}
+
+
+      {/* Connexions droite - hidden on mobile */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col justify-center h-full z-20 pointer-events-none">
         <div className="flex items-center mb-[60px]">
-          <div className="w-[140px] h-[2px] bg-[#770D28] mr-2"></div>
-          <div className="w-5 h-5 bg-[#770D28] rounded-full mr-2"></div>
+          <div className="w-[140px] h-[2px] bg-[#770D28] mr-2"></div> {/* ligne */}
+          <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div> {/* point côté texte */}
           <span className="text-black text-[14px] font-bold w-[180px] leading-[20px]">
             Établissements scolaires supérieurs
           </span>
@@ -122,18 +121,14 @@ export function SolutionsSection() {
 
         <div className="flex items-center mb-[60px]">
           <div className="w-[140px] h-[2px] bg-[#770D28] mr-2"></div>
-          <div className="w-5 h-5 bg-[#770D28] rounded-full mr-2"></div>
-          <span className="text-black text-[14px] font-bold w-[140px]">
-            Institutions privées
-          </span>
+          <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div>
+          <span className="text-black text-[14px] font-bold w-[140px]">Institutions privées</span>
         </div>
 
         <div className="flex items-center">
           <div className="w-[140px] h-[2px] bg-[#770D28] mr-2"></div>
-          <div className="w-5 h-5 bg-[#770D28] rounded-full mr-2"></div>
-          <span className="text-black text-[14px] font-bold w-[160px]">
-            Institutions publiques
-          </span>
+          <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div>
+          <span className="text-black text-[14px] font-bold w-[160px]">Institutions publiques</span>
         </div>
       </div>
     </div>
@@ -169,7 +164,8 @@ export function SolutionsSection() {
 
       <div className="space-y-2 text-black text-[14px] leading-[20px] mb-8">
         <p>
-          <strong>Recherche juridique avancée :</strong> législation, jurisprudence, doctrine et bien plus encore.
+          <strong>Recherche juridique avancée :</strong> législation, jurisprudence, doctrine et bien plus
+          encore.
         </p>
         <p>
           <strong>Filtres multicritères et outils de tri</strong> pour un accès immédiat à l'information.
@@ -202,6 +198,7 @@ export function SolutionsSection() {
     </div>
   </div>
 </div>
+
 
 
 
