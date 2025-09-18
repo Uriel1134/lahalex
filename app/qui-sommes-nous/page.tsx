@@ -177,49 +177,49 @@ export default function QuiSommesNous() {
       </section>
 
       {/* ---------------- IMPACT ---------------- */}
-<section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
-  {/* Bloc image avec décor */}
-  <div className="relative">
-    {/* Bloc olive derrière */}
-    <div className="absolute -bottom-10 -left-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
+      <section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
+        {/* Bloc image avec décor */}
+        <div className="relative">
+          {/* Bloc olive derrière */}
+          <div className="absolute -bottom-10 -left-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
 
-    {/* Image principale */}
-    <Image
-      src="/images/impact.png"
-      alt="Bibliothèque"
-      width={583}
-      height={468}
-      className="relative rounded-xl object-cover z-10"
-    />
+          {/* Image principale */}
+          <Image
+            src="/images/impact.png"
+            alt="Bibliothèque"
+            width={583}
+            height={468}
+            className="relative rounded-xl object-cover z-10"
+          />
 
-    {/* Doodle décoratif */}
-    <Image
-      src="/images/leaf-decoration.png"
-      alt=""
-      width={135}
-      height={151}
-      className="absolute -top-12 -right-10 rotate-[87deg] z-0"
-    />
-  </div>
+          {/* Doodle décoratif */}
+          <Image
+            src="/images/leaf-decoration.png"
+            alt=""
+            width={135}
+            height={151}
+            className="absolute -top-25 -right-155 rotate-[87deg] z-0"
+          />
+        </div>
 
-  {/* Texte */}
-  <div>
-    <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
-      Impact social et éducatif
-    </h2>
-    <p className="text-[#293240] text-lg leading-8 max-w-[538px]">
-      Nous croyons que l’accès au savoir juridique contribue à renforcer l’État
-      de droit et la démocratie. À travers des partenariats avec universités,
-      barreaux et institutions, LAHALEX soutient la formation continue des
-      professionnels et l’insertion des étudiants dans le monde du travail.
-    </p>
-  </div>
-</section>
-
+        {/* Texte */}
+        <div>
+          <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
+            Impact social et éducatif
+          </h2>
+          <p className="text-[#293240] text-lg leading-8 max-w-[538px]">
+            Nous croyons que l’accès au savoir juridique contribue à renforcer
+            l’État de droit et la démocratie. À travers des partenariats avec
+            universités, barreaux et institutions, LAHALEX soutient la formation
+            continue des professionnels et l’insertion des étudiants dans le
+            monde du travail.
+          </p>
+        </div>
+      </section>
 
       {/* ---------------- DIMENSION ---------------- */}
       <section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div>
+        <div className="relative">
           <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
             Dimension panafricaine et internationale
           </h2>
@@ -228,14 +228,29 @@ export default function QuiSommesNous() {
             monde, LAHALEX s’impose comme un pont entre les réalités locales et
             les standards internationaux.
           </p>
+          {/* Doodle décoratif */}
+          <Image
+            src="/images/leaf-decoration.png"
+            alt=""
+            width={135}
+            height={151}
+            className="absolute top-50 -left-10 rotate-[87deg] z-0"
+          />
         </div>
-        <Image
-          src="/images/earth-africa.png"
-          alt="Carte Afrique"
-          width={662}
-          height={455}
-          className="rounded-xl object-cover"
-        />
+
+        <div className="relative">
+          {/* Bloc olive derrière */}
+          <div className="absolute -bottom-10 -right-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
+
+          {/* Image au-dessus */}
+          <Image
+            src="/images/earth-africa.png"
+            alt="Carte Afrique"
+            width={662}
+            height={455}
+            className="rounded-xl object-cover relative z-10"
+          />
+        </div>
       </section>
 
       {/* ---------------- CITATION ---------------- */}
