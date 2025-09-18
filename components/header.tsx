@@ -194,7 +194,7 @@ export function Header() {
                 ACCUEIL
               </a>
               <a
-                href="#"
+                href="/qui-sommes-nous"
                 className="text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold"
               >
                 QUI SOMMES - NOUS ?
