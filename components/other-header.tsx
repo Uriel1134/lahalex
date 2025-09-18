@@ -88,7 +88,7 @@ export function Header() {
             </div>
 
             <Link
-              href="/tarifs"
+              href="/paiement-abonnements"
               className="text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap"
             >
               Nos tarifs

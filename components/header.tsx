@@ -105,13 +105,13 @@ export function Header() {
             {/* Liens gauche centrés entre icône et logo */}
             <nav className="flex items-center gap-6 mx-auto">
               <a
-                href="#"
+                href="nous-contacter"
                 className="text-[#1C232F] text-base md:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Nous contacter
               </a>
               <a
-                href="#"
+                href="essai-gratuit"
                 className="text-[#1C232F] text-base md:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Essai gratuit
@@ -168,7 +168,7 @@ export function Header() {
               </div>
               </div>
               <a
-                href="#"
+                href="paiement-abonnements"
                 className="text-[#1C232F] text-base md:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Nos formules
@@ -229,41 +229,41 @@ export function Header() {
                 </button>
                 {mobileSolutionsOpen && (
                   <div className="mt-4 ml-4 space-y-4">
-                    <a href="#universel" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                    <a href="/lahalex-universel" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
                       Lahalex Universel
                     </a>
-                    <a href="#avocat" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                    <a href="/lahalex-avocat" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
                       Lahalex Avocat
                     </a>
-                    <a href="#notaire" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                    <a href="/lahalex-notaire" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
                       Lahalex Notaire
                     </a>
-                    <a href="#commissaire" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                    <a href="/lahalex-commissaire-justice" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
                       Lahalex Commissaire de justice
                     </a>
                   </div>
                 )}
               </div>
               <a
-                href="#"
+                href="/paiement-abonnements"
                 className="text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold"
               >
                 NOS TARIFS
               </a>
               <a
-                href="#"
+                href="/recrutement"
                 className="text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold"
               >
                 RECRUTEMENT
               </a>
               <a
-                href="#"
+                href="/devenir-auteur"
                 className="text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold"
               >
                 DEVENIR AUTEUR
               </a>
               <a
-                href="#"
+                href="/essai-gratuit"
                 className="text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold"
               >
                 ESSAI GRATUIT
@@ -275,7 +275,7 @@ export function Header() {
                 CONNEXION
               </a>
               <a
-                href="#"
+                href="/faq"
                 className="text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold "
               >
                 FAQ
