@@ -4,7 +4,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Menu } from "lucide-react";
-import {Header} from "@/components/other-header";
+import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
 
 export default function QuiSommesNous() {
@@ -51,15 +51,16 @@ export default function QuiSommesNous() {
           </p>
           <p className="text-[#293240] text-lg leading-8 mb-4">
             <strong>Notre vision :</strong> devenir la référence panafricaine de
-            la LegalTech, en connectant les praticiens du droit, les institutions
-            et les citoyens grâce à l’innovation.
+            la LegalTech, en connectant les praticiens du droit, les
+            institutions et les citoyens grâce à l’innovation.
           </p>
           <p className="text-[#293240] text-lg leading-8">
             <strong>Qu’est-ce que la LegalTech ?</strong> La LegalTech désigne
             l’utilisation des technologies pour concevoir, proposer et fournir
-            des services et produits liés au droit et à la justice. Elle permet à
-            tous professionnels comme non-professionnels d’accéder plus facilement
-            à l’information juridique et de simplifier leurs démarches.
+            des services et produits liés au droit et à la justice. Elle permet
+            à tous professionnels comme non-professionnels d’accéder plus
+            facilement à l’information juridique et de simplifier leurs
+            démarches.
           </p>
         </div>
         <Image
@@ -73,96 +74,148 @@ export default function QuiSommesNous() {
 
       {/* ---------------- VALEURS ---------------- */}
       <section className="relative w-[90%] max-w-[1320px] mx-auto py-16">
-        <div className="absolute inset-0 bg-[url('/images/Rectangle 158.png')] rounded-2xl opacity-10"></div>
-        <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold text-center mb-12">
-          Valeurs <span className="font-normal">fondatrices</span>
-        </h2>
+        <div className="relative rounded-2xl overflow-hidden">
+          {/* Image de fond */}
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rectangle%20158%201-nuRhQvkcJFv6OjgIC2Twd26VILQypO.png"
+            alt="Background pattern"
+            fill
+            className="object-cover"
+          />
 
-        <div className="grid md:grid-cols-2 gap-12 relative z-10">
-          <div className="flex items-start gap-6">
-            <Image
-              src="/images/password-icon.png"
-              alt="Accessibilité"
-              width={80}
-              height={80}
-            />
-            <div>
-              <h3 className="text-[#770D28] text-2xl font-bold mb-2">
-                Accessibilité
-              </h3>
-              <p>Un droit compréhensible et disponible pour tous.</p>
-            </div>
-          </div>
+          {/* Overlay gris (semi-transparent) */}
+          <div className="absolute inset-0 bg-[rgba(47,47,47,0.15)] rounded-2xl"></div>
 
-          <div className="flex items-start gap-6">
-            <Image
-              src="/images/innovation-icon.png"
-              alt="Innovation"
-              width={80}
-              height={80}
-            />
-            <div>
-              <h3 className="text-[#770D28] text-2xl font-bold mb-2">
-                Innovation
-              </h3>
-              <p>Intégrer l’IA et les nouvelles technologies au service de la justice.</p>
-            </div>
-          </div>
+          {/* Contenu */}
+          <div className="relative z-10 p-8 md:p-12">
+            {/* Titre */}
+            <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold text-center mb-12">
+              Valeurs <span className="font-normal">fondatrices</span>
+            </h2>
 
-          <div className="flex items-start gap-6">
-            <Image
-              src="/images/fiabilite-icon.png"
-              alt="Fiabilité"
-              width={80}
-              height={80}
-            />
-            <div>
-              <h3 className="text-[#770D28] text-2xl font-bold mb-2">
-                Fiabilité
-              </h3>
-              <p>Des contenus validés par des experts.</p>
-            </div>
-          </div>
+            {/* Grid */}
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Accessibilité */}
+              <div className="flex items-start gap-6">
+                <Image
+                  src="/images/password-icon.png"
+                  alt="Accessibilité"
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 object-contain"
+                />
+                <div>
+                  <h3 className="text-[#770D28] text-2xl font-bold mb-2">
+                    Accessibilité
+                  </h3>
+                  <p className="text-gray-800 text-base md:text-lg">
+                    Un droit compréhensible et disponible pour tous.
+                  </p>
+                </div>
+              </div>
 
-          <div className="flex items-start gap-6">
-            <Image
-              src="/images/engagement-icon.png"
-              alt="Engagement"
-              width={80}
-              height={80}
-            />
-            <div>
-              <h3 className="text-[#770D28] text-2xl font-bold mb-2">
-                Engagement
-              </h3>
-              <p>Soutenir la formation et l’excellence académique en Afrique.</p>
+              {/* Innovation */}
+              <div className="flex items-start gap-6">
+                <Image
+                  src="/images/innovation-icon.png"
+                  alt="Innovation"
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 object-contain"
+                />
+                <div>
+                  <h3 className="text-[#770D28] text-2xl font-bold mb-2">
+                    Innovation
+                  </h3>
+                  <p className="text-gray-800 text-base md:text-lg">
+                    Intégrer l’IA et les nouvelles technologies au service de la
+                    justice.
+                  </p>
+                </div>
+              </div>
+
+              {/* Fiabilité */}
+              <div className="flex items-start gap-6">
+                <Image
+                  src="/images/fiabilite-icon.png"
+                  alt="Fiabilité"
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 object-contain"
+                />
+                <div>
+                  <h3 className="text-[#770D28] text-2xl font-bold mb-2">
+                    Fiabilité
+                  </h3>
+                  <p className="text-gray-800 text-base md:text-lg">
+                    Des contenus validés par des experts.
+                  </p>
+                </div>
+              </div>
+
+              {/* Engagement */}
+              <div className="flex items-start gap-6">
+                <Image
+                  src="/images/engagement-icon.png"
+                  alt="Engagement"
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 object-contain"
+                />
+                <div>
+                  <h3 className="text-[#770D28] text-2xl font-bold mb-2">
+                    Engagement
+                  </h3>
+                  <p className="text-gray-800 text-base md:text-lg">
+                    Soutenir la formation et l’excellence académique en Afrique.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ---------------- IMPACT ---------------- */}
-      <section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
-        <Image
-          src="/images/impact.png"
-          alt="Bibliothèque"
-          width={583}
-          height={468}
-          className="rounded-xl object-cover"
-        />
-        <div>
-          <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
-            Impact social et éducatif
-          </h2>
-          <p className="text-[#293240] text-lg leading-8">
-            Nous croyons que l’accès au savoir juridique contribue à renforcer
-            l’État de droit et la démocratie.  
-            À travers des partenariats avec universités, barreaux et institutions,
-            LAHALEX soutient la formation continue des professionnels et
-            l’insertion des étudiants dans le monde du travail.
-          </p>
-        </div>
-      </section>
+<section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
+  {/* Bloc image avec décor */}
+  <div className="relative">
+    {/* Bloc olive derrière */}
+    <div className="absolute -bottom-10 -left-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
+
+    {/* Image principale */}
+    <Image
+      src="/images/impact.png"
+      alt="Bibliothèque"
+      width={583}
+      height={468}
+      className="relative rounded-xl object-cover z-10"
+    />
+
+    {/* Doodle décoratif */}
+    <Image
+      src="/images/leaf-decoration.png"
+      alt=""
+      width={135}
+      height={151}
+      className="absolute -top-12 -right-10 rotate-[87deg] z-0"
+    />
+  </div>
+
+  {/* Texte */}
+  <div>
+    <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
+      Impact social et éducatif
+    </h2>
+    <p className="text-[#293240] text-lg leading-8 max-w-[538px]">
+      Nous croyons que l’accès au savoir juridique contribue à renforcer l’État
+      de droit et la démocratie. À travers des partenariats avec universités,
+      barreaux et institutions, LAHALEX soutient la formation continue des
+      professionnels et l’insertion des étudiants dans le monde du travail.
+    </p>
+  </div>
+</section>
+
 
       {/* ---------------- DIMENSION ---------------- */}
       <section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
