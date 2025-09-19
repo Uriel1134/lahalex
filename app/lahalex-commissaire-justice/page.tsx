@@ -1,11 +1,135 @@
 "use client"
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function LahalexCommissaireJusticePage() {
+  // Refs pour les animations
+  const heroRef = useRef<HTMLElement>(null);
+  const servicesRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    // Animation simple et visible au chargement de la page
+    const tl = gsap.timeline();
+
+    // Animation du hero - plus visible
+    tl.fromTo(".hero-title", 
+      { opacity: 0, y: 100, scale: 0.5 }, 
+      { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
+    )
+    .fromTo(".hero-subtitle", 
+      { opacity: 0, x: -100 }, 
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" }, "-=0.5"
+    )
+    .fromTo(".hero-button", 
+      { opacity: 0, scale: 0, rotation: 360 }, 
+      { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: "elastic.out(1, 0.5)" }, "-=0.5"
+    )
+    .fromTo(".hero-image", 
+      { opacity: 0, x: 200, rotation: 45 }, 
+      { opacity: 1, x: 0, rotation: 0, duration: 1.5, ease: "power3.out" }, "-=1"
+    );
+
+    // Animation des services avec scroll trigger
+    const ctx = gsap.context(() => {
+      // Animation simple des cartes
+      gsap.fromTo(".service-card", 
+        { opacity: 0, y: 100, scale: 0.8 }, 
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power2.out",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: ".service-card",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des icônes
+      gsap.fromTo(".service-icon", 
+        { opacity: 0, scale: 0, rotation: -360 }, 
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 1.5,
+          ease: "elastic.out(1, 0.6)",
+          stagger: 0.3,
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: ".service-card",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des titres
+      gsap.fromTo(".service-title", 
+        { opacity: 0, x: -50 }, 
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0.3,
+          delay: 0.8,
+          scrollTrigger: {
+            trigger: ".service-card",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des boutons
+      gsap.fromTo(".service-button", 
+        { opacity: 0, y: 30 }, 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "bounce.out",
+          stagger: 0.3,
+          delay: 1.1,
+          scrollTrigger: {
+            trigger: ".service-card",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+    }, [servicesRef]);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#FAF5EF" }}>
       <Header />
+      
+      <style jsx global>{`
+        .hero-title, .hero-subtitle, .hero-button, .hero-image {
+          opacity: 0;
+        }
+        .service-card, .service-icon, .service-title, .service-button {
+          opacity: 0;
+        }
+      `}</style>
 
       {/* Hero Section */}
       <section className="bg-[#FAF5EF] py-12 sm:py-16 lg:py-20">
@@ -13,16 +137,16 @@ export default function LahalexCommissaireJusticePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Content */}
             <div className="order-2 lg:order-1">
-              <h1 className="font-gobold text-3xl sm:text-4xl lg:text-5xl text-[#770D28] mb-6 lg:mb-8 leading-tight">
+              <h1 className="hero-title font-gobold text-3xl sm:text-4xl lg:text-5xl text-[#770D28] mb-6 lg:mb-8 leading-tight">
                 LAHALEX COMMISSAIRE DE JUSTICE
               </h1>
-              <p className="text-gray-700 text-base sm:text-lg mb-8 leading-relaxed">
+              <p className="hero-subtitle text-gray-700 text-base sm:text-lg mb-8 leading-relaxed">
                 Prenez une longueur d'avance. Pilotez votre étude en toute simplicité avec une technologie pensée pour
                 votre quotidien.
               </p>
               <a
                 href="/essai-gratuit"
-                className="bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+                className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
               >
                 Essaie gratuit
               </a>
@@ -30,22 +154,22 @@ export default function LahalexCommissaireJusticePage() {
 
             {/* Right Column - Placeholder for future image/video */}
             <div className="order-1 lg:order-2">
-              <div className="bg-gray-200 h-64 sm:h-80 lg:h-96 rounded-lg"></div>
+              <div className="hero-image bg-gray-200 h-64 sm:h-80 lg:h-96 rounded-lg"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Cards Section with 3 cards for Commissaire */}
-      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section ref={servicesRef} className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0" style={{ backgroundColor: "#770D28" }}></div>
+        <div className="services-bg absolute inset-0" style={{ backgroundColor: "#770D28" }}></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {/* Gestion simplifiée de votre cabinet */}
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -55,15 +179,15 @@ export default function LahalexCommissaireJusticePage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="font-sf-pro text-lg text-[#770D28] mb-4">Gestion simplifiée de votre cabinet</h3>
-              <p className="text-gray-700 text-sm mb-6 leading-relaxed">
+              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Gestion simplifiée de votre cabinet</h3>
+              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Prenez le contrôle total de votre cabinet avec un module pensé pour les professionnels du droit
                 exigeants. Suivi des dossiers,...
               </p>
               <div className="text-right">
                 <a
                   href="/gestion-etude-commissaire"
-                  className="border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
+                  className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
                 >
                   En savoir plus
                 </a>
@@ -72,7 +196,7 @@ export default function LahalexCommissaireJusticePage() {
 
             {/* Rédaction d'actes juridiques assistées et avancées */}
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -82,16 +206,16 @@ export default function LahalexCommissaireJusticePage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="font-sf-pro text-lg text-[#770D28] mb-4">
+              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">
                 Rédaction d'actes juridiques assistées et avancées
               </h3>
-              <p className="text-gray-700 text-sm mb-6 leading-relaxed">
+              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Gagnez en efficacité, en rigueur et en sécurité grâce au module Rédaction de LahaLex Avocat :...
               </p>
               <div className="text-right">
                 <a
                   href="/redaction-actes-commissaire"
-                  className="border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
+                  className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
                 >
                   En savoir plus
                 </a>
@@ -100,7 +224,7 @@ export default function LahalexCommissaireJusticePage() {
 
             {/* Outil d'assistance IA */}
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -110,16 +234,16 @@ export default function LahalexCommissaireJusticePage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="font-gobold text-lg text-[#770D28] mb-4">
+              <h3 className="service-title font-gobold text-lg text-[#770D28] mb-4">
                 Outil d'assistance IA dédié à l'optimisation de vos activités
               </h3>
-              <p className="text-gray-700 text-sm mb-6 leading-relaxed">
+              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Boostez votre efficacité juridique avec l'assistant IA intégré à notre logiciel.
               </p>
               <div className="text-right">
                 <a
                   href="/assistance-ia-commissaire"
-                  className="border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
+                  className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
                 >
                   En savoir plus
                 </a>

@@ -2,13 +2,386 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function QuiSommesNous() {
   const [menuOpen, setMenuOpen] = useState(false);
+  
+  // Refs pour les animations
+  const heroRef = useRef<HTMLElement>(null);
+  const visionRef = useRef<HTMLElement>(null);
+  const valuesRef = useRef<HTMLElement>(null);
+  const impactRef = useRef<HTMLElement>(null);
+  const dimensionRef = useRef<HTMLElement>(null);
+  const citationRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const ctx = gsap.context(() => {
+      // Animation du hero
+      gsap.fromTo(
+        heroRef.current,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des titres du hero
+      gsap.fromTo(
+        ".hero-title",
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".hero-subtitle",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.6,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation de la section Vision & Mission
+      gsap.fromTo(
+        visionRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: visionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des éléments de la section Vision
+      gsap.fromTo(
+        ".vision-content",
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          delay: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: visionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".vision-image",
+        { opacity: 0, x: 50, scale: 0.9 },
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 1,
+          delay: 0.4,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: visionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des images principales avec effet de zoom
+      gsap.fromTo(
+        ".main-image",
+        { opacity: 0, scale: 0.8, y: 50 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".main-image",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation de la section Valeurs
+      gsap.fromTo(
+        valuesRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: valuesRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation en cascade des cartes de valeurs
+      gsap.fromTo(
+        ".value-card",
+        { opacity: 0, y: 60, scale: 0.9 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: valuesRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation spécifique des icônes de valeurs
+      gsap.fromTo(
+        ".value-icon",
+        { 
+          opacity: 0, 
+          scale: 0.3, 
+          rotation: -180,
+          transformOrigin: "center center"
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 1.2,
+          ease: "elastic.out(1, 0.6)",
+          stagger: 0.3,
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: valuesRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des titres de valeurs
+      gsap.fromTo(
+        ".value-title",
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+          delay: 0.8,
+          scrollTrigger: {
+            trigger: valuesRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des descriptions de valeurs
+      gsap.fromTo(
+        ".value-description",
+        { opacity: 0, x: -20 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.2,
+          delay: 1.0,
+          scrollTrigger: {
+            trigger: valuesRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation de la section Impact
+      gsap.fromTo(
+        impactRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: impactRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des éléments décoratifs
+      gsap.fromTo(
+        ".decorative-element",
+        { opacity: 0, scale: 0.8, rotation: -10 },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 1.2,
+          ease: "elastic.out(1, 0.3)",
+          scrollTrigger: {
+            trigger: impactRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation spéciale pour les icônes de feuilles décoratives
+      gsap.fromTo(
+        ".leaf-decoration",
+        { 
+          opacity: 0, 
+          scale: 0.5, 
+          rotation: -45,
+          transformOrigin: "center center"
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 87,
+          duration: 1.5,
+          ease: "elastic.out(1, 0.4)",
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: ".leaf-decoration",
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation de la section Dimension
+      gsap.fromTo(
+        dimensionRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: dimensionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation de la citation
+      gsap.fromTo(
+        citationRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: citationRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation du texte de citation
+      gsap.fromTo(
+        ".citation-text",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: citationRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".citation-author",
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          delay: 0.6,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: citationRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+    }, [heroRef, visionRef, valuesRef, impactRef, dimensionRef, citationRef]);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <main className="relative w-full bg-[#FAF5EF] overflow-x-hidden">
@@ -16,7 +389,7 @@ export default function QuiSommesNous() {
       <Header />
 
       {/* ---------------- HERO ---------------- */}
-      <section className="relative w-full mt-20">
+      <section ref={heroRef} className="relative w-full mt-20">
         <div className="relative w-[90%] max-w-[1320px] h-[529px] mx-auto">
           <Image
             src="/images/business-meeting.png"
@@ -26,40 +399,40 @@ export default function QuiSommesNous() {
           />
           <div className="absolute inset-0 bg-[#770D28]/88 rounded-2xl"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-            <h1 className="text-white font-gobold text-4xl md:text-6xl mb-6">
+            <h1 className="hero-title text-white font-gobold text-4xl md:text-6xl mb-6">
               QUI SOMMES-NOUS ?
             </h1>
-            <p className="text-white text-lg md:text-2xl max-w-3xl leading-relaxed">
+            <p className="hero-subtitle text-white text-lg md:text-2xl max-w-3xl leading-relaxed">
               Lahalex est une solution juridique innovante qui met à disposition
               des professionnels du droit des outils fiables et pratiques pour
-              accéder, analyser et gérer efficacement l’information juridique
+              accéder, analyser et gérer efficacement l'information juridique
             </p>
           </div>
         </div>
       </section>
 
       {/* ---------------- VISION & MISSION ---------------- */}
-      <section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div>
+      <section ref={visionRef} className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
+        <div className="vision-content">
           <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
             Vision et mission
           </h2>
           <p className="text-[#293240] text-lg leading-8 mb-4">
             Chez <strong>LAHALEX</strong>, <strong>notre mission</strong> est de
-            démocratiser l’accès au droit africain à travers des solutions
+            démocratiser l'accès au droit africain à travers des solutions
             numériques fiables, intuitives et abordables.
           </p>
           <p className="text-[#293240] text-lg leading-8 mb-4">
             <strong>Notre vision :</strong> devenir la référence panafricaine de
             la LegalTech, en connectant les praticiens du droit, les
-            institutions et les citoyens grâce à l’innovation.
+            institutions et les citoyens grâce à l'innovation.
           </p>
           <p className="text-[#293240] text-lg leading-8">
-            <strong>Qu’est-ce que la LegalTech ?</strong> La LegalTech désigne
-            l’utilisation des technologies pour concevoir, proposer et fournir
+            <strong>Qu'est-ce que la LegalTech ?</strong> La LegalTech désigne
+            l'utilisation des technologies pour concevoir, proposer et fournir
             des services et produits liés au droit et à la justice. Elle permet
-            à tous professionnels comme non-professionnels d’accéder plus
-            facilement à l’information juridique et de simplifier leurs
+            à tous professionnels comme non-professionnels d'accéder plus
+            facilement à l'information juridique et de simplifier leurs
             démarches.
           </p>
         </div>
@@ -68,12 +441,12 @@ export default function QuiSommesNous() {
           alt="Réunion"
           width={650}
           height={450}
-          className="rounded-xl object-cover"
+          className="vision-image rounded-xl object-cover"
         />
       </section>
 
       {/* ---------------- VALEURS ---------------- */}
-      <section className="relative w-[90%] max-w-[1320px] mx-auto py-16">
+      <section ref={valuesRef} className="relative w-[90%] max-w-[1320px] mx-auto py-16">
         <div className="relative rounded-2xl overflow-hidden">
           {/* Image de fond */}
           <Image
@@ -96,78 +469,78 @@ export default function QuiSommesNous() {
             {/* Grid */}
             <div className="grid md:grid-cols-2 gap-12">
               {/* Accessibilité */}
-              <div className="flex items-start gap-6">
+              <div className="value-card flex items-start gap-6">
                 <Image
                   src="/images/password-icon.png"
                   alt="Accessibilité"
                   width={80}
                   height={80}
-                  className="w-20 h-20 object-contain"
+                  className="value-icon w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="text-[#770D28] text-2xl font-bold mb-2">
+                  <h3 className="value-title text-[#770D28] text-2xl font-bold mb-2">
                     Accessibilité
                   </h3>
-                  <p className="text-gray-800 text-base md:text-lg">
+                  <p className="value-description text-gray-800 text-base md:text-lg">
                     Un droit compréhensible et disponible pour tous.
                   </p>
                 </div>
               </div>
 
               {/* Innovation */}
-              <div className="flex items-start gap-6">
+              <div className="value-card flex items-start gap-6">
                 <Image
                   src="/images/innovation-icon.png"
                   alt="Innovation"
                   width={80}
                   height={80}
-                  className="w-20 h-20 object-contain"
+                  className="value-icon w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="text-[#770D28] text-2xl font-bold mb-2">
+                  <h3 className="value-title text-[#770D28] text-2xl font-bold mb-2">
                     Innovation
                   </h3>
-                  <p className="text-gray-800 text-base md:text-lg">
-                    Intégrer l’IA et les nouvelles technologies au service de la
+                  <p className="value-description text-gray-800 text-base md:text-lg">
+                    Intégrer l'IA et les nouvelles technologies au service de la
                     justice.
                   </p>
                 </div>
               </div>
 
               {/* Fiabilité */}
-              <div className="flex items-start gap-6">
+              <div className="value-card flex items-start gap-6">
                 <Image
                   src="/images/fiabilite-icon.png"
                   alt="Fiabilité"
                   width={80}
                   height={80}
-                  className="w-20 h-20 object-contain"
+                  className="value-icon w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="text-[#770D28] text-2xl font-bold mb-2">
+                  <h3 className="value-title text-[#770D28] text-2xl font-bold mb-2">
                     Fiabilité
                   </h3>
-                  <p className="text-gray-800 text-base md:text-lg">
+                  <p className="value-description text-gray-800 text-base md:text-lg">
                     Des contenus validés par des experts.
                   </p>
                 </div>
               </div>
 
               {/* Engagement */}
-              <div className="flex items-start gap-6">
+              <div className="value-card flex items-start gap-6">
                 <Image
                   src="/images/engagement-icon.png"
                   alt="Engagement"
                   width={80}
                   height={80}
-                  className="w-20 h-20 object-contain"
+                  className="value-icon w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="text-[#770D28] text-2xl font-bold mb-2">
+                  <h3 className="value-title text-[#770D28] text-2xl font-bold mb-2">
                     Engagement
                   </h3>
-                  <p className="text-gray-800 text-base md:text-lg">
-                    Soutenir la formation et l’excellence académique en Afrique.
+                  <p className="value-description text-gray-800 text-base md:text-lg">
+                    Soutenir la formation et l'excellence académique en Afrique.
                   </p>
                 </div>
               </div>
@@ -177,11 +550,11 @@ export default function QuiSommesNous() {
       </section>
 
       {/* ---------------- IMPACT ---------------- */}
-      <section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
+      <section ref={impactRef} className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
         {/* Bloc image avec décor */}
         <div className="relative">
           {/* Bloc olive derrière */}
-          <div className="absolute -bottom-10 -left-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
+          <div className="decorative-element absolute -bottom-10 -left-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
 
           {/* Image principale */}
           <Image
@@ -189,7 +562,7 @@ export default function QuiSommesNous() {
             alt="Bibliothèque"
             width={583}
             height={468}
-            className="relative rounded-xl object-cover z-10"
+            className="main-image relative rounded-xl object-cover z-10"
           />
 
           {/* Doodle décoratif */}
@@ -198,7 +571,7 @@ export default function QuiSommesNous() {
             alt=""
             width={135}
             height={151}
-            className="absolute -top-25 -right-155 rotate-[87deg] z-0"
+            className="leaf-decoration decorative-element absolute -top-25 -right-155 rotate-[87deg] z-0"
           />
         </div>
 
@@ -208,24 +581,24 @@ export default function QuiSommesNous() {
             Impact social et éducatif
           </h2>
           <p className="text-[#293240] text-lg leading-8 max-w-[538px]">
-            Nous croyons que l’accès au savoir juridique contribue à renforcer
-            l’État de droit et la démocratie. À travers des partenariats avec
+            Nous croyons que l'accès au savoir juridique contribue à renforcer
+            l'État de droit et la démocratie. À travers des partenariats avec
             universités, barreaux et institutions, LAHALEX soutient la formation
-            continue des professionnels et l’insertion des étudiants dans le
+            continue des professionnels et l'insertion des étudiants dans le
             monde du travail.
           </p>
         </div>
       </section>
 
       {/* ---------------- DIMENSION ---------------- */}
-      <section className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
+      <section ref={dimensionRef} className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
         <div className="relative">
           <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
             Dimension panafricaine et internationale
           </h2>
           <p className="text-[#293240] text-lg leading-8">
-            Présente dans plusieurs pays d’Afrique francophone et ouverte sur le
-            monde, LAHALEX s’impose comme un pont entre les réalités locales et
+            Présente dans plusieurs pays d'Afrique francophone et ouverte sur le
+            monde, LAHALEX s'impose comme un pont entre les réalités locales et
             les standards internationaux.
           </p>
           {/* Doodle décoratif */}
@@ -234,13 +607,13 @@ export default function QuiSommesNous() {
             alt=""
             width={135}
             height={151}
-            className="absolute top-50 -left-10 rotate-[87deg] z-0"
+            className="leaf-decoration decorative-element absolute top-50 -left-10 rotate-[87deg] z-0"
           />
         </div>
 
         <div className="relative">
           {/* Bloc olive derrière */}
-          <div className="absolute -bottom-10 -right-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
+          <div className="decorative-element absolute -bottom-10 -right-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
 
           {/* Image au-dessus */}
           <Image
@@ -248,21 +621,21 @@ export default function QuiSommesNous() {
             alt="Carte Afrique"
             width={662}
             height={455}
-            className="rounded-xl object-cover relative z-10"
+            className="main-image rounded-xl object-cover relative z-10"
           />
         </div>
       </section>
 
       {/* ---------------- CITATION ---------------- */}
-      <section className="relative w-[90%] max-w-[1324px] mx-auto py-20">
+      <section ref={citationRef} className="relative w-[90%] max-w-[1324px] mx-auto py-20">
         <div className="relative bg-[#770D28] rounded-2xl p-12 text-center text-white">
-          <p className="italic text-xl md:text-2xl leading-relaxed mb-6">
-            « Grâce à l’intelligence artificielle, au big data et à des
+          <p className="citation-text italic text-xl md:text-2xl leading-relaxed mb-6">
+            « Grâce à l'intelligence artificielle, au big data et à des
             plateformes interactives, nous offrons aux praticiens des outils
-            d’aide à la décision et de gestion de dossiers adaptés aux
+            d'aide à la décision et de gestion de dossiers adaptés aux
             spécificités du droit OHADA et des droits nationaux africains. »
           </p>
-          <p className="font-bold text-xl">L.Laleye - DG LAHALEX</p>
+          <p className="citation-author font-bold text-xl">L.Laleye - DG LAHALEX</p>
           <Image
             src="/images/Group-10818.png"
             alt="Motif"
