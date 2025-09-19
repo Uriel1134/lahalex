@@ -63,10 +63,10 @@ export function HeroSection() {
         {/* Bandeau gradient bas */}
         <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/90 to-transparent" />
         {/* Titres: mobile en pile, desktop en deux colonnes. Balayage lumineux conforme globals.css */}
-        <div className="absolute left-0 right-0 bottom-6 md:bottom-8 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0 px-2 sm:px-4 md:px-16">
+        <div className="absolute left-0 right-0 bottom-4 sm:bottom-6 md:bottom-8 flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-0 px-2 sm:px-4 md:px-8 lg:px-16">
           {/* Groupe gauche */}
-          <div className="text-white font-gobold leading-none text-left whitespace-nowrap order-1 sm:order-none">
-            <div className="relative inline-flex gap-[1px] sm:gap-[2px] text-[18px] xs:text-[22px] sm:text-[32px] md:text-[64px]">
+          <div className="text-white font-gobold leading-none text-center lg:text-left whitespace-nowrap order-1 lg:order-none">
+            <div className="relative inline-flex gap-[1px] sm:gap-[2px] text-[16px] xs:text-[18px] sm:text-[24px] md:text-[32px] lg:text-[48px] xl:text-[64px]">
               {"CENTRALISEZ LE DROIT".split("").map((ch, i) => (
                 <span key={`l-${i}`} className="relative animate-flip-in-bottom" style={{ animationDelay: `${0.1 + i * 0.05}s` }}>
                   {ch === " " ? "\u00A0" : ch}
@@ -77,8 +77,8 @@ export function HeroSection() {
           </div>
 
           {/* Groupe droit */}
-          <div className="text-white font-gobold leading-none text-right whitespace-nowrap order-2 sm:order-none">
-            <div className="relative inline-flex gap-[1px] sm:gap-[2px] text-[18px] xs:text-[22px] sm:text-[32px] md:text-[64px]">
+          <div className="text-white font-gobold leading-none text-center lg:text-right whitespace-nowrap order-2 lg:order-none">
+            <div className="relative inline-flex gap-[1px] sm:gap-[2px] text-[16px] xs:text-[18px] sm:text-[24px] md:text-[32px] lg:text-[48px] xl:text-[64px]">
               {"SIMPLIFIEZ LA JUSTICE".split("").map((ch, i) => (
                 <span key={`r-${i}`} className="relative animate-flip-in-bottom" style={{ animationDelay: `${0.1 + i * 0.05}s` }}>
                   {ch === " " ? "\u00A0" : ch}

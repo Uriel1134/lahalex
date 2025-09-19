@@ -89,13 +89,13 @@ export function Header() {
         </div>
 
         {/* Desktop/tablette: zones gauche/logo/droite */}
-        <div className="hidden sm:flex relative z-10 items-center px-4 md:px-8 h-full">
+        <div className="hidden sm:flex relative z-10 items-center px-2 md:px-4 lg:px-8 h-full">
           {/* Zone gauche (1/2) */}
           <div className="hidden sm:flex items-center w-1/2">
             {/* Icône menu */}
             <div className="flex items-center">
-              <div className="w-[52px] h-[52px] bg-[#515560] rounded-full flex items-center justify-center">
-                <button aria-label="Ouvrir le menu" onClick={() => setMobileMenuOpen(true)} className="w-6 h-6">
+              <div className="w-[40px] md:w-[52px] h-[40px] md:h-[52px] bg-[#515560] rounded-full flex items-center justify-center">
+                <button aria-label="Ouvrir le menu" onClick={() => setMobileMenuOpen(true)} className="w-5 md:w-6 h-5 md:h-6">
                   <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
                     <path d="M3 12h18M3 6h18M3 18h18" stroke="white" strokeWidth="2" strokeLinecap="round" />
                   </svg>
@@ -103,27 +103,27 @@ export function Header() {
               </div>
             </div>
             {/* Liens gauche centrés entre icône et logo */}
-            <nav className="flex items-center gap-6 mx-auto">
+            <nav className="flex items-center gap-3 md:gap-6 mx-auto">
               <a
                 href="nous-contacter"
-                className="text-[#1C232F] text-base md:text-lg font-normal hover:text-[#770D28] transition-colors"
+                className="text-[#1C232F] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Nous contacter
               </a>
               <a
                 href="essai-gratuit"
-                className="text-[#1C232F] text-base md:text-lg font-normal hover:text-[#770D28] transition-colors"
+                className="text-[#1C232F] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Essai gratuit
               </a>
             </nav>
-            {/* Espace miroir de l’icône pour équilibrer */}
-            <div className="w-[52px]" />
+            {/* Espace miroir de l'icône pour équilibrer */}
+            <div className="w-[40px] md:w-[52px]" />
           </div>
 
           {/* Logo central */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <h1 className="text-[#770D28] text-[24px] md:text-[30px] font-bold tracking-[0.07em] font-gobold">
+            <h1 className="text-[#770D28] text-[20px] md:text-[24px] lg:text-[30px] font-bold tracking-[0.07em] font-gobold">
               LAHALEX
             </h1>
           </div>
@@ -131,36 +131,36 @@ export function Header() {
           {/* Zone droite (1/2) */}
           <div className="hidden sm:flex items-center w-1/2 justify-end">
             {/* Espace miroir côté logo pour équilibrer */}
-            <div className="w-[52px]" />
+            <div className="w-[40px] md:w-[52px]" />
             {/* Liens droite centrés entre logo et bouton */}
-            <div className="flex items-center gap-6 mx-auto">
+            <div className="flex items-center gap-3 md:gap-6 mx-auto">
               <div className="relative group">
-                <button className="flex items-center gap-1 text-[#1C232F] text-base md:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
+                <button className="flex items-center gap-1 text-[#1C232F] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
                   <span>Nos solutions</span>
                 </button>
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="absolute top-full left-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
                   <Link
                     href="/lahalex-universel"
-                    className="block px-4 py-3 text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
                   >
                     Lahalex Universel
                   </Link>
                   <Link
                     href="/lahalex-avocat"
-                    className="block px-4 py-3 text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
                   >
                     Lahalex Avocat
                   </Link>
                   <Link
                     href="/lahalex-notaire"
-                    className="block px-4 py-3 text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
                   >
                     Lahalex Notaire
                   </Link>
                   <Link
                     href="/lahalex-commissaire-justice"
-                    className="block px-4 py-3 text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
                   >
                     Lahalex Commissaire de justice
                   </Link>
@@ -169,14 +169,14 @@ export function Header() {
               </div>
               <a
                 href="paiement-abonnements"
-                className="text-[#1C232F] text-base md:text-lg font-normal hover:text-[#770D28] transition-colors"
+                className="text-[#1C232F] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Nos formules
               </a>
             </div>
             <Button
               variant="outline"
-              className="ml-4 border-2 border-black rounded-[10px] px-3 md:px-4 py-2 md:py-3 text-sm md:text-base text-black hover:bg-black hover:text-white transition-colors bg-transparent"
+              className="ml-2 md:ml-4 border-2 border-black rounded-[10px] px-2 md:px-3 lg:px-4 py-1 md:py-2 lg:py-3 text-xs md:text-sm lg:text-base text-black hover:bg-black hover:text-white transition-colors bg-transparent"
             >
               Connexion
             </Button>

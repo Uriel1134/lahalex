@@ -77,14 +77,14 @@ export function SolutionsSection() {
           <div className="solution-card relative">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
               {/* Bloc Laptop + Connexions */}
-              <div className="relative flex-1 min-h-[240px] sm:min-h-[360px] lg:min-h-[480px]">
+              <div className="relative flex-1 min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[480px]">
                 <div className="absolute left-1/2 lg:left-[45%] top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                   <Image
                     src="/images/universel-laptop.png"
                     alt="Lahalex Universel Interface"
                     width={480}
                     height={300}
-                    className="object-contain w-[180px] sm:w-[280px] lg:w-[400px] h-auto"
+                    className="object-contain w-[150px] xs:w-[180px] sm:w-[220px] md:w-[280px] lg:w-[350px] xl:w-[400px] h-auto"
                   />
                 </div>
 
@@ -144,7 +144,7 @@ export function SolutionsSection() {
 
               {/* Texte descriptif */}
               <div className="flex-1 max-w-[400px] lg:ml-8">
-                <h3 className="text-[#770D28] text-[28px] md:text-[36px] leading-[43px] mb-6">
+                <h3 className="text-[#770D28] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6">
                   <span className="font-normal">
                     <TextType
                       text={["Lahalex "]}
@@ -171,7 +171,7 @@ export function SolutionsSection() {
                   </span>
                 </h3>
 
-                <div className="space-y-2 text-black text-[14px] leading-[20px] mb-8">
+                <div className="space-y-2 text-black text-[13px] sm:text-[14px] leading-[18px] sm:leading-[20px] mb-6 md:mb-8">
                   <p>
                     <strong>Recherche juridique avancée :</strong> législation,
                     jurisprudence, doctrine et bien plus encore.
@@ -198,14 +198,14 @@ export function SolutionsSection() {
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                   <Button
                     variant="outline"
-                    className="border border-[#770D28] text-[#770D28] rounded-[30px] px-6 py-3 text-[16px] md:text-[18px] hover:bg-[#770D28] hover:text-white bg-transparent"
+                    className="border border-[#770D28] text-[#770D28] rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] hover:bg-[#770D28] hover:text-white bg-transparent"
                   >
                     En savoir plus
                   </Button>
-                  <Button className="bg-[#770D28] text-white rounded-[30px] px-6 py-3 text-[16px] md:text-[18px] hover:bg-[#770D28]/90">
+                  <Button className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] hover:bg-[#770D28]/90">
                     Demander une démo
                   </Button>
                 </div>
@@ -214,9 +214,9 @@ export function SolutionsSection() {
           </div>
 
           {/* Lahalex Avocat */}
-          <div className="solution-card flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 bg-[#D4C89A] rounded-[20px] p-6 md:p-12">
+          <div className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 bg-[#D4C89A] rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12">
             {/* Image à droite sur PC, au-dessus sur mobile */}
-            <div className="w-full lg:w-[400px] xl:w-[500px] h-[250px] md:h-[350px] rounded-[20px] overflow-hidden">
+            <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] overflow-hidden">
               <Image
                 src="/images/lahalex-avocat.png"
                 alt="Lahalex Avocat Interface"
@@ -227,7 +227,7 @@ export function SolutionsSection() {
             </div>
 
             <div className="flex-1">
-              <h3 className="text-[#770D28] text-[28px] md:text-[36px] leading-[43px] mb-6">
+              <h3 className="text-[#770D28] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6">
                 <span className="font-normal">
                   <TextType
                     text={["Lahalex "]}
@@ -254,7 +254,7 @@ export function SolutionsSection() {
                 </span>
               </h3>
 
-              <p className="text-black text-[14px] md:text-[15px] leading-[24px] md:leading-[30px] mb-8">
+              <p className="text-black text-[13px] sm:text-[14px] md:text-[15px] leading-[20px] sm:leading-[24px] md:leading-[30px] mb-6 md:mb-8">
                Gestion complète du cabinet : dossiers,
                 clients, facturation, finance.
                 <br />
@@ -272,14 +272,14 @@ export function SolutionsSection() {
                 </strong>
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <Button
                   variant="outline"
-                  className="border border-[#770D28] text-[#770D28] rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28] hover:text-white bg-transparent"
+                  className="border border-[#770D28] text-[#770D28] rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] hover:bg-[#770D28] hover:text-white bg-transparent"
                 >
                   En savoir plus
                 </Button>
-                <Button className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90">
+                <Button className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] hover:bg-[#770D28]/90">
                   Demander une démo
                 </Button>
               </div>
@@ -287,9 +287,9 @@ export function SolutionsSection() {
           </div>
 
           {/* Lahalex Notaire */}
-          <div className="solution-card flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          <div className="solution-card flex flex-col lg:flex-row items-center gap-6 md:gap-8 lg:gap-16">
             {/* Image d'abord en mobile */}
-            <div className="w-full lg:w-[400px] xl:w-[500px] h-[250px] md:h-[350px] rounded-[20px] overflow-hidden order-1 lg:order-none">
+            <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] overflow-hidden order-1 lg:order-none">
               <Image
                 src="/images/lahalex-notaire.png"
                 alt="Lahalex Notaire Interface"
@@ -366,9 +366,9 @@ export function SolutionsSection() {
           </div>
 
           {/* Lahalex Commissaire de justice */}
-          <div className="solution-card flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 bg-[#D4C89A] rounded-[20px] p-6 md:p-12">
+          <div className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 bg-[#D4C89A] rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12">
             {/* Image à droite sur PC, au-dessus sur mobile */}
-            <div className="w-full lg:w-[400px] xl:w-[500px] h-[250px] md:h-[350px] rounded-[20px] overflow-hidden">
+            <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] overflow-hidden">
               <Image
                 src="/images/Gradient.png"
                 alt="Lahalex Commissaire de Justice Interface"

@@ -50,8 +50,10 @@ export function ArticlesSection() {
   // Détecte la taille d'écran pour adapter le nombre d'items visibles
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 640) {
         setItemsPerView(1) // mobile
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(2) // tablet
       } else {
         setItemsPerView(3) // desktop
       }
@@ -96,30 +98,30 @@ export function ArticlesSection() {
             style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
           >
             {articles.map((article, index) => (
-              <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-4">
-                <article className="w-full max-w-[400px] mx-auto">
-                  <div className="relative w-full h-[350px] md:h-[391px]">
+              <div key={index} className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4">
+                <article className="w-full max-w-[350px] sm:max-w-[400px] mx-auto">
+                  <div className="relative w-full h-[300px] sm:h-[350px] md:h-[391px]">
                     <div
                       className="absolute inset-0 rounded-[20px]"
                       style={{
                         background: "radial-gradient(84.4% 214% at 15.6% 50%, #B4AB6B 0%, #FFFFFF 100%)",
                       }}
                     >
-                      <div className="absolute left-[20px] top-[0px] right-[20px] h-[280px] md:h-[309px] bg-white border border-gray-400/40 rounded-[20px] p-5">
-                        <h3 className="text-black text-[16px] md:text-[18px] font-bold leading-[22px] md:leading-[26px] mb-4 md:mb-6">
+                      <div className="absolute left-[15px] sm:left-[20px] top-[0px] right-[15px] sm:right-[20px] h-[240px] sm:h-[280px] md:h-[309px] bg-white border border-gray-400/40 rounded-[20px] p-3 sm:p-5">
+                        <h3 className="text-black text-[14px] sm:text-[16px] md:text-[18px] font-bold leading-[18px] sm:leading-[22px] md:leading-[26px] mb-3 sm:mb-4 md:mb-6">
                           {article.title}
                         </h3>
-                        <div className="absolute bottom-[20px] left-[20px] right-[20px]">
-                          <p className="text-black text-[14px] md:text-[16px] font-semibold leading-[20px] md:leading-[24px]">
+                        <div className="absolute bottom-[15px] sm:bottom-[20px] left-[15px] sm:left-[20px] right-[15px] sm:right-[20px]">
+                          <p className="text-black text-[12px] sm:text-[14px] md:text-[16px] font-semibold leading-[16px] sm:leading-[20px] md:leading-[24px]">
                             {article.author}
                           </p>
-                          <p className="text-black text-[12px] md:text-[14px] font-normal leading-[18px] md:leading-[20px] mt-1">
+                          <p className="text-black text-[10px] sm:text-[12px] md:text-[14px] font-normal leading-[14px] sm:leading-[18px] md:leading-[20px] mt-1">
                             {article.position}
                           </p>
                         </div>
                       </div>
-                      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[0px] w-[93px] h-[50px] bg-[#770D28] rounded-[5px] flex items-center justify-center">
-                        <span className="text-white text-[18px] md:text-[20px] font-medium">Lire</span>
+                      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[0px] w-[80px] sm:w-[93px] h-[40px] sm:h-[50px] bg-[#770D28] rounded-[5px] flex items-center justify-center">
+                        <span className="text-white text-[16px] sm:text-[18px] md:text-[20px] font-medium">Lire</span>
                       </div>
                     </div>
                   </div>
