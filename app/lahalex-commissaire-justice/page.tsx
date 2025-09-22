@@ -152,9 +152,14 @@ export default function LahalexCommissaireJusticePage() {
               </a>
             </div>
 
-            {/* Right Column - Placeholder for future image/video */}
-            <div className="order-1 lg:order-2">
-              <div className="hero-image bg-gray-200 h-64 sm:h-80 lg:h-96 rounded-lg"></div>
+            {/* Colonne droite - Illustration spécifique Commissaire de Justice */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <img
+                src="/images/lahalex-commissaire.png"
+                alt="Illustration LahaLex Commissaire de Justice"
+                className="hero-image h-64 sm:h-80 lg:h-96 w-full max-w-md object-contain "
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

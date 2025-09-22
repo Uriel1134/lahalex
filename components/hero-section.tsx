@@ -4,19 +4,57 @@ import { Counter } from "./counter"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full h-[560px] md:h-[720px] bg-gradient-to-b from-[#FAF5EF] to-[#FAF5EF] overflow-hidden">
-      {/* Background image */}
+    <section
+      className="relative w-full min-h-screen h-screen overflow-hidden bg-[#770D28]"
+    >
+      {/* Aurora mesh SVG */}
+      <svg
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none"
+        viewBox="0 0 1920 1080"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{position: 'absolute', left: 0, top: 0, width: '100%', height: '100%'}}
+      >
+        <defs>
+          <radialGradient id="aurora1" cx="0.5" cy="0.4" r="0.6" fx="0.5" fy="0.4" gradientUnits="objectBoundingBox">
+            <stop offset="0%" stopColor="#EADFCB" stopOpacity="0.7" />
+            <stop offset="80%" stopColor="#EADFCB" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#770D28" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id="aurora2" cx="0.7" cy="0.7" r="0.4" fx="0.7" fy="0.7" gradientUnits="objectBoundingBox">
+            <stop offset="0%" stopColor="#F7CBAA" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#770D28" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <ellipse cx="900" cy="400" rx="600" ry="320" fill="url(#aurora1)" />
+        <ellipse cx="1400" cy="800" rx="400" ry="180" fill="url(#aurora2)" />
+      </svg>
+      {/* Image centrale laptop */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        className="absolute left-1/2 top-1/2 z-20 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none"
         style={{
-          backgroundImage: "url('/images/bg1.jpg')",
+          width: 'min(900px, 80vw)',
+          height: 'auto',
+          maxHeight: '70vh',
         }}
-      />
+      >
+        <img
+          src="/images/universel-laptop.png"
+          alt="Universel Laptop"
+          className="w-full h-auto drop-shadow-2xl"
+          style={{
+            maxWidth: '100%',
+            maxHeight: '70vh',
+            minWidth: '280px',
+            objectFit: 'contain',
+          }}
+        />
+      </div>
 
       {/* Content overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-between h-full px-4 md:px-16 py-8">
+  <div className="relative z-10 flex flex-col items-center justify-between h-full px-4 md:px-16 py-8">
         {/* Top statistics */}
-        <div className="w-full flex justify-between items-start pt-8 md:pt-16">
+  <div className="w-full flex justify-between items-start pt-8 md:pt-16">
           {/* Left statistics */}
           <div className="space-y-4 md:space-y-8">
             <div>
@@ -61,9 +99,9 @@ export function HeroSection() {
         </div>
 
         {/* Bandeau gradient bas */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/90 to-transparent" />
+  <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/90 to-transparent" />
         {/* Titres: mobile en pile, desktop en deux colonnes. Balayage lumineux conforme globals.css */}
-        <div className="absolute left-0 right-0 bottom-4 sm:bottom-6 md:bottom-8 flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-0 px-2 sm:px-4 md:px-8 lg:px-16">
+  <div className="absolute left-0 right-0 bottom-4 sm:bottom-6 md:bottom-8 flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-0 px-2 sm:px-4 md:px-8 lg:px-16">
           {/* Groupe gauche */}
           <div className="text-white font-gobold leading-none text-center lg:text-left whitespace-nowrap order-1 lg:order-none">
             <div className="relative inline-flex gap-[1px] sm:gap-[2px] text-[16px] xs:text-[18px] sm:text-[24px] md:text-[32px] lg:text-[48px] xl:text-[64px]">

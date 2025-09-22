@@ -173,9 +173,14 @@ export default function LahalexNotairePage() {
               </a>
             </div>
 
-            {/* Right Column - Placeholder for future image/video */}
+            {/* Colonne droite - Illustration spécifique Notaire */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="hero-image bg-gray-200 h-48 sm:h-64 lg:h-80 w-full max-w-md rounded-lg"></div>
+              <img
+                src="/images/lahalex-notaire.png"
+                alt="Illustration LahaLex Notaire"
+                className="hero-image h-48 sm:h-64 lg:h-80 w-full max-w-md object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

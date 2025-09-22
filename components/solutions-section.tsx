@@ -77,68 +77,15 @@ export function SolutionsSection() {
           <div className="solution-card relative">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
               {/* Bloc Laptop + Connexions */}
-              <div className="relative flex-1 min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[480px]">
-                <div className="absolute left-1/2 lg:left-[45%] top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="relative flex-1 min-h-[220px] xs:min-h-[280px] sm:min-h-[340px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center">
+                <div className="w-full flex justify-center items-center sm:absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-10">
                   <Image
                     src="/images/universel-laptop.png"
                     alt="Lahalex Universel Interface"
-                    width={480}
-                    height={300}
-                    className="object-contain w-[150px] xs:w-[180px] sm:w-[220px] md:w-[280px] lg:w-[350px] xl:w-[400px] h-auto"
+                    width={1200}
+                    height={800}
+                    className="object-contain w-[95vw] max-w-[1200px] h-auto mx-auto"
                   />
-                </div>
-
-                {/* Connexions gauche - hidden on mobile */}
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col justify-center h-full z-20 pointer-events-none">
-                  <div className="flex items-center mb-[80px]">
-                    <span className="text-black text-[14px] font-bold w-[120px] text-right mr-2">
-                      Associations
-                    </span>{" "}
-                    {/* texte */}
-                    <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div>{" "}
-                    {/* point rouge */}
-                    <div className="w-[70px] h-[2px] bg-[#770D28]"></div>{" "}
-                    {/* ligne vers le laptop */}
-                  </div>
-
-                  <div className="flex items-center">
-                    <span className="text-black text-[14px] font-bold w-[80px] text-right leading-[17px] mr-2">
-                      Praticiens
-                    </span>
-                    <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div>{" "}
-                    {/* point rouge */}
-                    <div className="w-[70px] h-[2px] bg-[#770D28]"></div>{" "}
-                    {/* ligne vers le laptop */}
-                  </div>
-                </div>
-
-                {/* Connexions droite - hidden on mobile */}
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col justify-center h-full z-20 pointer-events-none">
-                  <div className="flex items-center mb-[60px]">
-                    <div className="w-[140px] h-[2px] bg-[#770D28] mr-2"></div>{" "}
-                    {/* ligne */}
-                    <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div>{" "}
-                    {/* point côté texte */}
-                    <span className="text-black text-[14px] font-bold w-[180px] leading-[20px]">
-                      Établissements scolaires supérieurs
-                    </span>
-                  </div>
-
-                  <div className="flex items-center mb-[60px]">
-                    <div className="w-[140px] h-[2px] bg-[#770D28] mr-2"></div>
-                    <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div>
-                    <span className="text-black text-[14px] font-bold w-[140px]">
-                      Institutions privées
-                    </span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <div className="w-[140px] h-[2px] bg-[#770D28] mr-2"></div>
-                    <div className="w-3 h-3 bg-[#770D28] rounded-full mr-2"></div>
-                    <span className="text-black text-[14px] font-bold w-[160px]">
-                      Institutions publiques
-                    </span>
-                  </div>
                 </div>
               </div>
 

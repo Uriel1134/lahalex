@@ -571,7 +571,7 @@ export default function QuiSommesNous() {
             alt=""
             width={135}
             height={151}
-            className="leaf-decoration decorative-element absolute -top-25 -right-155 rotate-[87deg] z-0"
+            className="leaf-decoration decorative-element absolute -top-25 -right-155 rotate-[87deg] z-0 hidden sm:block"
           />
         </div>
 
@@ -607,7 +607,7 @@ export default function QuiSommesNous() {
             alt=""
             width={135}
             height={151}
-            className="leaf-decoration decorative-element absolute top-50 -left-10 rotate-[87deg] z-0"
+            className="leaf-decoration decorative-element absolute top-50 -left-10 rotate-[87deg] z-0 hidden sm:block"
           />
         </div>
 

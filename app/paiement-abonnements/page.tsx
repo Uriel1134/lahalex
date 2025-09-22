@@ -9,20 +9,6 @@ export default function PaiementAbonnements() {
   const [isAnnual, setIsAnnual] = useState(false)
   const [selectedDiscount, setSelectedDiscount] = useState<number | null>(null)
 
-  const prices = {
-    student: { monthly: 25000, annual: 300000 },
-    professional: { monthly: 100000, annual: 1200000 },
-  }
-
-  const calculatePrice = (basePrice: number, discount: number | null, isAnnual: boolean) => {
-    if (!isAnnual || !discount) return basePrice
-    const discountAmount = (basePrice * discount) / 100
-    return Math.round(basePrice - discountAmount)
-  }
-
-  const studentPrice = isAnnual ? prices.student.annual : prices.student.monthly
-  const professionalBasePrice = isAnnual ? prices.professional.annual : prices.professional.monthly
-  const professionalPrice = calculatePrice(professionalBasePrice, selectedDiscount, isAnnual)
 
   const tabs = [
     { id: "universel", label: "Lahalex Universel" },
@@ -87,7 +73,7 @@ export default function PaiementAbonnements() {
               </div>
 
               {/* Pricing Cards */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mt-6 lg:mt-8 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mt-6 lg:mt-8 items-start">
                 {/* Student Card */}
                 <div className="bg-[#FAF5EF] border border-gray-200 rounded-lg overflow-hidden">
                   <div className="p-6 lg:p-8">
@@ -115,27 +101,13 @@ export default function PaiementAbonnements() {
                         </div>
                       ))}
                     </div>
-                    <div className="border-t pt-4">
-                      <div className="text-right mb-4">
-                        <span className="text-sm text-gray-500 font-sf-pro">Total</span>
-                        <div className="font-gobold text-xl sm:text-2xl text-gray-900">
-                          {studentPrice.toLocaleString("fr-FR")} FCFA
-                        </div>
-                      </div>
-                      <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-                        <a
-                          href="/connexion"
-                          className="flex-1 bg-[#770D28] text-white py-3 rounded-lg font-medium hover:bg-[#5a0a1f] inline-block text-center font-sf-pro"
-                        >
-                          S'abonner
-                        </a>
-                        <a
-                          href="/connexion"
-                          className="text-[#770D28] px-4 py-3 rounded-lg hover:bg-[#fdf2f8] whitespace-nowrap inline-block text-center font-sf-pro"
-                        >
-                          essai gratuit →
-                        </a>
-                      </div>
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
+                      <a
+                        href="/nous-contacter"
+                        className="flex-1 bg-[#770D28] text-white py-3 rounded-lg font-medium hover:bg-[#5a0a1f] inline-block text-center font-sf-pro"
+                      >
+                        Demandez un devis
+                      </a>
                     </div>
                   </div>
                   {/* Footer Bar */}
@@ -175,56 +147,34 @@ export default function PaiementAbonnements() {
                     ))}
                   </div>
 
-                  {/* Discount Options */}
-                  <div className="space-y-3 mb-6">
-                    {[
-                      { value: 5, title: "-5% de réduction", desc: "Pour un abonnement annuel payé comptant" },
-                      { value: 15, title: "-15% de réduction", desc: "Pour un engagement sur 2 ans" },
-                      { value: 30, title: "-30% de réduction", desc: "Pour un engagement sur 3 ans" },
-                      {
-                        value: 10,
-                        title: "-10% de réduction",
-                        desc: "sur chaque abonnement dès la souscription de 2 abonnements ou plus par la même personne",
-                      },
-                    ].map((discount) => (
-                      <label key={discount.value} className="flex items-start">
-                        <input
-                          type="radio"
-                          name="discount"
-                          value={discount.value}
-                          checked={selectedDiscount === discount.value}
-                          onChange={() => setSelectedDiscount(discount.value)}
-                          className="mr-3 mt-1 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="font-medium text-sm font-sf-pro">{discount.title}</div>
-                          <div className="text-xs text-gray-500 font-sf-pro">{discount.desc}</div>
-                        </div>
-                      </label>
-                    ))}
-                  </div>
 
-                  <div className="border-t pt-4">
-                    <div className="text-right mb-4">
-                      <span className="text-sm text-gray-500 font-sf-pro">Total</span>
-                      <div className="font-gobold text-xl sm:text-2xl text-gray-900">
-                        {professionalPrice.toLocaleString("fr-FR")} FCFA
-                      </div>
-                    </div>
-                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-                      <a
-                        href="/connexion"
-                        className="flex-1 bg-[#770D28] text-white py-3 rounded-lg font-medium hover:bg-[#5a0a1f] inline-block text-center font-sf-pro"
-                      >
-                        S'abonner
-                      </a>
-                      <a
-                        href="/connexion"
-                        className="text-[#770D28] px-4 py-3 rounded-lg hover:bg-[#fdf2f8] whitespace-nowrap inline-block text-center font-sf-pro"
-                      >
-                        essai gratuit →
-                      </a>
-                    </div>
+                  <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
+                    <a
+                      href="/nous-contacter"
+                      className="flex-1 bg-[#770D28] text-white py-3 rounded-lg font-medium hover:bg-[#5a0a1f] inline-block text-center font-sf-pro"
+                    >
+                      Demandez un devis
+                    </a>
+                  </div>
+                </div>
+
+                {/* Formule Établissements Supérieurs et Institutions */}
+                <div className="bg-[#FAF5EF] border border-gray-200 rounded-lg p-6 lg:p-8 flex flex-col justify-between">
+                  <h4 className="font-gobold text-lg sm:text-xl text-[#770D28] mb-4">
+                    FORMULE ÉTABLISSEMENTS SUPÉRIEURS ET INSTITUTIONS PUBLIQUES/PRIVÉES
+                  </h4>
+                  <div className="flex-1 flex flex-col justify-center">
+                    <p className="text-gray-900 text-base sm:text-lg mb-6 leading-relaxed font-sf-pro">
+                      Vous êtes : une institution publique ou privée, une ONG, une entreprise, une association ou un
+                      établissement d'enseignement supérieur ?<br />
+                      Nous avons une formule sur mesure pour vous.
+                    </p>
+                    <a
+                      href="/nous-contacter"
+                      className="border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#fdf2f8] transition-colors inline-block font-sf-pro"
+                    >
+                      Contactez nous
+                    </a>
                   </div>
                 </div>
               </div>
@@ -309,66 +259,20 @@ export default function PaiementAbonnements() {
                     </label>
                   </div>
 
-                  <div className="border-t pt-4">
-                    <div className="text-right mb-4">
-                      <span className="text-sm text-gray-500">Total :</span>
-                      <div className="font-gobold text-xl sm:text-2xl text-gray-900">3.500.000 FCFA</div>
-                    </div>
-                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-                      <a
-                        href="/connexion"
-                        className="flex-1 bg-[#770D28] text-white py-3 rounded-lg font-medium hover:bg-[#5a0a1f] inline-block text-center"
-                      >
-                        Acheter
-                      </a>
-                      <a
-                        href="/connexion"
-                        className="text-[#770D28] px-4 py-3 rounded-lg hover:bg-[#fdf2f8] whitespace-nowrap inline-block text-center font-sf-pro"
-                      >
-                        essai gratuit →
-                      </a>
-                    </div>
+                  <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
+                    <a
+                      href="/nous-contacter"
+                      className="flex-1 bg-[#770D28] text-white py-3 rounded-lg font-medium hover:bg-[#5a0a1f] inline-block text-center font-sf-pro"
+                    >
+                      Demandez un devis
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Formule Établissements Section - Only show for Universel */}
-          {activeTab === "universel" && (
-            <section className="bg-[#FAF5EF] py-20">
-              <div className="bg-[#FAF5EF] py-16 sm:py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <h2 className="font-gobold text-2xl sm:text-3xl text-[#770D28] mb-8 lg:mb-12">
-                    FORMULE ÉTABLISSEMENTS SUPÉRIEURS ET INSTITUTIONS PUBLIQUES/PRIVÉES
-                  </h2>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <div>
-                      <p className="text-gray-900 text-base sm:text-lg mb-6 leading-relaxed font-sf-pro">
-                        Vous êtes : une institution publique ou privée, une ONG, une entreprise, une association ou un
-                        établissement d'enseignement supérieur ?<br />
-                        Nous avons une formule sur mesure pour vous.
-                      </p>
-                      <a
-                        href="/nous-contacter"
-                        className="border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#fdf2f8] transition-colors inline-block font-sf-pro"
-                      >
-                        Contactez-nous
-                      </a>
-                    </div>
-                    <div className="flex justify-center lg:justify-end">
-                      <img
-                        src="/placeholder.svg?height=400&width=500&text=Établissements+supérieurs"
-                        alt="Établissements supérieurs"
-                        className="w-full max-w-md lg:max-w-lg rounded-lg shadow-sm"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
         </div>
       </section>
 
