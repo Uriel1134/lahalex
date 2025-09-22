@@ -156,7 +156,7 @@ export default function LahalexAvocatPage() {
             {/* Colonne droite - Illustration spécifique Avocat */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <img
-                src="/images/lahalex-avocat.png"
+                src="/images/lahalex-notaire.png"
                 alt="Illustration LahaLex Avocat"
                 className="hero-image h-64 sm:h-80 lg:h-96 w-full max-w-md object-contain"
                 loading="lazy"

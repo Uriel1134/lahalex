@@ -637,7 +637,7 @@ export default function QuiSommesNous() {
           </p>
           <p className="citation-author font-bold text-xl">L.Laleye - DG LAHALEX</p>
           <Image
-            src="/images/Group-10818.png"
+            src="/images/group-10818.png"
             alt="Motif"
             fill
             className="absolute inset-0 object-cover rounded-2xl"

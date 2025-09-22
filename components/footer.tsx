@@ -35,6 +35,7 @@ export function Footer() {
             </h4>
             <div className="space-y-2 text-sm font-sf-pro">
               <p>+33 614 972 046</p>
+              <p>+229 015 599 000</p>
               <p className="underline">contact@lahalex.com</p>
             </div>
           </div>
@@ -45,6 +46,7 @@ export function Footer() {
             <div className="text-sm font-sf-pro">
               <p>Rue de la Côte Fleurie, 77660</p>
               <p>Saint-Jean-les-deux-jumeaux, France</p>
+              <p>Jéricho C/490, Cotonou, Bénin</p>
             </div>
           </div>
 
@@ -95,10 +97,10 @@ export function Footer() {
         {/* Bottom Links */}
         <div className="mt-8 pt-8 text-xs font-sf-pro">
           <div className="flex flex-wrap justify-center gap-6 text-center">
-            <Link href="#" className="hover:text-gray-300 uppercase">
+            <Link href="/conditions-generales" className="hover:text-gray-300 uppercase">
               CONDITIONS GÉNÉRALES DE VENTE ET D&apos;UTILISATION
             </Link>
-            <Link href="#" className="hover:text-gray-300 uppercase">
+            <Link href="/politique-confidentialite" className="hover:text-gray-300 uppercase">
               POLITIQUES DE CONFIDENTIALITÉ
             </Link>
             <span className="uppercase">
