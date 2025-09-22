@@ -384,7 +384,7 @@ export default function QuiSommesNous() {
   }, []);
 
   return (
-    <main className="relative w-full bg-[#FAF5EF] overflow-x-hidden">
+    <main className="relative w-full bg-white overflow-x-hidden">
       {/* ---------------- NAVBAR ---------------- */}
       <Header />
 

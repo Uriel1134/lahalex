@@ -136,7 +136,7 @@ export default function EssaiGratuit() {
             </div>
 
             {/* Section droite - Formulaire d'inscription (visible en premier sur mobile, à droite sur desktop) */}
-            <div className="bg-[#FAF5EF] rounded-lg shadow-lg p-8 order-1 lg:order-2">
+            <div className="bg-white rounded-lg shadow-lg p-8 order-1 lg:order-2">
               <h2 className="text-2xl font-gobold mb-8" style={{ color: "#770D28" }}>
                 Formulaire d'inscription
               </h2>

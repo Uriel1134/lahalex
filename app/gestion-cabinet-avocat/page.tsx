@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 
 export default function AvocatPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAF5EF] font-sf-pro">
+    <div className="flex flex-col min-h-screen bg-white font-sf-pro">
       <Header />
 
       <main className="flex-1 bg-white py-8 sm:py-12 lg:py-16">

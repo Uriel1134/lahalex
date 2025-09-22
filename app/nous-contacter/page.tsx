@@ -14,7 +14,7 @@ export default function NousContacter() {
       </section>
 
       {/* SECTION : NOUS JOINDRE */}
-      <section className="bg-[#FAF5EF]">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           {/* Ligne titre + texte */}
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-start">

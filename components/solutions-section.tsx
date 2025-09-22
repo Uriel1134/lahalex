@@ -84,7 +84,7 @@ export function SolutionsSection() {
                     alt="Lahalex Universel Interface"
                     width={1200}
                     height={800}
-                    className="object-contain w-[95vw] max-w-[1200px] h-auto mx-auto"
+                    className="object-contain w-[95vw] max-w-[1200px] h-auto mx-auto lg:max-w-[950px] xl:max-w-[850px]"
                   />
                 </div>
               </div>
@@ -165,11 +165,11 @@ export function SolutionsSection() {
             {/* Image à droite sur PC, au-dessus sur mobile */}
             <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] overflow-hidden">
               <Image
-                src="/images/lahalex-avocat.png"
+                src="/images/lahalex-notaire.png"
                 alt="Lahalex Avocat Interface"
                 width={500}
                 height={350}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
 
@@ -238,11 +238,11 @@ export function SolutionsSection() {
             {/* Image d'abord en mobile */}
             <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] overflow-hidden order-1 lg:order-none">
               <Image
-                src="/images/lahalex-notaire.png"
+                src="/images/lahalex-avocat.png"
                 alt="Lahalex Notaire Interface"
                 width={500}
                 height={350}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
 
@@ -321,7 +321,7 @@ export function SolutionsSection() {
                 alt="Lahalex Commissaire de Justice Interface"
                 width={500}
                 height={350}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
 

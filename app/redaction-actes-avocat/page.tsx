@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 
 export default function RedactionActesPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAF5EF] font-sf-pro">
+    <div className="flex flex-col min-h-screen bg-white font-sf-pro">
       {/* Header global */}
       <Header />
 

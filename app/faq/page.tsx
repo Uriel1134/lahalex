@@ -79,10 +79,10 @@ export default function FAQ() {
               {/* FAQ Items */}
               <div className="space-y-8">
                 {faqItems.map((item, index) => (
-                  <div key={index} className="faq-item border border-gray-200 rounded-lg bg-[#FAF5EF]">
+                  <div key={index} className="faq-item border border-gray-200 rounded-lg bg-white">
                     <button
                       onClick={() => toggleFaq(index)}
-                      className="faq-button w-full px-8 py-6 text-left bg-[#FAF5EF] hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+                      className="faq-button w-full px-8 py-6 text-left bg-white hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
                     >
                       <span className="font-medium text-gray-900">{item.question}</span>
                       <svg
@@ -111,7 +111,7 @@ export default function FAQ() {
             </div>
 
             {/* Right Column - Contact Form */}
-            <div className="bg-[#FAF5EF] p-8 rounded-lg shadow-lg">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Poser votre question</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
@@ -164,7 +164,7 @@ export default function FAQ() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#FAF5EF] border-2 border-[#770D28] text-[#770D28] py-3 px-6 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-all duration-300"
+                  className="w-full bg-white border-2 border-[#770D28] text-[#770D28] py-3 px-6 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-all duration-300"
                 >
                   Envoyer le message
                 </button>

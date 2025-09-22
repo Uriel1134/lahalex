@@ -225,7 +225,7 @@ export default function RecrutementPage() {
   const jobById = (id: string) => JOBS.find((j) => j.id === id)!
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAF5EF] font-sf-pro">
+    <div className="flex flex-col min-h-screen bg-white font-sf-pro">
       <Header />
 
       <main className="flex-1">

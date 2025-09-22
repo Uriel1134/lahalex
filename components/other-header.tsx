@@ -10,7 +10,7 @@ export function Header() {
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
 
   return (
-    <header className="shadow-sm relative z-50 bg-[#FAF5EF]">
+    <header className="shadow-sm relative z-50 bg-white">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left: hamburger + links */}
@@ -55,7 +55,6 @@ export function Header() {
             <div className="relative group">
               <button className="flex items-center space-x-1 text-sm text-gray-600 hover:text-gray-900 focus:outline-none">
                 <span>Nos solutions</span>
-                <ChevronDown className="w-4 h-4" />
               </button>
               <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
@@ -91,7 +90,7 @@ export function Header() {
               href="/paiement-abonnements"
               className="text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap"
             >
-              Nos tarifs
+              Nos formules
             </Link>
 
             <Link
@@ -174,10 +173,10 @@ export function Header() {
           </div>
 
           <Link
-            href="/tarifs"
+            href="/formules"
             className="font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
           >
-            NOS TARIFS
+            NOS formules
           </Link>
           <Link
             href="/recrutement"
