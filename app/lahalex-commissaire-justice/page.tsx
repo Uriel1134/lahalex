@@ -173,7 +173,7 @@ export default function LahalexCommissaireJusticePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {/* Gestion simplifiée de votre cabinet */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
               <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -189,7 +189,8 @@ export default function LahalexCommissaireJusticePage() {
                 Prenez le contrôle total de votre cabinet avec un module pensé pour les professionnels du droit
                 exigeants. Suivi des dossiers,...
               </p>
-              <div className="text-right">
+              <div className="flex-1"></div>
+              <div className="text-right mt-auto">
                 <a
                   href="/gestion-etude-commissaire"
                   className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
@@ -200,7 +201,7 @@ export default function LahalexCommissaireJusticePage() {
             </div>
 
             {/* Rédaction d'actes juridiques assistées et avancées */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
               <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -217,7 +218,8 @@ export default function LahalexCommissaireJusticePage() {
               <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Gagnez en efficacité, en rigueur et en sécurité grâce au module Rédaction de LahaLex Avocat :...
               </p>
-              <div className="text-right">
+              <div className="flex-1"></div>
+              <div className="text-right mt-auto">
                 <a
                   href="/redaction-actes-commissaire"
                   className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
@@ -228,7 +230,7 @@ export default function LahalexCommissaireJusticePage() {
             </div>
 
             {/* Outil d'assistance IA */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
               <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -245,7 +247,8 @@ export default function LahalexCommissaireJusticePage() {
               <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Boostez votre efficacité juridique avec l'assistant IA intégré à notre logiciel.
               </p>
-              <div className="text-right">
+              <div className="flex-1"></div>
+              <div className="text-right mt-auto">
                 <a
                   href="/assistance-ia-commissaire"
                   className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"

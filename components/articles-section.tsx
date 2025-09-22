@@ -1,6 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay } from "swiper/modules"
+import "swiper/css"
 
 const articles = [
   {
@@ -15,7 +18,8 @@ const articles = [
     position: "Juriste spécialiste",
   },
   {
-    title: "LE PRINCIPE DE SÉCURITÉ JURIDIQUE : GARANT OU MIRAGE DANS LES ACTES DE L'ADMINISTRATION BÉNINOISE ?",
+    title:
+      "LE PRINCIPE DE SÉCURITÉ JURIDIQUE : GARANT OU MIRAGE DANS LES ACTES DE L'ADMINISTRATION BÉNINOISE ?",
     author: "James ATINDEHOU",
     position: "Magistrat au Tribunal de Première instance de deuxième classe de Ouidah",
   },
@@ -45,44 +49,25 @@ const ChevronRight = ({ className }: { className?: string }) => (
 
 export function ArticlesSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [itemsPerView, setItemsPerView] = useState(3) // par défaut desktop
+  let swiperInstance: any = null
 
-  // Détecte la taille d'écran pour adapter le nombre d'items visibles
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setItemsPerView(1) // mobile
-      } else if (window.innerWidth < 1024) {
-        setItemsPerView(2) // tablet
-      } else {
-        setItemsPerView(3) // desktop
-      }
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  // Défilement automatique continu sans interruption
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % articles.length)
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [articles.length])
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % articles.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + articles.length) % articles.length)
+  const handleInit = (swiper: any) => {
+    swiperInstance = swiper
   }
 
   const goToSlide = (index: number) => {
+    if (swiperInstance) {
+      swiperInstance.slideToLoop(index)
+    }
     setCurrentIndex(index)
+  }
+
+  const nextSlide = () => {
+    if (swiperInstance) swiperInstance.slideNext()
+  }
+
+  const prevSlide = () => {
+    if (swiperInstance) swiperInstance.slidePrev()
   }
 
   return (
@@ -92,46 +77,56 @@ export function ArticlesSection() {
           NOS ARTICLES
         </h2>
 
-        <div className="relative overflow-hidden mb-12">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
-          >
-            {articles.map((article, index) => (
-              <div key={index} className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4">
-                <article className="w-full max-w-[350px] sm:max-w-[400px] mx-auto">
-                  <div className="relative w-full h-[300px] sm:h-[350px] md:h-[391px]">
-                    <div
-                      className="absolute inset-0 rounded-[20px]"
-                      style={{
-                        background: "radial-gradient(84.4% 214% at 15.6% 50%, #B4AB6B 0%, #FFFFFF 100%)",
-                      }}
-                    >
-                      <div className="absolute left-[15px] sm:left-[20px] top-[0px] right-[15px] sm:right-[20px] h-[240px] sm:h-[280px] md:h-[309px] bg-white border border-gray-400/40 rounded-[20px] p-3 sm:p-5">
-                        <h3 className="text-black text-[14px] sm:text-[16px] md:text-[18px] font-bold leading-[18px] sm:leading-[22px] md:leading-[26px] mb-3 sm:mb-4 md:mb-6">
-                          {article.title}
-                        </h3>
-                        <div className="absolute bottom-[15px] sm:bottom-[20px] left-[15px] sm:left-[20px] right-[15px] sm:right-[20px]">
-                          <p className="text-black text-[12px] sm:text-[14px] md:text-[16px] font-semibold leading-[16px] sm:leading-[20px] md:leading-[24px]">
-                            {article.author}
-                          </p>
-                          <p className="text-black text-[10px] sm:text-[12px] md:text-[14px] font-normal leading-[14px] sm:leading-[18px] md:leading-[20px] mt-1">
-                            {article.position}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[0px] w-[80px] sm:w-[93px] h-[40px] sm:h-[50px] bg-[#770D28] rounded-[5px] flex items-center justify-center">
-                        <span className="text-white text-[16px] sm:text-[18px] md:text-[20px] font-medium">Lire</span>
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={24}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          loop
+          onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+          onSwiper={handleInit}
+          className="mb-12"
+        >
+          {articles.map((article, index) => (
+            <SwiperSlide key={index}>
+              <article className="w-full max-w-[350px] sm:max-w-[400px] mx-auto">
+                <div className="relative w-full h-[300px] sm:h-[350px] md:h-[391px]">
+                  <div
+                    className="absolute inset-0 rounded-[20px]"
+                    style={{
+                      background: "radial-gradient(84.4% 214% at 15.6% 50%, #B4AB6B 0%, #FFFFFF 100%)",
+                    }}
+                  >
+                    <div className="absolute left-[15px] sm:left-[20px] top-0 right-[15px] sm:right-[20px] h-[240px] sm:h-[280px] md:h-[309px] bg-white border border-gray-400/40 rounded-[20px] p-3 sm:p-5">
+                      <h3 className="text-black text-[14px] sm:text-[16px] md:text-[18px] font-bold leading-[18px] sm:leading-[22px] md:leading-[26px] mb-3 sm:mb-4 md:mb-6">
+                        {article.title}
+                      </h3>
+                      <div className="absolute bottom-[15px] sm:bottom-[20px] left-[15px] sm:left-[20px] right-[15px] sm:right-[20px]">
+                        <p className="text-black text-[12px] sm:text-[14px] md:text-[16px] font-semibold">
+                          {article.author}
+                        </p>
+                        <p className="text-black text-[10px] sm:text-[12px] md:text-[14px] font-normal mt-1">
+                          {article.position}
+                        </p>
                       </div>
                     </div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-[80px] sm:w-[93px] h-[40px] sm:h-[50px] bg-[#770D28] rounded-[5px] flex items-center justify-center">
+                      <span className="text-white text-[16px] sm:text-[18px] md:text-[20px] font-medium">
+                        Lire
+                      </span>
+                    </div>
                   </div>
-                </article>
-              </div>
-            ))}
-          </div>
-        </div>
+                </div>
+              </article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-        {/* Navigation */}
+        {/* Navigation custom */}
         <div className="flex justify-center items-center space-x-4">
           <button onClick={prevSlide} className="p-2 hover:bg-gray-100 rounded">
             <ChevronLeft className="w-6 h-6 text-[#770D28]" />
@@ -142,7 +137,9 @@ export function ArticlesSection() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full ${index === currentIndex ? "bg-[#770D28]" : "bg-gray-300"}`}
+                className={`w-3 h-3 rounded-full ${
+                  index === currentIndex ? "bg-[#770D28]" : "bg-gray-300"
+                }`}
               />
             ))}
           </div>

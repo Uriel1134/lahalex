@@ -173,7 +173,7 @@ export default function LahalexUniverselPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Recherche juridique avancée */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
               <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -189,7 +189,8 @@ export default function LahalexUniverselPage() {
                 Notre outil de recherche juridique avancée permet d'exploiter de façon structurée et intelligente un
                 vaste ensembl...
               </p>
-              <div className="text-right">
+              <div className="flex-1"></div>
+              <div className="text-right mt-auto">
                 <button
                   className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
                   onClick={() => (window.location.href = "/recherche-juridique-universel")}
@@ -200,7 +201,7 @@ export default function LahalexUniverselPage() {
             </div>
 
             {/* Bibliothèque pluridisciplinaire */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
               <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -216,7 +217,8 @@ export default function LahalexUniverselPage() {
                 Notre bibliothèque pluridisciplinaire est une plateforme en ligne dédiée à la consultation d'un vaste
                 ensemble d'ouvrages et de documents en version numé...
               </p>
-              <div className="text-right">
+              <div className="flex-1"></div>
+              <div className="text-right mt-auto">
                 <button
                   className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
                   onClick={() => (window.location.href = "/bibliotheque-numerique-universel")}
@@ -227,7 +229,7 @@ export default function LahalexUniverselPage() {
             </div>
 
             {/* Veille juridique */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
               <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -243,7 +245,8 @@ export default function LahalexUniverselPage() {
                 Notre veille juridique est un dispositif structuré de surveillance, de collecte, d'analyse et de
                 diffusion continue d'informations législa...
               </p>
-              <div className="text-right">
+              <div className="flex-1"></div>
+              <div className="text-right mt-auto">
                 <button
                   className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
                   onClick={() => (window.location.href = "/veille-juridique-universel")}
@@ -254,7 +257,7 @@ export default function LahalexUniverselPage() {
             </div>
 
             {/* Autres outils */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card">
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
               <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -276,7 +279,8 @@ export default function LahalexUniverselPage() {
                 Cette section de notre plateforme a été conçue comme un espace de référence indispensable, tant pour les
                 professionnels du droit (avocat...
               </p>
-              <div className="text-right">
+              <div className="flex-1"></div>
+              <div className="text-right mt-auto">
                 <button
                   className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
                   onClick={() => (window.location.href = "/autres-outils-universel")}
