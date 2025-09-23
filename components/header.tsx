@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link";
+import Image from "next/image";
 import { gsap } from "gsap"
 
 export function Header() {
@@ -54,7 +55,23 @@ export function Header() {
     <>
       <header ref={headerRef} className="absolute top-0 left-0 right-0 z-30 w-full h-[79px] bg-transparent">
         {/* Bloc central (desktop/tablette) */}
-        <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 top-0 w-[231px] h-[70px] bg-white rounded-b-[14px]" />
+<div className="relative hidden sm:flex justify-center items-start">
+  {/* Bloc central blanc */}
+ <Image
+    src="/images/Union.png"
+    alt="Union shape"
+    width={231}
+    height={70}
+    className="absolute top-0 left-1/2 -translate-x-1/2"
+  />
+
+  {/* Rectangle gauche */}
+</div>
+
+
+
+
+
 
         {/* Left decorative element (desktop/tablette) */}
         <div className="hidden sm:block absolute left-0 top-0 w-[137px] h-[76px] bg-white rounded-br-[38px]" />

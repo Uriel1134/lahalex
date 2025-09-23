@@ -153,7 +153,7 @@ export function SolutionsSection() {
                     En savoir plus
                   </Button>
                   <Button className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] hover:bg-[#770D28]/90">
-                    Demander une démo
+                    Demandez une démo
                   </Button>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export function SolutionsSection() {
                   En savoir plus
                 </Button>
                 <Button className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] hover:bg-[#770D28]/90">
-                  Demander une démo
+                  Demandez une démo
                 </Button>
               </div>
             </div>
@@ -306,7 +306,7 @@ export function SolutionsSection() {
                   En savoir plus
                 </Button>
                 <Button className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90">
-                  Demander une démo
+                  Demandez une démo
                 </Button>
               </div>
             </div>
@@ -380,7 +380,7 @@ export function SolutionsSection() {
                   En savoir plus
                 </Button>
                 <Button className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90">
-                  Demander une démo
+                  Demandez une démo
                 </Button>
               </div>
             </div>
