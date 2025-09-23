@@ -173,7 +173,7 @@ export function Header() {
           </div>
 
           <Link
-            href="/formules"
+            href="/paiement-abonnements"
             className="font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
           >
             NOS formules
