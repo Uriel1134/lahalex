@@ -97,12 +97,14 @@ export function Header() {
             <h1 className="text-[#770D28] text-[22px] font-bold tracking-[0.07em] font-gobold">LAHALEX</h1>
           </div>
           {/* Bouton Connexion */}
+          <a href="/lahalex-connexion">
           <Button
             variant="outline"
             className="border-2 border-black rounded-[10px] px-3 py-2 text-sm text-black hover:bg-black hover:text-white transition-colors bg-transparent"
           >
             Connexion
           </Button>
+          </a>
         </div>
 
         {/* Desktop/tablette: zones gauche/logo/droite */}
@@ -286,7 +288,7 @@ export function Header() {
                 ESSAI GRATUIT
               </a>
               <a
-                href="#"
+                href="/lahalex-connexion"
                 className="text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold font-gobold"
               >
                 CONNEXION

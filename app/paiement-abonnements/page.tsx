@@ -56,6 +56,9 @@ export default function PaiementAbonnements() {
                 <div className="bg-white border border-gray-200 rounded-lg flex flex-col transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-[#770D28] animate-slide-up opacity-0 animate-delay-200">
                   <div className="p-6 lg:p-8 flex-1 flex flex-col">
                     <h4 className="font-sf-pro text-lg sm:text-xl text-[#770D28] mb-4">Étudiant(es)/Doctorant(es)</h4>
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-600 mb-6 font-sf-pro" >Justificatif obligatoire </p>
+                    </div>
                     <div className="mt-auto">
                       <a
                         href="/nous-contacter"
@@ -92,7 +95,9 @@ export default function PaiementAbonnements() {
                     <h4 className="font-sf-pro text-lg sm:text-xl text-[#770D28] mb-4">
                       Etablissements supérieurs et institutions publiques/privées
                     </h4>
-                    <div className="flex-1"></div>
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-600 mb-6 font-sf-pro" >Institution publique/privée, ONG, entreprise, association, établissement d'enseignement supérieur etc</p>
+                    </div>
                     <div className="mt-auto">
                       <a
                         href="/nous-contacter"

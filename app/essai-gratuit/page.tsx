@@ -498,38 +498,6 @@ export default function EssaiGratuit() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Mot de passe
-                  </label>
-                  <input
-                    type="password"
-                    name="motDePasse"
-                    value={formData.motDePasse}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                    style={
-                      { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                    }
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Confirmer mot de passe
-                  </label>
-                  <input
-                    type="password"
-                    name="confirmerMotDePasse"
-                    value={formData.confirmerMotDePasse}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                    style={
-                      { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                    }
-                  />
-                </div>
-
                 <div className="flex items-start space-x-3">
                   <input
                     type="checkbox"
@@ -568,7 +536,7 @@ export default function EssaiGratuit() {
                     border: "2px solid #770D28",
                   }}
                 >
-                  Créer mon compte LAHALEX
+                  Envoyer
                 </button>
               </form>
             </div>

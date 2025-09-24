@@ -1,5 +1,6 @@
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
+import Image from "next/image";
 
 export default function NousContacter() {
   return (
@@ -7,11 +8,22 @@ export default function NousContacter() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-[#770D28] py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-gobold text-4xl sm:text-5xl lg:text-2xl text-white leading-tight">NOUS CONTACTER</h1>
-        </div>
-      </section>
+      <section className="relative w-full mt-20">
+              <div className="relative w-[90%] max-w-[1320px] h-[529px] mx-auto">
+                <Image
+                  src="/images/business-meeting.png"
+                  alt="Hero"
+                  fill
+                  className="rounded-2xl object-cover"
+                />
+                <div className="absolute inset-0 bg-[#770D28]/88 rounded-2xl"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                  <h1 className="hero-title text-white font-gobold text-4xl md:text-6xl mb-6">
+                    NOUS CONTACTER
+                  </h1>
+                </div>
+              </div>
+            </section>
 
       {/* Formulaire de contact - version épurée et responsive */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 mt-16">

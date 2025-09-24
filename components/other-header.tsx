@@ -94,7 +94,7 @@ export function Header() {
             </Link>
 
             <Link
-              href="/connexion"
+              href="/lahalex-connexion"
               className="text-black px-4 py-2 rounded-lg text-sm font-medium transition-colors border hover:bg-[#5a0a1f]"
             >
               Connexion
@@ -197,7 +197,7 @@ export function Header() {
             ESSAI GRATUIT
           </Link>
           <Link
-            href="/connexion"
+            href="/lahalex-connexion"
             className="font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
           >
             CONNEXION
