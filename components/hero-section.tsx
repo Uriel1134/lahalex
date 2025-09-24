@@ -110,7 +110,7 @@ export function HeroSection() {
   px-2 sm:px-4 md:px-8 lg:px-16 xl:px-24">
   
   {/* Groupe gauche */}
-<div className="text-[#B4AB6B] leading-none text-center lg:text-left order-1 lg:order-none 
+<div className="text-white font-gobold leading-none text-center lg:text-left order-1 lg:order-none 
   max-w-full overflow-hidden pr-2 lg:-ml-16 xl:-ml-24">
   <div 
     className="relative inline-flex gap-[1px] sm:gap-[2px] flex-wrap lg:flex-nowrap"
@@ -123,7 +123,7 @@ export function HeroSection() {
         style={{ animationDelay: `${0.1 + i * 0.05}s` }}
       >
         {ch === " " ? "\u00A0" : ch}
-        <span className="pointer-events-none absolute inset-0 bg-[#B4AB6B]/40 animate-light-sweep" />
+        <span className="pointer-events-none absolute inset-0 bg-white/30 animate-light-sweep" />
       </span>
     ))}
   </div>
@@ -133,7 +133,7 @@ export function HeroSection() {
   {/* Groupe droit */}
 {/* Groupe droit */}
 <div
-  className="text-[#B4AB6B] leading-none text-center lg:text-right order-2 lg:order-none 
+  className="text-white font-gobold leading-none text-center lg:text-right order-2 lg:order-none 
   max-w-full overflow-hidden lg:-mr-16 xl:-mr-24"
 >
   <div
@@ -147,7 +147,7 @@ export function HeroSection() {
         style={{ animationDelay: `${0.1 + i * 0.05}s` }}
       >
         {ch === " " ? "\u00A0" : ch}
-        <span className="pointer-events-none absolute inset-0 bg-[#B4AB6B]/40 animate-light-sweep" />
+        <span className="pointer-events-none absolute inset-0 bg-white/30 animate-light-sweep" />
       </span>
     ))}
   </div>

@@ -52,7 +52,7 @@ export default function FAQ() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FAF5EF" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
 
       {/* Hero Section */}
@@ -63,7 +63,7 @@ export default function FAQ() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16" style={{ backgroundColor: "#FAF5EF" }}>
+      <section className="py-16" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Column - FAQ */}

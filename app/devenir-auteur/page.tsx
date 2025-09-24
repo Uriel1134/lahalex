@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 
 export default function DevenirAuteur() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#FAF5EF" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
 
       <main className="flex-1">
@@ -27,9 +27,11 @@ export default function DevenirAuteur() {
               Publiez vos articles, analyses, chroniques jurisprudentielles, contributions doctrinales, notes de
               lecture, ouvrages, revues juridiques et bien plus encore sur notre plateforme.
             </p>
-            <button className="bg-[#770D28] text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#5a0a1f] transition-colors">
-              Devenir auteur
-            </button>
+            <a href="/devenir-auteur-form">
+  <button className="bg-[#770D28] text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#5a0a1f] transition-colors">
+    Devenir auteur
+  </button>
+</a>
           </div>
         </section>
       </main>

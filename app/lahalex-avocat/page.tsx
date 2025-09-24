@@ -119,7 +119,7 @@ export default function LahalexAvocatPage() {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FAF5EF" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
       
       <style jsx global>{`

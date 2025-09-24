@@ -123,13 +123,13 @@ export function Header() {
             <nav className="flex items-center gap-3 md:gap-6 mx-auto">
               <a
                 href="nous-contacter"
-                className="text-[#FAF5EF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
+                className="text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Nous contacter
               </a>
               <a
                 href="essai-gratuit"
-                className="text-[#FAF5EF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
+                className="text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Essai gratuit
               </a>
@@ -152,7 +152,7 @@ export function Header() {
             {/* Liens droite centrés entre logo et bouton */}
             <div className="flex items-center gap-3 md:gap-6 mx-auto">
               <div className="relative group">
-                <button className="flex items-center gap-1 text-[#FAF5EF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
+                <button className="flex items-center gap-1 text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
                   <span>Nos solutions</span>
                 </button>
                       <div className="absolute top-full left-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -186,7 +186,7 @@ export function Header() {
               </div>
               <a
                 href="paiement-abonnements"
-                className="text-[#FAF5EF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
+                className="text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Nos formules
               </a>
@@ -265,7 +265,7 @@ export function Header() {
                 href="/paiement-abonnements"
                 className="text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold"
               >
-                NOS TARIFS
+                NOS FORMULES
               </a>
               <a
                 href="/recrutement"

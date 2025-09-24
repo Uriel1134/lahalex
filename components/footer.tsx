@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="bg-[#770D28] text-white py-12 relative overflow-hidden border-t-4 border-[#FAF5EF]">
+    <footer className="bg-[#770D28] text-white py-12 relative overflow-hidden border-t-4 border-[#FFFFFF]">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-80">
         <Image
@@ -46,6 +46,7 @@ export function Footer() {
             <div className="text-sm font-sf-pro">
               <p>Rue de la Côte Fleurie, 77660</p>
               <p>Saint-Jean-les-deux-jumeaux, France</p>
+              <br />
               <p>Jéricho C/490, Cotonou, Bénin</p>
             </div>
           </div>

@@ -428,7 +428,7 @@ export default function QuiSommesNous() {
             institutions et les citoyens grâce à l'innovation.
           </p>
           <p className="text-[#293240] text-lg leading-8">
-            <strong>Qu'est-ce que la LegalTech ?</strong> La LegalTech désigne
+            <strong className="text-[#770D28]" >Qu'est-ce que la LegalTech ?</strong> <br /><br /> La LegalTech désigne
             l'utilisation des technologies pour concevoir, proposer et fournir
             des services et produits liés au droit et à la justice. Elle permet
             à tous professionnels comme non-professionnels d'accéder plus

@@ -17,22 +17,22 @@ export default function PaiementAbonnements() {
   ]
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FAF5EF" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
 
       <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Title */}
           <div className="text-left mb-6">
-            <h1 className="font-gobold text-2xl sm:text-3xl lg:text-4xl text-[#770D28] leading-tight">NOS TARIFS</h1>
+            <h1 className="font-gobold text-2xl sm:text-3xl lg:text-4xl text-[#770D28] leading-tight">NOS FORMULES</h1>
           </div>
 
-          <div className="flex flex-wrap justify-center mb-0 gap-2 relative z-10 -mb-2">
+          <div className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center mb-0 gap-2 relative z-10 -mb-2 overflow-x-auto sm:overflow-x-visible pb-2 sm:pb-0 scrollbar-hide">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`pricing-tab px-4 sm:px-6 py-2 sm:py-3 font-medium transition-all duration-300 ease-in-out text-xs sm:text-sm transform hover:scale-105 hover:shadow-lg active:scale-95 ${
+                className={`pricing-tab px-4 sm:px-6 py-2 sm:py-3 font-medium transition-all duration-300 ease-in-out text-xs sm:text-sm transform hover:scale-105 hover:shadow-lg active:scale-95 whitespace-nowrap flex-shrink-0 sm:flex-shrink ${
                   activeTab === tab.id
                     ? "bg-[#770D28] text-white shadow-lg"
                     : "bg-white text-[#770D28] border border-[#770D28] hover:bg-[#fdf2f8] hover:border-[#5a0a1f]"
@@ -56,32 +56,6 @@ export default function PaiementAbonnements() {
                 <div className="bg-white border border-gray-200 rounded-lg flex flex-col transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-[#770D28] animate-slide-up opacity-0 animate-delay-200">
                   <div className="p-6 lg:p-8 flex-1 flex flex-col">
                     <h4 className="font-sf-pro text-lg sm:text-xl text-[#770D28] mb-4">Étudiant(es)/Doctorant(es)</h4>
-                    <div className="space-y-3 mb-6 flex-1">
-                      {[
-                        "Recherche juridique avancée",
-                        "Veille juridique",
-                        "Bibliothèque pluridisciplinaire",
-                        "Autres outils",
-                      ].map((feature, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center transform transition-all duration-200 hover:translate-x-1"
-                        >
-                          <svg
-                            className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 transition-transform duration-200 hover:scale-110"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
-                          <span className="text-sm font-sf-pro">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
                     <div className="mt-auto">
                       <a
                         href="/nous-contacter"
@@ -101,33 +75,6 @@ export default function PaiementAbonnements() {
                       Professionnel du droit : avocats, magistrats, notaires, juriste d'entreprise, consultants, etc
                     </p>
 
-                    <div className="space-y-3 mb-6 flex-1">
-                      {[
-                        "Recherche juridique avancée",
-                        "Veille juridique",
-                        "Bibliothèque pluridisciplinaire",
-                        "Autres outils",
-                      ].map((feature, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center transform transition-all duration-200 hover:translate-x-1"
-                        >
-                          <svg
-                            className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 transition-transform duration-200 hover:scale-110"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
-                          <span className="text-sm font-sf-pro">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
                     <div className="mt-auto">
                       <a
                         href="/nous-contacter"
@@ -143,15 +90,9 @@ export default function PaiementAbonnements() {
                 <div className="bg-white border border-gray-200 rounded-lg flex flex-col transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-[#770D28] animate-slide-up opacity-0 animate-delay-400">
                   <div className="p-6 lg:p-8 flex-1 flex flex-col">
                     <h4 className="font-sf-pro text-lg sm:text-xl text-[#770D28] mb-4">
-                      Formule établissements supérieurs et institutions publiques/privées
+                      Etablissements supérieurs et institutions publiques/privées
                     </h4>
-                    <div className="flex-1">
-                      <p className="text-gray-900 text-base sm:text-lg mb-6 leading-relaxed font-sf-pro">
-                        Vous êtes : une institution publique ou privée, une ONG, une entreprise, une association ou un
-                        établissement d'enseignement supérieur ?<br />
-                        Nous avons une formule sur mesure pour vous.
-                      </p>
-                    </div>
+                    <div className="flex-1"></div>
                     <div className="mt-auto">
                       <a
                         href="/nous-contacter"
@@ -173,7 +114,7 @@ export default function PaiementAbonnements() {
                 <div className="text-white p-4 sm:p-6">
                   <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0">
                     <div className="flex items-center">
-                      <h3 className="font-gobold text-lg sm:text-xl">Achat du logiciel</h3>
+                      <h3 className="font-gobold text-lg sm:text-xl">Logiciel</h3>
                       <div className="hidden lg:block w-px h-8 bg-white opacity-30 ml-4"></div>
                     </div>
                     <div className="flex-1 lg:ml-4">
@@ -195,32 +136,6 @@ export default function PaiementAbonnements() {
                     {activeTab === "notaire" && "Lahalex Notaire"}
                     {activeTab === "commissaire" && "Lahalex Commissaire de justice"}
                   </h4>
-
-                  <div className="space-y-3 mb-6">
-                    {[
-                      "Gestion simplifiée de votre cabinet",
-                      "Rédaction d'actes juridiques assistée et avancée",
-                      "Option - Outil d'assistance IA dédié à l'optimisation de vos activités",
-                    ].map((feature, index) => (
-                      <div
-                        key={index}
-                        className="flex items-start transform transition-all duration-200 hover:translate-x-1"
-                      >
-                        <svg
-                          className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0 transition-transform duration-200 hover:scale-110"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
-                        <span className="text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
 
                   {/* Special Offer */}
                   <div className="bg-blue-100 rounded-lg p-4 mb-6 transform transition-all duration-200 hover:bg-blue-200">
@@ -267,6 +182,16 @@ export default function PaiementAbonnements() {
       <Footer />
 
       <style jsx>{`
+        /* Added scrollbar hiding styles for mobile horizontal scroll */
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+
         @keyframes fade-in {
           from {
             opacity: 0;

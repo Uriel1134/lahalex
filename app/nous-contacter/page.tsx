@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 
 export default function NousContacter() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FAF5EF" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
 
       {/* Hero Section */}
