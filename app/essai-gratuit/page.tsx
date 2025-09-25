@@ -5,6 +5,7 @@ import type React from "react";
 import { useState } from "react";
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
+import countries from 'world-countries';
 
 export default function EssaiGratuit() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,29 @@ export default function EssaiGratuit() {
     confirmerMotDePasse: "",
     accepterConditions: false,
   });
+
+  // Générer les options de pays avec world-countries
+  const countryOptions = countries
+    .filter(country => country.idd && country.idd.root && country.idd.suffixes)
+    .map(country => ({
+      value: country.cca2,
+      label: `${country.flag} ${country.name.common}`,
+      code: country.cca2
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label, 'fr'))
+
+  // Générer les options d'indicatifs téléphoniques avec world-countries
+  const callingCodeOptions = countries
+    .filter(country => country.idd && country.idd.root && country.idd.suffixes)
+    .map(country => {
+      const callingCode = country.idd.root + (country.idd.suffixes?.[0] || '')
+      return {
+        value: callingCode,
+        label: callingCode,
+        code: country.cca2
+      }
+    })
+    .sort((a, b) => a.label.localeCompare(b.label, 'fr'))
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -226,129 +250,11 @@ export default function EssaiGratuit() {
                     }
                   >
                     <option value="">-- Pays --</option>
-                    <option value="FR">France</option>
-                    <option value="BE">Belgique</option>
-                    <option value="CH">Suisse</option>
-                    <option value="CA">Canada</option>
-                    <option value="US">États-Unis</option>
-                    <option value="CI">Côte d'Ivoire</option>
-                    <option value="SN">Sénégal</option>
-                    <option value="MG">Madagascar</option>
-                    <option value="MA">Maroc</option>
-                    <option value="TN">Tunisie</option>
-                    <option value="DZ">Algérie</option>
-                    <option value="CM">Cameroun</option>
-                    <option value="BF">Burkina Faso</option>
-                    <option value="ML">Mali</option>
-                    <option value="NE">Niger</option>
-                    <option value="TG">Togo</option>
-                    <option value="BJ">Bénin</option>
-                    <option value="CD">RDC</option>
-                    <option value="CG">Congo</option>
-                    <option value="GA">Gabon</option>
-                    <option value="GN">Guinée</option>
-                    <option value="GQ">Guinée équatoriale</option>
-                    <option value="CF">Centrafrique</option>
-                    <option value="TD">Tchad</option>
-                    <option value="MG">Madagascar</option>
-                    <option value="ZA">Afrique du Sud</option>
-                    <option value="GB">Royaume-Uni</option>
-                    <option value="IT">Italie</option>
-                    <option value="ES">Espagne</option>
-                    <option value="DE">Allemagne</option>
-                    <option value="PT">Portugal</option>
-                    <option value="NL">Pays-Bas</option>
-                    <option value="RU">Russie</option>
-                    <option value="CN">Chine</option>
-                    <option value="IN">Inde</option>
-                    <option value="JP">Japon</option>
-                    <option value="BR">Brésil</option>
-                    <option value="MX">Mexique</option>
-                    <option value="TR">Turquie</option>
-                    <option value="EG">Égypte</option>
-                    <option value="SA">Arabie Saoudite</option>
-                    <option value="AE">Émirats arabes unis</option>
-                    <option value="AU">Australie</option>
-                    <option value="KR">Corée du Sud</option>
-                    <option value="AR">Argentine</option>
-                    <option value="CL">Chili</option>
-                    <option value="CO">Colombie</option>
-                    <option value="PE">Pérou</option>
-                    <option value="VE">Venezuela</option>
-                    <option value="NG">Nigeria</option>
-                    <option value="KE">Kenya</option>
-                    <option value="ET">Éthiopie</option>
-                    <option value="GH">Ghana</option>
-                    <option value="UG">Ouganda</option>
-                    <option value="SD">Soudan</option>
-                    <option value="PK">Pakistan</option>
-                    <option value="ID">Indonésie</option>
-                    <option value="PH">Philippines</option>
-                    <option value="TH">Thaïlande</option>
-                    <option value="VN">Vietnam</option>
-                    <option value="MY">Malaisie</option>
-                    <option value="SG">Singapour</option>
-                    <option value="NZ">Nouvelle-Zélande</option>
-                    <option value="IE">Irlande</option>
-                    <option value="DK">Danemark</option>
-                    <option value="SE">Suède</option>
-                    <option value="NO">Norvège</option>
-                    <option value="FI">Finlande</option>
-                    <option value="PL">Pologne</option>
-                    <option value="CZ">République tchèque</option>
-                    <option value="AT">Autriche</option>
-                    <option value="GR">Grèce</option>
-                    <option value="HU">Hongrie</option>
-                    <option value="RO">Roumanie</option>
-                    <option value="SK">Slovaquie</option>
-                    <option value="BG">Bulgarie</option>
-                    <option value="HR">Croatie</option>
-                    <option value="SI">Slovénie</option>
-                    <option value="EE">Estonie</option>
-                    <option value="LV">Lettonie</option>
-                    <option value="LT">Lituanie</option>
-                    <option value="LU">Luxembourg</option>
-                    <option value="LI">Liechtenstein</option>
-                    <option value="MC">Monaco</option>
-                    <option value="SM">Saint-Marin</option>
-                    <option value="MT">Malte</option>
-                    <option value="IS">Islande</option>
-                    <option value="CY">Chypre</option>
-                    <option value="QA">Qatar</option>
-                    <option value="KW">Koweït</option>
-                    <option value="OM">Oman</option>
-                    <option value="BH">Bahreïn</option>
-                    <option value="JO">Jordanie</option>
-                    <option value="LB">Liban</option>
-                    <option value="IL">Israël</option>
-                    <option value="IR">Iran</option>
-                    <option value="IQ">Irak</option>
-                    <option value="SY">Syrie</option>
-                    <option value="YE">Yémen</option>
-                    <option value="AF">Afghanistan</option>
-                    <option value="NP">Népal</option>
-                    <option value="LK">Sri Lanka</option>
-                    <option value="MM">Birmanie</option>
-                    <option value="KH">Cambodge</option>
-                    <option value="LA">Laos</option>
-                    <option value="MN">Mongolie</option>
-                    <option value="UZ">Ouzbékistan</option>
-                    <option value="KZ">Kazakhstan</option>
-                    <option value="KG">Kirghizistan</option>
-                    <option value="TJ">Tadjikistan</option>
-                    <option value="TM">Turkménistan</option>
-                    <option value="AZ">Azerbaïdjan</option>
-                    <option value="GE">Géorgie</option>
-                    <option value="AM">Arménie</option>
-                    <option value="MD">Moldavie</option>
-                    <option value="UA">Ukraine</option>
-                    <option value="BY">Biélorussie</option>
-                    <option value="RS">Serbie</option>
-                    <option value="ME">Monténégro</option>
-                    <option value="AL">Albanie</option>
-                    <option value="MK">Macédoine du Nord</option>
-                    <option value="BA">Bosnie-Herzégovine</option>
-                    <option value="XK">Kosovo</option>
+                    {countryOptions.map((country) => (
+                      <option key={country.code} value={country.value}>
+                        {country.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div>
@@ -366,123 +272,11 @@ export default function EssaiGratuit() {
                       }
                     >
                       <option value="">-- Indicatif --</option>
-                      <option value="+1">+1</option>
-                      <option value="+33">+33</option>
-                      <option value="+32">+32</option>
-                      <option value="+41">+41</option>
-                      <option value="+44">+44</option>
-                      <option value="+49">+49</option>
-                      <option value="+34">+34</option>
-                      <option value="+39">+39</option>
-                      <option value="+212">+212</option>
-                      <option value="+216">+216</option>
-                      <option value="+213">+213</option>
-                      <option value="+225">+225</option>
-                      <option value="+221">+221</option>
-                      <option value="+226">+226</option>
-                      <option value="+223">+223</option>
-                      <option value="+227">+227</option>
-                      <option value="+228">+228</option>
-                      <option value="+229">+229</option>
-                      <option value="+243">+243</option>
-                      <option value="+242">+242</option>
-                      <option value="+241">+241</option>
-                      <option value="+240">+240</option>
-                      <option value="+237">+237</option>
-                      <option value="+235">+235</option>
-                      <option value="+236">+236</option>
-                      <option value="+261">+261</option>
-                      <option value="+27">+27</option>
-                      <option value="+351">+351</option>
-                      <option value="+31">+31</option>
-                      <option value="+7">+7</option>
-                      <option value="+86">+86</option>
-                      <option value="+91">+91</option>
-                      <option value="+81">+81</option>
-                      <option value="+55">+55</option>
-                      <option value="+52">+52</option>
-                      <option value="+90">+90</option>
-                      <option value="+20">+20</option>
-                      <option value="+971">+971</option>
-                      <option value="+966">+966</option>
-                      <option value="+61">+61</option>
-                      <option value="+82">+82</option>
-                      <option value="+54">+54</option>
-                      <option value="+56">+56</option>
-                      <option value="+57">+57</option>
-                      <option value="+51">+51</option>
-                      <option value="+58">+58</option>
-                      <option value="+234">+234</option>
-                      <option value="+254">+254</option>
-                      <option value="+251">+251</option>
-                      <option value="+233">+233</option>
-                      <option value="+256">+256</option>
-                      <option value="+249">+249</option>
-                      <option value="+92">+92</option>
-                      <option value="+62">+62</option>
-                      <option value="+63">+63</option>
-                      <option value="+66">+66</option>
-                      <option value="+84">+84</option>
-                      <option value="+60">+60</option>
-                      <option value="+65">+65</option>
-                      <option value="+64">+64</option>
-                      <option value="+353">+353</option>
-                      <option value="+45">+45</option>
-                      <option value="+46">+46</option>
-                      <option value="+47">+47</option>
-                      <option value="+358">+358</option>
-                      <option value="+48">+48</option>
-                      <option value="+420">+420</option>
-                      <option value="+43">+43</option>
-                      <option value="+30">+30</option>
-                      <option value="+36">+36</option>
-                      <option value="+40">+40</option>
-                      <option value="+421">+421</option>
-                      <option value="+359">+359</option>
-                      <option value="+385">+385</option>
-                      <option value="+386">+386</option>
-                      <option value="+372">+372</option>
-                      <option value="+371">+371</option>
-                      <option value="+370">+370</option>
-                      <option value="+352">+352</option>
-                      <option value="+423">+423</option>
-                      <option value="+377">+377</option>
-                      <option value="+378">+378</option>
-                      <option value="+356">+356</option>
-                      <option value="+354">+354</option>
-                      <option value="+357">+357</option>
-                      <option value="+974">+974</option>
-                      <option value="+965">+965</option>
-                      <option value="+968">+968</option>
-                      <option value="+973">+973</option>
-                      <option value="+962">+962</option>
-                      <option value="+961">+961</option>
-                      <option value="+972">+972</option>
-                      <option value="+98">+98</option>
-                      <option value="+964">+964</option>
-                      <option value="+963">+963</option>
-                      <option value="+967">+967</option>
-                      <option value="+93">+93</option>
-                      <option value="+977">+977</option>
-                      <option value="+94">+94</option>
-                      <option value="+95">+95</option>
-                      <option value="+855">+855</option>
-                      <option value="+856">+856</option>
-                      <option value="+976">+976</option>
-                      <option value="+998">+998</option>
-                      <option value="+7">+7</option>
-                      <option value="+994">+994</option>
-                      <option value="+995">+995</option>
-                      <option value="+374">+374</option>
-                      <option value="+373">+373</option>
-                      <option value="+380">+380</option>
-                      <option value="+375">+375</option>
-                      <option value="+381">+381</option>
-                      <option value="+382">+382</option>
-                      <option value="+355">+355</option>
-                      <option value="+389">+389</option>
-                      <option value="+387">+387</option>
-                      <option value="+383">+383</option>
+                      {callingCodeOptions.map((country) => (
+                        <option key={country.code} value={country.value}>
+                          {country.label}
+                        </option>
+                      ))}
                     </select>
                     <input
                       type="tel"

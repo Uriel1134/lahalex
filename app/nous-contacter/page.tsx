@@ -1,8 +1,19 @@
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
 import Image from "next/image";
+import countries from 'world-countries';
 
 export default function NousContacter() {
+  // Générer les options de pays avec world-countries
+  const countryOptions = countries
+    .filter(country => country.idd && country.idd.root && country.idd.suffixes)
+    .map(country => ({
+      value: country.cca2,
+      label: `${country.flag} ${country.name.common}`,
+      code: country.cca2
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label, 'fr'))
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
@@ -66,11 +77,11 @@ export default function NousContacter() {
               <label className="font-sf-pro text-sm text-gray-700">Pays</label>
               <select className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro">
                 <option value="">Sélectionner</option>
-                <option value="France">France</option>
-                <option value="Belgique">Belgique</option>
-                <option value="Suisse">Suisse</option>
-                <option value="Luxembourg">Luxembourg</option>
-                <option value="Autre">Autre</option>
+                {countryOptions.map((country) => (
+                  <option key={country.code} value={country.value}>
+                    {country.label}
+                  </option>
+                ))}
               </select>
             </div>
           </div>

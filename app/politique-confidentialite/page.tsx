@@ -221,60 +221,49 @@ export default function PolitiqueConfidentialitePage() {
                     </div>
                   </section>
 
-                  {/* Article 3 */}
+                                    {/* Ajout de l'article 3 complet */}
                   <section>
                     <h2 className="text-xl sm:text-2xl font-bold text-[#770D28] mb-3 sm:mb-4 text-balance">
                       ARTICLE 3 - PARTAGE ET COMMUNICATION DES DONNÉES
                     </h2>
-
                     <div className="space-y-4 sm:space-y-6">
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                           3.1 Communication Interne à l'Organisation
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          Lorsque l'accès s'effectue via un abonnement organisationnel, les données et informations
-                          d'usage peuvent être transmises au gestionnaire pour supervision, gestion administrative et
-                          formation.
+                          Lorsque l'accès s'effectue via un abonnement organisationnel, les données et informations d'usage peuvent être transmises au gestionnaire pour supervision, gestion administrative et formation.
                         </p>
                       </div>
-
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                           3.2 Applications et Services Tiers
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          En cas d'utilisation d'applications tierces intégrées, les données nécessaires sont
-                          communiquées aux éditeurs concernés selon leurs politiques respectives.
+                          En cas d'utilisation d'applications tierces intégrées, les données nécessaires sont communiquées aux éditeurs concernés selon leurs politiques respectives.
                         </p>
                       </div>
-
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                           3.3 Partenaires et Prestataires Autorisés
                         </h3>
-                        <p className="text-gray-700 leading-relaxed mb-2 sm:mb-3 text-sm sm:text-base">
+                        <p className="text-gray-700 leading-relaxed mb-2 text-sm sm:text-base">
                           LAHALEX partage les données avec :
                         </p>
-                        <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base">
+                        <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base mb-2">
                           <li>Ses entités affiliées et divisions</li>
-                          <li>
-                            Ses prestataires, fournisseurs et agents (établissements financiers, hébergeurs, opérateurs
-                            marketing, transporteurs)
-                          </li>
+                          <li>Ses prestataires, fournisseurs et agents (établissements financiers, hébergeurs, opérateurs marketing, transporteurs)</li>
                           <li>Ses partenaires commerciaux autorisés</li>
                         </ul>
-                        <p className="text-gray-700 leading-relaxed mt-2 sm:mt-3 text-sm sm:text-base">
-                          Ces destinataires traitent les données selon les instructions de LAHALEX et dans le respect de
-                          la présente politique.
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                          Ces destinataires traitent les données selon les instructions de LAHALEX et dans le respect de la présente politique.
                         </p>
                       </div>
-
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                           3.4 Communication pour Motifs Légaux
                         </h3>
-                        <p className="text-gray-700 leading-relaxed mb-2 sm:mb-3 text-sm sm:text-base">
+                        <p className="text-gray-700 leading-relaxed mb-2 text-sm sm:text-base">
                           LAHALEX communique les données lorsque nécessaire pour :
                         </p>
                         <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base">
@@ -284,20 +273,19 @@ export default function PolitiqueConfidentialitePage() {
                           <li>Réaliser des opérations structurelles (fusion, acquisition, cession)</li>
                         </ul>
                       </div>
-
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                           3.5 Espaces Publics
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          L'Utilisateur reconnaît que toute information publiée dans les espaces publics du Service peut
-                          être collectée et utilisée par des tiers. LAHALEX décline toute responsabilité à cet égard.
+                          L'Utilisateur reconnaît que toute information publiée dans les espaces publics du Service peut être collectée et utilisée par des tiers. LAHALEX décline toute responsabilité à cet égard.
                         </p>
                       </div>
                     </div>
                   </section>
 
-                  {/* Articles suivants - format condensé */}
+
+                  {/* Article 4 */}
                   <section>
                     <h2 className="text-xl sm:text-2xl font-bold text-[#770D28] mb-3 sm:mb-4 text-balance">
                       ARTICLE 4 - CONSERVATION DES DONNÉES
@@ -308,15 +296,14 @@ export default function PolitiqueConfidentialitePage() {
                           4.1 Principe de Conservation
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          LAHALEX conserve les données personnelles pendant la durée nécessaire aux finalités
-                          poursuivies, augmentée des délais légaux de prescription et d'archivage.
+                          LAHALEX conserve les données personnelles pendant la durée nécessaire aux finalités poursuivies, augmentée des délais légaux de prescription et d'archivage.
                         </p>
                       </div>
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                           4.2 Durées Spécifiques
                         </h3>
-                        <p className="text-gray-700 leading-relaxed mb-2 sm:mb-3 text-sm sm:text-base">
+                        <p className="text-gray-700 leading-relaxed mb-2 text-sm sm:text-base">
                           La conservation peut s'étendre pour :
                         </p>
                         <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base">
@@ -332,13 +319,13 @@ export default function PolitiqueConfidentialitePage() {
                           4.3 Conservation Post-Résiliation
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          En cas d'abonnement organisationnel, LAHALEX conserve les coordonnées professionnelles même
-                          après résiliation pour assurer la continuité des échanges.
+                          En cas d'abonnement organisationnel, LAHALEX conserve les coordonnées professionnelles même après résiliation pour assurer la continuité des échanges.
                         </p>
                       </div>
                     </div>
                   </section>
 
+                  {/* Article 5 */}
                   <section>
                     <h2 className="text-xl sm:text-2xl font-bold text-[#770D28] mb-3 sm:mb-4 text-balance">
                       ARTICLE 5 - LOCALISATION ET TRANSFERTS
@@ -349,8 +336,7 @@ export default function PolitiqueConfidentialitePage() {
                           5.1 Traitement International
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          Les données peuvent être hébergées et traitées dans tout État où LAHALEX, ses affiliées ou
-                          prestataires exploitent des infrastructures.
+                          Les données peuvent être hébergées et traitées dans tout État où LAHALEX, ses affiliées ou prestataires exploitent des infrastructures.
                         </p>
                       </div>
                       <div>
@@ -358,8 +344,7 @@ export default function PolitiqueConfidentialitePage() {
                           5.2 Garanties de Protection
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          LAHALEX met en place les mesures contractuelles et techniques nécessaires pour garantir un
-                          niveau de protection conforme aux exigences légales, quel que soit le lieu de traitement.
+                          LAHALEX met en place les mesures contractuelles et techniques nécessaires pour garantir un niveau de protection conforme aux exigences légales, quel que soit le lieu de traitement.
                         </p>
                       </div>
                       <div>
@@ -367,13 +352,13 @@ export default function PolitiqueConfidentialitePage() {
                           5.3 Mesures de Sécurité
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          LAHALEX applique des mesures techniques et organisationnelles appropriées pour assurer la
-                          sécurité, l'intégrité, la confidentialité et la disponibilité des données.
+                          LAHALEX applique des mesures techniques et organisationnelles appropriées pour assurer la sécurité, l'intégrité, la confidentialité et la disponibilité des données.
                         </p>
                       </div>
                     </div>
                   </section>
 
+                  {/* Article 6 */}
                   <section>
                     <h2 className="text-xl sm:text-2xl font-bold text-[#770D28] mb-3 sm:mb-4 text-balance">
                       ARTICLE 6 - DROITS DES UTILISATEURS
@@ -383,7 +368,7 @@ export default function PolitiqueConfidentialitePage() {
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                           6.1 Droits Reconnus
                         </h3>
-                        <p className="text-gray-700 leading-relaxed mb-2 sm:mb-3 text-sm sm:text-base">
+                        <p className="text-gray-700 leading-relaxed mb-2 text-sm sm:text-base">
                           Conformément à la réglementation applicable, l'Utilisateur dispose des droits suivants :
                         </p>
                         <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base">
@@ -398,13 +383,11 @@ export default function PolitiqueConfidentialitePage() {
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                           6.2 Modalités d'Exercice
                         </h3>
-                        <p className="text-gray-700 leading-relaxed mb-2 sm:mb-3 text-sm sm:text-base">
-                          Pour exercer ces droits, l'Utilisateur doit s'adresser à :{" "}
-                          <strong>contact@lahalex.com</strong>
+                        <p className="text-gray-700 leading-relaxed mb-2 text-sm sm:text-base">
+                          Pour exercer ces droits, l'Utilisateur doit s'adresser à : <strong>contact@lahalex.com</strong>
                         </p>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          LAHALEX se réserve le droit d'exiger une vérification d'identité préalable et peut refuser les
-                          demandes manifestement infondées ou excessives.
+                          LAHALEX se réserve le droit d'exiger une vérification d'identité préalable et peut refuser les demandes manifestement infondées ou excessives.
                         </p>
                       </div>
                       <div>
@@ -412,8 +395,7 @@ export default function PolitiqueConfidentialitePage() {
                           6.3 Délais de Traitement
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          Les demandes sont traitées dans les délais légaux, prolongeables en cas de complexité
-                          particulière.
+                          Les demandes sont traitées dans les délais légaux, prolongeables en cas de complexité particulière.
                         </p>
                       </div>
                       <div>
@@ -421,69 +403,79 @@ export default function PolitiqueConfidentialitePage() {
                           6.4 Limitations des Droits
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          Les droits peuvent être limités lorsque leur exercice porterait atteinte aux intérêts
-                          légitimes de LAHALEX, à la sécurité des Services, ou aux droits de tiers.
+                          Les droits peuvent être limités lorsque leur exercice porterait atteinte aux intérêts légitimes de LAHALEX, à la sécurité des Services, ou aux droits de tiers.
                         </p>
                       </div>
                     </div>
                   </section>
 
+                  {/* Articles 7-13 manquants */}
                   <section>
                     <h2 className="text-xl sm:text-2xl font-bold text-[#770D28] mb-3 sm:mb-4 text-balance">
-                      ARTICLE 7 - CONTACT ET RÉCLAMATIONS
+                      ARTICLES 7-13 - DISPOSITIONS COMPLÉMENTAIRES
                     </h2>
                     <div className="space-y-4 sm:space-y-6">
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
-                          7.1 Service Client
+                          ARTICLE 7 - GESTION DES COMMUNICATIONS
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          Pour toute question relative à la présente politique ou au traitement des données :{" "}
-                          <strong>contact@lahalex.com</strong>
+                          <strong>7.1 Paramétrage des Préférences :</strong> L'Utilisateur peut configurer ses préférences de communication via son compte utilisateur ou en contactant LAHALEX. <strong> <br />7.2 Communications Obligatoires :</strong> LAHALEX se réserve le droit d'adresser des notifications obligatoires relatives aux modifications essentielles du Service, nonobstant les préférences de l'Utilisateur.
                         </p>
                       </div>
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
-                          7.2 Autorité de Contrôle
+                          ARTICLE 8 - PROTECTION DES MINEURS
                         </h3>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          L'Utilisateur peut introduire une réclamation auprès de l'autorité de protection des données
-                          compétente en République du Bénin.
+                          LAHALEX ne collecte pas intentionnellement de données concernant les enfants de moins de 14 ans. Les Services ne sont pas destinés à ce public. En cas de collecte accidentelle, LAHALEX supprime immédiatement ces données sur demande.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                          ARTICLE 9 - DISPOSITIONS SPÉCIALES - AUTEURS ET CONTRIBUTEURS
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                          <strong>9.1 Données Spécifiques Collectées :</strong> Pour les auteurs et contributeurs, LAHALEX collecte identité, structure d'appartenance et coordonnées, parcours professionnel et domaines d'expertise, biographie, profil, photographie, enregistrements vocaux, informations financières pour rémunération, données éditoriales et administratives. <strong> <br />9.2 Finalités du Traitement :</strong> Ces données sont utilisées pour la gestion éditoriale et publication des travaux, l'exécution des contrats d'auteur/contributeur, la promotion des contenus et services. <strong> <br />9.3 Publication et Diffusion :</strong> L'auteur/contributeur autorise expressément la publication de ses données biographiques et professionnelles en relation avec ses contributions.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                          ARTICLE 10 - MODIFICATIONS DE LA POLITIQUE
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                          <strong>10.1 Droit de Modification :</strong> LAHALEX se réserve le droit de modifier à tout moment la présente politique de confidentialité, sans préavis obligatoire. <strong> <br />10.2 Notification des Modifications :</strong> Les modifications substantielles sont publiées sur cette page avec indication de la date de mise à jour.  L'Utilisateur peut être informé par tout 
+                          canal approprié.<strong> <br />10.3 Acceptation des Modifications :</strong> L'utilisation continue des Services après modification vaut acceptation expresse de la nouvelle politique.
+                        </p>
+                    </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                          ARTICLE 11 - RESPONSABILITÉ ET LIMITATIONS
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                          <strong>11.1 Limitation de Responsabilité :</strong> LAHALEX ne peut être tenue responsable des conséquences résultant de l'interception ou l'utilisation frauduleuse de données lors de leur transmission sur Internet, des défaillances techniques des systèmes tiers, de l'utilisation inappropriée des données par l'Utilisateur, des violations de sécurité imputables à des tiers. <strong> <br />11.2 Obligations de l'Utilisateur :</strong> L'Utilisateur s'engage à fournir des informations exactes et à jour, protéger ses identifiants d'accès, respecter les droits des tiers, signaler immédiatement tout usage frauduleux.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                          ARTICLE 12 - CONTACT ET RÉCLAMATIONS
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                          <strong>12.1 Service Client :</strong> Pour toute question relative à la présente politique ou au traitement des données : <strong>contact@lahalex.com</strong> <strong> <br />12.2 Autorité de Contrôle :</strong> L'Utilisateur peut introduire une réclamation auprès de l'autorité de protection des données compétente en République du Bénin.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                          ARTICLE 13 - DISPOSITIONS GÉNÉRALES
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                          <strong>13.1 Droit Applicable :</strong> La présente politique est exclusivement régie par le droit de la République du Bénin. <strong> <br />13.2 Validité :</strong> Si une disposition était déclarée nulle, les autres dispositions conserveraient leur pleine validité. <strong> <br />13.3 Langue de Référence :</strong> En cas de traduction, la version française fait foi.
                         </p>
                       </div>
                     </div>
                   </section>
 
-                  <section>
-                    <h2 className="text-xl sm:text-2xl font-bold text-[#770D28] mb-3 sm:mb-4 text-balance">
-                      ARTICLE 8 - DISPOSITIONS GÉNÉRALES
-                    </h2>
-                    <div className="space-y-4 sm:space-y-6">
-                      <div>
-                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
-                          8.1 Droit Applicable
-                        </h3>
-                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          La présente politique est exclusivement régie par le droit de la République du Bénin.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">8.2 Validité</h3>
-                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          Si une disposition était déclarée nulle, les autres dispositions conserveraient leur pleine
-                          validité.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
-                          8.3 Langue de Référence
-                        </h3>
-                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                          En cas de traduction, la version française fait foi.
-                        </p>
-                      </div>
-                    </div>
-                  </section>
+
 
                   <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
                     <p className="text-sm sm:text-base text-gray-700 font-medium">
