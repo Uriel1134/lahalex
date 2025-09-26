@@ -156,7 +156,7 @@ export default function LahalexUniverselPage() {
             {/* Right Column - Placeholder for future image/video */}
             <div className="order-1 lg:order-2 flex justify-center items-center">
               <img
-                src="/images/universel-laptop.png"
+                src="/images/lahalex-universel-2.png"
                 alt="Aperçu Lahalex Universel"
                 className="hero-image h-64 sm:h-80 lg:h-96 w-auto object-contain"
               />
