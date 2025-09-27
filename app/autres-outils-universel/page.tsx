@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/other-header"
 import { Footer } from "@/components/footer"
+import Image from "next/image"
 
 export default function UniverselPage() {
   return (
@@ -55,14 +56,38 @@ export default function UniverselPage() {
 
               {/* Placeholder image */}
               <div className="order-1 lg:order-2">
-                <div className="bg-gray-200 h-64 sm:h-80 lg:h-96 rounded-lg"></div>
+                <div className="aspect-video overflow-hidden">
+                  <Image
+                    src="/images/autre-outil.png"
+                    alt="Autres outils"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             {/* Row of 2 placeholders */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12">
-              <div className="bg-gray-200 h-48 sm:h-64 rounded-lg"></div>
-              <div className="bg-gray-200 h-48 sm:h-64 rounded-lg"></div>
+              <div className="aspect-video overflow-hidden">
+                <Image
+                  src="/images/autre-outil-2.png"
+                  alt="Autres outils"
+                  width={600}
+                  height={338}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="aspect-video overflow-hidden">
+                <Image
+                  src="/images/autre-outil-3.png"
+                  alt="Autres outils"
+                  width={600}
+                  height={338}
+                  className="w-full h-full object-contain"
+                /> 
+              </div>
             </div>
           </div>
         </section>
@@ -138,7 +163,15 @@ export default function UniverselPage() {
                   className={`bg-gray-200 h-64 sm:h-80 lg:h-96 rounded-lg ${
                     tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
                   }`}
-                ></div>
+                >
+                  <Image
+                    src={`/images/autre-outil${tool.number === "1" ? "" : tool.number === "2" ? "-2" : tool.number === "3" ? "-3" : tool.number === "4" ? "-4" : ""}.png`}
+                    alt={tool.title}
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
 
                 {/* Content */}
                 <div

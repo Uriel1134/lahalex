@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/other-header"
 import { Footer } from "@/components/footer"
+import Image from "next/image"
 
 export default function BibliothequePage() {
   return (
@@ -47,14 +48,30 @@ export default function BibliothequePage() {
               </a>
             </div>
             <div className="animate-slide-from-right">
-              <div className="bg-gray-300 rounded-lg aspect-video"></div>
+              <div className="aspect-video overflow-hidden">
+                <Image
+                  src="/images/bibliotheque-numerique.png"
+                  alt="Bibliothèque numérique"
+                  width={800}
+                  height={450}
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Second placeholder */}
+        {/* Image secondaire */}
         <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <div className="bg-gray-300 rounded-lg aspect-video max-w-2xl mx-auto"></div>
+          <div className="aspect-video max-w-2xl mx-auto overflow-hidden">
+            <Image
+              src="/images/bibliotheque-numerique-2.png"
+              alt="Interface bibliothèque numérique"
+              width={800}
+              height={450}
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
 
         {/* Description */}

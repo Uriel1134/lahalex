@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/other-header"
 import { Footer } from "@/components/footer"
+import Image from "next/image"
 
 export default function VeilleJuridiquePage() {
   return (
@@ -49,7 +50,15 @@ export default function VeilleJuridiquePage() {
                 </a>
               </div>
               <div>
-                <div className="bg-gray-300 rounded-lg aspect-video"></div>
+                <div className="aspect-video overflow-hidden">
+                  <Image
+                    src="/images/veille-juridique.png"
+                    alt="Veille juridique"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
             </div>
           </section>
@@ -57,8 +66,24 @@ export default function VeilleJuridiquePage() {
           {/* Illustrations */}
           <section className="mb-12">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gray-300 rounded-lg aspect-video"></div>
-              <div className="bg-gray-300 rounded-lg aspect-video"></div>
+              <div className="aspect-video overflow-hidden">
+                <Image
+                  src="/images/veille-juridique-2.png"
+                  alt="Interface veille juridique"
+                  width={600}
+                  height={338}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="aspect-video overflow-hidden">
+                <Image
+                  src="/images/veille-juridique-3.png"
+                  alt="Alertes veille juridique"
+                  width={600}
+                  height={338}
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           </section>
 

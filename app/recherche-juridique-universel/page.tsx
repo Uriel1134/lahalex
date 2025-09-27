@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/other-header"
 import { Footer } from "@/components/footer"
+import Image from "next/image"
 
 export default function RecherchePage() {
   return (
@@ -49,8 +50,16 @@ export default function RecherchePage() {
               </a>
             </div>
 
-            {/* Placeholder principal */}
-            <div className="w-full h-[300px] sm:h-[400px] lg:h-[522px] bg-gray-300 rounded-lg mb-16 shadow-lg"></div>
+            {/* Image principale */}
+            <div className="w-full h-[300px] sm:h-[400px] lg:h-[522px] mb-16 overflow-hidden">
+              <Image
+                src="/images/recherche-juridique.png"
+                alt="Recherche juridique avancée"
+                width={800}
+                height={522}
+                className="w-full h-full object-contain"
+              />
+            </div>
 
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Texte + image */}
@@ -64,7 +73,15 @@ export default function RecherchePage() {
                   hiérarchisés.
                 </p>
 
-                <div className="w-full h-[250px] sm:h-[300px] lg:h-[371px] bg-gray-300 rounded-lg shadow-lg"></div>
+                  <div className="w-full h-[250px] sm:h-[300px] lg:h-[371px] overflow-hidden">
+                  <Image
+                    src="/images/recherche-juridique-2.png"
+                    alt="Interface de recherche juridique"
+                    width={600}
+                    height={371}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
 
               {/* Avantages */}
