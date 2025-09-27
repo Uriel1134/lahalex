@@ -2,33 +2,18 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
-import countries from 'world-countries'
+import { gsap } from "gsap";
 
 export default function FAQ() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [formData, setFormData] = useState({
-    nom: "",
-    email: "",
-    indicatif: "+33",
-    telephone: "",
-    message: "",
-  })
-
-  // Générer les options de pays avec world-countries
-  const countryOptions = countries
-    .filter(country => country.idd && country.idd.root && country.idd.suffixes)
-    .map(country => {
-      const callingCode = country.idd.root + (country.idd.suffixes?.[0] || '')
-      return {
-        value: callingCode,
-        label: `${country.flag} ${callingCode} ${country.name.common}`,
-        code: country.cca2
-      }
-    })
-    .sort((a, b) => a.label.localeCompare(b.label, 'fr'))
+  
+  // Refs pour les animations GSAP
+  const mainRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const faqContainerRef = useRef<HTMLDivElement>(null);
 
   const faqItems = [
     {
@@ -89,145 +74,239 @@ export default function FAQ() {
     setOpenFaq(openFaq === index ? null : index)
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
+  // Animations GSAP spectaculaires - style devenir-auteur-form
+  useEffect(() => {
+    if (typeof window === "undefined") return
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-  }
+    // Animation spectaculaire au chargement
+    const tl = gsap.timeline()
+
+    // Animation du titre principal - effet bounce spectaculaire
+    tl.fromTo(".faq-hero-title", 
+      { opacity: 0, y: 100, scale: 0.5 }, 
+      { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
+    )
+
+    // Animation simple sans ScrollTrigger
+    const ctx = gsap.context(() => {
+      // Animation du conteneur FAQ simple
+      if (faqContainerRef.current) {
+        gsap.fromTo(
+          faqContainerRef.current,
+          { 
+            opacity: 0, 
+            y: 50
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: 0.5
+          }
+        )
+
+        // Animation des éléments FAQ en cascade simple
+        const faqItems = faqContainerRef.current.querySelectorAll('.faq-item')
+        gsap.fromTo(
+          faqItems,
+          { 
+            opacity: 0, 
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power2.out",
+            delay: 0.8
+          }
+        )
+      }
+    }, mainRef)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
+    <div ref={mainRef} className="min-h-screen relative overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
 
+      {/* Effets de particules flottantes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-2 h-2 bg-[#770D28]/10 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-3 h-3 bg-[#770D28]/8 rounded-full animate-drift" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-[#770D28]/12 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-[#770D28]/10 rounded-full animate-drift" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-[#770D28]/15 rounded-full animate-orbit" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-[#770D28]/12 rounded-full animate-drift" style={{ animationDelay: '0.8s' }}></div>
+        <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-[#770D28]/10 rounded-full animate-orbit" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="bg-[#770D28] py-16">
+      <section className="bg-gradient-to-br from-[#770D28] via-[#770D28] to-[#5a0a1f] py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-gobold text-5xl lg:text-2xl text-white">FAQ</h1>
+          <h1 ref={titleRef} className="faq-hero-title font-gobold text-6xl lg:text-7xl text-white mb-4">
+            FAQ
+          </h1>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16" style={{ backgroundColor: "#FFFFFF" }}>
+      <section className="py-20 relative z-10" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - FAQ */}
-            <div className="space-y-8 mb-12">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Vous avez une question ?</h2>
-                <p className="text-gray-600 mb-8">
-                  Veuillez lire les questions ci-dessous et si vous ne trouvez pas votre réponse, envoyez-nous votre
-                  question, nous vous répondrons dès que possible.
+          <div className="space-y-12">
+            <div className="text-center">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Questions fréquemment posées
+              </h2>
+              <p className="text-gray-600 text-lg lg:text-xl mb-12 max-w-3xl mx-auto">
+                Trouvez les réponses aux questions les plus courantes concernant nos services et solutions.
                 </p>
               </div>
 
               {/* FAQ Items */}
-              <div className="space-y-8">
+            <div ref={faqContainerRef} className="max-w-5xl mx-auto space-y-8">
                 {faqItems.map((item, index) => (
-                  <div key={index} className="faq-item border border-gray-200 rounded-lg bg-white">
+                <div key={index} className="faq-item group">
+                  <div className="bg-white rounded-2xl border border-gray-100 hover:border-[#770D28]/20 transition-all duration-300 overflow-hidden">
                     <button
                       onClick={() => toggleFaq(index)}
-                      className="faq-button w-full px-8 py-6 text-left bg-white hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+                      className="faq-button w-full px-8 py-8 text-left bg-gradient-to-r from-white to-gray-50 hover:from-[#770D28]/5 hover:to-[#770D28]/10 transition-all duration-300 flex justify-between items-center"
                     >
-                      <span className="font-medium text-gray-900">{item.question}</span>
-                      <svg
-                        className={`faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200 ${
-                          openFaq === index ? "rotate-180" : "rotate-0"
-                        }`}
+                      <span className="font-semibold text-gray-900 text-lg lg:text-xl pr-6 group-hover:text-[#770D28] transition-colors duration-300">
+                        {item.question}
+                      </span>
+                      <div className="flex-shrink-0">
+                        <div className={`w-12 h-12 rounded-full bg-gradient-to-r from-[#770D28] to-[#5a0a1f] flex items-center justify-center transform transition-all duration-300 ${
+                          openFaq === index ? "rotate-180 scale-110" : "rotate-0 scale-100"
+                        }`}>
+                          <svg
+                            className="w-6 h-6 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                       </svg>
+                        </div>
+                      </div>
                     </button>
                     <div
-                      className={`faq-content overflow-hidden transition-all duration-300 ease-in-out ${
+                      className={`faq-content overflow-hidden transition-all duration-500 ease-in-out ${
                         openFaq === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                       }`}
                     >
-                      <div className="px-8 py-8 bg-gray-50 border-t border-gray-200">
-                        <p className="text-gray-600 leading-relaxed">{item.answer}</p>
+                      <div className="px-8 py-8 bg-gradient-to-r from-gray-50 to-white border-t border-gray-100">
+                        <p className="text-gray-700 leading-relaxed text-lg">{item.answer}</p>
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Column - Contact Form */}
-            <div className="bg-white p-8 ">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Poser votre question</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                  type="text"
-                  name="nom"
-                  placeholder="Votre nom"
-                  value={formData.nom}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#770D28] focus:border-transparent transition-all duration-300"
-                />
-
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Votre email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#770D28] focus:border-transparent transition-all duration-300"
-                />
-
-                <div className="grid grid-cols-3 gap-2">
-                  <select
-                    name="indicatif"
-                    value={formData.indicatif}
-                    onChange={handleInputChange}
-                    className="px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#770D28] focus:border-transparent transition-all duration-300"
-                  >
-                    {countryOptions.map((country) => (
-                      <option key={country.code} value={country.value}>
-                        {country.label}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    type="tel"
-                    name="telephone"
-                    placeholder="Votre numéro"
-                    value={formData.telephone}
-                    onChange={handleInputChange}
-                    className="col-span-2 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#770D28] focus:border-transparent transition-all duration-300"
-                  />
                 </div>
-
-                <textarea
-                  name="message"
-                  placeholder="Entrez votre texte"
-                  rows={6}
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#770D28] focus:border-transparent transition-all duration-300 resize-none"
-                ></textarea>
-
-                <button
-                  type="submit"
-                  className="w-full bg-white border-2 border-[#770D28] text-[#770D28] py-3 px-6 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-all duration-300"
-                >
-                  Envoyer le message
-                </button>
-              </form>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       <Footer />
+
+      <style jsx global>{`
+        /* Classes pour les animations GSAP - style devenir-auteur-form */
+        .faq-hero-title {
+          opacity: 0;
+        }
+
+        /* Animations pour les particules flottantes */
+        @keyframes float {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) rotate(0deg); 
+            opacity: 0.3;
+          }
+          25% { 
+            transform: translateY(-20px) translateX(10px) rotate(90deg); 
+            opacity: 0.8;
+          }
+          50% { 
+            transform: translateY(-10px) translateX(-15px) rotate(180deg); 
+            opacity: 0.5;
+          }
+          75% { 
+            transform: translateY(-30px) translateX(5px) rotate(270deg); 
+            opacity: 0.7;
+          }
+        }
+
+        @keyframes drift {
+          0% { transform: translateX(0px) translateY(0px); }
+          33% { transform: translateX(30px) translateY(-20px); }
+          66% { transform: translateX(-20px) translateY(10px); }
+          100% { transform: translateX(0px) translateY(0px); }
+        }
+
+        @keyframes orbit {
+          0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-drift {
+          animation: drift 8s ease-in-out infinite;
+        }
+
+        .animate-orbit {
+          animation: orbit 12s linear infinite;
+        }
+
+        /* Styles simples pour les cards FAQ */
+        .faq-item {
+          background: rgba(255, 255, 255, 1);
+        }
+
+        /* Effets de hover simples */
+        .faq-item:hover {
+          transform: translateY(-2px);
+        }
+
+        /* Animation de révélation du contenu */
+        .faq-content {
+          transform-origin: top;
+        }
+
+        /* Effets de transition fluides */
+        .faq-item * {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Responsive design amélioré */
+        @media (max-width: 640px) {
+          .faq-item {
+            margin: 0 1rem;
+            margin-bottom: 2rem !important;
+          }
+          
+          .faq-button {
+            padding: 1.5rem 1rem;
+          }
+          
+          .faq-button span {
+            font-size: 0.9rem;
+            line-height: 1.4;
+          }
+        }
+
+        /* Amélioration de l'accessibilité */
+        .faq-button:focus {
+          outline: 2px solid #770D28;
+          outline-offset: 2px;
+        }
+      `}</style>
     </div>
   )
 }

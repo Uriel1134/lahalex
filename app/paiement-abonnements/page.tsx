@@ -154,12 +154,12 @@ export default function PaiementAbonnements() {
            <div ref={tabsRef} className="flex justify-center mb-16">
              <div className="bg-white/80 backdrop-blur-md rounded-2xl p-2 shadow-2xl border border-white/20 w-full max-w-6xl">
                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-                 {tabs.map((tab) => (
-                   <button
-                     key={tab.id}
-                     onClick={() => setActiveTab(tab.id)}
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
                      className={`tab-button group relative px-4 py-3 rounded-xl font-medium transition-all duration-500 ease-out flex items-center justify-center gap-2 ${
-                       activeTab === tab.id
+                  activeTab === tab.id
                          ? "bg-[#770D28] text-white shadow-xl transform scale-105"
                          : "text-gray-600 hover:text-[#770D28] hover:bg-white/50 hover:scale-105"
                      }`}
@@ -169,11 +169,11 @@ export default function PaiementAbonnements() {
                      {activeTab === tab.id && (
                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 rounded-xl"></div>
                      )}
-                   </button>
-                 ))}
+              </button>
+            ))}
                </div>
              </div>
-           </div>
+          </div>
 
           {activeTab === "universel" && (
             <div ref={cardsRef} className="pricing-content">
@@ -448,7 +448,7 @@ export default function PaiementAbonnements() {
          
          .scrollbar-hide::-webkit-scrollbar {
            display: none;
-         }
+        }
       `}</style>
     </div>
   )

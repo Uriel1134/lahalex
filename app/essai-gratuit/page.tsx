@@ -2,10 +2,17 @@
 
 import type React from "react";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
+import Stepper, { Step } from "@/components/Stepper";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import countries from 'world-countries';
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function EssaiGratuit() {
   const [formData, setFormData] = useState({
@@ -20,6 +27,12 @@ export default function EssaiGratuit() {
     confirmerMotDePasse: "",
     accepterConditions: false,
   });
+
+  // Refs pour les animations GSAP
+  const mainRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
+  const stepperRef = useRef<HTMLDivElement>(null);
 
   // Générer les options de pays avec world-countries
   const countryOptions = countries
@@ -61,23 +74,144 @@ export default function EssaiGratuit() {
     }));
   };
 
+  // Animations GSAP spectaculaires - style devenir-auteur-form
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    // Animation spectaculaire au chargement - style lahalex-universel
+    const tl = gsap.timeline()
+
+    // Animation du titre principal - effet bounce spectaculaire
+    tl.fromTo(".hero-title", 
+      { opacity: 0, y: 100, scale: 0.5 }, 
+      { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
+    )
+
+    // Animation des sections avec ScrollTrigger
+    const ctx = gsap.context(() => {
+      // Animation des caractéristiques avec effet de glissement spectaculaire
+      if (featuresRef.current) {
+        gsap.fromTo(
+          featuresRef.current,
+          { 
+            opacity: 0, 
+            x: -150, 
+            scale: 0.8,
+            rotation: -10,
+            transformOrigin: "left center"
+          },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            rotation: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: featuresRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        )
+
+        // Animation des éléments de caractéristiques en cascade avec effets spectaculaires
+        const featureItems = featuresRef.current.querySelectorAll('div')
+        gsap.fromTo(
+          featureItems,
+          { 
+            opacity: 0, 
+            y: 50, 
+            scale: 0.7,
+            rotation: 5,
+            transformOrigin: "center bottom"
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotation: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "elastic.out(1, 0.6)",
+            delay: 0.5,
+            scrollTrigger: {
+              trigger: featuresRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        )
+      }
+
+      // Animation du Stepper avec effet 3D spectaculaire
+      if (stepperRef.current) {
+        gsap.fromTo(
+          stepperRef.current,
+          { 
+            opacity: 0, 
+            y: 150, 
+            scale: 0.6, 
+            rotationX: 45,
+            rotationY: 20,
+            rotationZ: 10,
+            transformOrigin: "center center",
+            filter: "blur(15px)"
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotationX: 0,
+            rotationY: 0,
+            rotationZ: 0,
+            filter: "blur(0px)",
+            duration: 1.5,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: stepperRef.current,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        )
+      }
+    }, mainRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
 
-      <main className="min-h-screen py-12 sm:py-16 lg:py-20">
+      {/* Effets de particules flottantes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-2 h-2 bg-[#770D28]/10 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-3 h-3 bg-[#770D28]/8 rounded-full animate-drift" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-[#770D28]/12 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-[#770D28]/10 rounded-full animate-drift" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-[#770D28]/15 rounded-full animate-orbit" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-[#770D28]/12 rounded-full animate-drift" style={{ animationDelay: '0.8s' }}></div>
+        <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-[#770D28]/10 rounded-full animate-orbit" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>
+      </div>
+
+      <main ref={mainRef as any} className="min-h-screen py-12 sm:py-16 lg:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Titre principal */}
           <h1
-            className="font-gobold text-4xl sm:text-5xl lg:text-2xl text-center lg:text-left mb-4"
+            ref={titleRef}
+            className="hero-title font-gobold text-4xl sm:text-5xl lg:text-2xl text-center lg:text-left mb-4"
             style={{ color: "#000000" }}
           >
             ESSAI GRATUIT
           </h1>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Section gauche - Informations essai gratuit (visible en second sur mobile, à gauche sur desktop) */}
-            <div className="space-y-8 order-2 lg:order-1">
+            <div ref={featuresRef} className="space-y-8 order-2 lg:order-1">
               {/* Caractéristiques principales */}
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
@@ -155,16 +289,30 @@ export default function EssaiGratuit() {
 
             </div>
 
-            {/* Section droite - Formulaire d'inscription (visible en premier sur mobile, à droite sur desktop) */}
-            <div className="bg-white rounded-lg shadow-lg p-8 order-1 lg:order-2">
-              <h2
-                className="text-2xl font-gobold mb-8"
-                style={{ color: "#770D28" }}
+            {/* Section droite - Formulaire d'inscription avec Stepper */}
+            <div ref={stepperRef} className="order-1 lg:order-2 flex items-center justify-center min-h-[600px]">
+              <Stepper
+                initialStep={1}
+                onStepChange={(() => {
+                  console.log("Étape changée");
+                }) as any}
+                onFinalStepCompleted={() => {
+                  console.log("Formulaire terminé!");
+                  handleSubmit(new Event('submit') as any);
+                }}
+                backButtonText="Précédent"
+                nextButtonText="Suivant"
+                stepCircleContainerClassName="bg-white border-gray-200 shadow-xl"
+                contentClassName="min-h-[400px] py-4"
+                renderStepIndicator={undefined}
               >
-                Ma demande
-              </h2>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Étape 1: Informations personnelles */}
+                <Step>
+                  <div className="space-y-6">
+                    <h3 className="text-xl font-gobold text-[#770D28] mb-4">
+                      Informations personnelles
+                    </h3>
+                    
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Nom
@@ -176,9 +324,7 @@ export default function EssaiGratuit() {
                     value={formData.nom}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                    style={
-                      { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                    }
+                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
                   />
                 </div>
 
@@ -193,32 +339,38 @@ export default function EssaiGratuit() {
                     value={formData.prenoms}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                    style={
-                      { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                    }
+                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Statut
+                        Statut professionnel
                   </label>
                   <select
                     name="statut"
                     value={formData.statut}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                    style={
-                      { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                    }
+                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
                   >
                     <option value="">-- Sélectionnez un statut --</option>
                     <option value="avocat">Avocat</option>
                     <option value="notaire">Notaire</option>
                     <option value="commissaire">Commissaire de justice</option>
+                        <option value="etudiant">Étudiant</option>
                     <option value="autre">Autre</option>
                   </select>
                 </div>
+                  </div>
+                </Step>
+
+                {/* Étape 2: Contact */}
+                <Step>
+                  <div className="space-y-6">
+                    <h3 className="text-xl font-gobold text-[#770D28] mb-4">
+                      Informations de contact
+                    </h3>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -231,11 +383,10 @@ export default function EssaiGratuit() {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                    style={
-                      { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                    }
+                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
                   />
                 </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Pays
@@ -244,19 +395,18 @@ export default function EssaiGratuit() {
                     name="pays"
                     value={formData.pays || ""}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all min-w-[120px]"
-                    style={
-                      { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                    }
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
+                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
                   >
                     <option value="">-- Pays --</option>
-                    {countryOptions.map((country) => (
-                      <option key={country.code} value={country.value}>
-                        {country.label}
-                      </option>
-                    ))}
+                        {countryOptions.map((country) => (
+                          <option key={country.code} value={country.value}>
+                            {country.label}
+                          </option>
+                        ))}
                   </select>
                 </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Numéro de téléphone
@@ -267,16 +417,14 @@ export default function EssaiGratuit() {
                       value={formData.indicatif}
                       onChange={handleInputChange}
                       className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all min-w-[90px]"
-                      style={
-                        { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                      }
+                          style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
                     >
                       <option value="">-- Indicatif --</option>
-                      {callingCodeOptions.map((country) => (
-                        <option key={country.code} value={country.value}>
-                          {country.label}
-                        </option>
-                      ))}
+                          {callingCodeOptions.map((country) => (
+                            <option key={country.code} value={country.value}>
+                              {country.label}
+                            </option>
+                          ))}
                     </select>
                     <input
                       type="tel"
@@ -285,11 +433,48 @@ export default function EssaiGratuit() {
                       value={formData.telephone}
                       onChange={handleInputChange}
                       className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                      style={
-                        { "--tw-ring-color": "#770D28" } as React.CSSProperties
-                      }
+                          style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
                     />
+                      </div>
+                    </div>
                   </div>
+                </Step>
+
+                {/* Étape 3: Sécurité */}
+                <Step>
+                  <div className="space-y-6">
+                    <h3 className="text-xl font-gobold text-[#770D28] mb-4">
+                      Sécurité et confidentialité
+                    </h3>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Mot de passe
+                      </label>
+                      <input
+                        type="password"
+                        name="motDePasse"
+                        placeholder="Votre mot de passe"
+                        value={formData.motDePasse}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
+                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Confirmer le mot de passe
+                      </label>
+                      <input
+                        type="password"
+                        name="confirmerMotDePasse"
+                        placeholder="Confirmez votre mot de passe"
+                        value={formData.confirmerMotDePasse}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
+                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                      />
                 </div>
 
                 <div className="flex items-start space-x-3">
@@ -304,7 +489,7 @@ export default function EssaiGratuit() {
                   <label htmlFor="conditions" className="text-sm text-gray-700">
                     {"J'accepte les "}
                     <a
-                      href="#"
+                          href="/conditions-generales"
                       className="underline"
                       style={{ color: "#770D28" }}
                     >
@@ -312,7 +497,7 @@ export default function EssaiGratuit() {
                     </a>
                     {" et la "}
                     <a
-                      href="#"
+                          href="/politique-confidentialite"
                       className="underline"
                       style={{ color: "#770D28" }}
                     >
@@ -321,24 +506,118 @@ export default function EssaiGratuit() {
                     {"."}
                   </label>
                 </div>
+                  </div>
+                </Step>
 
-                <button
-                  type="submit"
-                  className="w-full py-3 px-6 rounded-lg font-medium text-white transition-all hover:opacity-90"
-                  style={{
-                    backgroundColor: "#770D28",
-                    border: "2px solid #770D28",
-                  }}
-                >
-                  Envoyer
-                </button>
-              </form>
+                {/* Étape 4: Confirmation */}
+                <Step>
+                  <div className="space-y-6 text-center">
+                    <h3 className="text-xl font-gobold text-[#770D28] mb-4">
+                      Confirmation
+                    </h3>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-center space-x-4">
+                        <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: "#770D28" }}>
+                          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <div className="text-left">
+                          <p className="font-semibold text-gray-900">{formData.nom} {formData.prenoms}</p>
+                          <p className="text-sm text-gray-600">{formData.email}</p>
+                          <p className="text-sm text-gray-600">{formData.statut}</p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-700">
+                        Votre essai gratuit de 5 jours va commencer dès la validation de votre inscription.
+                      </p>
+                      
+                      <div className="bg-gray-50 rounded-lg p-4">
+                        <p className="text-sm text-gray-600">
+                          <strong>Rappel :</strong> Vous bénéficiez de 5 jours d'essai gratuit sans engagement, 
+                          avec conseils et assistance technique inclus.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Step>
+              </Stepper>
             </div>
           </div>
         </div>
       </main>
 
       <Footer />
+
+      <style jsx global>{`
+        /* Classes pour les animations GSAP - style devenir-auteur-form */
+        .hero-title {
+          opacity: 0;
+        }
+
+        /* Animations pour les particules flottantes */
+        @keyframes float {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) rotate(0deg); 
+            opacity: 0.3;
+          }
+          25% { 
+            transform: translateY(-20px) translateX(10px) rotate(90deg); 
+            opacity: 0.8;
+          }
+          50% { 
+            transform: translateY(-10px) translateX(-15px) rotate(180deg); 
+            opacity: 0.5;
+          }
+          75% { 
+            transform: translateY(-30px) translateX(5px) rotate(270deg); 
+            opacity: 0.7;
+          }
+        }
+
+        @keyframes drift {
+          0% { transform: translateX(0px) translateY(0px); }
+          33% { transform: translateX(30px) translateY(-20px); }
+          66% { transform: translateX(-20px) translateY(10px); }
+          100% { transform: translateX(0px) translateY(0px); }
+        }
+
+        @keyframes orbit {
+          0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-drift {
+          animation: drift 8s ease-in-out infinite;
+        }
+
+        .animate-orbit {
+          animation: orbit 12s linear infinite;
+        }
+
+        /* Effets de glassmorphism */
+        .glass-effect {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Effets de hover avancés */
+        .card-hover-effect {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover-effect:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+      `}</style>
     </div>
   );
 }
