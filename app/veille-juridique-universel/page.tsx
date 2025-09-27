@@ -14,7 +14,7 @@ export default function VeilleJuridiquePage() {
           {/* Breadcrumb */}
           <div className="mb-8">
             <a
-              href="/nos-prestations"
+              href="/lahalex-universel"
               className="flex items-center text-gray-600 hover:text-[#770D28] transition-colors duration-200 text-sm sm:text-base"
             >
               <svg

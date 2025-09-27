@@ -79,11 +79,12 @@ export function SolutionsSection() {
               {/* Bloc Laptop + Connexions */}
               <div className="relative flex-1 min-h-[220px] xs:min-h-[280px] sm:min-h-[340px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center">
                 <div className="w-full flex justify-center items-center sm:absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-10">
-                  <Image
-                    src="/images/universel-laptop.png"
-                    alt="Lahalex Universel Interface"
-                    width={1200}
-                    height={800}
+                  <video
+                    src="/videos/lahalex-universel.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="object-contain w-[95vw] max-w-[1200px] h-auto mx-auto lg:max-w-[950px] xl:max-w-[850px]"
                   />
                 </div>

@@ -153,11 +153,14 @@ export default function LahalexUniverselPage() {
               </button>
             </div>
 
-            {/* Right Column - Placeholder for future image/video */}
+            {/* Right Column - Video */}
             <div className="order-1 lg:order-2 flex justify-center items-center">
-              <img
-                src="/images/lahalex-universel-2.png"
-                alt="Aperçu Lahalex Universel"
+              <video
+                src="/videos/lahalex-universel.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="hero-image h-64 sm:h-80 lg:h-96 w-auto object-contain"
               />
             </div>
