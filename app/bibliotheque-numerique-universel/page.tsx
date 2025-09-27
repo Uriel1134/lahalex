@@ -3,13 +3,132 @@
 import { Header } from "@/components/other-header"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 export default function BibliothequePage() {
+  // Refs pour les animations GSAP
+  const mainRef = useRef<HTMLDivElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  // Animations GSAP spectaculaires - style lahalex-universel
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const ctx = gsap.context(() => {
+      // Animation du titre principal - effet bounce spectaculaire
+      gsap.fromTo(".bibliotheque-title", 
+        { opacity: 0, y: 100, scale: 0.5 }, 
+        { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
+      )
+
+      // Animation de l'image avec effet de rotation spectaculaire
+      gsap.fromTo(".bibliotheque-image", 
+        { opacity: 0, x: 200, rotation: 45 }, 
+        { opacity: 1, x: 0, rotation: 0, duration: 1.5, ease: "power3.out", delay: 0.3 }
+      )
+
+        // Animation des images secondaires avec rotation
+        gsap.fromTo(".bibliotheque-image-secondary", 
+          { opacity: 0, y: 100, rotation: -30 }, 
+          { 
+            opacity: 1, 
+            y: 0, 
+            rotation: 0, 
+            duration: 1.2, 
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".bibliotheque-image-secondary",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        )
+
+      // Animation du contenu avec ScrollTrigger
+      if (contentRef.current) {
+        gsap.fromTo(
+          contentRef.current,
+          { 
+            opacity: 0, 
+            y: 150, 
+            scale: 0.8,
+            rotation: -5,
+            transformOrigin: "center center"
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotation: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: contentRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        )
+
+        // Animation des éléments de contenu en cascade avec effets spectaculaires
+        const contentItems = contentRef.current.querySelectorAll('.content-item')
+        gsap.fromTo(
+          contentItems,
+          { 
+            opacity: 0, 
+            y: 80, 
+            scale: 0.7,
+            rotation: 10,
+            transformOrigin: "center bottom"
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotation: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: "elastic.out(1, 0.6)",
+            delay: 0.3,
+            scrollTrigger: {
+              trigger: contentRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        )
+      }
+    }, mainRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <div className="flex flex-col min-h-screen bg-white font-sf-pro">
+    <div ref={mainRef} className="flex flex-col min-h-screen bg-white font-sf-pro relative overflow-hidden">
       <Header />
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Effets de particules flottantes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-2 h-2 bg-[#770D28]/10 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-3 h-3 bg-[#770D28]/8 rounded-full animate-drift" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-[#770D28]/12 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-[#770D28]/10 rounded-full animate-drift" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-[#770D28]/15 rounded-full animate-orbit" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-[#770D28]/12 rounded-full animate-drift" style={{ animationDelay: '0.8s' }}></div>
+        <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-[#770D28]/10 rounded-full animate-orbit" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>
+      </div>
+
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {/* Retour */}
         <div className="mb-8 animate-fade-in">
           <a
@@ -37,18 +156,18 @@ export default function BibliothequePage() {
         <div className="mb-12">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="animate-slide-from-left">
-              <h1 className="font-gobold text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
+              <h1 ref={titleRef} className="bibliotheque-title font-gobold text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
                 Bibliothèque numérique
               </h1>
-              <a
-                href="/essai-gratuit"
-                className="inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                Essai gratuit
-              </a>
+                <a
+                  href="/essai-gratuit"
+                  className="bibliotheque-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Essai gratuit
+                </a>
             </div>
             <div className="animate-slide-from-right">
-              <div className="aspect-video overflow-hidden">
+              <div ref={imageRef} className="bibliotheque-image aspect-video overflow-hidden">
                 <Image
                   src="/images/bibliotheque-numerique.png"
                   alt="Bibliothèque numérique"
@@ -63,7 +182,7 @@ export default function BibliothequePage() {
 
         {/* Image secondaire */}
         <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <div className="aspect-video max-w-2xl mx-auto overflow-hidden">
+          <div className="bibliotheque-image-secondary aspect-video max-w-2xl mx-auto overflow-hidden">
             <Image
               src="/images/bibliotheque-numerique-2.png"
               alt="Interface bibliothèque numérique"
@@ -75,8 +194,8 @@ export default function BibliothequePage() {
         </div>
 
         {/* Description */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-          <p className="text-gray-700 text-lg leading-relaxed">
+        <div ref={contentRef} className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <p className="content-item text-gray-700 text-lg leading-relaxed">
             Notre bibliothèque numérique est une plateforme en ligne dédiée à la
             consultation d&apos;un vaste ensemble d&apos;ouvrages et de documents en
             version numérique de diverses matières avec plus de 500.000 livres
@@ -168,6 +287,61 @@ export default function BibliothequePage() {
       </main>
 
       <Footer />
+
+      <style jsx global>{`
+        /* Classes pour les animations GSAP - style lahalex-universel */
+        .bibliotheque-title {
+          opacity: 0;
+        }
+
+        .bibliotheque-image-secondary {
+          opacity: 0;
+        }
+
+        /* Animations pour les particules flottantes */
+        @keyframes float {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) rotate(0deg); 
+            opacity: 0.3;
+          }
+          25% { 
+            transform: translateY(-20px) translateX(10px) rotate(90deg); 
+            opacity: 0.8;
+          }
+          50% { 
+            transform: translateY(-10px) translateX(-15px) rotate(180deg); 
+            opacity: 0.5;
+          }
+          75% { 
+            transform: translateY(-30px) translateX(5px) rotate(270deg); 
+            opacity: 0.7;
+          }
+        }
+
+        @keyframes drift {
+          0% { transform: translateX(0px) translateY(0px); }
+          33% { transform: translateX(30px) translateY(-20px); }
+          66% { transform: translateX(-20px) translateY(10px); }
+          100% { transform: translateX(0px) translateY(0px); }
+        }
+
+        @keyframes orbit {
+          0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-drift {
+          animation: drift 8s ease-in-out infinite;
+        }
+
+        .animate-orbit {
+          animation: orbit 12s linear infinite;
+        }
+      `}</style>
     </div>
   )
 }
