@@ -154,57 +154,66 @@ export default function BibliothequePage() {
 
         {/* Hero */}
         <div className="mb-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="animate-slide-from-left">
-              <h1 ref={titleRef} className="bibliotheque-title font-gobold text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
-                Bibliothèque numérique
-              </h1>
-                <a
-                  href="/essai-gratuit"
-                  className="bibliotheque-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  Essai gratuit
-                </a>
-            </div>
-            <div className="animate-slide-from-right">
-              <div ref={imageRef} className="bibliotheque-image aspect-video overflow-hidden">
-                <Image
-                  src="/images/bibliotheque-numerique.png"
-                  alt="Bibliothèque numérique"
-                  width={800}
-                  height={450}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
+          <div className="text-left">
+            <h1 ref={titleRef} className="bibliotheque-title font-gobold text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
+              Bibliothèque numérique
+            </h1>
+            <a
+              href="/essai-gratuit"
+              className="bibliotheque-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              Essai gratuit
+            </a>
           </div>
         </div>
 
-        {/* Image secondaire */}
+        {/* Section avec images et texte */}
         <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <div className="bibliotheque-image-secondary aspect-video max-w-2xl mx-auto overflow-hidden">
-            <Image
-              src="/images/bibliotheque-numerique-2.png"
-              alt="Interface bibliothèque numérique"
-              width={800}
-              height={450}
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </div>
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 items-center">
+            {/* Image à gauche */}
+            <div className="bibliotheque-image-secondary aspect-video overflow-hidden">
+              <Image
+                src="/images/bibliotheque-numerique.png"
+                alt="Interface bibliothèque numérique"
+                width={600}
+                height={400}
+                className="w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
+              />
+            </div>
 
-        {/* Description */}
-        <div ref={contentRef} className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-          <p className="content-item text-gray-700 text-lg leading-relaxed">
-            Notre bibliothèque numérique est une plateforme en ligne dédiée à la
-            consultation d&apos;un vaste ensemble d&apos;ouvrages et de documents en
-            version numérique de diverses matières avec plus de 500.000 livres
-            disponibles. Elle permet un accès structuré et permanent à une large
-            collection de ressources documentaires, accessibles à tout moment
-            depuis un ordinateur, une tablette ou un smartphone. L&apos;ensemble
-            de ces contenus est en accès libre et gratuit une fois votre
-            abonnement souscrit.
-          </p>
+            {/* Texte au milieu */}
+            <div ref={contentRef} className="lg:order-2">
+              <p className="content-item text-gray-700 text-lg leading-relaxed text-center lg:text-left">
+                Notre bibliothèque numérique est une plateforme en ligne dédiée à la
+                consultation d&apos;un vaste ensemble d&apos;ouvrages et de documents en
+                version numérique de diverses matières avec plus de 500.000 livres
+                disponibles. Elle permet un accès structuré et permanent à une large
+                collection de resources documentaires, accessibles à tout moment
+                depuis un ordinateur, une tablette ou un smartphone. L&apos;ensemble
+                de ces contenus est en accès libre et gratuit une fois votre
+                abonnement souscrit.
+              </p>
+            </div>
+
+            {/* Image à droite */}
+            <div className="bibliotheque-image-secondary aspect-video overflow-hidden lg:order-3">
+              <Image
+                src="/images/bibliotheque-numerique-2.png"
+                alt="Interface bibliothèque numérique"
+                width={600}
+                height={400}
+                className="w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Avantages */}
