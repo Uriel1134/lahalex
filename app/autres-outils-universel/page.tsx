@@ -283,7 +283,7 @@ export default function UniverselPage() {
                           <div>
                             <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
                               Utilité
-                            </span>
+                        </span>
                             <span className="text-gray-700 text-sm leading-relaxed">{tool.utilite}</span>
                           </div>
                         </div>
@@ -292,11 +292,11 @@ export default function UniverselPage() {
                         <div className="flex items-start space-x-3">
                           <div className="w-6 h-6 bg-[#770D28] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
                             A
-                          </div>
+                      </div>
                           <div>
                             <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
                               Avantage
-                            </span>
+                        </span>
                             <span className="text-gray-700 text-sm leading-relaxed">{tool.avantage}</span>
                           </div>
                         </div>
