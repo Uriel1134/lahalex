@@ -181,7 +181,11 @@ export default function CommissaireJusticePage() {
                   alt="Gestion étude commissaire"
                   width={400}
                   height={225}
-                  className="w-full h-full object-contain"
+                  className="gestion-commissaire-image w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                    borderRadius: '12px'
+                  }}
                 />
               </div>
               <div className="gestion-commissaire-image aspect-video overflow-hidden">
@@ -190,7 +194,11 @@ export default function CommissaireJusticePage() {
                   alt="Interface gestion étude"
                   width={400}
                   height={225}
-                  className="w-full h-full object-contain"
+                  className="gestion-commissaire-image w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                    borderRadius: '12px'
+                  }}
                 />
               </div>
               <div className="gestion-commissaire-image aspect-video overflow-hidden">
@@ -199,7 +207,11 @@ export default function CommissaireJusticePage() {
                   alt="Tableau de bord commissaire"
                   width={400}
                   height={225}
-                  className="w-full h-full object-contain"
+                  className="gestion-commissaire-image w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                    borderRadius: '12px'
+                  }}
                 />
               </div>
             </div>

@@ -179,7 +179,11 @@ export default function AvocatPage() {
                 alt="Gestion cabinet avocat"
                 width={400}
                 height={300}
-                className="w-full h-full object-contain"
+                className="gestion-image w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
               />
             </div>
             <div className="gestion-image aspect-video overflow-hidden">
@@ -188,7 +192,11 @@ export default function AvocatPage() {
                 alt="Interface gestion cabinet"
                 width={400}
                 height={300}
-                className="w-full h-full object-contain"
+                className="gestion-image w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
               />
             </div>
             <div className="gestion-image aspect-video overflow-hidden">
@@ -197,7 +205,11 @@ export default function AvocatPage() {
                 alt="Dashboard gestion cabinet"
                 width={400}
                 height={300}
-                className="w-full h-full object-contain"
+                className="gestion-image w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
               />
             </div>
           </div>

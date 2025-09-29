@@ -181,7 +181,11 @@ export default function NotairePage() {
                 alt="Gestion office notaire"
                 width={400}
                 height={256}
-                className="w-full h-full object-contain"
+                className="gestion-image w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
               />
             </div>
             <div className="gestion-image h-64 overflow-hidden">
@@ -190,7 +194,11 @@ export default function NotairePage() {
                 alt="Interface gestion office"
                 width={400}
                 height={256}
-                className="w-full h-full object-contain"
+                className="gestion-image w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
               />
             </div>
             <div className="gestion-image h-64 overflow-hidden">
@@ -199,7 +207,11 @@ export default function NotairePage() {
                 alt="Tableau de bord office"
                 width={400}
                 height={256}
-                className="w-full h-full object-contain"
+                className="gestion-image w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
               />
             </div>
           </div>

@@ -182,7 +182,11 @@ export default function LahalexAvocatPage() {
                   alt="Assistance IA avocat"
                   width={800}
                   height={450}
-                  className="w-full h-full object-contain"
+                  className="assistance-image w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                    borderRadius: '12px'
+                  }}
                 />
               </div>
             </div>
