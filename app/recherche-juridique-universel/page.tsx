@@ -176,6 +176,10 @@ export default function RecherchePage() {
                 width={800}
                 height={522}
                 className="w-full h-full object-contain"
+                style={{
+                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                  borderRadius: '12px'
+                }}
               />
             </div>
 
@@ -198,6 +202,10 @@ export default function RecherchePage() {
                     width={600}
                     height={371}
                     className="w-full h-full object-contain"
+                    style={{
+                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                      borderRadius: '12px'
+                    }}
                   />
                 </div>
               </div>
@@ -209,12 +217,12 @@ export default function RecherchePage() {
 
   {/* Bloc 1 */}
   <div className="flex items-start space-x-6">
-    <div className="flex-shrink-0 mt-3 relative z-10">
+    <div className="flex-shrink-0 relative z-10">
       <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
         <div className="w-4 h-4 bg-[#770D28] rounded-full"></div>
       </div>
     </div>
-    <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro">
+    <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro pt-3">
       Des filtres multicritères, une interface intuitive et des
       fonctionnalités de tri facilitent l'accès rapide aux
       informations les plus pertinentes, constamment mises à jour
@@ -224,12 +232,12 @@ export default function RecherchePage() {
 
   {/* Bloc 2 */}
   <div className="flex items-start space-x-6 mt-8">
-    <div className="flex-shrink-0 mt-3 relative z-10">
+    <div className="flex-shrink-0 relative z-10">
       <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
         <div className="w-4 h-4 bg-[#770D28] rounded-full"></div>
       </div>
     </div>
-    <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro">
+    <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro pt-3">
       LAHALEX centralise tout :<br />
       • derniers textes et jurisprudences en temps réel <br />
       • pertinence et précision <br />

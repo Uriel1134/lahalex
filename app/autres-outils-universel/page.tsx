@@ -167,39 +167,6 @@ export default function UniverselPage() {
               </div>
 
               {/* Placeholder image */}
-              <div className="order-1 lg:order-2">
-                <div className="autres-image aspect-video overflow-hidden">
-                  <Image
-                    src="/images/autre-outil.png"
-                    alt="Autres outils"
-                    width={800}
-                    height={450}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Row of 2 placeholders */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12">
-              <div className="autres-image aspect-video overflow-hidden">
-                <Image
-                  src="/images/autre-outil-2.png"
-                  alt="Autres outils"
-                  width={600}
-                  height={338}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="autres-image aspect-video overflow-hidden">
-                <Image
-                  src="/images/autre-outil-3.png"
-                  alt="Autres outils"
-                  width={600}
-                  height={338}
-                  className="w-full h-full object-contain"
-                /> 
-              </div>
             </div>
           </div>
         </section>
@@ -272,7 +239,7 @@ export default function UniverselPage() {
               >
                 {/* Image */}
                 <div
-                  className={`bg-gray-200 h-64 sm:h-80 lg:h-96 rounded-lg ${
+                  className={`h-64 sm:h-80 lg:h-96 rounded-lg ${
                     tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
                   }`}
                 >
@@ -281,7 +248,11 @@ export default function UniverselPage() {
                     alt={tool.title}
                     width={800}
                     height={450}
-                    className="w-full h-full object-contain"
+                    className="autres-image w-full h-full object-contain"
+                    style={{
+                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                      borderRadius: '12px'
+                    }}
                   />
                 </div>
 
@@ -303,18 +274,32 @@ export default function UniverselPage() {
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
                       {tool.desc}
                     </p>
-                    <div className="space-y-3">
-                      <div className="flex items-center space-x-3">
-                        <span className="font-semibold text-gray-900 flex-shrink-0">
-                          • Utilité :
-                        </span>
-                        <span className="text-gray-700">{tool.utilite}</span>
+                    <div className="space-y-4">
+                      <div className="bg-[#770D28]/5 p-4 rounded-lg">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-6 h-6 bg-[#770D28] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
+                            U
+                          </div>
+                          <div>
+                            <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
+                              Utilité
+                            </span>
+                            <span className="text-gray-700 text-sm leading-relaxed">{tool.utilite}</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <span className="font-semibold text-gray-900 flex-shrink-0">
-                          • Avantage :
-                        </span>
-                        <span className="text-gray-700">{tool.avantage}</span>
+                      <div className="bg-[#770D28]/5 p-4 rounded-lg">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-6 h-6 bg-[#770D28] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
+                            A
+                          </div>
+                          <div>
+                            <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
+                              Avantage
+                            </span>
+                            <span className="text-gray-700 text-sm leading-relaxed">{tool.avantage}</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

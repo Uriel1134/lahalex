@@ -150,10 +150,14 @@ export function SolutionsSection() {
                   <Button
                     variant="outline"
                     className="border border-[#770D28] text-[#770D28] rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] hover:bg-[#770D28] hover:text-white bg-transparent"
+                    onClick={() => window.location.href = '/lahalex-universel'}
                   >
                     En savoir plus
                   </Button>
-                  <Button className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] hover:bg-[#770D28]/90">
+                  <Button 
+                    className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] hover:bg-[#770D28]/90"
+                    onClick={() => window.location.href = '/nous-contacter'}
+                  >
                     Demandez une démo
                   </Button>
                 </div>
@@ -224,10 +228,14 @@ export function SolutionsSection() {
                 <Button
                   variant="outline"
                   className="border border-[#770D28] text-[#770D28] rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] hover:bg-[#770D28] hover:text-white bg-transparent"
+                  onClick={() => window.location.href = '/lahalex-avocat'}
                 >
                   En savoir plus
                 </Button>
-                <Button className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] hover:bg-[#770D28]/90">
+                <Button 
+                  className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] hover:bg-[#770D28]/90"
+                  onClick={() => window.location.href = '/nous-contacter'}
+                >
                   Demandez une démo
                 </Button>
               </div>
@@ -303,10 +311,14 @@ export function SolutionsSection() {
                 <Button
                   variant="outline"
                   className="border border-[#770D28] text-[#770D28] rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28] hover:text-white bg-transparent"
+                  onClick={() => window.location.href = '/lahalex-notaire'}
                 >
                   En savoir plus
                 </Button>
-                <Button className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90">
+                <Button 
+                  className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90"
+                  onClick={() => window.location.href = '/nous-contacter'}
+                >
                   Demandez une démo
                 </Button>
               </div>
@@ -377,10 +389,14 @@ export function SolutionsSection() {
                 <Button
                   variant="outline"
                   className="border border-[#770D28] text-[#770D28] rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28] hover:text-white bg-transparent"
+                  onClick={() => window.location.href = '/lahalex-commissaire-justice'}
                 >
                   En savoir plus
                 </Button>
-                <Button className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90">
+                <Button 
+                  className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90"
+                  onClick={() => window.location.href = '/nous-contacter'}
+                >
                   Demandez une démo
                 </Button>
               </div>
