@@ -155,12 +155,9 @@ export default function LahalexUniverselPage() {
 
             {/* Right Column - Video */}
             <div className="order-1 lg:order-2 flex justify-center items-center">
-              <video
-                src="/videos/lahalex-universel.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
+              <img
+                src="/gif/lahalex-universel.gif"
+                alt="LahaLex Universel"
                 className="hero-image h-64 sm:h-80 lg:h-96 w-auto object-contain"
               />
             </div>
