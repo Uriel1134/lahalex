@@ -37,6 +37,7 @@ export function Footer() {
               <p>+33 614 972 046</p>
               <p>+229 015 599 0000</p>
               <p className="underline">contact@lahalex.com</p>
+              <p>Du lundi au samedi,<br/>de 9h à 18h</p>
             </div>
           </div>
 
