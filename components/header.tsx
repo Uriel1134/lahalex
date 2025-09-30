@@ -141,7 +141,7 @@ export function Header() {
 
   return (
     <>
-      <header ref={headerRef} className="absolute top-0 left-0 right-0 z-30 w-full h-[79px] bg-transparent">
+      <header ref={headerRef} className="absolute top-0 left-0 right-0 z-30 w-full h-[79px] bg-transparent border-t-5 border-white">
         {/* Bloc central (desktop/tablette) */}
 <div className="relative hidden sm:flex justify-center items-start">
   {/* Bloc central blanc */}
@@ -162,10 +162,22 @@ export function Header() {
 
 
         {/* Left decorative element (desktop/tablette) */}
-        <div className="hidden sm:block absolute left-0 top-0 w-[137px] h-[76px] bg-white rounded-br-[38px]" />
+        <Image
+          src="/images/border-hamburger-1.png"
+          alt="Border decoration"
+          width={210}
+          height={100}
+          className="hidden sm:block absolute -left-4 -top-4"
+        />
 
         {/* Right decorative element (desktop/tablette) */}
-        <div className="hidden sm:block absolute right-0 top-0 w-[162px] h-[76px] bg-white rounded-bl-[38px]" />
+        <Image
+          src="/images/connexion-background.png"
+          alt="Connexion background"
+          width={210}
+          height={100}
+          className="hidden sm:block absolute right-2 top-0"
+        />
 
         {/* Navigation content */}
         {/* Mobile: icône gauche, logo centré, bouton connexion droit */}
