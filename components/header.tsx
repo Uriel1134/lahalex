@@ -172,11 +172,11 @@ export function Header() {
 
         {/* Right decorative element (desktop/tablette) */}
         <Image
-          src="/images/connexion-background.png"
+          src="/images/bg-header-1.png"
           alt="Connexion background"
           width={210}
           height={100}
-          className="hidden sm:block absolute right-2 top-0"
+          className="hidden sm:block absolute right-0 -top-5"
         />
 
         {/* Navigation content */}

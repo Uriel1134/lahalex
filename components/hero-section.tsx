@@ -5,7 +5,7 @@ import { Counter } from "./counter"
 export function HeroSection() {
   return (
     <section
-      className="relative w-full min-h-screen h-screen overflow-hidden bg-[#770D28] border-l-2 border-r-2 border-white"
+      className="relative w-full min-h-screen h-screen overflow-hidden bg-[#770D28] border-white"
     >
       {/* Aurora mesh SVG */}
       <svg
