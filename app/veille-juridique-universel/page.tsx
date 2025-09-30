@@ -157,33 +157,32 @@ export default function VeilleJuridiquePage() {
                 href="/essai-gratuit"
                 className="veille-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Essai gratuit
+                Demandez un devis
               </a>
             </div>
           </section>
 
-           {/* Description avec image */}
+           {/* Description avec images */}
            <section className="mb-12">
-             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-0 lg:gap-0 items-center">
-               {/* Image - visible en premier sur mobile */}
-               <div className="veille-image aspect-video overflow-hidden min-h-[300px] sm:min-h-[350px] lg:min-h-[500px] lg:-ml-16 order-1 lg:order-2 w-full flex justify-center lg:justify-start mb-8 lg:mb-0">
-                 <div className="w-full max-w-md lg:max-w-none">
-                   <Image
-                     src="/images/veille-juridique-2.png"
-                     alt="Interface veille juridique"
-                     width={1000}
-                     height={600}
-                     className="w-full h-full object-contain"
-                     style={{
-                       filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                       borderRadius: '12px'
-                     }}
-                   />
-                 </div>
+             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center">
+               {/* Image 1 */}
+               <div className="veille-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
+                 <Image
+                   src="/images/veille-juridique-2.png"
+                   alt="Interface veille juridique"
+                   width={600}
+                   height={600}
+                   className="w-full h-full object-contain"
+                   style={{
+                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                     borderRadius: '12px'
+                   }}
+                 />
                </div>
-               {/* Texte - visible en second sur mobile */}
-               <div className="order-2 lg:order-1">
-                 <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left lg:text-justify" style={{ textAlignLast: 'left' }}>
+               
+               {/* Texte au milieu */}
+               <div className="lg:order-2 flex items-center">
+                 <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
                    Notre veille juridique est un dispositif structuré de
                    surveillance, de collecte, d&apos;analyse et de diffusion continue
                    d&apos;informations législatives, réglementaires et
@@ -196,9 +195,24 @@ export default function VeilleJuridiquePage() {
                    pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
                    un environnement juridique qui change chaque jour, prendre du
                    retard sur l&apos;information peut coûter cher. Notre veille
-                   juridique spécialisée veille pour vous 24h/24 et vous alerte dès
+                   juridique spécialisée veille pour vous <strong> 24h/24</strong> et vous alerte dès
                    qu&apos;une nouveauté mérite votre attention.
                  </p>
+               </div>
+
+               {/* Image 2 */}
+               <div className="veille-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden lg:order-3">
+                 <Image
+                   src="/images/veille-juridique-02.png"
+                   alt="Fonctionnalités veille juridique"
+                   width={600}
+                   height={600}
+                   className="w-full h-full object-contain"
+                   style={{
+                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                     borderRadius: '12px'
+                   }}
+                 />
                </div>
              </div>
            </section>
@@ -206,7 +220,7 @@ export default function VeilleJuridiquePage() {
           {/* Avantages */}
           <section>
             <h2 className="font-gobold text-2xl sm:text-3xl text-[#770D28] mb-8">
-              Avantages dans notre bibliothèque numérique
+              Avantages dans notre veille juridique
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[

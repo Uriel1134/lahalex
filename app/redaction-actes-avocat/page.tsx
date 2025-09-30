@@ -168,7 +168,7 @@ export default function RedactionActesPage() {
               href="/essai-gratuit"
               className="redaction-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
             >
-              Essai gratuit
+              Demandez un devis
             </a>
           </div>
 
@@ -224,7 +224,7 @@ export default function RedactionActesPage() {
                 },
               ].map((item, i) => (
                 <div key={i} className="content-item flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#770D28] rounded-full flex items-center justify-center mt-1">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="none"

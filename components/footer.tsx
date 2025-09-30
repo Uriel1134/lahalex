@@ -35,7 +35,7 @@ export function Footer() {
             </h4>
             <div className="space-y-2 text-sm font-sf-pro">
               <p>+33 614 972 046</p>
-              <p>+229 015 599 000</p>
+              <p>+229 015 599 0000</p>
               <p className="underline">contact@lahalex.com</p>
             </div>
           </div>

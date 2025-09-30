@@ -168,19 +168,19 @@ export default function CommissaireJusticePage() {
               href="/essai-gratuit"
               className="gestion-commissaire-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
             >
-              Essai gratuit
+              Demandez un devis
             </a>
           </section>
 
           {/* Images */}
           <section className="mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="gestion-commissaire-image aspect-video overflow-hidden">
+              <div className="gestion-commissaire-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
                 <Image
                   src="/images/gestion-etude-commissaire.png"
                   alt="Gestion étude commissaire"
-                  width={400}
-                  height={225}
+                  width={600}
+                  height={600}
                   className="gestion-commissaire-image w-full h-full object-contain"
                   style={{
                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -188,12 +188,12 @@ export default function CommissaireJusticePage() {
                   }}
                 />
               </div>
-              <div className="gestion-commissaire-image aspect-video overflow-hidden">
+              <div className="gestion-commissaire-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
                 <Image
                   src="/images/gestion-etude-commissaire-2.png"
                   alt="Interface gestion étude"
-                  width={400}
-                  height={225}
+                  width={600}
+                  height={600}
                   className="gestion-commissaire-image w-full h-full object-contain"
                   style={{
                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -201,12 +201,12 @@ export default function CommissaireJusticePage() {
                   }}
                 />
               </div>
-              <div className="gestion-commissaire-image aspect-video overflow-hidden">
+              <div className="gestion-commissaire-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
                 <Image
                   src="/images/gestion-etude-commissaire-3.png"
                   alt="Tableau de bord commissaire"
-                  width={400}
-                  height={225}
+                  width={600}
+                  height={600}
                   className="gestion-commissaire-image w-full h-full object-contain"
                   style={{
                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -255,7 +255,7 @@ export default function CommissaireJusticePage() {
               ].map((item, i) => (
                 <div key={i} className="content-item flex items-start space-x-3">
                   {/* Icône check */}
-                  <div className="flex-shrink-0 w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#770D28] rounded-full flex items-center justify-center mt-1">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="none"

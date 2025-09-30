@@ -149,7 +149,7 @@ export default function LahalexAvocatPage() {
                 href="/essai-gratuit"
                 className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
               >
-                Essaie gratuit
+                Demandez un devis
               </a>
             </div>
 

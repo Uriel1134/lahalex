@@ -164,87 +164,98 @@ export default function RecherchePage() {
                 href="/essai-gratuit"
                 className="recherche-button inline-block bg-[#770D28] text-white px-8 py-4 rounded-lg hover:bg-[#5a0a1e] transition-all duration-300 font-sf-pro text-xl font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                Essai gratuit
+                Demandez un devis
               </a>
             </div>
 
-            {/* Image principale */}
-            <div className="recherche-image w-full h-[300px] sm:h-[400px] lg:h-[522px] mb-16 overflow-hidden">
-              <Image
-                src="/images/recherche-juridique.png"
-                alt="Recherche juridique avancée"
-                width={800}
-                height={522}
-                className="w-full h-full object-contain"
-                style={{
-                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                  borderRadius: '12px'
-                }}
-              />
+            {/* Trois images en haut */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+              <div className="recherche-image aspect-video overflow-hidden">
+                <Image
+                  src="/images/recherche-juridique.png"
+                  alt="Recherche juridique avancée"
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                    borderRadius: '12px'
+                  }}
+                />
+              </div>
+              <div className="recherche-image aspect-video overflow-hidden">
+                <Image
+                  src="/images/recherche-juridique-2.png"
+                  alt="Interface de recherche juridique"
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                    borderRadius: '12px'
+                  }}
+                />
+              </div>
+              <div className="recherche-image aspect-video overflow-hidden">
+                <Image
+                  src="/images/recherche-juridique-3.png"
+                  alt="Fonctionnalités de recherche"
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                    borderRadius: '12px'
+                  }}
+                />
+              </div>
             </div>
 
-            <div ref={contentRef} className="grid lg:grid-cols-2 gap-16 items-start">
-              {/* Texte + image */}
-              <div className="space-y-8">
-                <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro">
-                  Notre outil de recherche juridique avancée permet d'exploiter
-                  de façon structurée et intelligente un vaste ensemble de
-                  contenus juridiques tels que la législation, la jurisprudence,
-                  la doctrine ou encore l'actualité. Grâce à des technologies
-                  performantes, il offre des résultats ciblés, précis et
-                  hiérarchisés.
-                </p>
-
-                  <div className="recherche-image w-full h-[250px] sm:h-[300px] lg:h-[371px] overflow-hidden">
-                  <Image
-                    src="/images/recherche-juridique-2.png"
-                    alt="Interface de recherche juridique"
-                    width={600}
-                    height={371}
-                    className="w-full h-full object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                      borderRadius: '12px'
-                    }}
-                  />
-                </div>
-              </div>
+            <div ref={contentRef} className="space-y-8">
+              <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
+                Notre outil de recherche juridique avancée permet d'exploiter
+                de façon structurée et intelligente un vaste ensemble de
+                contenus juridiques tels que la législation, la jurisprudence,
+                la doctrine ou encore l'actualité. Grâce à des technologies
+                performantes, il offre des résultats ciblés, précis et
+                hiérarchisés.
+              </p>
 
               {/* Avantages */}
               <div className="space-y-16 relative">
- {/* Ligne verticale décorative */}
-  <div className="absolute left-4 top-0 bottom-0 w-px bg-[#770D28]" />
+                {/* Ligne verticale décorative */}
+                <div className="absolute left-4 top-0 bottom-0 w-px bg-[#770D28]" />
 
-  {/* Bloc 1 */}
-  <div className="flex items-start space-x-6">
-    <div className="flex-shrink-0 relative z-10">
-      <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
-        <div className="w-4 h-4 bg-[#770D28] rounded-full"></div>
-      </div>
-    </div>
-    <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro pt-3">
-      Des filtres multicritères, une interface intuitive et des
-      fonctionnalités de tri facilitent l'accès rapide aux
-      informations les plus pertinentes, constamment mises à jour
-      et directement exploitables dans la pratique professionnelle.
-    </p>
-  </div>
+                {/* Bloc 1 */}
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0 relative z-10">
+                    <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
+                      <div className="w-4 h-4 bg-[#770D28] rounded-full"></div>
+                    </div>
+                  </div>
+                  <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
+                    Des filtres multicritères, une interface intuitive et des
+                    fonctionnalités de tri facilitent l'accès rapide aux
+                    informations les plus pertinentes, constamment mises à jour
+                    et directement exploitables dans la pratique professionnelle.
+                  </p>
+                </div>
 
-  {/* Bloc 2 */}
-  <div className="flex items-start space-x-6 mt-8">
-    <div className="flex-shrink-0 relative z-10">
-      <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
-        <div className="w-4 h-4 bg-[#770D28] rounded-full"></div>
-      </div>
-    </div>
-    <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro pt-3">
-      LAHALEX centralise tout :<br />
-      • derniers textes et jurisprudences en temps réel <br />
-      • pertinence et précision <br />
-      • mise à jour en temps réel <br />
-      • gain de temps considérable
-    </p>
-  </div>
+                {/* Bloc 2 */}
+                <div className="flex items-start space-x-6 mt-8">
+                  <div className="flex-shrink-0 relative z-10">
+                    <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
+                      <div className="w-4 h-4 bg-[#770D28] rounded-full"></div>
+                    </div>
+                  </div>
+                  <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
+                    LAHALEX centralise tout :<br />
+                    • derniers textes et jurisprudences <br />
+                    • pertinence et précision <br />
+                    • mise à jour en temps réel <br />
+                    • gain de temps considérable
+                  </p>
+                </div>
               </div>
             </div>
           </div>

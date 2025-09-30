@@ -169,31 +169,18 @@ export default function NotairePage() {
               href="/essai-gratuit"
               className="gestion-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
             >
-              Essai gratuit
+              Demandez un devis
             </a>
           </div>
 
           {/* Images */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="gestion-image h-64 overflow-hidden">
-              <Image
-                src="/images/gestion-office-notaire.png"
-                alt="Gestion office notaire"
-                width={400}
-                height={256}
-                className="gestion-image w-full h-full object-contain"
-                style={{
-                  filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                  borderRadius: '12px'
-                }}
-              />
-            </div>
-            <div className="gestion-image h-64 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div className="gestion-image aspect-video overflow-hidden">
               <Image
                 src="/images/gestion-office-notaire-2.png"
                 alt="Interface gestion office"
-                width={400}
-                height={256}
+                width={600}
+                height={400}
                 className="gestion-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -201,12 +188,12 @@ export default function NotairePage() {
                 }}
               />
             </div>
-            <div className="gestion-image h-64 overflow-hidden">
+            <div className="gestion-image aspect-video overflow-hidden">
               <Image
                 src="/images/gestion-office-notaire-3.png"
                 alt="Tableau de bord office"
-                width={400}
-                height={256}
+                width={600}
+                height={400}
                 className="gestion-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -258,7 +245,7 @@ export default function NotairePage() {
               ].map((item, i) => (
                 <div key={i} className="content-item flex items-start space-x-3">
                   {/* Icône check */}
-                  <div className="flex-shrink-0 w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#770D28] rounded-full flex items-center justify-center mt-1">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="none"

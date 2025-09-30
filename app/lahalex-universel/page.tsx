@@ -149,18 +149,15 @@ export default function LahalexUniverselPage() {
                 className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
                 onClick={() => (window.location.href = "/essai-gratuit")}
               >
-                Essaie gratuit
+                Demandez un devis
               </button>
             </div>
 
             {/* Right Column - Video */}
             <div className="order-1 lg:order-2 flex justify-center items-center">
-              <video
-                src="/videos/lahalex.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
+              <img
+                src="/images/lahalex-universel-2.png"
+                alt="LahaLex Universel"
                 className="hero-image h-64 sm:h-80 lg:h-96 w-auto object-contain"
               />
             </div>

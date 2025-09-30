@@ -162,7 +162,7 @@ export default function BibliothequePage() {
               href="/essai-gratuit"
               className="bibliotheque-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              Essai gratuit
+              Demandez un devis
             </a>
           </div>
         </div>
@@ -187,13 +187,12 @@ export default function BibliothequePage() {
 
             {/* Texte au milieu */}
             <div ref={contentRef} className="lg:order-2">
-              <p className="content-item text-gray-700 text-lg leading-relaxed text-center lg:text-left">
+              <p className="content-item text-gray-700 text-lg leading-relaxed text-left sm:text-justify">
                 Notre bibliothèque numérique est une plateforme en ligne dédiée à la
                 consultation d&apos;un vaste ensemble d&apos;ouvrages et de documents en
-                version numérique de diverses matières avec plus de 500.000 livres
-                disponibles. Elle permet un accès structuré et permanent à une large
+                version numérique de diverses matières avec plus de <strong>500.000 livres</strong> disponibles. Elle permet un accès structuré et permanent à une large
                 collection de resources documentaires, accessibles à tout moment
-                depuis un ordinateur, une tablette ou un smartphone. L&apos;ensemble
+                depuis un ordinateur, une tablette ou un smartphone. Lapos;ensemble
                 de ces contenus est en accès libre et gratuit une fois votre
                 abonnement souscrit.
               </p>

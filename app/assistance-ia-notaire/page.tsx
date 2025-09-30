@@ -165,7 +165,7 @@ export default function NotairePage() {
             href="/essai-gratuit"
             className="assistance-notaire-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
           >
-            Essai gratuit
+            Demandez un devis
           </a>
         </section>
 
@@ -192,28 +192,20 @@ export default function NotairePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                title: "Bibliothèque complète des actes notariaux",
-                desc: "Accédez à plus de 100 actes types régulièrement actualisés (vente, succession, donation, création de SCI, etc.).",
+                title: "Création intelligente de dossiers, contacts, et suivi des actes",
+                desc: "L'IA génère automatiquement vos dossiers clients, organise vos contacts et assure un suivi complet de tous vos actes notariaux.",
               },
               {
-                title: "Personnalisation complète",
-                desc: "Ajoutez le logo de l'office, vos styles d'écriture, vos formules spécifiques, pour un rendu soigné et fidèle à votre pratique.",
+                title: "Automatisation des délais, rappels et formalités préalables",
+                desc: "Plus jamais d'oubli ! L'assistant IA calcule automatiquement les délais légaux, envoie des rappels et gère toutes les formalités préalables.",
               },
               {
-                title: "Classement intelligent",
-                desc: "Trouvez immédiatement le bon modèle en fonction de l'opération envisagée et des parties impliquées (indivision, société, mineur, usufruitier...).",
-              },
-              {
-                title: "Importation de vos modèles internes",
-                desc: "Conservez votre savoir-faire : ajoutez vos propres trames, clauses et configurations rédactionnelles.",
-              },
-              {
-                title: "Remplissage automatique des actes",
-                desc: "Les données sont extraites de la fiche client et du dossier pour générer automatiquement les clauses essentielles : fini les ressaisies !",
+                title: "Dictée vocale & commandes intelligentes pour un gain de temps immédiat",
+                desc: "Dictez vos actes directement, utilisez des commandes vocales intelligentes et gagnez un temps précieux dans votre pratique quotidienne.",
               },
             ].map((item, i) => (
               <div key={i} className="content-item flex items-start space-x-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-1">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#770D28] rounded-full flex items-center justify-center mt-1">
                   <svg
                     className="w-4 h-4 text-white"
                     fill="none"
