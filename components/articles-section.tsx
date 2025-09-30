@@ -114,11 +114,11 @@ export function ArticlesSection() {
                         </p>
                       </div>
                     </div>
-                    <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-[80px] sm:w-[93px] h-[40px] sm:h-[50px] bg-[#770D28] rounded-[5px] flex items-center justify-center">
+                    <a href="/lahalex-universel" className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-[80px] sm:w-[93px] h-[40px] sm:h-[50px] bg-[#770D28] rounded-[5px] flex items-center justify-center hover:bg-[#5a0a1f] transition-colors">
                       <span className="text-white text-[16px] sm:text-[18px] md:text-[20px] font-medium">
                         Lire
                       </span>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </article>

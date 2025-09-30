@@ -244,13 +244,6 @@ export default function DevenirAuteurForm() {
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold text-lg mb-2 text-gray-900">Contribuez à l'évolution du droit africain</h3>
-                  <p className="text-base leading-relaxed">
-                    En publiant vos analyses, vous participez activement à l'évolution du droit africain, influençant
-                    les débats juridiques et les réformes en cours.
-                  </p>
-                </div>
 
               </div>
             </section>
