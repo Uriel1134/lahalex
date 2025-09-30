@@ -266,12 +266,12 @@ export default function DevenirAuteurForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="prenom">Prénoms</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="prenom">Prénom</label>
                   <input
                     id="prenom"
                     type="text"
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#770D28] focus:border-transparent transition-all"
-                    placeholder="Vos prénoms"
+                    placeholder="Prénom"
                   />
                 </div>
 
