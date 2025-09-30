@@ -163,11 +163,11 @@ export function Header() {
 
         {/* Left decorative element (desktop/tablette) */}
         <Image
-          src="/images/border-hamburger-1.png"
+          src="/images/bg-header.jpg"
           alt="Border decoration"
           width={210}
           height={100}
-          className="hidden sm:block absolute -left-4 -top-4"
+          className="hidden sm:block absolute -left-1 -top-4"
         />
 
         {/* Right decorative element (desktop/tablette) */}
