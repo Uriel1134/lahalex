@@ -158,12 +158,20 @@ export default function BibliothequePage() {
             <h1 ref={titleRef} className="bibliotheque-title font-gobold text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
               Bibliothèque numérique
             </h1>
-            <a
-              href="/essai-gratuit"
-              className="bibliotheque-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Demandez un devis
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/essai-gratuit"
+                className="bibliotheque-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                Demandez un devis
+              </a>
+              <a
+                href="/nous-contacter"
+                className="bibliotheque-button inline-block border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                Demandez une démonstration
+              </a>
+            </div>
           </div>
         </div>
 

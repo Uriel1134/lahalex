@@ -161,12 +161,20 @@ export default function NotairePage() {
             notre logiciel. Déléguez les tâches répétitives et concentrez-vous sur
             ce qui compte.
           </p>
-          <a
-            href="/essai-gratuit"
-            className="assistance-notaire-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-          >
-            Demandez un devis
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/essai-gratuit"
+              className="assistance-notaire-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+            >
+              Demandez un devis
+            </a>
+            <a
+              href="/nous-contacter"
+              className="assistance-notaire-button inline-block border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-colors"
+            >
+              Demandez une démonstration
+            </a>
+          </div>
         </section>
 
         {/* Image */}

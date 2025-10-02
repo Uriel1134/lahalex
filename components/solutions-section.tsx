@@ -207,21 +207,21 @@ export function SolutionsSection() {
               </h3>
 
               <p className="text-black text-[13px] sm:text-[14px] md:text-[15px] leading-[20px] sm:leading-[24px] md:leading-[30px] mb-6 md:mb-8">
-               Gestion complète du cabinet : dossiers,
+               <strong>Gestion complète du cabinet: </strong> dossiers,
                 clients, facturation, finance.
                 <br />
-                Base de données intelligente : clients,
+                <strong>Base de données intelligente : </strong>clients,
                 magistrats, adversaires, prestataires.
                 <br />
-               Facturation intégrée : factures personnalisées,
+               <strong>Facturation intégrée : </strong> factures personnalisées,
                 suivi des paiements, relances automatiques.
                 <br />
-                Alertes d'information sur le métier d'avocat.
+                Alertes d'information sur le métier d'avocat
                 <br />
-                <strong>
-                  Bibliothèque de +1000 modèles d'actes conformes et
+                
+                  Bibliothèque de <strong>+1000 modèles d'actes conformes</strong> et
                   régulièrement actualisés.
-                </strong>
+                
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">

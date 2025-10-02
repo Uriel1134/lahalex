@@ -159,12 +159,18 @@ export default function RecherchePage() {
               Recherche juridique avancée
             </h1>
 
-            <div className="mb-12">
+            <div className="mb-12 flex flex-col sm:flex-row gap-4">
               <a
                 href="/essai-gratuit"
                 className="recherche-button inline-block bg-[#770D28] text-white px-8 py-4 rounded-lg hover:bg-[#5a0a1e] transition-all duration-300 font-sf-pro text-xl font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Demandez un devis
+              </a>
+              <a
+                href="/nous-contacter"
+                className="recherche-button inline-block border-2 border-[#770D28] text-[#770D28] px-8 py-4 rounded-lg hover:bg-[#770D28] hover:text-white transition-all duration-300 font-sf-pro text-xl font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Demandez une démonstration
               </a>
             </div>
 
@@ -212,14 +218,6 @@ export default function RecherchePage() {
             </div>
 
             <div ref={contentRef} className="space-y-8">
-              <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
-                  Notre outil de recherche juridique avancée permet d'exploiter
-                  de façon structurée et intelligente un vaste ensemble de
-                  contenus juridiques tels que la législation, la jurisprudence,
-                  la doctrine ou encore l'actualité. Grâce à des technologies
-                  performantes, il offre des résultats ciblés, précis et
-                  hiérarchisés.
-                </p>
 
               {/* Avantages */}
               <div className="space-y-16 relative">
@@ -234,10 +232,12 @@ export default function RecherchePage() {
       </div>
     </div>
                   <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
-      Des filtres multicritères, une interface intuitive et des
-      fonctionnalités de tri facilitent l'accès rapide aux
-      informations les plus pertinentes, constamment mises à jour
-      et directement exploitables dans la pratique professionnelle.
+                  Notre outil de recherche juridique avancée permet d'exploiter
+                  de façon structurée et intelligente un vaste ensemble de
+                  contenus juridiques tels que la législation, la jurisprudence,
+                  la doctrine ou encore l'actualité. Grâce à des technologies
+                  performantes, il offre des résultats ciblés, précis et
+                  hiérarchisés.
     </p>
   </div>
 
@@ -249,11 +249,10 @@ export default function RecherchePage() {
       </div>
     </div>
                   <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
-      LAHALEX centralise tout :<br />
-                    • derniers textes et jurisprudences <br />
-      • pertinence et précision <br />
-      • mise à jour en temps réel <br />
-      • gain de temps considérable
+                  Des filtres multicritères, une interface intuitive et des
+      fonctionnalités de tri facilitent l'accès rapide aux
+      informations les plus pertinentes, constamment mises à jour
+      et directement exploitables dans la pratique professionnelle.
     </p>
   </div>
               </div>

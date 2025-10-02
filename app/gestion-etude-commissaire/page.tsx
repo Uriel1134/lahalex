@@ -164,12 +164,20 @@ export default function CommissaireJusticePage() {
               Prenez une longueur d&apos;avance. Pilotez votre étude en toute
               simplicité avec une technologie pensée pour votre quotidien.
             </p>
-            <a
-              href="/essai-gratuit"
-              className="gestion-commissaire-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-            >
-              Demandez un devis
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/essai-gratuit"
+                className="gestion-commissaire-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+              >
+                Demandez un devis
+              </a>
+              <a
+                href="/nous-contacter"
+                className="gestion-commissaire-button border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-colors"
+              >
+                Demandez une démonstration
+              </a>
+            </div>
           </section>
 
           {/* Images */}

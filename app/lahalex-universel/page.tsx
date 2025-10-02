@@ -145,12 +145,20 @@ export default function LahalexUniverselPage() {
                 privées, universités, notaires, avocats, commissaires de justice et tous les praticiens du droit,
                 LahaLex Universel vous donne un accès simplifié, intelligent et innovant à l'information juridique.
               </p>
-              <button
-                className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-                onClick={() => (window.location.href = "/essai-gratuit")}
-              >
-                Demandez un devis
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+                  onClick={() => (window.location.href = "/essai-gratuit")}
+                >
+                  Demandez un devis
+                </button>
+                <button
+                  className="hero-button border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-colors"
+                  onClick={() => (window.location.href = "/nous-contacter")}
+                >
+                  Demandez une démonstration
+                </button>
+              </div>
             </div>
 
             {/* Right Column - Video */}

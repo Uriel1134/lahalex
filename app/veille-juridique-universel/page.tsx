@@ -153,12 +153,20 @@ export default function VeilleJuridiquePage() {
                 <h1 ref={titleRef} className="veille-title font-gobold text-3xl sm:text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
                   Veille juridique
                 </h1>
-                <a
-                  href="/essai-gratuit"
-                  className="veille-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                Demandez un devis
-              </a>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="/essai-gratuit"
+                    className="veille-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    Demandez un devis
+                  </a>
+                  <a
+                    href="/nous-contacter"
+                    className="veille-button inline-block border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    Demandez une démonstration
+                  </a>
+                </div>
             </div>
           </section>
 
@@ -184,18 +192,18 @@ export default function VeilleJuridiquePage() {
                <div className="lg:order-2 flex items-center">
                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
               Notre veille juridique est un dispositif structuré de
-              surveillance, de collecte, d&apos;analyse et de diffusion continue
+              <strong> surveillance</strong>, de collecte, d&apos;analyse et de diffusion continue
               d&apos;informations législatives, réglementaires et
-              jurisprudentielles. Restez informé de l&apos;actualité dans tous
-              les domaines juridiques grâce à notre service alimenté chaque jour
-              par nos experts. Interface intuitive adaptée à tous vos écrans,
+              jurisprudentielles. Restez informé de l&apos;actualité dans <strong>tous
+              les domaines juridiques </strong> grâce à notre service alimenté chaque jour
+              par nos experts. Interface intuitive adaptée à <strong> tous vos écrans</strong>,
               notifications ciblées sur vos centres d&apos;intérêt, et outils
               pratiques pour traiter l&apos;information efficacement. LahaLex
               simplifie votre quotidien pour que vous puissiez vous consacrer
               pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
               un environnement juridique qui change chaque jour, prendre du
               retard sur l&apos;information peut coûter cher. Notre veille
-                   juridique spécialisée veille pour vous <strong> 24h/24</strong> et vous alerte dès
+                   juridique spécialisée veille pour vous <strong> 24h/24</strong> et vous<strong> alerte dès</strong>
               qu&apos;une nouveauté mérite votre attention.
             </p>
                </div>

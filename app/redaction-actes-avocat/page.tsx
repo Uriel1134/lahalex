@@ -164,12 +164,20 @@ export default function RedactionActesPage() {
               création d'actes juridiques en une expérience fluide, intelligente
               et sur mesure.
             </p>
-            <a
-              href="/essai-gratuit"
-              className="redaction-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-            >
-              Demandez un devis
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/essai-gratuit"
+                className="redaction-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+              >
+                Demandez un devis
+              </a>
+              <a
+                href="/nous-contacter"
+                className="redaction-button border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-colors"
+              >
+                Demandez une démonstration
+              </a>
+            </div>
           </div>
 
           {/* Illustrations */}
@@ -198,7 +206,7 @@ export default function RedactionActesPage() {
               {[
                 {
                   title:
-                    "Accès à une bibliothèque de plus de 800 modèles juridiques",
+                    "Accès à une bibliothèque de plus de 1000 modèles juridiques",
                   desc: "",
                 },
                 {

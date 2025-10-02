@@ -6,11 +6,81 @@ import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap"
 
+// Structure du menu VOS BESOINS avec routes spécifiques vers les sous-rubriques
+const vosBesoinsMenu = [
+  {
+    title: "Recherche documentaire",
+    submenu: [
+      { title: "Lahalex Universel", href: "/recherche-juridique-universel" }
+    ]
+  },
+  {
+    title: "Veille juridique", 
+    submenu: [
+      { title: "Lahalex Universel", href: "/veille-juridique-universel" }
+    ]
+  },
+  {
+    title: "Rencontres juridiques",
+    submenu: [
+      { title: "Lahalex Universel", href: "/autres-outils-universel" }
+    ]
+  },
+  {
+    title: "Bibliothèque",
+    submenu: [
+      { title: "Lahalex Universel", href: "/bibliotheque-numerique-universel" }
+    ]
+  },
+  {
+    title: "Rédaction d'actes",
+    submenu: [
+      { title: "Lahalex Avocat", href: "/redaction-actes-avocat" },
+      { title: "Lahalex Notaire", href: "/redaction-actes-notaire" },
+      { title: "Lahalex Commissaire de justice", href: "/redaction-actes-commissaire" }
+    ]
+  },
+  {
+    title: "Gestion des clients/collaborateurs", 
+    submenu: [
+      { title: "Lahalex Avocat", href: "/gestion-cabinet-avocat" },
+      { title: "Lahalex Notaire", href: "/gestion-office-notaire" },
+      { title: "Lahalex Commissaire de justice", href: "/gestion-etude-commissaire" }
+    ]
+  },
+  {
+    title: "Gestion de cabinet",
+    submenu: [
+      { title: "Lahalex Avocat", href: "/gestion-cabinet-avocat" }
+    ]
+  },
+  {
+    title: "Gestion de l'office",
+    submenu: [
+      { title: "Lahalex Notaire", href: "/gestion-office-notaire" }
+    ]
+  },
+  {
+    title: "Gestion de l'étude", 
+    submenu: [
+      { title: "Lahalex Commissaire de justice", href: "/gestion-etude-commissaire" }
+    ]
+  },
+  {
+    title: "Solutions personnalisées",
+    submenu: [
+      { title: "Nous contacter", href: "/nous-contacter" }
+    ]
+  }
+];
+
 export function Header() {
   const headerRef = useRef<HTMLElement>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
+  const [vosBesoinsOpen, setVosBesoinsOpen] = useState(false)
+  const [activeBesoin, setActiveBesoin] = useState<string | null>(null)
 
   useEffect(() => {
     if (typeof window === "undefined") return
@@ -257,35 +327,115 @@ export function Header() {
                 <button className="flex items-center gap-1 text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
                   <span>Nos solutions</span>
                 </button>
-                      <div className="absolute top-full left-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2">
-                  <Link
-                    href="/lahalex-universel"
-                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                  >
-                    Lahalex Universel
-                  </Link>
-                  <Link
-                    href="/lahalex-avocat"
-                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                  >
-                    Lahalex Avocat
-                  </Link>
-                  <Link
-                    href="/lahalex-notaire"
-                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                  >
-                    Lahalex Notaire
-                  </Link>
-                  <Link
-                    href="/lahalex-commissaire-justice"
-                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                  >
-                    Lahalex Commissaire de justice
-                  </Link>
+                <div className="absolute top-full left-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <Link
+                      href="/lahalex-universel"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    >
+                      Lahalex Universel
+                    </Link>
+                    <Link
+                      href="/lahalex-avocat"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    >
+                      Lahalex Avocat
+                    </Link>
+                    <Link
+                      href="/lahalex-notaire"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    >
+                      Lahalex Notaire
+                    </Link>
+                    <Link
+                      href="/lahalex-commissaire-justice"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    >
+                      Lahalex Commissaire de justice
+                    </Link>
+                  </div>
                 </div>
               </div>
+              
+              {/* Menu VOS BESOINS */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setVosBesoinsOpen(true)}
+                onMouseLeave={() => {
+                  setVosBesoinsOpen(false)
+                  setActiveBesoin(null)
+                }}
+              >
+                <button className="flex items-center gap-1 text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
+                  <span>Vos besoins</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${vosBesoinsOpen ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
+                <div 
+                  className={`absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                  onMouseEnter={() => setVosBesoinsOpen(true)}
+                  onMouseLeave={() => {
+                    setVosBesoinsOpen(false)
+                    setActiveBesoin(null)
+                  }}
+                >
+                  <div className="flex">
+                    {/* Colonne gauche - Liste des besoins */}
+                    <div className="w-80 bg-white py-4">
+                      {vosBesoinsMenu.map((besoin, index) => (
+                        <div
+                          key={besoin.title}
+                          className={`px-4 py-3 cursor-pointer flex items-center justify-between hover:bg-gray-50 ${activeBesoin === besoin.title ? 'bg-gray-50 border-r-2 border-[#770D28]' : ''}`}
+                          onMouseEnter={() => setActiveBesoin(besoin.title)}
+                        >
+                          <span className="text-sm text-gray-700">
+                            {besoin.title}
+                          </span>
+                          <svg 
+                            className="w-4 h-4 text-gray-400"
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Colonne droite - Sous-menu */}
+                    {activeBesoin && (
+                      <div className="w-64 bg-gray-50 py-4 border-l border-gray-200">
+                        <div className="px-4">
+                          <h4 className="text-sm font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-300">
+                            {vosBesoinsMenu.find(b => b.title === activeBesoin)?.title}
+                          </h4>
+                          <div className="space-y-2">
+                            {vosBesoinsMenu.find(b => b.title === activeBesoin)?.submenu.map((item, index) => (
+                              <Link
+                                key={index}
+                                href={item.href}
+                                className="block px-3 py-2 text-sm text-[#770D28] hover:bg-[#770D28] hover:text-white rounded transition-colors"
+                              >
+                                {item.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
+              
               <a
                 href="paiement-abonnements"
                 className="text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
@@ -334,11 +484,11 @@ export function Header() {
               <div className="relative mobile-menu-item">
                 <button
                   onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                  className="flex items-center text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                  className="flex items-center text-white text-2xl font-bold uppercase hover:opacity-70 transition-opacity font-gobold"
                 >
                   NOS SOLUTIONS
                   <svg
-                    className={`ml-2 w-4 h-4 transition-transform ${mobileSolutionsOpen ? "rotate-180" : ""}`}
+                    className="ml-2 w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -444,7 +594,7 @@ export function Header() {
         }
 
         /* Animation du bouton de fermeture */
-        .mobile-menu-overlay button:hover {
+        .mobile-menu-overlay button[aria-label="Fermer le menu"]:hover {
           transform: scale(1.1) rotate(90deg);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
