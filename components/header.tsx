@@ -368,14 +368,6 @@ export function Header() {
               >
                 <button className="flex items-center gap-1 text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
                   <span>Vos besoins</span>
-                  <svg 
-                    className={`w-4 h-4 transition-transform duration-200 ${vosBesoinsOpen ? 'rotate-180' : ''}`}
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </button>
                 
                 {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
