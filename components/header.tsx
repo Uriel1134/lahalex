@@ -211,7 +211,7 @@ export function Header() {
 
   return (
     <>
-      <header ref={headerRef} className="absolute top-0 left-0 right-0 z-30 w-full h-[79px] bg-transparent border-white">
+      <header ref={headerRef} className="absolute top-0 left-0 right-0 z-[9998] w-full h-[79px] bg-transparent border-white">
         {/* Bloc central (desktop/tablette) */}
 <div className="relative hidden sm:flex justify-center items-start">
   {/* Bloc central blanc */}
@@ -372,7 +372,7 @@ export function Header() {
                 
                 {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
                 <div 
-                  className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                  className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-[9999] ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                   onMouseEnter={() => setVosBesoinsOpen(true)}
                   onMouseLeave={() => {
                     setVosBesoinsOpen(false)

@@ -212,7 +212,7 @@ export function Header() {
   }
 
   return (
-    <header ref={headerRef} className="shadow-sm relative z-50 bg-white">
+    <header ref={headerRef} className="shadow-sm relative z-[9998] bg-white">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left: hamburger + links */}
@@ -303,7 +303,7 @@ export function Header() {
               
               {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
               <div 
-                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-[9999] ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                 onMouseEnter={() => setVosBesoinsOpen(true)}
                 onMouseLeave={() => {
                   setVosBesoinsOpen(false)
