@@ -181,12 +181,12 @@ export default function CommissaireActesPage() {
 
           {/* Image */}
           <section className="mb-16">
-            <div className="redaction-commissaire-image aspect-video max-w-4xl mx-auto overflow-hidden">
+            <div className="redaction-commissaire-image h-[800px] sm:h-[900px] lg:h-[1000px] max-w-7xl mx-auto overflow-hidden">
               <Image
                 src="/images/redaction-actes-commissaire.png"
                 alt="Rédaction d'actes commissaire"
-                width={800}
-                height={450}
+                width={1400}
+                height={1000}
                 className="redaction-commissaire-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
