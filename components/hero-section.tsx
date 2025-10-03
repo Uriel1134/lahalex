@@ -69,7 +69,7 @@ export function HeroSection() {
         </div>
 
         {/* Flèche gauche bas */}
-        <div className="absolute bottom-[15%] md:bottom-[25%] left-0 md:left-[15%] lg:left-[18%] flex flex-col items-center">
+        <div className="absolute bottom-[16%] md:bottom-[25%] left-0 md:left-[15%] lg:left-[18%] flex flex-col items-center">
           <img 
             src="/images/fleche-gauche-bas.png" 
             alt="Flèche gauche bas" 
