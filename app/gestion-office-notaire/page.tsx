@@ -182,13 +182,13 @@ export default function NotairePage() {
           </div>
 
           {/* Images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div className="gestion-image aspect-video overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+            <div className="gestion-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
               <Image
-                src="/images/gestion-office-notaire-2.png"
+                src="/images/gestion-office-notaire.png"
                 alt="Interface gestion office"
-                width={600}
-                height={400}
+                width={1000}
+                height={800}
                 className="gestion-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -196,12 +196,12 @@ export default function NotairePage() {
                 }}
               />
             </div>
-            <div className="gestion-image aspect-video overflow-hidden">
+            <div className="gestion-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
               <Image
-                src="/images/gestion-office-notaire-3.png"
+                src="/images/gestion-office-notaire-2.png"
                 alt="Tableau de bord office"
-                width={600}
-                height={400}
+                width={1000}
+                height={800}
                 className="gestion-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
