@@ -303,7 +303,7 @@ export function Header() {
               
               {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
               <div 
-                className={`absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                 onMouseEnter={() => setVosBesoinsOpen(true)}
                 onMouseLeave={() => {
                   setVosBesoinsOpen(false)

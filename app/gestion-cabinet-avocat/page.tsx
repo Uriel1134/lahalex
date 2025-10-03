@@ -164,10 +164,10 @@ export default function AvocatPage() {
               centralisé, automatisé et conforme.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/essai-gratuit"
-                className="gestion-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-              >
+            <a
+              href="/essai-gratuit"
+              className="gestion-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+            >
                 Demandez un devis
               </a>
               <a
@@ -180,13 +180,13 @@ export default function AvocatPage() {
           </div>
 
           {/* Illustrations */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div className="gestion-image aspect-video overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+            <div className="gestion-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
               <Image
                 src="/images/gestion-cabinet-avocat.png"
                 alt="Gestion cabinet avocat"
-                width={600}
-                height={400}
+                width={1000}
+                height={800}
                 className="gestion-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -194,12 +194,12 @@ export default function AvocatPage() {
                 }}
               />
             </div>
-            <div className="gestion-image aspect-video overflow-hidden">
+            <div className="gestion-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
               <Image
                 src="/images/gestion-cabinet-avocat-2.png"
                 alt="Interface gestion cabinet"
-                width={600}
-                height={400}
+                width={1000}
+                height={800}
                 className="gestion-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',

@@ -327,34 +327,34 @@ export function Header() {
                 <button className="flex items-center gap-1 text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
                   <span>Nos solutions</span>
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <div className="py-2">
-                    <Link
-                      href="/lahalex-universel"
-                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                    >
-                      Lahalex Universel
-                    </Link>
-                    <Link
-                      href="/lahalex-avocat"
-                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                    >
-                      Lahalex Avocat
-                    </Link>
-                    <Link
-                      href="/lahalex-notaire"
-                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                    >
-                      Lahalex Notaire
-                    </Link>
-                    <Link
-                      href="/lahalex-commissaire-justice"
-                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                    >
-                      Lahalex Commissaire de justice
-                    </Link>
-                  </div>
+                      <div className="absolute top-full left-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link
+                    href="/lahalex-universel"
+                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                  >
+                    Lahalex Universel
+                  </Link>
+                  <Link
+                    href="/lahalex-avocat"
+                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                  >
+                    Lahalex Avocat
+                  </Link>
+                  <Link
+                    href="/lahalex-notaire"
+                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                  >
+                    Lahalex Notaire
+                  </Link>
+                  <Link
+                    href="/lahalex-commissaire-justice"
+                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                  >
+                    Lahalex Commissaire de justice
+                  </Link>
                 </div>
+              </div>
               </div>
               
               {/* Menu VOS BESOINS */}
@@ -372,7 +372,7 @@ export function Header() {
                 
                 {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
                 <div 
-                  className={`absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                  className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                   onMouseEnter={() => setVosBesoinsOpen(true)}
                   onMouseLeave={() => {
                     setVosBesoinsOpen(false)

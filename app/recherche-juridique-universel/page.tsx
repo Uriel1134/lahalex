@@ -174,47 +174,34 @@ export default function RecherchePage() {
               </a>
             </div>
 
-            {/* Trois images en haut */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-              <div className="recherche-image aspect-video overflow-hidden">
+            {/* Deux images agrandies */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+              <div className="recherche-image h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
               <Image
                 src="/images/recherche-juridique.png"
                 alt="Recherche juridique avancée"
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-contain"
-                  style={{
-                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                    borderRadius: '12px'
-                  }}
-                />
-              </div>
-              <div className="recherche-image aspect-video overflow-hidden">
-                <Image
-                  src="/images/recherche-juridique-2.png"
-                  alt="Interface de recherche juridique"
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-contain"
-                  style={{
-                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                    borderRadius: '12px'
-                  }}
-                />
-              </div>
-              <div className="recherche-image aspect-video overflow-hidden">
-                <Image
-                  src="/images/recherche-juridique-3.png"
-                  alt="Fonctionnalités de recherche"
-                  width={400}
-                  height={300}
+                  width={800}
+                  height={600}
                 className="w-full h-full object-contain"
                   style={{
                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
                     borderRadius: '12px'
                   }}
               />
-              </div>
+            </div>
+              <div className="recherche-image h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
+                  <Image
+                    src="/images/recherche-juridique-2.png"
+                    alt="Interface de recherche juridique"
+                  width={800}
+                  height={600}
+                    className="w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                    borderRadius: '12px'
+                  }}
+                  />
+                </div>
             </div>
 
             <div ref={contentRef} className="space-y-8">

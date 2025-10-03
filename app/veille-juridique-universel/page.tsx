@@ -170,59 +170,119 @@ export default function VeilleJuridiquePage() {
             </div>
           </section>
 
-           {/* Description avec images */}
+          {/* Section avec images et texte */}
           <section className="mb-12">
-             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center">
-               {/* Image 1 */}
-               <div className="veille-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
-                <Image
-                  src="/images/veille-juridique-2.png"
-                  alt="Interface veille juridique"
-                  width={600}
-                   height={600}
-                  className="w-full h-full object-contain"
-                   style={{
-                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                     borderRadius: '12px'
-                   }}
-                />
-              </div>
-               
-               {/* Texte au milieu */}
-               <div className="lg:order-2 flex items-center">
-                 <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
-              Notre veille juridique est un dispositif structuré de
-              <strong> surveillance</strong>, de collecte, d&apos;analyse et de diffusion continue
-              d&apos;informations législatives, réglementaires et
-              jurisprudentielles. Restez informé de l&apos;actualité dans <strong>tous
-              les domaines juridiques </strong> grâce à notre service alimenté chaque jour
-              par nos experts. Interface intuitive adaptée à <strong> tous vos écrans</strong>,
-              notifications ciblées sur vos centres d&apos;intérêt, et outils
-              pratiques pour traiter l&apos;information efficacement. LahaLex
-              simplifie votre quotidien pour que vous puissiez vous consacrer
-              pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
-              un environnement juridique qui change chaque jour, prendre du
-              retard sur l&apos;information peut coûter cher. Notre veille
-                   juridique spécialisée veille pour vous <strong> 24h/24</strong> et vous<strong> alerte dès</strong>
-              qu&apos;une nouveauté mérite votre attention.
-            </p>
-               </div>
+             {/* Mobile : image PC - texte - image téléphone */}
+             <div className="block lg:hidden">
+                <div className="mb-8">
+                  {/* Image 1 - PC */}
+                  <div className="veille-image h-[400px] sm:h-[500px] overflow-hidden">
+                    <Image
+                      src="/images/veille-juridique-2-1.png"
+                      alt="Interface veille juridique"
+                      width={800}
+                      height={800}
+                      className="w-full h-full object-contain"
+                      style={{
+                        filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                        borderRadius: '12px'
+                      }}
+                    />
+                  </div>
+                </div>
 
-               {/* Image 2 */}
-               <div className="veille-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden lg:order-3">
-                 <Image
-                   src="/images/veille-juridique-02.png"
-                   alt="Fonctionnalités veille juridique"
-                   width={600}
-                   height={600}
-                   className="w-full h-full object-contain"
-                   style={{
-                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                     borderRadius: '12px'
-                   }}
-                 />
+                {/* Texte */}
+                <div className="mb-8">
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
+                    Notre veille juridique est un dispositif structuré de
+                    <strong> surveillance</strong>, de collecte, d&apos;analyse et de diffusion continue
+                    d&apos;informations législatives, réglementaires et
+                    jurisprudentielles. Restez informé de l&apos;actualité dans <strong>tous
+                    les domaines juridiques </strong> grâce à notre service alimenté chaque jour
+                    par nos experts. Interface intuitive adaptée à <strong> tous vos écrans</strong>,
+                    notifications ciblées sur vos centres d&apos;intérêt, et outils
+                    pratiques pour traiter l&apos;information efficacement. LahaLex
+                    simplifie votre quotidien pour que vous puissiez vous consacrer
+                    pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
+                    un environnement juridique qui change chaque jour, prendre du
+                    retard sur l&apos;information peut coûter cher. Notre veille
+                         juridique spécialisée veille pour vous <strong> 24h/24</strong> et vous<strong> alerte dès</strong>
+                    qu&apos;une nouveauté mérite votre attention.
+                  </p>
+                </div>
+
+                {/* Image 2 - téléphone */}
+                <div className="mb-8">
+                  <div className="veille-image h-[400px] sm:h-[500px] overflow-hidden">
+                    <Image
+                      src="/images/veille-juridique-02.png"
+                      alt="Fonctionnalités veille juridique"
+                      width={600}
+                      height={600}
+                      className="w-full h-full object-contain"
+                      style={{
+                        filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                        borderRadius: '12px'
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+             {/* Desktop/Tablette : images en haut - texte en bas */}
+             <div className="hidden lg:block">
+                <div className="grid lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 mb-8">
+                  {/* Image 1 - grande */}
+                   <div className="veille-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden lg:-ml-16 md:-ml-8">
+                     <Image
+                       src="/images/veille-juridique-2-1.png"
+                       alt="Interface veille juridique"
+                       width={1200}
+                        height={1200}
+                       className="w-full h-full object-contain"
+                       style={{
+                         filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                         borderRadius: '12px'
+                       }}
+                     />
+                   </div>
+                   
+                   {/* Image 2 */}
+                   <div className="veille-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
+                     <Image
+                       src="/images/veille-juridique-02.png"
+                       alt="Fonctionnalités veille juridique"
+                       width={600}
+                       height={600}
+                       className="w-full h-full object-contain"
+                       style={{
+                         filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                         borderRadius: '12px'
+                       }}
+                     />
+                   </div>
+                 </div>
+
+                 {/* Texte en bas */}
+                 <div className="max-w-4xl">
+                   <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
+                     Notre veille juridique est un dispositif structuré de
+                     <strong> surveillance</strong>, de collecte, d&apos;analyse et de diffusion continue
+                     d&apos;informations législatives, réglementaires et
+                     jurisprudentielles. Restez informé de l&apos;actualité dans <strong>tous
+                     les domaines juridiques </strong> grâce à notre service alimenté chaque jour
+                     par nos experts. Interface intuitive adaptée à <strong> tous vos écrans</strong>,
+                     notifications ciblées sur vos centres d&apos;intérêt, et outils
+                     pratiques pour traiter l&apos;information efficacement. LahaLex
+                     simplifie votre quotidien pour que vous puissiez vous consacrer
+                     pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
+                     un environnement juridique qui change chaque jour, prendre du
+                     retard sur l&apos;information peut coûter cher. Notre veille
+                          juridique spécialisée veille pour vous <strong> 24h/24</strong> et vous<strong> alerte dès</strong>
+                     qu&apos;une nouveauté mérite votre attention.
+                   </p>
+                 </div>
                </div>
-             </div>
           </section>
 
           {/* Avantages */}

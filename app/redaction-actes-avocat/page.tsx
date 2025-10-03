@@ -182,12 +182,12 @@ export default function RedactionActesPage() {
 
           {/* Illustrations */}
           <div className="mb-16">
-            <div className="redaction-image aspect-video max-w-4xl mx-auto overflow-hidden">
+            <div className="redaction-image h-[600px] sm:h-[700px] lg:h-[800px] max-w-6xl mx-auto overflow-hidden">
               <Image
                 src="/images/redaction-actes-avocat.png"
                 alt="Rédaction d'actes juridiques"
-                width={800}
-                height={450}
+                width={1200}
+                height={800}
                 className="redaction-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
