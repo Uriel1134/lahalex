@@ -54,7 +54,7 @@ export function HeroSection() {
       {/* Flèches et textes positionnés autour du PC */}
       <div className="absolute inset-0 z-20 pointer-events-none">
         {/* Flèche gauche haut */}
-        <div className="absolute top-[10%] left-0 md:left-[15%] lg:left-[18%] flex flex-col items-center">
+        <div className="absolute top-[8%] left-0 md:left-[15%] lg:left-[18%] flex flex-col items-center">
           <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center mb-4 max-w-[120px] md:max-w-[150px] md:-ml-32 lg:-ml-36 ml-16 mt-4">
             <div><span className="font-gobold">+<Counter target={15} duration={2000} className="inline" />h</span></div>
             <div>de travail</div>
@@ -69,13 +69,13 @@ export function HeroSection() {
         </div>
 
         {/* Flèche gauche bas */}
-        <div className="absolute bottom-[12%] md:bottom-[25%] left-0 md:left-[15%] lg:left-[18%] flex flex-col items-center">
+        <div className="absolute bottom-[8%] md:bottom-[25%] left-0 md:left-[15%] lg:left-[18%] flex flex-col items-center">
           <img 
             src="/images/fleche-gauche-bas.png" 
             alt="Flèche gauche bas" 
             className="w-[60px] md:w-[80px] lg:w-[100px] h-auto mb-4 -rotate-90 md:rotate-0 -ml-[80px] md:ml-0"
           />
-          <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center max-w-[120px] md:max-w-[150px] md:-ml-48 lg:-ml-52 ml-16 -mb-10">
+          <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center max-w-[120px] md:max-w-[150px] md:-ml-48 lg:-ml-52 ml-16">
             <div><span className="font-gobold">+<Counter target={17000} duration={2500} separator="." className="inline" /></span></div>
             <div>professionnels</div>
             <div>du droit</div>
@@ -84,8 +84,8 @@ export function HeroSection() {
         </div>
 
         {/* Flèche droite haut */}
-        <div className="absolute top-[10%] right-0 md:right-[15%] lg:right-[18%] flex flex-col items-center">
-          <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center mb-4 max-w-[120px] md:max-w-[150px] md:-mr-32 lg:-mr-36 mr-16 mt-4">
+        <div className="absolute top-[8%] right-0 md:right-[15%] lg:right-[18%] flex flex-col items-center">
+          <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center mb-4 max-w-[120px] md:max-w-[150px] md:-mr-32 lg:-mr-30 mr-16 mt-4">
             <div><span className="font-gobold">+<Counter target={500000} duration={3000} separator="." className="inline" /></span></div>
             <div>Livres</div>
             <div>numériques</div>
@@ -99,7 +99,7 @@ export function HeroSection() {
         </div>
 
         {/* Flèche droite bas */}
-        <div className="absolute bottom-[12%] md:bottom-[25%] right-0 md:right-[15%] lg:right-[18%] flex flex-col items-center">
+        <div className="absolute bottom-[8%] md:bottom-[25%] right-0 md:right-[15%] lg:right-[18%] flex flex-col items-center">
           <img 
             src="/images/fleche-droit-bas.png" 
             alt="Flèche droite bas" 
