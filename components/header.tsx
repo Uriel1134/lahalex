@@ -435,12 +435,14 @@ export function Header() {
                 Nos formules
               </a>
             </div>
-            <Button
-              variant="outline"
-              className="ml-2 md:ml-4 border-2 border-black rounded-[10px] px-2 md:px-3 lg:px-4 py-1 md:py-2 lg:py-3 text-xs md:text-sm lg:text-base text-black hover:bg-black hover:text-white transition-colors bg-transparent"
-            >
-              Connexion
-            </Button>
+            <a href="/lahalex-connexion">
+              <Button
+                variant="outline"
+                className="ml-2 md:ml-4 border-2 border-black rounded-[10px] px-2 md:px-3 lg:px-4 py-1 md:py-2 lg:py-3 text-xs md:text-sm lg:text-base text-black hover:bg-black hover:text-white transition-colors bg-transparent"
+              >
+                Connexion
+              </Button>
+            </a>
           </div>
         </div>
       </header>
