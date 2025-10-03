@@ -51,110 +51,117 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Content overlay */}
-  <div className="relative z-10 flex flex-col items-center justify-between h-full px-4 md:px-16 py-8">
-        {/* Top statistics */}
-  <div className="w-full flex justify-between items-start pt-8 md:pt-16">
-          {/* Left statistics */}
-          <div className="space-y-4 md:space-y-8">
-            <div>
-              <div className="text-white text-[24px] md:text-[39px] font-normal leading-tight tracking-[0.45px] font-['Gratelos']">
-                +<Counter target={15} duration={2000} className="inline" />h
-              </div>
-              <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.45px] font-['Gratelos'] w-[80px] md:w-[99px]">
-                de travail économisé par semaine
-              </div>
-            </div>
-
-            <div>
-              <div className="text-white text-[24px] md:text-[39px] font-normal leading-tight tracking-[0.54px] font-['Gratelos']">
-                +<Counter target={17000} duration={2500} separator="." className="inline" />
-              </div>
-              <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.54px] font-['Gratelos'] w-[100px] md:w-[150px]">
-                professionnels du droit convaincus
-              </div>
-            </div>
+      {/* Flèches et textes positionnés autour du PC */}
+      <div className="absolute inset-0 z-30 pointer-events-none">
+        {/* Flèche gauche haut */}
+        <div className="absolute top-[15%] left-0 md:left-[20%] lg:left-[25%] flex flex-col items-center">
+          <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center mb-4 max-w-[120px] md:max-w-[150px] md:-ml-24 lg:-ml-28 ml-16 mt-4">
+            <div><span className="font-gobold">+<Counter target={15} duration={2000} className="inline" />h</span></div>
+            <div>de travail</div>
+            <div>économisé</div>
+            <div>par semaine</div>
           </div>
+          <img 
+            src="/images/fleche-gauche-haut.png" 
+            alt="Flèche gauche haut" 
+            className="w-[60px] md:w-[80px] lg:w-[100px] h-auto rotate-90 md:rotate-0 -ml-[80px] md:ml-0 -mt-4"
+          />
+        </div>
 
-          {/* Right statistics */}
-          <div className="space-y-4 md:space-y-8 text-right">
-            <div>
-              <div className="text-white text-[24px] md:text-[39px] font-normal leading-tight tracking-[0.40px] font-['Gratelos']">
-                +<Counter target={500000} duration={3000} separator="." className="inline" />
-              </div>
-              <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.40px] font-['Gratelos'] w-[100px] md:w-[121px] ml-auto">
-                Livres numériques pluridisciplinaire
-              </div>
-            </div>
-
-            <div>
-              <div className="text-white text-[24px] md:text-[39px] font-normal leading-tight tracking-[0.44px] font-['Gratelos']">
-                +<Counter target={2000000} duration={3500} separator="." className="inline" />
-              </div>
-              <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.44px] font-['Gratelos'] w-[80px] md:w-[91px] ml-auto">
-                Ressources juridiques
-              </div>
-            </div>
+        {/* Flèche gauche bas */}
+        <div className="absolute bottom-[15%] md:bottom-[25%] left-0 md:left-[20%] lg:left-[25%] flex flex-col items-center">
+          <img 
+            src="/images/fleche-gauche-bas.png" 
+            alt="Flèche gauche bas" 
+            className="w-[60px] md:w-[80px] lg:w-[100px] h-auto mb-4 -rotate-90 md:rotate-0 -ml-[80px] md:ml-0"
+          />
+          <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center max-w-[120px] md:max-w-[150px] md:-ml-40 lg:-ml-44 ml-16">
+            <div><span className="font-gobold">+<Counter target={17000} duration={2500} separator="." className="inline" /></span></div>
+            <div>professionnels</div>
+            <div>du droit</div>
+            <div>convaincus</div>
           </div>
         </div>
 
-        {/* Bandeau gradient bas */}
-  <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/90 to-transparent" />
-        {/* Titres: mobile en pile, desktop en deux colonnes. Balayage lumineux conforme globals.css */}
-{/* Bandeau gradient bas */}
-<div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/90 to-transparent" />
+        {/* Flèche droite haut */}
+        <div className="absolute top-[15%] right-0 md:right-[20%] lg:right-[25%] flex flex-col items-center">
+          <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center mb-4 max-w-[120px] md:max-w-[150px] md:-mr-24 lg:-mr-28 mr-16 mt-4">
+            <div><span className="font-gobold">+<Counter target={500000} duration={3000} separator="." className="inline" /></span></div>
+            <div>Livres</div>
+            <div>numériques</div>
+            <div>pluridisciplinaire</div>
+          </div>
+          <img 
+            src="/images/fleche-droit-haut.png" 
+            alt="Flèche droite haut" 
+            className="w-[60px] md:w-[80px] lg:w-[100px] h-auto -rotate-90 md:rotate-0 -mr-[80px] md:mr-0 -mt-6"
+          />
+        </div>
 
-{/* Titres */}
-<div className="absolute left-0 right-0 bottom-4 sm:bottom-6 md:bottom-8 
-  flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-0 
-  px-2 sm:px-4 md:px-8 lg:px-16 xl:px-24">
-  
-  {/* Groupe gauche */}
-<div className="text-white font-gobold leading-none text-center lg:text-left order-1 lg:order-none 
-  max-w-full overflow-hidden pr-2 lg:-ml-16 xl:-ml-24">
-  <div 
-    className="relative inline-flex gap-[1px] sm:gap-[2px] flex-wrap lg:flex-nowrap"
-    style={{ fontSize: "clamp(16px, 4vw, 64px)" }}
-  >
-    {"CENTRALISEZ LE DROIT".split("").map((ch, i) => (
-      <span 
-        key={`l-${i}`} 
-        className="relative animate-flip-in-bottom" 
-        style={{ animationDelay: `${0.1 + i * 0.05}s` }}
-      >
-        {ch === " " ? "\u00A0" : ch}
-        <span className="pointer-events-none absolute inset-0 bg-white/30 animate-light-sweep" />
-      </span>
-    ))}
-  </div>
-</div>
+        {/* Flèche droite bas */}
+        <div className="absolute bottom-[12%] md:bottom-[25%] right-0 md:right-[20%] lg:right-[25%] flex flex-col items-center">
+          <img 
+            src="/images/fleche-droit-bas.png" 
+            alt="Flèche droite bas" 
+            className="w-[60px] md:w-[80px] lg:w-[100px] h-auto mb-4 rotate-90 md:rotate-0 -mr-[80px] md:mr-0"
+          />
+          <div className="text-white text-[18px] md:text-[24px] lg:text-[28px] font-bold font-gobold-normal text-center max-w-[120px] md:max-w-[150px] md:-mr-40 lg:-mr-44 mr-16">
+            <div><span className="font-gobold">+<Counter target={2000000} duration={3500} separator="." className="inline" /></span></div>
+            <div>Ressources</div>
+            <div>juridiques</div>
+          </div>
+        </div>
+      </div>
 
+      {/* Bandeau gradient bas */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/90 to-transparent" />
 
-  {/* Groupe droit */}
-{/* Groupe droit */}
-<div
-  className="text-white font-gobold leading-none text-center lg:text-right order-2 lg:order-none 
-  max-w-full overflow-hidden lg:-mr-16 xl:-mr-24"
->
-  <div
-    className="relative inline-flex gap-[1px] sm:gap-[2px] flex-wrap lg:flex-nowrap"
-    style={{ fontSize: "clamp(16px, 4vw, 64px)" }}
-  >
-    {"SIMPLIFIEZ LA JUSTICE".split("").map((ch, i) => (
-      <span
-        key={`r-${i}`}
-        className="relative animate-flip-in-bottom"
-        style={{ animationDelay: `${0.1 + i * 0.05}s` }}
-      >
-        {ch === " " ? "\u00A0" : ch}
-        <span className="pointer-events-none absolute inset-0 bg-white/30 animate-light-sweep" />
-      </span>
-    ))}
-  </div>
-</div>
+      {/* Titres */}
+      <div className="absolute left-0 right-0 bottom-4 sm:bottom-6 md:bottom-8 
+        flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-0 
+        px-2 sm:px-4 md:px-8 lg:px-16 xl:px-24">
+        
+        {/* Groupe gauche */}
+        <div className="text-white font-gobold leading-none text-center lg:text-left order-1 lg:order-none 
+          max-w-full overflow-hidden pr-2 lg:-ml-16 xl:-ml-24">
+          <div 
+            className="relative inline-flex gap-[1px] sm:gap-[2px] flex-wrap lg:flex-nowrap"
+            style={{ fontSize: "clamp(16px, 4vw, 64px)" }}
+          >
+            {"CENTRALISEZ LE DROIT".split("").map((ch, i) => (
+              <span 
+                key={`l-${i}`} 
+                className="relative animate-flip-in-bottom" 
+                style={{ animationDelay: `${0.1 + i * 0.05}s` }}
+              >
+                {ch === " " ? "\u00A0" : ch}
+                <span className="pointer-events-none absolute inset-0 bg-white/30 animate-light-sweep" />
+              </span>
+            ))}
+          </div>
+        </div>
 
-</div>
-
+        {/* Groupe droit */}
+        <div
+          className="text-white font-gobold leading-none text-center lg:text-right order-2 lg:order-none 
+          max-w-full overflow-hidden lg:-mr-16 xl:-mr-24"
+        >
+          <div
+            className="relative inline-flex gap-[1px] sm:gap-[2px] flex-wrap lg:flex-nowrap"
+            style={{ fontSize: "clamp(16px, 4vw, 64px)" }}
+          >
+            {"SIMPLIFIEZ LA JUSTICE".split("").map((ch, i) => (
+              <span
+                key={`r-${i}`}
+                className="relative animate-flip-in-bottom"
+                style={{ animationDelay: `${0.1 + i * 0.05}s` }}
+              >
+                {ch === " " ? "\u00A0" : ch}
+                <span className="pointer-events-none absolute inset-0 bg-white/30 animate-light-sweep" />
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

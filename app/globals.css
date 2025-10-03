@@ -131,6 +131,12 @@ body {
   .font-gobold {
     font-family: 'Gobold Extra1', 'Gobold_Extra1', sans-serif;
   }
+  
+  .font-gobold-normal {
+    font-family: 'SF Pro Display', 'Inter', 'Arial', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
 }
 
 /* Smooth scrolling */
