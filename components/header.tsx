@@ -372,12 +372,6 @@ export function Header() {
                 </div>
               </div>
               
-              <a
-                href="essai-gratuit"
-                className="text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
-              >
-                Essai gratuit
-              </a>
             </nav>
             {/* Espace miroir de l'icône pour équilibrer */}
             <div className="w-[40px] md:w-[52px]" />

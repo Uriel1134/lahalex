@@ -306,13 +306,6 @@ export function Header() {
                   </div>
                 </div>
               </div>
-              
-              <Link
-                href="/essai-gratuit"
-                className="text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap"
-              >
-                Essai gratuit
-              </Link>
             </div>
           </div>
 
