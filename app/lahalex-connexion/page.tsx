@@ -16,69 +16,57 @@ export default function FAQPage() {
             {/* Carte Universel */}
             <div className="bg-[#770D28] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
               <img
-                src="/logo.png"
+                src="/images/laha-logo-Universel.png"
                 alt="Lahalex Universel"
-                className="w-28 h-28 mb-6"
+                className="w-40 h-40 mb-8"
               />
-              <h3 className="text-white font-bold text-lg tracking-wide mb-8">
-                UNIVERSEL
-              </h3>
-              <a href="/connexion">
-                <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
-                  Connexion
-                </button>
-              </a>
-            </div>
+               <a href="/connexion?solution=universel">
+                 <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
+                   Connexion
+                 </button>
+               </a>
+             </div>
 
-            {/* Carte Avocat */}
-            <div className="bg-[#770D28] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
-              <img
-                src="/logo.png"
-                alt="Lahalex Avocat"
-                className="w-28 h-28 mb-6"
-              />
-              <h3 className="text-white font-bold text-lg tracking-wide mb-8">
-                AVOCAT
-              </h3>
-              <a href="/connexion">
-                <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
-                  Connexion
-                </button>
-              </a>
-            </div>
+             {/* Carte Avocat */}
+             <div className="bg-[#770D28] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
+               <img
+                 src="/images/laha-logo-Avocat.png"
+                 alt="Lahalex Avocat"
+                 className="w-40 h-40 mb-8"
+               />
+               <a href="/connexion?solution=avocat">
+                 <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
+                   Connexion
+                 </button>
+               </a>
+             </div>
 
-            {/* Carte Notaire */}
-            <div className="bg-[#770D28] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
-              <img
-                src="/logo.png"
-                alt="Lahalex Notaire"
-                className="w-28 h-28 mb-6"
-              />
-              <h3 className="text-white font-bold text-lg tracking-wide mb-8">
-                NOTAIRE
-              </h3>
-              <a href="/connexion">
-                <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
-                  Connexion
-                </button>
-              </a>
-            </div>
+             {/* Carte Notaire */}
+             <div className="bg-[#770D28] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
+               <img
+                 src="/images/laha-logo-Notaire.png"
+                 alt="Lahalex Notaire"
+                 className="w-40 h-40 mb-8"
+               />
+               <a href="/connexion?solution=notaire">
+                 <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
+                   Connexion
+                 </button>
+               </a>
+             </div>
 
-            {/* Carte Commissaire de Justice */}
-            <div className="bg-[#770D28] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
-              <img
-                src="/logo.png"
-                alt="Lahalex Commissaire de Justice"
-                className="w-28 h-28 mb-6"
-              />
-              <h3 className="text-white font-bold text-lg tracking-wide text-center mb-8">
-                COMMISSAIRE DE JUSTICE
-              </h3>
-              <a href="/connexion">
-                <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
-                  Connexion
-                </button>
-              </a>
+             {/* Carte Commissaire de Justice */}
+             <div className="bg-[#770D28] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
+               <img
+                 src="/images/Laha-logo-Commissaire.png"
+                 alt="Lahalex Commissaire de Justice"
+                 className="w-40 h-40 mb-8"
+               />
+               <a href="/connexion?solution=commissaire">
+                 <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
+                   Connexion
+                 </button>
+               </a>
             </div>
           </div>
         </div>

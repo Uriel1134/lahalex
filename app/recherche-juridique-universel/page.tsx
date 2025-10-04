@@ -175,13 +175,13 @@ export default function RecherchePage() {
             </div>
 
             {/* Deux images agrandies */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
-              <div className="recherche-image h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 -mx-16 sm:-mx-24 lg:-mx-32 -mt-32">
+              <div className="recherche-image h-[1200px] sm:h-[1300px] lg:h-[1400px] overflow-hidden">
               <Image
                 src="/images/recherche-juridique.png"
                 alt="Recherche juridique avancée"
-                  width={800}
-                  height={600}
+                  width={1800}
+                  height={1400}
                 className="w-full h-full object-contain"
                   style={{
                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -189,12 +189,12 @@ export default function RecherchePage() {
                   }}
               />
             </div>
-              <div className="recherche-image h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
+              <div className="recherche-image h-[1200px] sm:h-[1300px] lg:h-[1400px] overflow-hidden">
                   <Image
                     src="/images/recherche-juridique-2.png"
                     alt="Interface de recherche juridique"
-                  width={800}
-                  height={600}
+                  width={1800}
+                  height={1400}
                     className="w-full h-full object-contain"
                   style={{
                     filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',

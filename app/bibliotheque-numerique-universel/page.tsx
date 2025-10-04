@@ -177,14 +177,14 @@ export default function BibliothequePage() {
 
         {/* Images agrandies en haut */}
         <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 lg:gap-12">
             {/* Image à gauche */}
-            <div className="bibliotheque-image-secondary h-[800px] sm:h-[900px] lg:h-[1000px] overflow-hidden">
+            <div className="bibliotheque-image-secondary h-[700px] sm:h-[800px] lg:h-[900px] overflow-hidden">
               <Image
                 src="/images/bibliotheque-numerique.png"
                 alt="Interface bibliothèque numérique"
                 width={1200}
-                height={800}
+                height={900}
                 className="w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -194,12 +194,12 @@ export default function BibliothequePage() {
             </div>
 
             {/* Image à droite */}
-            <div className="bibliotheque-image-secondary h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
+            <div className="bibliotheque-image-secondary h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
               <Image
                 src="/images/bibliotheque-numerique-2.png"
                 alt="Interface bibliothèque numérique"
-                width={800}
-                height={600}
+                width={1000}
+                height={800}
                 className="w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',

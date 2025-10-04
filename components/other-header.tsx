@@ -212,7 +212,7 @@ export function Header() {
   }
 
   return (
-    <header ref={headerRef} className="shadow-sm relative z-[9998] bg-white">
+    <header ref={headerRef} className="shadow-sm relative z-50 bg-white">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left: hamburger + links */}
@@ -233,6 +233,78 @@ export function Header() {
               >
                 Nous contacter
               </Link>
+              
+              {/* Menu VOS BESOINS */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setVosBesoinsOpen(true)}
+                onMouseLeave={() => {
+                  setVosBesoinsOpen(false)
+                  setActiveBesoin(null)
+                }}
+              >
+                <button className="flex items-center space-x-1 text-sm text-gray-600 hover:text-gray-900 focus:outline-none">
+                  <span>Vos besoins</span>
+                </button>
+                
+                {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
+                <div 
+                  className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                  onMouseEnter={() => setVosBesoinsOpen(true)}
+                  onMouseLeave={() => {
+                    setVosBesoinsOpen(false)
+                    setActiveBesoin(null)
+                  }}
+                >
+                  <div className="flex">
+                    {/* Colonne gauche - Liste des besoins */}
+                    <div className="w-80 bg-white py-4">
+                      {vosBesoinsMenu.map((besoin, index) => (
+                        <div
+                          key={besoin.title}
+                          className={`px-4 py-3 cursor-pointer flex items-center justify-between hover:bg-gray-50 ${activeBesoin === besoin.title ? 'bg-gray-50 border-r-2 border-[#770D28]' : ''}`}
+                          onMouseEnter={() => setActiveBesoin(besoin.title)}
+                        >
+                          <span className="text-sm text-gray-700">
+                            {besoin.title}
+                          </span>
+                          <svg 
+                            className="w-4 h-4 text-gray-400"
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Colonne droite - Sous-menu */}
+                    {activeBesoin && (
+                      <div className="w-64 bg-gray-50 py-4 border-l border-gray-200">
+                        <div className="px-4">
+                          <h4 className="text-sm font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-300">
+                            {vosBesoinsMenu.find(b => b.title === activeBesoin)?.title}
+                          </h4>
+                          <div className="space-y-2">
+                            {vosBesoinsMenu.find(b => b.title === activeBesoin)?.submenu.map((item, index) => (
+                              <Link
+                                key={index}
+                                href={item.href}
+                                className="block px-3 py-2 text-sm text-[#770D28] hover:bg-[#770D28] hover:text-white rounded transition-colors"
+                              >
+                                {item.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+              
               <Link
                 href="/essai-gratuit"
                 className="text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap"
@@ -287,78 +359,6 @@ export function Header() {
                 </div>
               </div>
             </div>
-
-            {/* Menu VOS BESOINS */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setVosBesoinsOpen(true)}
-              onMouseLeave={() => {
-                setVosBesoinsOpen(false)
-                setActiveBesoin(null)
-              }}
-            >
-              <button className="flex items-center space-x-1 text-sm text-gray-600 hover:text-gray-900 focus:outline-none">
-                <span>Vos besoins</span>
-              </button>
-              
-              {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
-              <div 
-                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-[9999] ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
-                onMouseEnter={() => setVosBesoinsOpen(true)}
-                onMouseLeave={() => {
-                  setVosBesoinsOpen(false)
-                  setActiveBesoin(null)
-                }}
-              >
-                <div className="flex">
-                  {/* Colonne gauche - Liste des besoins */}
-                  <div className="w-80 bg-white py-4">
-                    {vosBesoinsMenu.map((besoin, index) => (
-                      <div
-                        key={besoin.title}
-                        className={`px-4 py-3 cursor-pointer flex items-center justify-between hover:bg-gray-50 ${activeBesoin === besoin.title ? 'bg-gray-50 border-r-2 border-[#770D28]' : ''}`}
-                        onMouseEnter={() => setActiveBesoin(besoin.title)}
-                      >
-                        <span className="text-sm text-gray-700">
-                          {besoin.title}
-                        </span>
-                        <svg 
-                          className="w-4 h-4 text-gray-400"
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Colonne droite - Sous-menu */}
-                  {activeBesoin && (
-                    <div className="w-64 bg-gray-50 py-4 border-l border-gray-200">
-                      <div className="px-4">
-                        <h4 className="text-sm font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-300">
-                          {vosBesoinsMenu.find(b => b.title === activeBesoin)?.title}
-                        </h4>
-                        <div className="space-y-2">
-                          {vosBesoinsMenu.find(b => b.title === activeBesoin)?.submenu.map((item, index) => (
-                            <Link
-                              key={index}
-                              href={item.href}
-                              className="block px-3 py-2 text-sm text-[#770D28] hover:bg-[#770D28] hover:text-white rounded transition-colors"
-                            >
-                              {item.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
 
             <Link
               href="/paiement-abonnements"
