@@ -78,17 +78,6 @@ export default function ConditionsGeneralesPage() {
                           l'accord préalable écrit de LAHALEX et la mise en place obligatoire d'un prélèvement
                           automatique.
                         </p>
-                        <div className="bg-gray-50 p-3 sm:p-4 rounded-lg mb-3">
-                          <p className="text-sm sm:text-base font-semibold text-gray-800 mb-2">LAHALEX SARL</p>
-                          <div className="text-sm sm:text-base text-gray-700 space-y-1">
-                            <p><strong>Bénin</strong></p>
-                            <p>Jéricho C/490, Cotonou (Bénin)</p>
-                            <p>TEL : +229 015599000</p>
-                            <p><strong>France</strong></p>
-                            <p>39 B rue de la Côte fleurie, 77660, Saint-Jean-les-deux-Jumeaux</p>
-                            <p>TEL : +33 0614972046</p>
-                          </div>
-                        </div>
                         <p className="text-gray-700 leading-relaxed mb-2 sm:mb-3 text-sm sm:text-base">
                           LAHALEX peut, à sa seule discrétion :
                         </p>

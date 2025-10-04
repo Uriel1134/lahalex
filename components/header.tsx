@@ -78,6 +78,7 @@ export function Header() {
   const headerRef = useRef<HTMLElement>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false)
+  const [mobileVosBesoinsOpen, setMobileVosBesoinsOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
   const [vosBesoinsOpen, setVosBesoinsOpen] = useState(false)
   const [activeBesoin, setActiveBesoin] = useState<string | null>(null)
@@ -505,6 +506,118 @@ export function Header() {
                     <a href="/lahalex-commissaire-justice" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
                       Lahalex Commissaire de justice
                     </a>
+                  </div>
+                )}
+              </div>
+              <div className="relative mobile-menu-item">
+                <button
+                  onClick={() => setMobileVosBesoinsOpen(!mobileVosBesoinsOpen)}
+                  className="flex items-center text-white text-2xl font-bold uppercase hover:opacity-70 transition-opacity font-gobold"
+                >
+                  VOS BESOINS
+                  <svg
+                    className="ml-2 w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {mobileVosBesoinsOpen && (
+                  <div className="mt-4 space-y-4">
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Recherche documentaire</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/recherche-juridique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Universel
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Veille juridique</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/veille-juridique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Universel
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Bibliothèque</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/bibliotheque-numerique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Universel
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Rédaction d'actes</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/redaction-actes-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Avocat
+                        </a>
+                        <a href="/redaction-actes-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Notaire
+                        </a>
+                        <a href="/redaction-actes-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Commissaire de justice
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Gestion des clients/collaborateurs</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/gestion-cabinet-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Avocat
+                        </a>
+                        <a href="/gestion-office-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Notaire
+                        </a>
+                        <a href="/gestion-etude-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Commissaire de justice
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Gestion de cabinet</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/gestion-cabinet-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Avocat
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Gestion de l'office</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/gestion-office-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Notaire
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Gestion de l'étude</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/gestion-etude-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Commissaire de justice
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Solutions personnalisées</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/nous-contacter" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Nous contacter
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>

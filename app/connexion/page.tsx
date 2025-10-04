@@ -1,11 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
 import countries from "world-countries"
 
-export default function ConnexionPage() {
+function ConnexionContent() {
   const [tab, setTab] = useState<"login" | "register">("register")
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -351,5 +351,20 @@ export default function ConnexionPage() {
         <p className="mt-4 text-sm">© LAHALEX {currentSolution.title} 2025</p>
       </footer>
     </div>
+  )
+}
+
+export default function ConnexionPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-[#FAF5EF]">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#770D28] mx-auto mb-4"></div>
+          <p className="text-[#770D28] font-medium">Chargement...</p>
+        </div>
+      </div>
+    }>
+      <ConnexionContent />
+    </Suspense>
   )
 }
