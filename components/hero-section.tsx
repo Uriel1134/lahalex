@@ -29,7 +29,7 @@ export function HeroSection() {
         <ellipse cx="900" cy="400" rx="600" ry="320" fill="url(#aurora1)" />
         <ellipse cx="1400" cy="800" rx="400" ry="180" fill="url(#aurora2)" />
       </svg>
-      {/* Image centrale laptop */}
+      {/* Image centrale laptop  ou vidéo*/}
       <div
         className="absolute left-1/2 top-1/2 z-20 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none"
         style={{

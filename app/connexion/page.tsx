@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
+import countries from "world-countries"
 
 export default function ConnexionPage() {
   const [tab, setTab] = useState<"login" | "register">("register")
@@ -61,147 +62,23 @@ export default function ConnexionPage() {
     }
   }, [showCountryDropdown])
 
-  // Liste complète des pays avec codes
-  const countries = [
-    { code: "+33", flag: "🇫🇷", name: "France" },
-    { code: "+1", flag: "🇺🇸", name: "États-Unis" },
-    { code: "+44", flag: "🇬🇧", name: "Royaume-Uni" },
-    { code: "+49", flag: "🇩🇪", name: "Allemagne" },
-    { code: "+39", flag: "🇮🇹", name: "Italie" },
-    { code: "+34", flag: "🇪🇸", name: "Espagne" },
-    { code: "+32", flag: "🇧🇪", name: "Belgique" },
-    { code: "+41", flag: "🇨🇭", name: "Suisse" },
-    { code: "+31", flag: "🇳🇱", name: "Pays-Bas" },
-    { code: "+351", flag: "🇵🇹", name: "Portugal" },
-    { code: "+45", flag: "🇩🇰", name: "Danemark" },
-    { code: "+46", flag: "🇸🇪", name: "Suède" },
-    { code: "+47", flag: "🇳🇴", name: "Norvège" },
-    { code: "+358", flag: "🇫🇮", name: "Finlande" },
-    { code: "+43", flag: "🇦🇹", name: "Autriche" },
-    { code: "+48", flag: "🇵🇱", name: "Pologne" },
-    { code: "+420", flag: "🇨🇿", name: "République tchèque" },
-    { code: "+421", flag: "🇸🇰", name: "Slovaquie" },
-    { code: "+36", flag: "🇭🇺", name: "Hongrie" },
-    { code: "+40", flag: "🇷🇴", name: "Roumanie" },
-    { code: "+359", flag: "🇧🇬", name: "Bulgarie" },
-    { code: "+385", flag: "🇭🇷", name: "Croatie" },
-    { code: "+386", flag: "🇸🇮", name: "Slovénie" },
-    { code: "+370", flag: "🇱🇹", name: "Lituanie" },
-    { code: "+371", flag: "🇱🇻", name: "Lettonie" },
-    { code: "+372", flag: "🇪🇪", name: "Estonie" },
-    { code: "+353", flag: "🇮🇪", name: "Irlande" },
-    { code: "+30", flag: "🇬🇷", name: "Grèce" },
-    { code: "+357", flag: "🇨🇾", name: "Chypre" },
-    { code: "+356", flag: "🇲🇹", name: "Malte" },
-    { code: "+352", flag: "🇱🇺", name: "Luxembourg" },
-    { code: "+229", flag: "🇧🇯", name: "Bénin" },
-    { code: "+226", flag: "🇧🇫", name: "Burkina Faso" },
-    { code: "+225", flag: "🇨🇮", name: "Côte d'Ivoire" },
-    { code: "+221", flag: "🇸🇳", name: "Sénégal" },
-    { code: "+223", flag: "🇲🇱", name: "Mali" },
-    { code: "+227", flag: "🇳🇪", name: "Niger" },
-    { code: "+228", flag: "🇹🇬", name: "Togo" },
-    { code: "+224", flag: "🇬🇳", name: "Guinée" },
-    { code: "+245", flag: "🇬🇼", name: "Guinée-Bissau" },
-    { code: "+238", flag: "🇨🇻", name: "Cap-Vert" },
-    { code: "+220", flag: "🇬🇲", name: "Gambie" },
-    { code: "+232", flag: "🇸🇱", name: "Sierra Leone" },
-    { code: "+231", flag: "🇱🇷", name: "Libéria" },
-    { code: "+233", flag: "🇬🇭", name: "Ghana" },
-    { code: "+234", flag: "🇳🇬", name: "Nigeria" },
-    { code: "+237", flag: "🇨🇲", name: "Cameroun" },
-    { code: "+235", flag: "🇹🇩", name: "Tchad" },
-    { code: "+236", flag: "🇨🇫", name: "République centrafricaine" },
-    { code: "+242", flag: "🇨🇬", name: "Congo" },
-    { code: "+243", flag: "🇨🇩", name: "République démocratique du Congo" },
-    { code: "+240", flag: "🇬🇶", name: "Guinée équatoriale" },
-    { code: "+241", flag: "🇬🇦", name: "Gabon" },
-    { code: "+239", flag: "🇸🇹", name: "Sao Tomé-et-Principe" },
-    { code: "+244", flag: "🇦🇴", name: "Angola" },
-    { code: "+260", flag: "🇿🇲", name: "Zambie" },
-    { code: "+263", flag: "🇿🇼", name: "Zimbabwe" },
-    { code: "+264", flag: "🇳🇦", name: "Namibie" },
-    { code: "+267", flag: "🇧🇼", name: "Botswana" },
-    { code: "+268", flag: "🇸🇿", name: "Eswatini" },
-    { code: "+266", flag: "🇱🇸", name: "Lesotho" },
-    { code: "+27", flag: "🇿🇦", name: "Afrique du Sud" },
-    { code: "+258", flag: "🇲🇿", name: "Mozambique" },
-    { code: "+265", flag: "🇲🇼", name: "Malawi" },
-    { code: "+250", flag: "🇷🇼", name: "Rwanda" },
-    { code: "+257", flag: "🇧🇮", name: "Burundi" },
-    { code: "+254", flag: "🇰🇪", name: "Kenya" },
-    { code: "+255", flag: "🇹🇿", name: "Tanzanie" },
-    { code: "+256", flag: "🇺🇬", name: "Ouganda" },
-    { code: "+252", flag: "🇸🇴", name: "Somalie" },
-    { code: "+253", flag: "🇩🇯", name: "Djibouti" },
-    { code: "+251", flag: "🇪🇹", name: "Éthiopie" },
-    { code: "+249", flag: "🇸🇩", name: "Soudan" },
-    { code: "+211", flag: "🇸🇸", name: "Soudan du Sud" },
-    { code: "+212", flag: "🇲🇦", name: "Maroc" },
-    { code: "+213", flag: "🇩🇿", name: "Algérie" },
-    { code: "+216", flag: "🇹🇳", name: "Tunisie" },
-    { code: "+218", flag: "🇱🇾", name: "Libye" },
-    { code: "+20", flag: "🇪🇬", name: "Égypte" },
-    { code: "+81", flag: "🇯🇵", name: "Japon" },
-    { code: "+82", flag: "🇰🇷", name: "Corée du Sud" },
-    { code: "+86", flag: "🇨🇳", name: "Chine" },
-    { code: "+852", flag: "🇭🇰", name: "Hong Kong" },
-    { code: "+853", flag: "🇲🇴", name: "Macao" },
-    { code: "+886", flag: "🇹🇼", name: "Taïwan" },
-    { code: "+65", flag: "🇸🇬", name: "Singapour" },
-    { code: "+60", flag: "🇲🇾", name: "Malaisie" },
-    { code: "+66", flag: "🇹🇭", name: "Thaïlande" },
-    { code: "+84", flag: "🇻🇳", name: "Vietnam" },
-    { code: "+855", flag: "🇰🇭", name: "Cambodge" },
-    { code: "+856", flag: "🇱🇦", name: "Laos" },
-    { code: "+95", flag: "🇲🇲", name: "Myanmar" },
-    { code: "+880", flag: "🇧🇩", name: "Bangladesh" },
-    { code: "+91", flag: "🇮🇳", name: "Inde" },
-    { code: "+92", flag: "🇵🇰", name: "Pakistan" },
-    { code: "+93", flag: "🇦🇫", name: "Afghanistan" },
-    { code: "+98", flag: "🇮🇷", name: "Iran" },
-    { code: "+964", flag: "🇮🇶", name: "Irak" },
-    { code: "+90", flag: "🇹🇷", name: "Turquie" },
-    { code: "+7", flag: "🇷🇺", name: "Russie" },
-    { code: "+380", flag: "🇺🇦", name: "Ukraine" },
-    { code: "+375", flag: "🇧🇾", name: "Biélorussie" },
-    { code: "+370", flag: "🇱🇹", name: "Lituanie" },
-    { code: "+371", flag: "🇱🇻", name: "Lettonie" },
-    { code: "+372", flag: "🇪🇪", name: "Estonie" },
-    { code: "+61", flag: "🇦🇺", name: "Australie" },
-    { code: "+64", flag: "🇳🇿", name: "Nouvelle-Zélande" },
-    { code: "+679", flag: "🇫🇯", name: "Fidji" },
-    { code: "+685", flag: "🇼🇸", name: "Samoa" },
-    { code: "+676", flag: "🇹🇴", name: "Tonga" },
-    { code: "+678", flag: "🇻🇺", name: "Vanuatu" },
-    { code: "+687", flag: "🇳🇨", name: "Nouvelle-Calédonie" },
-    { code: "+689", flag: "🇵🇫", name: "Polynésie française" },
-    { code: "+55", flag: "🇧🇷", name: "Brésil" },
-    { code: "+54", flag: "🇦🇷", name: "Argentine" },
-    { code: "+56", flag: "🇨🇱", name: "Chili" },
-    { code: "+57", flag: "🇨🇴", name: "Colombie" },
-    { code: "+51", flag: "🇵🇪", name: "Pérou" },
-    { code: "+58", flag: "🇻🇪", name: "Venezuela" },
-    { code: "+593", flag: "🇪🇨", name: "Équateur" },
-    { code: "+591", flag: "🇧🇴", name: "Bolivie" },
-    { code: "+598", flag: "🇺🇾", name: "Uruguay" },
-    { code: "+595", flag: "🇵🇾", name: "Paraguay" },
-    { code: "+592", flag: "🇬🇾", name: "Guyana" },
-    { code: "+597", flag: "🇸🇷", name: "Suriname" },
-    { code: "+594", flag: "🇬🇫", name: "Guyane française" },
-    { code: "+590", flag: "🇬🇵", name: "Guadeloupe" },
-    { code: "+596", flag: "🇲🇶", name: "Martinique" },
-    { code: "+262", flag: "🇷🇪", name: "La Réunion" },
-    { code: "+262", flag: "🇾🇹", name: "Mayotte" },
-    { code: "+590", flag: "🇧🇱", name: "Saint-Barthélemy" },
-    { code: "+590", flag: "🇲🇫", name: "Saint-Martin" },
-    { code: "+508", flag: "🇵🇲", name: "Saint-Pierre-et-Miquelon" },
-    { code: "+262", flag: "🇹🇫", name: "Terres australes françaises" },
-    { code: "+262", flag: "🇼🇫", name: "Wallis-et-Futuna" }
-  ]
+  // Utilisation de la bibliothèque world-countries (même logique que essai-gratuit)
+  const countriesList = countries
+    .filter(country => country.idd && country.idd.root && country.idd.suffixes)
+    .map(country => {
+      const callingCode = country.idd.root + (country.idd.suffixes?.[0] || '')
+      return {
+        code: callingCode,
+        flag: country.flag,
+        name: country.name.common,
+        cca2: country.cca2
+      }
+    })
+    .sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF5EF] font-[Inter]">
+    <div className="min-h-screen flex flex-col bg-[#FAF5EF] font-[SFPro]">
       {/* HALOS décor */}
       <div className="hidden lg:block absolute -left-40 top-56 w-[520px] h-[520px] rounded-full blur-[70px] opacity-35 pointer-events-none bg-[radial-gradient(closest-side,#FDECEC,transparent_70%)]"></div>
       <div className="hidden lg:block absolute -right-40 bottom-40 w-[520px] h-[520px] rounded-full blur-[70px] opacity-35 pointer-events-none bg-[radial-gradient(closest-side,#FDECEC,transparent_70%)]"></div>
@@ -362,7 +239,7 @@ export default function ConnexionPage() {
                                 className="h-11 w-24 rounded-md border border-gray-300 px-3 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white flex items-center justify-between"
                               >
                                 <span className="text-sm">
-                                  {countries.find(c => c.code === selectedCountry)?.flag} {selectedCountry}
+                                  {countriesList.find(c => c.code === selectedCountry)?.flag} {selectedCountry}
                                 </span>
                                 <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -371,21 +248,27 @@ export default function ConnexionPage() {
                               
                               {showCountryDropdown && (
                                 <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-50 max-h-80 overflow-y-auto w-80">
-                                  {countries.map((country, index) => (
-                                    <button
-                                      key={index}
-                                      type="button"
-                                      onClick={() => {
-                                        setSelectedCountry(country.code)
-                                        setShowCountryDropdown(false)
-                                      }}
-                                      className="w-full px-3 py-2 text-left hover:bg-gray-100 flex items-center gap-2 text-sm"
-                                    >
-                                      <span>{country.flag}</span>
-                                      <span className="font-medium">{country.code}</span>
-                                      <span className="text-gray-500">{country.name}</span>
-                                    </button>
-                                  ))}
+                                  {countriesList.length > 0 ? (
+                                    countriesList.map((country, index) => (
+                                      <button
+                                        key={index}
+                                        type="button"
+                                        onClick={() => {
+                                          setSelectedCountry(country.code)
+                                          setShowCountryDropdown(false)
+                                        }}
+                                        className="w-full px-3 py-2 text-left hover:bg-gray-100 flex items-center gap-2 text-sm"
+                                      >
+                                        <span>{country.flag}</span>
+                                        <span className="font-medium">{country.code}</span>
+                                        <span className="text-gray-500">{country.name}</span>
+                                      </button>
+                                    ))
+                                  ) : (
+                                    <div className="px-3 py-2 text-gray-500 text-sm">
+                                      Chargement des pays...
+                                    </div>
+                                  )}
                                 </div>
                               )}
                             </div>
@@ -410,7 +293,10 @@ export default function ConnexionPage() {
                               onClick={() => setShowPassword(!showPassword)}
                               className="absolute inset-y-0 right-0 px-4 text-gray-500 hover:text-gray-700 transition"
                             >
-                              👁️
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                              </svg>
                             </button>
                           </div>
                         </div>
@@ -428,7 +314,10 @@ export default function ConnexionPage() {
                               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                               className="absolute inset-y-0 right-0 px-4 text-gray-500 hover:text-gray-700 transition"
                             >
-                              👁️
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                              </svg>
                             </button>
                           </div>
                         </div>
