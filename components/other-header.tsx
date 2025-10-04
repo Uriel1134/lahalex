@@ -213,6 +213,7 @@ export function Header() {
   }
 
   return (
+    <>
     <header ref={headerRef} className="shadow-sm relative z-50 bg-white">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -380,252 +381,222 @@ export function Header() {
           <div className="w-6 sm:hidden"></div>
         </div>
       </nav>
+    </header>
 
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
-        <div className="mobile-menu-overlay fixed inset-0 z-40 bg-[#770D28] flex flex-col h-full justify-center items-start pl-8 sm:pl-16 space-y-6 sm:space-y-8 overflow-y-auto">
+        <div className="mobile-menu-overlay fixed inset-0 z-[60] bg-[#770D28] flex flex-col overflow-hidden">
           <div className="mobile-menu-content flex flex-col h-full overflow-hidden">
-            <button
-              onClick={closeMobileMenu}
-              className="absolute top-6 sm:top-8 right-6 sm:right-8 text-white text-3xl sm:text-4xl font-gobold"
-            >
-              <X />
-            </button>
+            {/* Close button */}
+            <div className="flex justify-end p-6 flex-shrink-0">
+          <button
+                onClick={closeMobileMenu}
+                className="text-white text-3xl font-light hover:opacity-70 transition-opacity hover:scale-110 transform transition-transform"
+                aria-label="Fermer le menu"
+          >
+                ×
+          </button>
+            </div>
 
-            <Link
-              href="/"
-              className="mobile-menu-item font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
-            >
-              ACCUEIL
-            </Link>
-            <Link
-              href="/qui-sommes-nous"
-              className="mobile-menu-item font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
-            >
-              QUI SOMMES-NOUS ?
-            </Link>
+            {/* Menu items - Scrollable */}
+            <nav className="flex flex-col px-16 py-8 space-y-8 flex-1 overflow-y-auto scrollbar-hide">
 
-          {/* Nos solutions mobile */}
-          <div className="w-full mobile-menu-item">
+              <a
+            href="/"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+          >
+            ACCUEIL
+              </a>
+              <a
+            href="/qui-sommes-nous"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+          >
+                QUI SOMMES - NOUS ?
+              </a>
+
+              <div className="relative mobile-menu-item">
             <button
               onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-              className="font-gobold text-white text-2xl sm:text-3xl lg:text-4xl flex items-center"
-            >
-              <span>NOS SOLUTIONS</span>
-              <ChevronDown className="w-6 h-6 ml-2" />
+                  className="flex items-center text-white text-2xl font-bold uppercase hover:opacity-70 transition-opacity font-gobold"
+                >
+                  NOS SOLUTIONS
+                  <svg
+                    className="ml-2 w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
             </button>
             {mobileSolutionsOpen && (
-              <div className="mt-4 ml-4 space-y-3">
-                <Link
-                  href="/lahalex-universel"
-                  className="block font-gobold text-white text-xl sm:text-2xl lg:text-3xl"
+                  <div className="mt-4 space-y-3">
+                    <a href="/lahalex-universel" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                      Lahalex Universel
+                    </a>
+                    <a href="/lahalex-avocat" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                      Lahalex Avocat
+                    </a>
+                    <a href="/lahalex-notaire" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                      Lahalex Notaire
+                    </a>
+                    <a href="/lahalex-commissaire-justice" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                      Lahalex Commissaire de justice
+                    </a>
+                  </div>
+                )}
+          </div>
+
+              <div className="relative mobile-menu-item">
+                <button
+                  onClick={() => setMobileVosBesoinsOpen(!mobileVosBesoinsOpen)}
+                  className="flex items-center text-white text-2xl font-bold uppercase hover:opacity-70 transition-opacity font-gobold"
                 >
-                  LAHALEX UNIVERSEL
-                </Link>
-                <Link
-                  href="/lahalex-avocat"
-                  className="block font-gobold text-white text-xl sm:text-2xl lg:text-3xl"
-                >
-                  LAHALEX AVOCAT
-                </Link>
-                <Link
-                  href="/lahalex-notaire"
-                  className="block font-gobold text-white text-xl sm:text-2xl lg:text-3xl"
-                >
-                  LAHALEX NOTAIRE
-                </Link>
-                <Link
-                  href="/lahalex-commissaire-justice"
-                  className="block font-gobold text-white text-xl sm:text-2xl lg:text-3xl"
-                >
-                  LAHALEX COMMISSAIRE DE JUSTICE
-                </Link>
+                  VOS BESOINS
+                  <svg
+                    className="ml-2 w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {mobileVosBesoinsOpen && (
+                  <div className="mt-4 space-y-4">
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Recherche documentaire</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/recherche-juridique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Universel
+                        </a>
+                      </div>
+                    </div>
+                
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Veille juridique</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/veille-juridique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Universel
+                        </a>
+                      </div>
+                    </div>
+                
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Bibliothèque</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/bibliotheque-numerique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Universel
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Rédaction d'actes</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/redaction-actes-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Avocat
+                        </a>
+                        <a href="/redaction-actes-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Notaire
+                        </a>
+                        <a href="/redaction-actes-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Commissaire de justice
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Gestion des clients/collaborateurs</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/gestion-cabinet-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Avocat
+                        </a>
+                        <a href="/gestion-office-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Notaire
+                        </a>
+                        <a href="/gestion-etude-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Commissaire de justice
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Gestion de cabinet</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/gestion-cabinet-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Avocat
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Gestion de l'office</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/gestion-office-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Notaire
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Gestion de l'étude</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/gestion-etude-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Lahalex Commissaire de justice
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-white text-lg font-semibold mb-2">Solutions personnalisées</div>
+                      <div className="ml-4 space-y-1">
+                        <a href="/nous-contacter" className="block text-white text-base hover:opacity-70 transition-opacity">
+                          Nous contacter
+                        </a>
+                      </div>
+                    </div>
               </div>
             )}
           </div>
 
-          {/* Vos besoins mobile */}
-          <div className="w-full mobile-menu-item">
-            <button
-              onClick={() => setMobileVosBesoinsOpen(!mobileVosBesoinsOpen)}
-              className="font-gobold text-white text-2xl sm:text-3xl lg:text-4xl flex items-center"
-            >
-              <span>VOS BESOINS</span>
-              <ChevronDown className="w-6 h-6 ml-2" />
-            </button>
-            {mobileVosBesoinsOpen && (
-              <div className="mt-4 ml-4 space-y-4">
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Recherche documentaire</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/recherche-juridique-universel"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Universel
-                    </Link>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Veille juridique</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/veille-juridique-universel"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Universel
-                    </Link>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Bibliothèque</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/bibliotheque-numerique-universel"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Universel
-                    </Link>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Rédaction d'actes</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/redaction-actes-avocat"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Avocat
-                    </Link>
-                    <Link
-                      href="/redaction-actes-notaire"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Notaire
-                    </Link>
-                    <Link
-                      href="/redaction-actes-commissaire"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Commissaire de justice
-                    </Link>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Gestion des clients/collaborateurs</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/gestion-cabinet-avocat"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Avocat
-                    </Link>
-                    <Link
-                      href="/gestion-office-notaire"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Notaire
-                    </Link>
-                    <Link
-                      href="/gestion-etude-commissaire"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Commissaire de justice
-                    </Link>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Gestion de cabinet</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/gestion-cabinet-avocat"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Avocat
-                    </Link>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Gestion de l'office</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/gestion-office-notaire"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Notaire
-                    </Link>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Gestion de l'étude</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/gestion-etude-commissaire"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Lahalex Commissaire de justice
-                    </Link>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-gobold text-white text-lg sm:text-xl lg:text-2xl mb-2">Solutions personnalisées</div>
-                  <div className="ml-4 space-y-1">
-                    <Link
-                      href="/nous-contacter"
-                      className="block font-gobold text-white text-base sm:text-lg lg:text-xl"
-                    >
-                      Nous contacter
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <Link
+              <a
             href="/paiement-abonnements"
-            className="mobile-menu-item font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
-          >
-            NOS formules
-          </Link>
-          <Link
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+              >
+                NOS FORMULES
+              </a>
+              <a
             href="/recrutement"
-            className="mobile-menu-item font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
           >
             RECRUTEMENT
-          </Link>
-          <Link
+              </a>
+              <a
             href="/devenir-auteur"
-            className="mobile-menu-item font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
           >
             DEVENIR AUTEUR
-          </Link>
-          <Link
+              </a>
+              <a
             href="/essai-gratuit"
-            className="mobile-menu-item font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
           >
             ESSAI GRATUIT
-          </Link>
-          <Link
+              </a>
+              <a
             href="/lahalex-connexion"
-            className="mobile-menu-item font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
           >
             CONNEXION
-          </Link>
-          <Link
+              </a>
+              <a
             href="/faq"
-            className="mobile-menu-item font-gobold text-white text-2xl sm:text-3xl lg:text-4xl"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
           >
             FAQ
-          </Link>
+              </a>
+            </nav>
           </div>
         </div>
       )}
@@ -709,6 +680,6 @@ export function Header() {
           }
         }
       `}</style>
-    </header>
+    </>
   );
 }
