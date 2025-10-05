@@ -85,7 +85,7 @@ function ConnexionContent() {
 
       {/* HEADER */}
       <header className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
-        <a href="/" className="text-[#770D28] font-medium text-sm sm:text-base " style={{ fontFamily: '"SF Pro Display", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '700', letterSpacing: 'normal', color: '#770D28' }}>Accueil</a>
+        <a href="/" className="text-[#770D28] font-medium text-sm sm:text-base " style={{ fontFamily: '"SF Pro Display", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>Accueil</a>
         <button className="inline-flex items-center gap-2 border rounded-md px-3 py-1.5 sm:py-2 text-xs sm:text-sm text-gray-700 hover:bg-gray-50 transition">
           🇫🇷 <span className="hidden sm:inline">FR</span>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
