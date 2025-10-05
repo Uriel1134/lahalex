@@ -1,34 +1,22 @@
 "use client"
 
 import { Counter } from "./counter"
+import Aurora from "./aurora"
 
 export function HeroSection() {
   return (
     <section
       className="relative w-full min-h-screen h-screen overflow-hidden bg-[#770D28] border-white"
     >
-      {/* Aurora mesh SVG */}
-      <svg
-        className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none"
-        viewBox="0 0 1920 1080"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{position: 'absolute', left: 0, top: 0, width: '100%', height: '100%'}}
-      >
-        <defs>
-          <radialGradient id="aurora1" cx="0.5" cy="0.4" r="0.6" fx="0.5" fy="0.4" gradientUnits="objectBoundingBox">
-            <stop offset="0%" stopColor="#EADFCB" stopOpacity="0.7" />
-            <stop offset="80%" stopColor="#EADFCB" stopOpacity="0.1" />
-            <stop offset="100%" stopColor="#770D28" stopOpacity="0" />
-          </radialGradient>
-          <radialGradient id="aurora2" cx="0.7" cy="0.7" r="0.4" fx="0.7" fy="0.7" gradientUnits="objectBoundingBox">
-            <stop offset="0%" stopColor="#F7CBAA" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#770D28" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <ellipse cx="900" cy="400" rx="600" ry="320" fill="url(#aurora1)" />
-        <ellipse cx="1400" cy="800" rx="400" ry="180" fill="url(#aurora2)" />
-      </svg>
+      {/* Aurora animé avec WebGL */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Aurora
+          colorStops={["#770D28", "#FAF5EF", "#770D28"]}
+          blend={0.6}
+          amplitude={1.2}
+          speed={0.3}
+        />
+      </div>
       {/* Image centrale laptop  ou vidéo*/}
       <div
         className="absolute left-1/2 top-1/2 z-20 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none"

@@ -196,18 +196,18 @@ export default function RecherchePage() {
               {/* Deux images en bas - exactement la même taille */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 -mt-70 lg:-mt-70">
                 <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[600px] sm:lg:h-[700px] lg:h-[800px] overflow-hidden -mt-20 lg:-mt-20">
-                  <Image
-                    src="/images/recherche-juridique.png"
-                    alt="Recherche juridique avancée"
+              <Image
+                src="/images/recherche-juridique.png"
+                alt="Recherche juridique avancée"
                     width={1800}
                     height={1400}
-                    className="w-full h-full object-contain"
+                className="w-full h-full object-contain"
                     style={{
                       filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
                       borderRadius: '12px'
                     }}
-                  />
-                </div>
+              />
+            </div>
                 <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[600px] sm:lg:h-[700px] lg:h-[800px] overflow-hidden">
                   <Image
                     src="/images/recherche-juridique-4.png"

@@ -46,63 +46,24 @@ export default function BibliothequePage() {
             ease: "power3.out",
             scrollTrigger: {
               trigger: ".bibliotheque-image-secondary",
-              start: "top 80%",
+              start: "top 90%",
               toggleActions: "play none none reverse",
             },
           }
         )
 
-      // Animation du contenu avec ScrollTrigger
+      // Animation du contenu avec fade simple
       if (contentRef.current) {
         gsap.fromTo(
           contentRef.current,
           { 
-            opacity: 0, 
-            y: 150, 
-            scale: 0.8,
-            rotation: -5,
-            transformOrigin: "center center"
+            opacity: 0
           },
           {
             opacity: 1,
-            y: 0,
-            scale: 1,
-            rotation: 0,
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: contentRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        )
-
-        // Animation des éléments de contenu en cascade avec effets spectaculaires
-        const contentItems = contentRef.current.querySelectorAll('.content-item')
-        gsap.fromTo(
-          contentItems,
-          { 
-            opacity: 0, 
-            y: 80, 
-            scale: 0.7,
-            rotation: 10,
-            transformOrigin: "center bottom"
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            rotation: 0,
             duration: 1,
-            stagger: 0.15,
-            ease: "elastic.out(1, 0.6)",
-            delay: 0.3,
-            scrollTrigger: {
-              trigger: contentRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
+            ease: "power2.out",
+            delay: 0.5,
           }
         )
       }
@@ -153,7 +114,7 @@ export default function BibliothequePage() {
         </div>
 
         {/* Hero */}
-        <div className="mb-12">
+        <div className="mb-6">
           <div className="text-left">
             <h1 ref={titleRef} className="bibliotheque-title font-gobold text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
               Bibliothèque numérique
@@ -176,15 +137,15 @@ export default function BibliothequePage() {
         </div>
 
         {/* Images agrandies en haut */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 lg:gap-12">
+        <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[3.5fr_2fr] gap-0 lg:gap-12">
             {/* Image à gauche */}
-            <div className="bibliotheque-image-secondary h-[700px] sm:h-[800px] lg:h-[900px] overflow-hidden">
+            <div className="bibliotheque-image-secondary h-[400px] sm:h-[500px] lg:h-[950px] overflow-hidden">
               <Image
                 src="/images/bibliotheque-numerique.png"
                 alt="Interface bibliothèque numérique"
-                width={1200}
-                height={900}
+                width={1300}
+                height={950}
                 className="w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -194,7 +155,7 @@ export default function BibliothequePage() {
             </div>
 
             {/* Image à droite */}
-            <div className="bibliotheque-image-secondary h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
+            <div className="bibliotheque-image-secondary h-[350px] sm:h-[450px] lg:h-[800px] overflow-hidden">
               <Image
                 src="/images/bibliotheque-numerique-2.png"
                 alt="Interface bibliothèque numérique"
@@ -211,7 +172,7 @@ export default function BibliothequePage() {
         </div>
 
         {/* Texte en bas */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+        <div className="sm:-mt-40 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
           <div ref={contentRef} className="max-w-4xl mx-auto">
             <p className="content-item text-gray-700 text-lg leading-relaxed text-left sm:text-justify">
               Notre bibliothèque numérique est une plateforme en ligne dédiée à la

@@ -338,21 +338,7 @@ export default function PaiementAbonnements() {
                      </div>
 
                     {/* Special Offer moderne */}
-                    <div className="bg-[#770D28]/5 rounded-3xl p-6 lg:p-8 mb-6 lg:mb-10 border border-[#770D28]/20 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-[#770D28]/10 rounded-full -translate-y-12 translate-x-12"></div>
-                      <div className="relative flex flex-col sm:flex-row items-start gap-4">
-                         <div className="bg-[#770D28] text-white rounded-2xl w-12 h-12 flex items-center justify-center shadow-lg flex-shrink-0">
-                           <Gift className="w-6 h-6 text-white" />
-                         </div>
-                        <div>
-                          <h5 className="font-semibold text-gray-900 mb-3 text-lg lg:text-xl">Offre spéciale</h5>
-                          <p className="text-gray-700 text-base lg:text-lg">
-                            La première année de mises à jour et de maintenance vous est <strong>offerte</strong>.
-                            Ensuite, continuez à profiter pour seulement <strong>25.000 FCFA</strong> par mois
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+
 
                      <div className="mb-6 lg:mb-10">
                        <label className="flex items-start cursor-pointer group">

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="bg-[#770D28] text-white py-12 relative overflow-hidden border-t-4 border-[#FFFFFF]">
+    <footer className="bg-[#770D28] text-white py-4 relative overflow-hidden border-t-4 border-[#FFFFFF]">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-80">
         <Image
@@ -16,7 +16,7 @@ export function Footer() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-3">
           {/* Logo */}
           <div className="flex items-start">
             <Image
@@ -24,35 +24,35 @@ export function Footer() {
               alt="LAHALEX Logo"
               width={150}
               height={80}
-              className="h-20 w-auto"
+              className="h-10 w-auto"
             />
           </div>
 
           {/* Informations & Contacts */}
           <div>
-            <h4 className="font-gobold text-lg mb-4 uppercase">
+            <h4 className="font-gobold text-sm mb-1 uppercase">
               INFORMATIONS & CONTACTS
             </h4>
-            <div className="space-y-3 text-sm font-sf-pro">
-              <div className="flex items-center space-x-3">
-                <div className="w-5 h-5 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="space-y-0.5 text-sm font-sf-pro">
+              <div className="flex items-center space-x-1.5">
+                <div className="w-3 h-3 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                   </svg>
                 </div>
                 <p>+33 614 972 046</p>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-5 h-5 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center space-x-1.5">
+                <div className="w-3 h-3 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                   </svg>
                 </div>
                 <p>+229 015 599 0000</p>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-5 h-5 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center space-x-1.5">
+                <div className="w-3 h-3 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                   </svg>
@@ -64,13 +64,11 @@ export function Footer() {
                   contact@lahalex.com
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-5 h-5 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center space-x-1.5">
+                <div className="w-3 h-3 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
                   </svg>
-
-
                 </div>
                 <p>Du lundi au samedi,<br/>de 9h à 18h</p>
               </div>
@@ -79,11 +77,11 @@ export function Footer() {
 
           {/* Adresse */}
           <div>
-            <h4 className="font-gobold text-lg mb-4 uppercase">ADRESSE</h4>
-            <div className="space-y-3 text-sm font-sf-pro">
-              <div className="flex items-start space-x-3">
-                <div className="w-5 h-5 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <h4 className="font-gobold text-sm mb-1 uppercase">ADRESSE</h4>
+            <div className="space-y-0.5 text-sm font-sf-pro">
+              <div className="flex items-start space-x-1.5">
+                <div className="w-3 h-3 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                   </svg>
                 </div>
@@ -92,9 +90,9 @@ export function Footer() {
                   <p>Saint-Jean-les-deux-jumeaux, <strong>France</strong></p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-5 h-5 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-start space-x-1.5">
+                <div className="w-3 h-3 bg-[#770D28] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                   </svg>
                 </div>
@@ -105,10 +103,10 @@ export function Footer() {
 
           {/* Réseaux sociaux */}
           <div>
-            <h4 className="font-gobold text-lg mb-4 uppercase">
+            <h4 className="font-gobold text-sm mb-1 uppercase">
               SUIVEZ-NOUS SUR
             </h4>
-            <div className="flex space-x-4">
+            <div className="flex space-x-2">
               {[
                 {
                   href: "https://www.linkedin.com/company/lahalex-sarl/",
@@ -130,10 +128,10 @@ export function Footer() {
                 <Link
                   key={i}
                   href={icon.href}
-                  className="w-8 h-8 rounded flex items-center justify-center hover:bg-opacity-30 transition-colors"
+                  className="w-5 h-5 rounded flex items-center justify-center hover:bg-opacity-30 transition-colors"
                 >
                   <svg
-                    className="w-4 h-4 fill-current"
+                    className="w-3 h-3 fill-current"
                     viewBox="0 0 24 24"
                     dangerouslySetInnerHTML={{
                       __html: `<path d="${icon.path}" />`,
@@ -146,8 +144,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Links */}
-        <div className="mt-8 pt-8 text-xs font-sf-pro">
-          <div className="flex flex-wrap justify-center gap-6 text-center">
+        <div className="mt-3 pt-3 text-sm font-sf-pro">
+          <div className="flex flex-wrap justify-center gap-3 text-center">
             <Link
               href="/conditions-generales"
               className="hover:text-gray-300 uppercase"

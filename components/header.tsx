@@ -234,7 +234,7 @@ export function Header() {
 
         {/* Left decorative element (desktop/tablette) */}
         <Image
-          src="/images/bg-header.jpg"
+          src="/images/bg-header-transparent.png"
           alt="Border decoration"
           width={210}
           height={100}
@@ -243,7 +243,7 @@ export function Header() {
 
         {/* Right decorative element (desktop/tablette) */}
         <Image
-          src="/images/bg-header-1.png"
+          src="/images/bg-header-1-transparent.png"
           alt="Connexion background"
           width={210}
           height={100}
@@ -638,6 +638,12 @@ export function Header() {
                 className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
               >
                 ESSAI GRATUIT
+              </a>
+              <a
+                href="/nous-contacter"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+              >
+                NOUS CONTACTER
               </a>
               <a
                 href="/lahalex-connexion"

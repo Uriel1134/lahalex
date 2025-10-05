@@ -291,13 +291,13 @@ export function Header() {
                           </h4>
                           <div className="space-y-2">
                             {vosBesoinsMenu.find(b => b.title === activeBesoin)?.submenu.map((item, index) => (
-                              <Link
+              <Link
                                 key={index}
                                 href={item.href}
                                 className="block px-3 py-2 text-sm text-[#770D28] hover:bg-[#770D28] hover:text-white rounded transition-colors"
-                              >
+              >
                                 {item.title}
-                              </Link>
+              </Link>
                             ))}
                           </div>
                         </div>
@@ -576,6 +576,12 @@ export function Header() {
                 className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
           >
             ESSAI GRATUIT
+              </a>
+              <a
+            href="/nous-contacter"
+                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+          >
+            NOUS CONTACTER
               </a>
               <a
             href="/lahalex-connexion"
