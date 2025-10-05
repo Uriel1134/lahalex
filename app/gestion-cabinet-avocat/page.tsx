@@ -210,7 +210,7 @@ export default function AvocatPage() {
           </div>
 
           {/* Avantages */}
-          <div ref={contentRef}>
+          <div ref={contentRef} className=" lg:-mt-40">
             <h2 className="font-gobold text-2xl sm:text-3xl text-gray-900 mb-8">
               Vos avantages
             </h2>
