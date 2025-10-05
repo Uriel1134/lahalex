@@ -111,7 +111,7 @@ function ConnexionContent() {
             <div className="bg-[#FDECEC] px-6 lg:px-10 py-8 lg:py-10 order-2 lg:order-1 relative">
               
               {/* Onglets */}
-              <div className="mx-auto mb-7 inline-flex items-center gap-2 bg-[#FDD7D7] rounded-[12px] p-2">
+              <div className="mx-auto mb-7 inline-flex items-center gap-2 bg-[#FDD7D7] rounded-[12px] p-2 "style={{ fontFamily: '"SF Pro Display", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '700', letterSpacing: 'normal', color: '#293240' }}>
                 <button
                   onClick={() => setTab("login")}
                   className={`px-5 py-2 rounded-[10px] font-medium text-base transition ${
@@ -169,7 +169,8 @@ function ConnexionContent() {
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200 bg-white"
+                        className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200"
+                        style={{ backgroundColor: '#F8F9FD', color: '#293240' }}
                       >
                         {showPassword ? (
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -307,7 +308,8 @@ function ConnexionContent() {
                             <button
                               type="button"
                               onClick={() => setShowPassword(!showPassword)}
-                              className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200 bg-white"
+                              className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200"
+                              style={{ backgroundColor: '#F8F9FD', color: '#293240' }}
                             >
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -329,7 +331,8 @@ function ConnexionContent() {
                             <button
                               type="button"
                               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                              className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200 bg-white"
+                              className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200"
+                              style={{ backgroundColor: '#F8F9FD', color: '#293240' }}
                             >
                               {showConfirmPassword ? (
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
