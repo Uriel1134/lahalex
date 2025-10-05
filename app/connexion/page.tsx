@@ -102,7 +102,7 @@ function ConnexionContent() {
             {/* Colonne droite (logo) => en mobile elle passe AVANT */}
             <div className="bg-[#770D28] text-white flex flex-col items-center justify-center p-8 order-1 lg:order-2">
               <Image src={currentSolution.logo} alt={currentSolution.title} width={200} height={200} className="mb-8 select-none" />
-              <p className="text-center text-lg lg:text-xl font-medium max-w-md leading-7">
+              <p className="text-center max-w-md leading-7" style={{ fontFamily: '"Gobold", sans-serif', fontSize: '16px', lineHeight: '19.2px', fontWeight: '400', letterSpacing: 'normal', color: '#F8F9FA' }}>
                 {currentSolution.subtitle}
               </p>
             </div>
