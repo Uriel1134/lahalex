@@ -180,13 +180,13 @@ export default function AvocatPage() {
           </div>
 
           {/* Illustrations */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
-            <div className="gestion-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 lg:-mt-50">
+            <div className="gestion-image h-[800px] sm:h-[900px] lg:h-[1000px] overflow-hidden">
               <Image
                 src="/images/gestion-cabinet-avocat.png"
                 alt="Gestion cabinet avocat"
-                width={1000}
-                height={800}
+                width={1400}
+                height={1200}
                 className="gestion-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -194,12 +194,12 @@ export default function AvocatPage() {
                 }}
               />
             </div>
-            <div className="gestion-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
+            <div className="gestion-image h-[800px] sm:h-[900px] lg:h-[1000px] overflow-hidden lg:-mt-10">
               <Image
                 src="/images/gestion-cabinet-avocat-2.png"
                 alt="Interface gestion cabinet"
-                width={1000}
-                height={800}
+                width={1600}
+                height={1400}
                 className="gestion-image w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
@@ -210,7 +210,7 @@ export default function AvocatPage() {
           </div>
 
           {/* Avantages */}
-          <div ref={contentRef} className="mb-16">
+          <div ref={contentRef}>
             <h2 className="font-gobold text-2xl sm:text-3xl text-gray-900 mb-8">
               Vos avantages
             </h2>

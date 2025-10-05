@@ -360,8 +360,8 @@ function ConnexionContent() {
       <footer className="py-8 text-center text-sm text-[#770D28]">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <a className="hover:underline" href="/qui-sommes-nous">À propos de nous</a>
-          <a className="hover:underline" href="#">Termes et conditions</a>
-          <a className="hover:underline" href="#">Politique de confidentialité</a>
+          <a className="hover:underline" href="/conditions-generales">Termes et conditions</a>
+          <a className="hover:underline" href="/politique-confidentialite">Politique de confidentialité</a>
         </div>
         <p className="mt-4 text-sm">© LAHALEX {currentSolution.title} 2025</p>
       </footer>

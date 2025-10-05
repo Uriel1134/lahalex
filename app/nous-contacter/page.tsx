@@ -90,11 +90,11 @@ export default function NousContacter() {
             <textarea className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro min-h-[100px]" />
           </div>
             <div className="text-xs text-gray-600 font-sf-pro mb-4">
-            LAHALEX peut vous contacter pour vous communiquer des informations sur nos produit, services et événements. Vous pourrez vous désabonner à tout moment via le lien fourni dans nos communications. Pour plus d'information, vous pouvez consulter notre <a href="#" className="text-blue-600 underline">politique de confidentialité</a>.
+            LAHALEX peut vous contacter pour vous communiquer des informations sur nos produit, services et événements. Vous pourrez vous désabonner à tout moment via le lien fourni dans nos communications. Pour plus d'information, vous pouvez consulter notre <a href="/politique-confidentialite" className="text-blue-600 underline">politique de confidentialité</a>.
           </div>
           <button type="submit" className="bg-[#770D28] w-full sm:w-auto text-white font-sf-pro px-8 py-3 rounded-md text-lg font-semibold shadow hover:bg-[#5a0a1e] transition-all">ENVOYER</button>
           <div className="text-xs text-gray-500 font-sf-pro mt-2">
-            Ce site est protégé par reCAPTCHA et la <a href="#" className="underline">politique de confidentialité</a> et les <a href="#" className="underline">conditions d'utilisation</a> de Google s'appliquent.
+            Ce site est protégé par reCAPTCHA et la <a href="/politique-confidentialite" className="underline">politique de confidentialité</a> et les <a href="/conditions-generales" className="underline">conditions d'utilisation</a> de Google s'appliquent.
           </div>
         </form>
       </div>

@@ -172,9 +172,9 @@ export default function BibliothequePage() {
         </div>
 
         {/* Texte en bas */}
-        <div className="sm:-mt-40 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+        <div className="sm:-mt-60 lg:-mt-60 lg:ml-60 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
           <div ref={contentRef} className="max-w-4xl mx-auto">
-            <p className="content-item text-gray-700 text-lg leading-relaxed text-left sm:text-justify">
+            <p className="content-item text-gray-700 text-lg leading-relaxed text-center sm:text-justify">
               Notre bibliothèque numérique est une plateforme en ligne dédiée à la
               consultation d&apos;un vaste ensemble d&apos;ouvrages et de documents en
               version numérique de diverses matières avec plus de <strong>500.000 livres</strong> disponibles. Elle permet un accès structuré et permanent à une large
