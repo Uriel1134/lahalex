@@ -80,7 +80,7 @@ export function SolutionsSection() {
               <div className="relative flex-1 min-h-[220px] xs:min-h-[280px] sm:min-h-[340px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center">
                 <div className="w-full flex justify-center items-center sm:absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-10">
                   <video
-                    src="/videos/lahalex.mp4"
+                    src="/videos/mockup.mp4"
                     autoPlay
                     loop
                     muted
