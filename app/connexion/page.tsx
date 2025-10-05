@@ -26,19 +26,19 @@ function ConnexionContent() {
     avocat: {
       logo: "/images/laha-logo-Avocat.png",
       title: "AVOCAT",
-      subtitle: "Votre assistant juridique intelligent",
+      subtitle: "Centralisez le droit, simplifiez la justice",
       welcomeText: "Bienvenue sur LAHALEX AVOCAT"
     },
     notaire: {
       logo: "/images/laha-logo-Notaire.png",
       title: "NOTAIRE",
-      subtitle: "Simplifiez votre pratique notariale",
+      subtitle: "Centralisez le droit, simplifiez la justice",
       welcomeText: "Bienvenue sur LAHALEX NOTAIRE"
     },
     commissaire: {
       logo: "/images/Laha-logo-Commissaire.png",
       title: "COMMISSAIRE DE JUSTICE",
-      subtitle: "Optimisez vos missions de justice",
+      subtitle: "Centralisez le droit, simplifiez la justice",
       welcomeText: "Bienvenue sur LAHALEX COMMISSAIRE DE JUSTICE"
     }
   }
