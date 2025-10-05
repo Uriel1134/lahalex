@@ -120,7 +120,7 @@ export default function Stepper({
                 style={{ backgroundColor: '#770D28' }}
                 {...nextButtonProps}
               >
-                {isLastStep ? 'Terminer' : nextButtonText}
+                {isLastStep ? 'Envoyer' : nextButtonText}
               </button>
             </div>
           </div>

@@ -50,7 +50,7 @@ export function HeroSection() {
                 +<Counter target={15} duration={2000} className="inline" />h
               </div>
               <div className="text-white text-[14px] md:text-[22px] font-normal leading-tight tracking-[0.45px] font-['Gratelos'] w-[80px] md:w-[99px]">
-                de travail économisé par semaine
+                de travail économisées par semaine
               </div>
             </div>
 

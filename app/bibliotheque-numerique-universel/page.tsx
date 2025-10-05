@@ -172,7 +172,7 @@ export default function BibliothequePage() {
         </div>
 
         {/* Texte en bas */}
-        <div className="sm:-mt-60 lg:-mt-60 lg:ml-60 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+        <div className="sm:-mt-60 lg:-mt-60 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
           <div ref={contentRef} className="max-w-4xl mx-auto">
             <p className="content-item text-gray-700 text-lg leading-relaxed text-center sm:text-justify">
               Notre bibliothèque numérique est une plateforme en ligne dédiée à la

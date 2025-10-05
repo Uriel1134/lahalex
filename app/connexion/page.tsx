@@ -149,32 +149,34 @@ function ConnexionContent() {
               {tab === "login" && (
                 <form className="max-w-lg mx-auto space-y-5">
                   <div>
-                    <label className="block text-base font-medium text-[#770D28] mb-2">Adresse email</label>
+                    <label className="block mb-2" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}>Adresse email</label>
                     <input
                       type="email"
                       placeholder="Entrez votre e-mail"
-                      className="w-full h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition"
+                      style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}
+                      className="w-full h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-base font-medium text-[#770D28] mb-2">Mot de passe</label>
+                    <label className="block mb-2" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}>Mot de passe</label>
                     <div className="relative">
                       <input
                         type={showPassword ? "text" : "password"}
                         placeholder="Entrez votre mot de passe"
-                        className="w-full h-11 rounded-md border border-gray-300 px-4 pr-12 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition"
+                        style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}
+                        className="w-full h-11 rounded-md border border-gray-300 px-4 pr-12 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute inset-y-0 right-0 px-4 text-gray-500 hover:text-gray-700 transition"
+                        className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200 bg-white"
                       >
                         {showPassword ? (
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
                           </svg>
                         ) : (
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                           </svg>
@@ -183,17 +185,17 @@ function ConnexionContent() {
                     </div>
                   </div>
 
-                  <div className="text-right">
-                    <a href="#" className="text-sm text-[#770D28] hover:underline">Mot de passe oublié ?</a>
+                  <div className="text-left">
+                    <a href="#" className="hover:underline" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D27' }}>Mot de passe oublié ?</a>
                   </div>
 
-                  <button type="submit" className="w-full h-11 rounded-md bg-[#770D28] text-white font-medium hover:brightness-110 transition">
+                  <button type="submit" className="w-full h-11 rounded-md bg-[#770D28] text-white hover:brightness-110 transition" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '500', letterSpacing: 'normal', color: '#FFFFFF' }}>
                     Connexion
                   </button>
 
-                  <p className="text-sm text-center text-[#2b0a12]">
+                  <p className="text-center" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#293240' }}>
                     Vous n'avez pas de compte ?{" "}
-                    <button type="button" onClick={() => setTab("register")} className="text-[#770D28] font-medium hover:underline">
+                    <button type="button" onClick={() => setTab("register")} className="hover:underline" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>
                       Inscription
                     </button>
                   </p>
@@ -225,7 +227,7 @@ function ConnexionContent() {
                           <input
                             type="text"
                             placeholder="Votre nom complet"
-                            className="w-full h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition"
+                            className="w-full h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                           />
                         </div>
                         
@@ -234,7 +236,7 @@ function ConnexionContent() {
                           <input
                             type="email"
                             placeholder="Adresse email"
-                            className="w-full h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition"
+                            className="w-full h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                           />
                         </div>
                         
@@ -284,7 +286,7 @@ function ConnexionContent() {
                             <input
                               type="tel"
                               placeholder="Votre numéro de téléphone"
-                              className="flex-1 h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition"
+                              className="flex-1 h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                             />
                           </div>
                         </div>
@@ -295,14 +297,14 @@ function ConnexionContent() {
                             <input
                               type={showPassword ? "text" : "password"}
                               placeholder="Mot de passe"
-                              className="w-full h-11 rounded-md border border-gray-300 px-4 pr-12 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition"
+                              className="w-full h-11 rounded-md border border-gray-300 px-4 pr-12 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                             />
                             <button
                               type="button"
                               onClick={() => setShowPassword(!showPassword)}
-                              className="absolute inset-y-0 right-0 px-4 text-gray-500 hover:text-gray-700 transition"
+                              className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200 bg-white"
                             >
-                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                               </svg>
@@ -316,19 +318,19 @@ function ConnexionContent() {
                             <input
                               type={showConfirmPassword ? "text" : "password"}
                               placeholder="Confirmer mot de passe"
-                              className="w-full h-11 rounded-md border border-gray-300 px-4 pr-12 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition"
+                              className="w-full h-11 rounded-md border border-gray-300 px-4 pr-12 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                             />
                             <button
                               type="button"
                               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                              className="absolute inset-y-0 right-0 px-4 text-gray-500 hover:text-gray-700 transition"
+                              className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 transition border-l border-gray-200 bg-white"
                             >
                               {showConfirmPassword ? (
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
                                 </svg>
                               ) : (
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>

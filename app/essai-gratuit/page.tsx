@@ -23,9 +23,7 @@ export default function EssaiGratuit() {
     pays: "",
     indicatif: "+33",
     telephone: "",
-    motDePasse: "",
-    confirmerMotDePasse: "",
-    accepterConditions: false,
+    solutions: [] as string[],
   });
 
   // Refs pour les animations GSAP
@@ -67,11 +65,21 @@ export default function EssaiGratuit() {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]:
-        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-    }));
+    
+    if (name === "solutions" && type === "checkbox") {
+      const checked = (e.target as HTMLInputElement).checked;
+      setFormData((prev) => ({
+        ...prev,
+        solutions: checked
+          ? [...prev.solutions, value]
+          : prev.solutions.filter((solution) => solution !== value),
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
+      }));
+    }
   };
 
   // Animations GSAP spectaculaires - style devenir-auteur-form
@@ -440,105 +448,72 @@ export default function EssaiGratuit() {
                   </div>
                 </Step>
 
-                {/* Étape 3: Sécurité */}
+                {/* Étape 3: Choix des solutions */}
                 <Step>
                   <div className="space-y-6">
                     <h3 className="text-xl font-gobold text-[#770D28] mb-4">
-                      Sécurité et confidentialité
-                    </h3>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Mot de passe
-                      </label>
-                      <input
-                        type="password"
-                        name="motDePasse"
-                        placeholder="Votre mot de passe"
-                        value={formData.motDePasse}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Confirmer le mot de passe
-                      </label>
-                      <input
-                        type="password"
-                        name="confirmerMotDePasse"
-                        placeholder="Confirmez votre mot de passe"
-                        value={formData.confirmerMotDePasse}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
-                      />
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <input
-                    type="checkbox"
-                    id="conditions"
-                    name="accepterConditions"
-                    checked={formData.accepterConditions}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                  />
-                  <label htmlFor="conditions" className="text-sm text-gray-700">
-                    {"J'accepte les "}
-                    <a
-                          href="/conditions-generales"
-                      className="underline"
-                      style={{ color: "#770D28" }}
-                    >
-                      conditions générales
-                    </a>
-                    {" et la "}
-                    <a
-                          href="/politique-confidentialite"
-                      className="underline"
-                      style={{ color: "#770D28" }}
-                    >
-                      politique de confidentialité
-                    </a>
-                    {"."}
-                  </label>
-                </div>
-                  </div>
-                </Step>
-
-                {/* Étape 4: Confirmation */}
-                <Step>
-                  <div className="space-y-6 text-center">
-                    <h3 className="text-xl font-gobold text-[#770D28] mb-4">
-                      Confirmation
+                      Que souhaitez-vous essayer ?
                     </h3>
                     
                     <div className="space-y-4">
-                      <div className="flex items-center justify-center space-x-4">
-                        <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: "#770D28" }}>
-                          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <div className="text-left">
-                          <p className="font-semibold text-gray-900">{formData.nom} {formData.prenoms}</p>
-                          <p className="text-sm text-gray-600">{formData.email}</p>
-                          <p className="text-sm text-gray-600">{formData.statut}</p>
-                        </div>
+                      <div className="flex items-start space-x-3">
+                        <input
+                          type="checkbox"
+                          id="universel"
+                          name="solutions"
+                          value="universel"
+                          checked={formData.solutions.includes("universel")}
+                          onChange={handleInputChange}
+                          className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                        />
+                        <label htmlFor="universel" className="text-sm font-medium text-gray-700 cursor-pointer">
+                          Lahalex Universel
+                        </label>
                       </div>
                       
-                      <p className="text-gray-700">
-                        Votre essai gratuit de 5 jours va commencer dès la validation de votre inscription.
-                      </p>
+                      <div className="flex items-start space-x-3">
+                        <input
+                          type="checkbox"
+                          id="avocat"
+                          name="solutions"
+                          value="avocat"
+                          checked={formData.solutions.includes("avocat")}
+                          onChange={handleInputChange}
+                          className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                        />
+                        <label htmlFor="avocat" className="text-sm font-medium text-gray-700 cursor-pointer">
+                          Lahalex Avocat
+                        </label>
+                      </div>
                       
-                      <div className="bg-gray-50 rounded-lg p-4">
-                        <p className="text-sm text-gray-600">
-                          <strong>Rappel :</strong> Vous bénéficiez de 5 jours d'essai gratuit sans engagement, 
-                          avec conseils et assistance technique inclus.
-                        </p>
+                      <div className="flex items-start space-x-3">
+                        <input
+                          type="checkbox"
+                          id="notaire"
+                          name="solutions"
+                          value="notaire"
+                          checked={formData.solutions.includes("notaire")}
+                          onChange={handleInputChange}
+                          className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                        />
+                        <label htmlFor="notaire" className="text-sm font-medium text-gray-700 cursor-pointer">
+                          Lahalex Notaire
+                        </label>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <input
+                          type="checkbox"
+                          id="commissaire"
+                          name="solutions"
+                          value="commissaire"
+                          checked={formData.solutions.includes("commissaire")}
+                          onChange={handleInputChange}
+                          className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                        />
+                        <label htmlFor="commissaire" className="text-sm font-medium text-gray-700 cursor-pointer">
+                          Lahalex Commissaire de justice
+                        </label>
                       </div>
                     </div>
                   </div>
