@@ -165,10 +165,10 @@ export default function CommissaireJusticePage() {
               simplicité avec une technologie pensée pour votre quotidien.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/essai-gratuit"
-                className="gestion-commissaire-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-              >
+            <a
+              href="/essai-gratuit"
+              className="gestion-commissaire-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+            >
                 Demandez un devis
               </a>
               <a

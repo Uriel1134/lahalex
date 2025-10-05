@@ -8,6 +8,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Gobold Lowplus';
+  src: url('/fonts/Gobold-Lowplus.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: 'SF Pro Display', 'Inter', 'Arial', sans-serif;
 }

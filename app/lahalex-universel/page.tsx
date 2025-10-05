@@ -146,10 +146,10 @@ export default function LahalexUniverselPage() {
                 LahaLex Universel vous donne un accès simplifié, intelligent et innovant à l'information juridique.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-                  onClick={() => (window.location.href = "/essai-gratuit")}
-                >
+              <button
+                className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+                onClick={() => (window.location.href = "/essai-gratuit")}
+              >
                   Demandez un devis
                 </button>
                 <button
@@ -157,7 +157,7 @@ export default function LahalexUniverselPage() {
                   onClick={() => (window.location.href = "/nous-contacter")}
                 >
                   Demandez une démonstration
-                </button>
+              </button>
               </div>
             </div>
 

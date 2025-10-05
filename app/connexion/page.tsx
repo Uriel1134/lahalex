@@ -102,7 +102,7 @@ function ConnexionContent() {
             {/* Colonne droite (logo) => en mobile elle passe AVANT */}
             <div className="bg-[#770D28] text-white flex flex-col items-center justify-center p-8 order-1 lg:order-2">
               <Image src={currentSolution.logo} alt={currentSolution.title} width={200} height={200} className="mb-8 select-none" />
-              <p className="text-center max-w-md leading-7" style={{ fontFamily: '"Gobold", sans-serif', fontSize: '16px', lineHeight: '19.2px', fontWeight: '400', letterSpacing: 'normal', color: '#F8F9FA' }}>
+              <p className="text-center max-w-md leading-7" style={{ fontFamily: '"Gobold Lowplus", sans-serif', fontSize: '16px', lineHeight: '19.2px', fontWeight: '400', letterSpacing: 'normal', color: '#F8F9FA' }}>
                 {currentSolution.subtitle}
               </p>
             </div>
@@ -202,46 +202,49 @@ function ConnexionContent() {
                 </form>
               )}
 
-                {/* Écran Inscription */}
-                {tab === "register" && (
+              {/* Écran Inscription */}
+              {tab === "register" && (
                   <div className="max-w-lg mx-auto">
                     {!showRegistrationForm ? (
                       <div className="text-center">
                         <button 
                           onClick={() => setShowRegistrationForm(true)}
-                          className="w-full h-11 rounded-md bg-[#770D28] text-white font-medium hover:brightness-110 transition shadow-sm"
+                          className="w-full h-11 rounded-md bg-[#770D28] text-white hover:brightness-110 transition shadow-sm"
+                          style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '500', letterSpacing: 'normal', color: '#FFFFFF' }}
                         >
-                          Créer un compte
-                        </button>
-                        <p className="mt-6 text-sm text-[#2b0a12]">
-                          Déjà inscrit ?{" "}
-                          <button type="button" onClick={() => setTab("login")} className="text-[#770D28] font-medium hover:underline">
-                            Connexion
-                          </button>
-                        </p>
+                    Créer un compte
+                  </button>
+                  <p className="mt-6" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#293240' }}>
+                    Déjà inscrit ?{" "}
+                    <button type="button" onClick={() => setTab("login")} className="hover:underline" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>
+                      Connexion
+                    </button>
+                  </p>
                       </div>
                     ) : (
                       <form className="space-y-5">
                         <div>
-                          <label className="block text-base font-medium text-[#770D28] mb-2">Nom complet</label>
+                          <label className="block mb-2" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}>Nom complet</label>
                           <input
                             type="text"
                             placeholder="Votre nom complet"
+                            style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}
                             className="w-full h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                           />
                         </div>
                         
                         <div>
-                          <label className="block text-base font-medium text-[#770D28] mb-2">Adresse email</label>
+                          <label className="block mb-2" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}>Adresse email</label>
                           <input
                             type="email"
                             placeholder="Adresse email"
+                            style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}
                             className="w-full h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                           />
                         </div>
                         
                         <div>
-                          <label className="block text-base font-medium text-[#770D28] mb-2">Téléphone</label>
+                          <label className="block mb-2" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}>Téléphone</label>
                           <div className="flex gap-2">
                             <div className="relative">
                               <button
@@ -286,17 +289,19 @@ function ConnexionContent() {
                             <input
                               type="tel"
                               placeholder="Votre numéro de téléphone"
+                              style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}
                               className="flex-1 h-11 rounded-md border border-gray-300 px-4 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                             />
                           </div>
                         </div>
                         
                         <div>
-                          <label className="block text-base font-medium text-[#770D28] mb-2">Mot de passe</label>
+                          <label className="block mb-2" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}>Mot de passe</label>
                           <div className="relative">
                             <input
                               type={showPassword ? "text" : "password"}
                               placeholder="Mot de passe"
+                              style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}
                               className="w-full h-11 rounded-md border border-gray-300 px-4 pr-12 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                             />
                             <button
@@ -313,11 +318,12 @@ function ConnexionContent() {
                         </div>
                         
                         <div>
-                          <label className="block text-base font-medium text-[#770D28] mb-2">Confirmation mot de passe</label>
+                          <label className="block mb-2" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}>Confirmation mot de passe</label>
                           <div className="relative">
                             <input
                               type={showConfirmPassword ? "text" : "password"}
                               placeholder="Confirmer mot de passe"
+                              style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#333333' }}
                               className="w-full h-11 rounded-md border border-gray-300 px-4 pr-12 placeholder-gray-400 focus:outline-none focus:border-[#770D28] focus:ring-1 focus:ring-[#770D28] transition bg-white"
                             />
                             <button
@@ -339,33 +345,33 @@ function ConnexionContent() {
                           </div>
                         </div>
 
-                        <button type="submit" className="w-full h-11 rounded-md bg-[#770D28] text-white font-medium hover:brightness-110 transition">
+                        <button type="submit" className="w-full h-11 rounded-md bg-[#770D28] text-white hover:brightness-110 transition" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '500', letterSpacing: 'normal', color: '#FFFFFF' }}>
                           Inscription
                         </button>
 
-                        <p className="text-sm text-center text-[#2b0a12]">
+                        <p className="text-center" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#293240' }}>
                           Vous avez déjà un compte ?{" "}
-                          <button type="button" onClick={() => setTab("login")} className="text-[#770D28] font-medium hover:underline">
+                          <button type="button" onClick={() => setTab("login")} className="hover:underline" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>
                             Connexion
                           </button>
                         </p>
                       </form>
                     )}
-                  </div>
-                )}
+                </div>
+              )}
             </div>
           </div>
         </section>
       </main>
 
       {/* FOOTER */}
-      <footer className="py-8 text-center text-sm text-[#770D28]">
+      <footer className="py-8 text-center" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a className="hover:underline" href="/qui-sommes-nous">À propos de nous</a>
-          <a className="hover:underline" href="/conditions-generales">Termes et conditions</a>
-          <a className="hover:underline" href="/politique-confidentialite">Politique de confidentialité</a>
+          <a className="hover:underline" href="/qui-sommes-nous" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>À propos de nous</a>
+          <a className="hover:underline" href="/conditions-generales" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>Termes et conditions</a>
+          <a className="hover:underline" href="/politique-confidentialite" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>Politique de confidentialité</a>
         </div>
-        <p className="mt-4 text-sm">© LAHALEX {currentSolution.title} 2025</p>
+        <p className="mt-4" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>© LAHALEX {currentSolution.title} 2025</p>
       </footer>
     </div>
   )

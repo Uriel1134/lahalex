@@ -116,14 +116,14 @@ export default function BibliothequePage() {
         {/* Hero */}
         <div className="mb-6">
           <div className="text-left">
-            <h1 ref={titleRef} className="bibliotheque-title font-gobold text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
-              Bibliothèque numérique
-            </h1>
+              <h1 ref={titleRef} className="bibliotheque-title font-gobold text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
+                Bibliothèque numérique
+              </h1>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/essai-gratuit"
-                className="bibliotheque-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
+                <a
+                  href="/essai-gratuit"
+                  className="bibliotheque-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
                 Demandez un devis
               </a>
               <a
@@ -131,7 +131,7 @@ export default function BibliothequePage() {
                 className="bibliotheque-button inline-block border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Demandez une démonstration
-              </a>
+                </a>
             </div>
           </div>
         </div>
@@ -156,33 +156,33 @@ export default function BibliothequePage() {
 
             {/* Image à droite */}
             <div className="bibliotheque-image-secondary h-[350px] sm:h-[450px] lg:h-[800px] overflow-hidden">
-              <Image
-                src="/images/bibliotheque-numerique-2.png"
-                alt="Interface bibliothèque numérique"
+            <Image
+              src="/images/bibliotheque-numerique-2.png"
+              alt="Interface bibliothèque numérique"
                 width={1000}
                 height={800}
-                className="w-full h-full object-contain"
+              className="w-full h-full object-contain"
                 style={{
                   filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
                   borderRadius: '12px'
                 }}
-              />
+            />
             </div>
           </div>
         </div>
 
         {/* Texte en bas */}
-        <div className="sm:-mt-60 lg:-mt-60 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+        <div className="sm:-mt-60 lg:-mt-60 lg:mb-10 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
           <div ref={contentRef} className="max-w-4xl mx-auto">
             <p className="content-item text-gray-700 text-lg leading-relaxed text-center sm:text-justify">
-              Notre bibliothèque numérique est une plateforme en ligne dédiée à la
-              consultation d&apos;un vaste ensemble d&apos;ouvrages et de documents en
+            Notre bibliothèque numérique est une plateforme en ligne dédiée à la
+            consultation d&apos;un vaste ensemble d&apos;ouvrages et de documents en
               version numérique de diverses matières avec plus de <strong>500.000 livres</strong> disponibles. Elle permet un accès structuré et permanent à une large
               collection de resources documentaires, accessibles à tout moment
-              depuis un ordinateur, une tablette ou un smartphone. L&apos;ensemble
-              de ces contenus est en accès libre et gratuit une fois votre
-              abonnement souscrit.
-            </p>
+            depuis un ordinateur, une tablette ou un smartphone. L&apos;ensemble
+            de ces contenus est en accès libre et gratuit une fois votre
+            abonnement souscrit.
+          </p>
           </div>
         </div>
 
