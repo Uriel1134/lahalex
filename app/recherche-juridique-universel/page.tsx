@@ -174,34 +174,54 @@ export default function RecherchePage() {
               </a>
             </div>
 
-            {/* Deux images agrandies */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 -mx-16 sm:-mx-24 lg:-mx-32 -mt-32">
-              <div className="recherche-image h-[1200px] sm:h-[1300px] lg:h-[1400px] overflow-hidden">
-              <Image
-                src="/images/recherche-juridique.png"
-                alt="Recherche juridique avancée"
-                  width={1800}
-                  height={1400}
-                className="w-full h-full object-contain"
-                  style={{
-                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                    borderRadius: '12px'
-                  }}
-              />
-            </div>
-              <div className="recherche-image h-[1200px] sm:h-[1300px] lg:h-[1400px] overflow-hidden">
+            {/* Disposition en triangle - image du milieu en haut, deux autres en bas */}
+            <div className="mb-16 mx-4 sm:-mx-24 lg:-mx-32 mt-2 sm:-mt-78">
+              {/* Image du milieu en haut */}
+              <div className="flex justify-center mb-8 lg:mb-0">
+                <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[1000px] w-[350px] sm:w-[500px] lg:w-[1000px] overflow-hidden">
                   <Image
-                    src="/images/recherche-juridique-2.png"
+                    src="/images/recherche-juridique-3.png"
                     alt="Interface de recherche juridique"
-                  width={1800}
-                  height={1400}
+                    width={1800}
+                    height={1400}
                     className="w-full h-full object-contain"
-                  style={{
-                    filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                    borderRadius: '12px'
-                  }}
+                    style={{
+                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                      borderRadius: '12px'
+                    }}
                   />
                 </div>
+              </div>
+              
+              {/* Deux images en bas - exactement la même taille */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 -mt-70 lg:-mt-70">
+                <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[600px] sm:lg:h-[700px] lg:h-[800px] overflow-hidden -mt-20 lg:-mt-20">
+                  <Image
+                    src="/images/recherche-juridique.png"
+                    alt="Recherche juridique avancée"
+                    width={1800}
+                    height={1400}
+                    className="w-full h-full object-contain"
+                    style={{
+                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                      borderRadius: '12px'
+                    }}
+                  />
+                </div>
+                <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[600px] sm:lg:h-[700px] lg:h-[800px] overflow-hidden">
+                  <Image
+                    src="/images/recherche-juridique-4.png"
+                    alt="Outils de recherche juridique"
+                    width={1800}
+                    height={1400}
+                    className="w-full h-full object-contain"
+                    style={{
+                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
+                      borderRadius: '12px'
+                    }}
+                  />
+                </div>
+              </div>
             </div>
 
             <div ref={contentRef} className="space-y-8">
