@@ -91,7 +91,7 @@ export function SolutionsSection() {
               </div>
 
               {/* Texte descriptif */}
-              <div className="flex-1 max-w-[400px] lg:ml-8">
+              <div className="flex-1 max-w-[400px] lg:ml-18">
                 <h3 className="text-[#770D28] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6">
                   <span className="font-normal">
                     <TextType
