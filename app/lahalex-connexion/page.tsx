@@ -20,7 +20,7 @@ export default function FAQPage() {
                 alt="Lahalex Universel"
                 className="w-40 h-40 mb-8"
               />
-               <a href="/connexion?solution=universel">
+               <a href="https://universel.lahalex.com/login">
                  <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
                    Connexion
                  </button>
@@ -34,7 +34,7 @@ export default function FAQPage() {
                  alt="Lahalex Avocat"
                  className="w-40 h-40 mb-8"
                />
-               <a href="/connexion?solution=avocat">
+               <a href="https://avocat.lahalex.com">
                  <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#770D28] transition">
                    Connexion
                  </button>
