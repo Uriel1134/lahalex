@@ -121,26 +121,26 @@ export function SolutionsSection() {
 
                 <div className="space-y-2 text-black text-[13px] sm:text-[14px] leading-[18px] sm:leading-[20px] mb-6 md:mb-8">
                   <p>
-                    Une base de données documentaire pluridisciplinaire de référence
+                    Une <strong>base de données documentaire pluridisciplinaire</strong> de référence
                   </p>
                   <p>
-                    Base de données documentaire couvrant le droit, la médecine et 
-                    l’économie : législation, jurisprudence, doctrine, publications 
+                    <strong>Base de données documentaire couvrant le droit, la médecine et 
+                    l’économie</strong> : législation, jurisprudence, doctrine, publications 
                     scientifiques et analyses spécialisées.
                   </p>
                   <p>
-                    Recherche avancée avec filtres multicritères pour un accès rapide, 
+                    <strong>Recherche avancée avec filtres multicritères</strong> pour un accès rapide, 
                     précis et ciblé à l’information.
                   </p>
                   <p>
-                    Contenus constamment mis à jour via une interface conçue pour optimiser 
+                    <strong>Contenus constamment mis à jour</strong> via une interface conçue pour optimiser 
                     le temps des professionnels.
                   </p>
                   <p>
-                    Bibliothèque numérique complète, intégrant le droit et d’autres disciplines connexes.
+                    <strong>Bibliothèque numérique complète</strong>, intégrant le droit et d’autres disciplines connexes.
                   </p>
                   <p>
-                    Veille continue avec alertes personnalisées et dictionnaires spécialisés par domaine.
+                    <strong>Veille continue</strong> avec alertes personnalisées et <strong>dictionnaires spécialisés</strong> par domaine.
                   </p>
                 </div>
 

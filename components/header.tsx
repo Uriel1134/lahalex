@@ -15,7 +15,7 @@ const vosBesoinsMenu = [
     ]
   },
   {
-    title: "Veille juridique", 
+    title: "Veille juridique",
     submenu: [
       { title: "Lahalex Universel", href: "/veille-juridique-universel" }
     ]
@@ -41,7 +41,7 @@ const vosBesoinsMenu = [
     ]
   },
   {
-    title: "Gestion des clients/collaborateurs", 
+    title: "Gestion des clients/collaborateurs",
     submenu: [
       { title: "Lahalex Avocat", href: "/gestion-cabinet-avocat" },
       { title: "Lahalex Notaire", href: "/gestion-office-notaire" },
@@ -61,7 +61,7 @@ const vosBesoinsMenu = [
     ]
   },
   {
-    title: "Gestion de l'étude", 
+    title: "Gestion de l'étude",
     submenu: [
       { title: "Lahalex Commissaire de justice", href: "/gestion-etude-commissaire" }
     ]
@@ -107,64 +107,64 @@ export function Header() {
       // Délai pour s'assurer que les éléments sont dans le DOM
       const timer = setTimeout(() => {
         // Définir l'état initial des éléments
-        gsap.set(".mobile-menu-overlay", { 
-          opacity: 0, 
+        gsap.set(".mobile-menu-overlay", {
+          opacity: 0,
           scale: 0.8,
           filter: "blur(20px)"
         })
-        
-        gsap.set(".mobile-menu-content", { 
-          opacity: 0, 
-          y: -100, 
+
+        gsap.set(".mobile-menu-content", {
+          opacity: 0,
+          y: -100,
           scale: 0.9,
           rotation: -5
         })
-        
-        gsap.set(".mobile-menu-item", { 
-          opacity: 0, 
-          x: -50, 
+
+        gsap.set(".mobile-menu-item", {
+          opacity: 0,
+          x: -50,
           scale: 0.8,
           rotation: -10
         })
 
         // Animation spectaculaire d'entrée du menu mobile
         const tl = gsap.timeline()
-        
+
         // Animation de l'overlay avec effet de scale et blur
-        tl.to(".mobile-menu-overlay", { 
-          opacity: 1, 
+        tl.to(".mobile-menu-overlay", {
+          opacity: 1,
           scale: 1,
           filter: "blur(0px)",
-          duration: 0.6, 
-          ease: "power3.out" 
+          duration: 0.6,
+          ease: "power3.out"
         })
-        
+
         // Animation du contenu avec effet de glissement spectaculaire
         tl.to(
           ".mobile-menu-content",
-          { 
-            opacity: 1, 
-            y: 0, 
+          {
+            opacity: 1,
+            y: 0,
             scale: 1,
             rotation: 0,
-            duration: 0.8, 
-            ease: "elastic.out(1, 0.6)", 
-            delay: 0.2 
+            duration: 0.8,
+            ease: "elastic.out(1, 0.6)",
+            delay: 0.2
           },
           "-=0.3"
         )
-        
+
         // Animation des éléments de menu en cascade
         tl.to(
           ".mobile-menu-item",
-          { 
-            opacity: 1, 
-            x: 0, 
+          {
+            opacity: 1,
+            x: 0,
             scale: 1,
             rotation: 0,
-            duration: 0.6, 
-            stagger: 0.1, 
-            ease: "back.out(1.7)" 
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "back.out(1.7)"
           },
           "-=0.4"
         )
@@ -177,7 +177,7 @@ export function Header() {
   const closeMobileMenu = () => {
     // Animation spectaculaire de fermeture
     const tl = gsap.timeline()
-    
+
     // Animation des éléments de menu en sortie
     tl.to(".mobile-menu-item", {
       opacity: 0,
@@ -188,7 +188,7 @@ export function Header() {
       stagger: 0.05,
       ease: "power2.in"
     })
-    
+
     // Animation du contenu
     tl.to(".mobile-menu-content", {
       opacity: 0,
@@ -198,7 +198,7 @@ export function Header() {
       duration: 0.4,
       ease: "power2.in"
     }, "-=0.2")
-    
+
     // Animation de l'overlay
     tl.to(".mobile-menu-overlay", {
       opacity: 0,
@@ -212,20 +212,20 @@ export function Header() {
 
   return (
     <>
-      <header ref={headerRef} className="absolute top-0 left-0 right-0 z-30 w-full h-[79px] bg-transparent border-white">
+      <header ref={headerRef} className="absolute top-0 left-0 right-0 z-30 w-full h-[79px] bg-transparent border-transparent">
         {/* Bloc central (desktop/tablette) */}
-<div className="relative hidden sm:flex justify-center items-start">
-  {/* Bloc central blanc */}
- <Image
-    src="/images/Union.png"
-    alt="Union shape"
-    width={231}
-    height={70}
-    className="absolute top-0 left-1/2 -translate-x-1/2"
-  />
+        <div className="relative hidden sm:flex justify-center items-start">
+          {/* Bloc central blanc */}
+          <Image
+            src="/images/Union.png"
+            alt="Union shape"
+            width={231}
+            height={70}
+            className="absolute top-0 left-1/2 -translate-x-1/2"
+          />
 
-  {/* Rectangle gauche */}
-</div>
+          {/* Rectangle gauche */}
+        </div>
 
 
 
@@ -265,16 +265,16 @@ export function Header() {
           </div>
           {/* Logo centré */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <h1 className="text-[#770D28] text-[22px] font-bold tracking-[0.07em] font-gobold">LAHALEX</h1>
+            <h1 className="text-[#770D28] text-[22px] font-bold tracking-[0.07em] font-gobold">LAHALEXE</h1>
           </div>
           {/* Bouton Connexion */}
           <a href="/lahalex-connexion">
-          <Button
-            variant="outline"
-            className="border-2 border-black rounded-[10px] px-3 py-2 text-sm text-black hover:bg-black hover:text-white transition-colors bg-transparent"
-          >
-            Connexion
-          </Button>
+            <Button
+              variant="outline"
+              className="border-2 border-black rounded-[10px] px-3 py-2 text-sm text-black hover:bg-black hover:text-white transition-colors bg-transparent"
+            >
+              Connexion
+            </Button>
           </a>
         </div>
 
@@ -296,13 +296,13 @@ export function Header() {
             <nav className="flex items-center gap-3 md:gap-6 mx-auto">
               <a
                 href="nous-contacter"
-                className="text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
+                className="text-[#111111] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Nous contacter
               </a>
-              
+
               {/* Menu VOS BESOINS */}
-              <div 
+              <div
                 className="relative group"
                 onMouseEnter={() => setVosBesoinsOpen(true)}
                 onMouseLeave={() => {
@@ -310,12 +310,12 @@ export function Header() {
                   setActiveBesoin(null)
                 }}
               >
-                <button className="flex items-center gap-1 text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
+                <button className="flex items-center gap-1 text-[#111111] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
                   <span>Vos besoins</span>
                 </button>
-                
+
                 {/* Menu VOS BESOINS - Structure à deux colonnes comme LexisNexis */}
-                <div 
+                <div
                   className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${vosBesoinsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                   onMouseEnter={() => setVosBesoinsOpen(true)}
                   onMouseLeave={() => {
@@ -335,10 +335,10 @@ export function Header() {
                           <span className="text-sm text-gray-700">
                             {besoin.title}
                           </span>
-                          <svg 
+                          <svg
                             className="w-4 h-4 text-gray-400"
-                            fill="none" 
-                            stroke="currentColor" 
+                            fill="none"
+                            stroke="currentColor"
                             viewBox="0 0 24 24"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -346,7 +346,7 @@ export function Header() {
                         </div>
                       ))}
                     </div>
-                    
+
                     {/* Colonne droite - Sous-menu */}
                     {activeBesoin && (
                       <div className="w-64 bg-gray-50 py-4 border-l border-gray-200">
@@ -371,7 +371,7 @@ export function Header() {
                   </div>
                 </div>
               </div>
-              
+
             </nav>
             {/* Espace miroir de l'icône pour équilibrer */}
             <div className="w-[40px] md:w-[52px]" />
@@ -379,7 +379,7 @@ export function Header() {
 
           {/* Logo central */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <h1 className="text-[#770D28] text-[20px] md:text-[24px] lg:text-[30px] font-bold tracking-[0.07em] font-gobold">
+            <h1 className="text-black text-[20px] md:text-[24px] lg:text-[30px] font-bold tracking-[0.07em] font-gobold">
               LAHALEX
             </h1>
           </div>
@@ -391,53 +391,53 @@ export function Header() {
             {/* Liens droite centrés entre logo et bouton */}
             <div className="flex items-center gap-3 md:gap-6 mx-auto">
               <div className="relative group">
-                <button className="flex items-center gap-1 text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
+                <button className="flex items-center gap-1 text-[#111111] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors focus:outline-none">
                   <span>Nos solutions</span>
                 </button>
-                      <div className="absolute top-full left-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2">
-                  <Link
-                    href="/lahalex-universel"
-                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                  >
-                    Lahalex Universel
-                  </Link>
-                  <Link
-                    href="/lahalex-avocat"
-                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                  >
-                    Lahalex Avocat
-                  </Link>
-                  <Link
-                    href="/lahalex-notaire"
-                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                  >
-                    Lahalex Notaire
-                  </Link>
-                  <Link
-                    href="/lahalex-commissaire-justice"
-                    className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
-                  >
-                    Lahalex Commissaire de justice
-                  </Link>
+                <div className="absolute top-full left-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <Link
+                      href="/lahalex-universel"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    >
+                      Lahalex Universel
+                    </Link>
+                    <Link
+                      href="/lahalex-avocat"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    >
+                      Lahalex Avocat
+                    </Link>
+                    <Link
+                      href="/lahalex-notaire"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    >
+                      Lahalex Notaire
+                    </Link>
+                    <Link
+                      href="/lahalex-commissaire-justice"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors text-[#770D28]"
+                    >
+                      Lahalex Commissaire de justice
+                    </Link>
+                  </div>
                 </div>
               </div>
-              </div>
-              
+
               <a
                 href="paiement-abonnements"
-                className="text-[#FFFFFF] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
+                className="text-[#111111] text-sm md:text-base lg:text-lg font-normal hover:text-[#770D28] transition-colors"
               >
                 Nos formules
               </a>
             </div>
             <a href="/lahalex-connexion">
-            <Button
-              variant="outline"
-              className="ml-2 md:ml-4 border-2 border-black rounded-[10px] px-2 md:px-3 lg:px-4 py-1 md:py-2 lg:py-3 text-xs md:text-sm lg:text-base text-black hover:bg-black hover:text-white transition-colors bg-transparent"
-            >
-              Connexion
-            </Button>
+              <Button
+                variant="outline"
+                className="ml-2 md:ml-4 border-2 border-black rounded-[10px] px-2 md:px-3 lg:px-4 py-1 md:py-2 lg:py-3 text-xs md:text-sm lg:text-base text-black hover:bg-black hover:text-white transition-colors bg-transparent"
+              >
+                Connexion
+              </Button>
             </a>
           </div>
         </div>
@@ -528,7 +528,7 @@ export function Header() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="text-white text-lg font-semibold mb-2">Veille juridique</div>
                       <div className="ml-4 space-y-1">
@@ -537,7 +537,7 @@ export function Header() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="text-white text-lg font-semibold mb-2">Bibliothèque</div>
                       <div className="ml-4 space-y-1">
@@ -546,7 +546,7 @@ export function Header() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="text-white text-lg font-semibold mb-2">Rédaction d'actes</div>
                       <div className="ml-4 space-y-1">
@@ -561,7 +561,7 @@ export function Header() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="text-white text-lg font-semibold mb-2">Gestion des clients/collaborateurs</div>
                       <div className="ml-4 space-y-1">
@@ -576,7 +576,7 @@ export function Header() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="text-white text-lg font-semibold mb-2">Gestion de cabinet</div>
                       <div className="ml-4 space-y-1">
@@ -585,7 +585,7 @@ export function Header() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="text-white text-lg font-semibold mb-2">Gestion de l'office</div>
                       <div className="ml-4 space-y-1">
@@ -594,7 +594,7 @@ export function Header() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="text-white text-lg font-semibold mb-2">Gestion de l'étude</div>
                       <div className="ml-4 space-y-1">
@@ -603,7 +603,7 @@ export function Header() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="text-white text-lg font-semibold mb-2">Solutions personnalisées</div>
                       <div className="ml-4 space-y-1">

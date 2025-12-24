@@ -23,19 +23,19 @@ export default function UniverselPage() {
 
     const ctx = gsap.context(() => {
       // Animation du titre principal - effet bounce spectaculaire
-      gsap.fromTo(".autres-title", 
-        { opacity: 0, y: 100, scale: 0.5 }, 
+      gsap.fromTo(".autres-title",
+        { opacity: 0, y: 100, scale: 0.5 },
         { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
       )
 
       // Animation des images avec rotation
-      gsap.fromTo(".autres-image", 
-        { opacity: 0, y: 100, rotation: -30 }, 
-        { 
-          opacity: 1, 
-          y: 0, 
-          rotation: 0, 
-          duration: 1.2, 
+      gsap.fromTo(".autres-image",
+        { opacity: 0, y: 100, rotation: -30 },
+        {
+          opacity: 1,
+          y: 0,
+          rotation: 0,
+          duration: 1.2,
           ease: "power3.out",
           scrollTrigger: {
             trigger: ".autres-image",
@@ -49,9 +49,9 @@ export default function UniverselPage() {
       if (contentRef.current) {
         gsap.fromTo(
           contentRef.current,
-          { 
-            opacity: 0, 
-            y: 150, 
+          {
+            opacity: 0,
+            y: 150,
             scale: 0.8,
             rotation: -5,
             transformOrigin: "center center"
@@ -75,9 +75,9 @@ export default function UniverselPage() {
         const contentItems = contentRef.current.querySelectorAll('.content-item')
         gsap.fromTo(
           contentItems,
-          { 
-            opacity: 0, 
-            y: 80, 
+          {
+            opacity: 0,
+            y: 80,
             scale: 0.7,
             rotation: 10,
             transformOrigin: "center bottom"
@@ -159,10 +159,10 @@ export default function UniverselPage() {
                   Autres outils
                 </h1>
                 <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="/essai-gratuit"
-                  className="autres-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-                >
+                  <a
+                    href="/essai-gratuit"
+                    className="autres-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+                  >
                     Demandez un devis
                   </a>
                   <a
@@ -184,16 +184,16 @@ export default function UniverselPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-8">
               Cette section de notre plateforme a été conçue comme un espace de
-              référence indispensable, tant pour les professionnels du droit
-              (avocats, magistrats, juristes d&apos;entreprise, notaires) que
-              pour les étudiants en droit. Elle regroupe des ressources fiables,
+              référence indispensable, tant pour les professionnels
+              (juristes, professionnels de santé, économistes, entreprises) que
+              pour les étudiants et chercheurs. Elle regroupe des ressources fiables,
               rigoureusement sélectionnées, permettant de réviser, consolider,
               approfondir ou vérifier rapidement une notion, sans quitter
               l&apos;environnement numérique de travail.
             </p>
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
               Chaque outil a été pensé pour répondre à un besoin concret,
-              quotidien et stratégique dans la maîtrise du droit.
+              quotidien et stratégique dans la maîtrise de votre domaine d&apos;expertise.
             </p>
           </div>
         </section>
@@ -247,9 +247,8 @@ export default function UniverselPage() {
               >
                 {/* Image */}
                 <div
-                  className={`h-64 sm:h-80 lg:h-96 rounded-lg ${
-                    tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
-                  }`}
+                  className={`h-64 sm:h-80 lg:h-96 rounded-lg ${tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
+                    }`}
                 >
                   <Image
                     src={`/images/autre-outil${tool.number === "1" ? "" : tool.number === "2" ? "-2" : tool.number === "3" ? "-3" : tool.number === "4" ? "-4" : ""}.png`}
@@ -266,11 +265,10 @@ export default function UniverselPage() {
 
                 {/* Content */}
                 <div
-                  className={`flex items-start space-x-4 ${
-                    tool.reverse
+                  className={`flex items-start space-x-4 ${tool.reverse
                       ? "order-1 lg:order-2"
                       : "order-2 lg:order-1"
-                  }`}
+                    }`}
                 >
                   <div className="w-12 h-12 bg-[#770D28] text-white rounded-full flex items-center justify-center font-gobold text-xl flex-shrink-0">
                     {tool.number}
@@ -291,7 +289,7 @@ export default function UniverselPage() {
                           <div>
                             <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
                               Utilité
-                        </span>
+                            </span>
                             <span className="text-gray-700 text-sm leading-relaxed">{tool.utilite}</span>
                           </div>
                         </div>
@@ -300,11 +298,11 @@ export default function UniverselPage() {
                         <div className="flex items-start space-x-3">
                           <div className="w-6 h-6 bg-[#770D28] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
                             A
-                      </div>
+                          </div>
                           <div>
                             <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
                               Avantage
-                        </span>
+                            </span>
                             <span className="text-gray-700 text-sm leading-relaxed">{tool.avantage}</span>
                           </div>
                         </div>
