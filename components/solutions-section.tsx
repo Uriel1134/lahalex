@@ -121,7 +121,7 @@ export function SolutionsSection() {
 
                 <div className="space-y-2 text-black text-[13px] sm:text-[14px] leading-[18px] sm:leading-[20px] mb-6 md:mb-8">
                   <p>
-                    <strong>Recherche juridique avancée :</strong> législation,
+                    <strong>Recherche avancée :</strong> législation,
                     jurisprudence, doctrine et bien plus encore.
                   </p>
                   <p>

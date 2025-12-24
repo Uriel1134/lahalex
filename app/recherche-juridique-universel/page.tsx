@@ -156,7 +156,7 @@ export default function RecherchePage() {
           {/* Hero */}
           <div className="mb-16">
             <h1 ref={titleRef} className="recherche-title text-4xl sm:text-5xl lg:text-6xl font-gobold text-[#770D28] mb-12 leading-tight">
-              Recherche juridique avancée
+              Recherche avancée
             </h1>
 
             <div className="mb-12 flex flex-col sm:flex-row gap-4">
@@ -198,7 +198,7 @@ export default function RecherchePage() {
                 <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[600px] sm:lg:h-[700px] lg:h-[800px] overflow-hidden -mt-20 lg:-mt-20">
               <Image
                 src="/images/recherche-juridique.png"
-                alt="Recherche juridique avancée"
+                alt="Recherche avancée"
                     width={1800}
                     height={1400}
                 className="w-full h-full object-contain"
@@ -239,7 +239,7 @@ export default function RecherchePage() {
       </div>
     </div>
                   <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
-                  Notre outil de recherche juridique avancée permet d'exploiter
+                  Notre outil de recherche avancée permet d'exploiter
                   de façon structurée et intelligente un vaste ensemble de
                   contenus juridiques tels que la législation, la jurisprudence,
                   la doctrine ou encore l'actualité. Grâce à des technologies

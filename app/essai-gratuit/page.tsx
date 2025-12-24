@@ -15,6 +15,7 @@ if (typeof window !== "undefined") {
 }
 
 export default function EssaiGratuit() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     nom: "",
     prenoms: "",
@@ -59,13 +60,14 @@ export default function EssaiGratuit() {
     e.preventDefault();
     // Handle form submission
     console.log("Form submitted:", formData);
+    setIsSubmitted(true);
   };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
-    
+
     if (name === "solutions" && type === "checkbox") {
       const checked = (e.target as HTMLInputElement).checked;
       setFormData((prev) => ({
@@ -90,8 +92,8 @@ export default function EssaiGratuit() {
     const tl = gsap.timeline()
 
     // Animation du titre principal - effet bounce spectaculaire
-    tl.fromTo(".hero-title", 
-      { opacity: 0, y: 100, scale: 0.5 }, 
+    tl.fromTo(".hero-title",
+      { opacity: 0, y: 100, scale: 0.5 },
       { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
     )
 
@@ -101,9 +103,9 @@ export default function EssaiGratuit() {
       if (featuresRef.current) {
         gsap.fromTo(
           featuresRef.current,
-          { 
-            opacity: 0, 
-            x: -150, 
+          {
+            opacity: 0,
+            x: -150,
             scale: 0.8,
             rotation: -10,
             transformOrigin: "left center"
@@ -127,9 +129,9 @@ export default function EssaiGratuit() {
         const featureItems = featuresRef.current.querySelectorAll('div')
         gsap.fromTo(
           featureItems,
-          { 
-            opacity: 0, 
-            y: 50, 
+          {
+            opacity: 0,
+            y: 50,
             scale: 0.7,
             rotation: 5,
             transformOrigin: "center bottom"
@@ -156,10 +158,10 @@ export default function EssaiGratuit() {
       if (stepperRef.current) {
         gsap.fromTo(
           stepperRef.current,
-          { 
-            opacity: 0, 
-            y: 150, 
-            scale: 0.6, 
+          {
+            opacity: 0,
+            y: 150,
+            scale: 0.6,
             rotationX: 45,
             rotationY: 20,
             rotationZ: 10,
@@ -269,25 +271,25 @@ export default function EssaiGratuit() {
                     Sans engagement
                   </span>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center"
                     style={{ backgroundColor: "#770D28" }}
                   >
-                                      <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-                    ></path>
-                  </svg>
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                      ></path>
+                    </svg>
                   </div>
                   <span className="text-lg font-sf-pro text-gray-700">
                     Conseils et assistance technique
@@ -299,226 +301,262 @@ export default function EssaiGratuit() {
 
             {/* Section droite - Formulaire d'inscription avec Stepper */}
             <div ref={stepperRef} className="order-1 lg:order-2 flex items-center justify-center min-h-[600px]">
-              <Stepper
-                initialStep={1}
-                onStepChange={(() => {
-                  console.log("Étape changée");
-                }) as any}
-                onFinalStepCompleted={() => {
-                  console.log("Formulaire terminé!");
-                  handleSubmit(new Event('submit') as any);
-                }}
-                backButtonText="Précédent"
-                nextButtonText="Suivant"
-                stepCircleContainerClassName="bg-white border-gray-200 shadow-xl"
-                contentClassName="min-h-[400px] py-4"
-                renderStepIndicator={undefined}
-              >
-                {/* Étape 1: Informations personnelles */}
-                <Step>
-                  <div className="space-y-6">
-                    <h3 className="text-xl font-gobold text-[#770D28] mb-4">
-                      Informations personnelles
-                    </h3>
-                    
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Nom
-                  </label>
-                  <input
-                    type="text"
-                    name="nom"
-                    placeholder="Votre nom"
-                    value={formData.nom}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Prénom
-                  </label>
-                  <input
-                    type="text"
-                    name="prenoms"
-                    placeholder="Votre prénom"
-                    value={formData.prenoms}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Statut professionnel
-                  </label>
-                  <select
-                    name="statut"
-                    value={formData.statut}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
-                  >
-                    <option value="">-- Sélectionnez un statut --</option>
-                    <option value="avocat">Avocat</option>
-                    <option value="notaire">Notaire</option>
-                    <option value="commissaire">Commissaire de justice</option>
-                        <option value="etudiant">Étudiant</option>
-                    <option value="autre">Autre</option>
-                  </select>
-                </div>
+              {isSubmitted ? (
+                <div className="flex flex-col items-center justify-center h-full p-10 text-center animate-in fade-in zoom-in duration-700 bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl w-full max-w-[500px] min-h-[450px] border border-gray-100">
+                  <div className="relative mb-8">
+                    <div className="absolute inset-0 bg-[#770D28]/20 rounded-full blur-xl animate-pulse"></div>
+                    <div className="relative w-24 h-24 bg-gradient-to-br from-[#770D28] to-[#5a0a1f] rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-500 hover:scale-105">
+                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                    </div>
                   </div>
-                </Step>
 
-                {/* Étape 2: Contact */}
-                <Step>
-                  <div className="space-y-6">
-                    <h3 className="text-xl font-gobold text-[#770D28] mb-4">
-                      Informations de contact
-                    </h3>
+                  <h3 className="text-4xl font-gobold text-[#770D28] mb-4 tracking-wide">
+                    Demande envoyée !
+                  </h3>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Votre email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
-                  />
-                </div>
+                  <div className="space-y-2 mb-8 max-w-sm mx-auto">
+                    <p className="text-lg text-gray-800 font-semibold">
+                      Merci de votre intérêt pour LahaLex.
+                    </p>
+                    <p className="text-gray-600">
+                      Notre équipe a bien reçu votre demande et vous recontactera dans les plus brefs délais.
+                    </p>
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Pays
-                  </label>
-                  <select
-                    name="pays"
-                    value={formData.pays || ""}
-                    onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                        style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                  <a
+                    href="/"
+                    className="group flex items-center gap-2 text-[#770D28] font-semibold hover:text-[#5a0a1f] transition-colors py-2 px-4 rounded-full hover:bg-[#770D28]/5"
                   >
-                    <option value="">-- Pays --</option>
-                        {countryOptions.map((country) => (
-                          <option key={country.code} value={country.value}>
-                            {country.label}
-                          </option>
-                        ))}
-                  </select>
+                    <span>Retour à l'accueil</span>
+                    <svg className="w-4 h-4 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </a>
                 </div>
+              ) : (
+                <Stepper
+                  initialStep={1}
+                  onStepChange={(() => {
+                    console.log("Étape changée");
+                  }) as any}
+                  onFinalStepCompleted={() => {
+                    console.log("Formulaire terminé!");
+                    handleSubmit(new Event('submit') as any);
+                  }}
+                  backButtonText="Précédent"
+                  nextButtonText="Suivant"
+                  stepCircleContainerClassName="bg-white border-gray-200 shadow-xl"
+                  contentClassName="min-h-[400px] py-4"
+                  renderStepIndicator={undefined}
+                >
+                  {/* Étape 1: Informations personnelles */}
+                  <Step>
+                    <div className="space-y-6">
+                      <h3 className="text-xl font-gobold text-[#770D28] mb-4">
+                        Informations personnelles
+                      </h3>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Numéro de téléphone
-                  </label>
-                  <div className="flex space-x-2">
-                    <select
-                      name="indicatif"
-                      value={formData.indicatif}
-                      onChange={handleInputChange}
-                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all min-w-[90px]"
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Nom
+                        </label>
+                        <input
+                          type="text"
+                          name="nom"
+                          placeholder="Votre nom"
+                          value={formData.nom}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
                           style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
-                    >
-                      <option value="">-- Indicatif --</option>
-                          {callingCodeOptions.map((country) => (
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Prénom
+                        </label>
+                        <input
+                          type="text"
+                          name="prenoms"
+                          placeholder="Votre prénom"
+                          value={formData.prenoms}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
+                          style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Statut professionnel
+                        </label>
+                        <select
+                          name="statut"
+                          value={formData.statut}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
+                          style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                        >
+                          <option value="">-- Sélectionnez un statut --</option>
+                          <option value="avocat">Avocat</option>
+                          <option value="notaire">Notaire</option>
+                          <option value="commissaire">Commissaire de justice</option>
+                          <option value="etudiant">Étudiant</option>
+                          <option value="autre">Autre</option>
+                        </select>
+                      </div>
+                    </div>
+                  </Step>
+
+                  {/* Étape 2: Contact */}
+                  <Step>
+                    <div className="space-y-6">
+                      <h3 className="text-xl font-gobold text-[#770D28] mb-4">
+                        Informations de contact
+                      </h3>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Votre email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
+                          style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Pays
+                        </label>
+                        <select
+                          name="pays"
+                          value={formData.pays || ""}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
+                          style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                        >
+                          <option value="">-- Pays --</option>
+                          {countryOptions.map((country) => (
                             <option key={country.code} value={country.value}>
                               {country.label}
                             </option>
                           ))}
-                    </select>
-                    <input
-                      type="tel"
-                      name="telephone"
-                      placeholder="Votre numéro"
-                      value={formData.telephone}
-                      onChange={handleInputChange}
-                      className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-                          style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
-                    />
+                        </select>
                       </div>
-                    </div>
-                  </div>
-                </Step>
 
-                {/* Étape 3: Choix des solutions */}
-                <Step>
-                  <div className="space-y-6">
-                    <h3 className="text-xl font-gobold text-[#770D28] mb-4">
-                      Que souhaitez-vous essayer ?
-                    </h3>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-3">
-                        <input
-                          type="checkbox"
-                          id="universel"
-                          name="solutions"
-                          value="universel"
-                          checked={formData.solutions.includes("universel")}
-                          onChange={handleInputChange}
-                          className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
-                        />
-                        <label htmlFor="universel" className="text-sm font-medium text-gray-700 cursor-pointer">
-                          Lahalex Universel
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Numéro de téléphone
                         </label>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <input
-                          type="checkbox"
-                          id="avocat"
-                          name="solutions"
-                          value="avocat"
-                          checked={formData.solutions.includes("avocat")}
-                          onChange={handleInputChange}
-                          className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
-                        />
-                        <label htmlFor="avocat" className="text-sm font-medium text-gray-700 cursor-pointer">
-                          Lahalex Avocat
-                        </label>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <input
-                          type="checkbox"
-                          id="notaire"
-                          name="solutions"
-                          value="notaire"
-                          checked={formData.solutions.includes("notaire")}
-                          onChange={handleInputChange}
-                          className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
-                        />
-                        <label htmlFor="notaire" className="text-sm font-medium text-gray-700 cursor-pointer">
-                          Lahalex Notaire
-                        </label>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <input
-                          type="checkbox"
-                          id="commissaire"
-                          name="solutions"
-                          value="commissaire"
-                          checked={formData.solutions.includes("commissaire")}
-                          onChange={handleInputChange}
-                          className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
-                        />
-                        <label htmlFor="commissaire" className="text-sm font-medium text-gray-700 cursor-pointer">
-                          Lahalex Commissaire de justice
-                        </label>
+                        <div className="flex space-x-2">
+                          <select
+                            name="indicatif"
+                            value={formData.indicatif}
+                            onChange={handleInputChange}
+                            className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all min-w-[90px]"
+                            style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                          >
+                            <option value="">-- Indicatif --</option>
+                            {callingCodeOptions.map((country) => (
+                              <option key={country.code} value={country.value}>
+                                {country.label}
+                              </option>
+                            ))}
+                          </select>
+                          <input
+                            type="tel"
+                            name="telephone"
+                            placeholder="Votre numéro"
+                            value={formData.telephone}
+                            onChange={handleInputChange}
+                            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all"
+                            style={{ "--tw-ring-color": "#770D28" } as React.CSSProperties}
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Step>
-              </Stepper>
+                  </Step>
+
+                  {/* Étape 3: Choix des solutions */}
+                  <Step>
+                    <div className="space-y-6">
+                      <h3 className="text-xl font-gobold text-[#770D28] mb-4">
+                        Que souhaitez-vous essayer ?
+                      </h3>
+
+                      <div className="space-y-4">
+                        <div className="flex items-start space-x-3">
+                          <input
+                            type="checkbox"
+                            id="universel"
+                            name="solutions"
+                            value="universel"
+                            checked={formData.solutions.includes("universel")}
+                            onChange={handleInputChange}
+                            className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                          />
+                          <label htmlFor="universel" className="text-sm font-medium text-gray-700 cursor-pointer">
+                            Lahalex Universel
+                          </label>
+                        </div>
+
+                        <div className="flex items-start space-x-3">
+                          <input
+                            type="checkbox"
+                            id="avocat"
+                            name="solutions"
+                            value="avocat"
+                            checked={formData.solutions.includes("avocat")}
+                            onChange={handleInputChange}
+                            className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                          />
+                          <label htmlFor="avocat" className="text-sm font-medium text-gray-700 cursor-pointer">
+                            Lahalex Avocat
+                          </label>
+                        </div>
+
+                        <div className="flex items-start space-x-3">
+                          <input
+                            type="checkbox"
+                            id="notaire"
+                            name="solutions"
+                            value="notaire"
+                            checked={formData.solutions.includes("notaire")}
+                            onChange={handleInputChange}
+                            className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                          />
+                          <label htmlFor="notaire" className="text-sm font-medium text-gray-700 cursor-pointer">
+                            Lahalex Notaire
+                          </label>
+                        </div>
+
+                        <div className="flex items-start space-x-3">
+                          <input
+                            type="checkbox"
+                            id="commissaire"
+                            name="solutions"
+                            value="commissaire"
+                            checked={formData.solutions.includes("commissaire")}
+                            onChange={handleInputChange}
+                            className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                          />
+                          <label htmlFor="commissaire" className="text-sm font-medium text-gray-700 cursor-pointer">
+                            Lahalex Commissaire de justice
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </Step>
+                </Stepper>
+              )}
             </div>
           </div>
         </div>

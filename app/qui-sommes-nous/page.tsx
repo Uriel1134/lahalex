@@ -15,7 +15,7 @@ if (typeof window !== "undefined") {
 
 export default function QuiSommesNous() {
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   // Refs pour les animations
   const heroRef = useRef<HTMLElement>(null);
   const visionRef = useRef<HTMLElement>(null);
@@ -190,9 +190,9 @@ export default function QuiSommesNous() {
       // Animation spécifique des icônes de valeurs
       gsap.fromTo(
         ".value-icon",
-        { 
-          opacity: 0, 
-          scale: 0.3, 
+        {
+          opacity: 0,
+          scale: 0.3,
           rotation: -180,
           transformOrigin: "center center"
         },
@@ -288,9 +288,9 @@ export default function QuiSommesNous() {
       // Animation spéciale pour les icônes de feuilles décoratives
       gsap.fromTo(
         ".leaf-decoration",
-        { 
-          opacity: 0, 
-          scale: 0.5, 
+        {
+          opacity: 0,
+          scale: 0.5,
           rotation: -45,
           transformOrigin: "center center"
         },
@@ -403,9 +403,9 @@ export default function QuiSommesNous() {
               QUI SOMMES-NOUS ?
             </h1>
             <p className="hero-subtitle text-white text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Lahalex est une solution juridique innovante qui met à disposition
-              des professionnels du droit des outils fiables et pratiques pour
-              accéder, analyser et gérer efficacement l'information juridique
+              Experts dans la conception et l’édition de bases de données documentaires 
+              et de logiciels métiers pluridisciplinaires, dédiés aux professionnels, 
+              aux institutions et aux acteurs de la recherche.
             </p>
           </div>
         </div>
@@ -418,22 +418,20 @@ export default function QuiSommesNous() {
             Vision et mission
           </h2>
           <p className="text-[#293240] text-lg leading-8 mb-4">
-            Chez <strong>LAHALEX</strong>, <strong>notre mission</strong> est de
-            démocratiser l'accès au droit africain à travers des solutions
-            numériques fiables, intuitives et abordables.
+            Chez <strong>LAHALEX</strong>, <strong>notre mission</strong> est de structurer, sécuriser et valoriser 
+            l’information afin de la transformer en un véritable levier de performance, de décision et d’innovation. 
+            Nous développons des solutions numériques fiables, intuitives et évolutives, conçues pour répondre aux 
+            exigences des environnements professionnels et académiques.
           </p>
           <p className="text-[#293240] text-lg leading-8 mb-4">
-            <strong>Notre vision :</strong> devenir la référence panafricaine de
-            la LegalTech, en connectant les praticiens du droit, les
-            institutions et les citoyens grâce à l'innovation.
+            Nos expertises s’inscrivent particulièrement dans les domaines du droit, 
+            de la médecine et des sciences économiques, où l’accès à une information rigoureuse, actualisée et 
+            exploitable est essentiel. À travers nos bases de données spécialisées et nos logiciels métiers, 
+            nous accompagnons les praticiens, chercheurs, enseignants, étudiants et décideurs dans leurs 
+            activités quotidiennes.
           </p>
           <p className="text-[#293240] text-lg leading-8">
-            <strong className="text-[#770D28]" >Qu'est-ce que la LegalTech ?</strong> <br /><br /> La LegalTech désigne
-            l'utilisation des technologies pour concevoir, proposer et fournir
-            des services et produits liés au droit et à la justice. Elle permet
-            à tous professionnels comme non-professionnels d'accéder plus
-            facilement à l'information juridique et de simplifier leurs
-            démarches.
+            À l’intersection du savoir, de la technologie et des usages métiers, nous plaçons l’expertise documentaire, la qualité scientifique et l’innovation numérique au cœur de chacune de nos solutions.
           </p>
         </div>
         <Image
@@ -482,7 +480,7 @@ export default function QuiSommesNous() {
                     Accessibilité
                   </h3>
                   <p className="value-description text-gray-800 text-base md:text-lg">
-                    Un droit compréhensible et disponible pour tous.
+                    Un savoir compréhensible et disponible pour tous.
                   </p>
                 </div>
               </div>
@@ -581,7 +579,7 @@ export default function QuiSommesNous() {
             Impact social et éducatif
           </h2>
           <p className="text-[#293240] text-lg leading-8 max-w-[538px]">
-            Nous croyons que l'accès au savoir juridique contribue à renforcer
+            Nous croyons que l'accès au savoir contribue à renforcer
             l'État de droit et la démocratie. À travers des partenariats avec
             universités, barreaux et institutions, LAHALEX soutient la formation
             continue des professionnels et l'insertion des étudiants dans le
@@ -628,7 +626,7 @@ export default function QuiSommesNous() {
 
       {/* ---------------- CITATION ---------------- */}
       <section ref={citationRef} className="relative w-[90%] max-w-[1324px] mx-auto py-20">
-        <div className="relative bg-[#770D28] rounded-2xl p-12 text-center text-white">
+        {/* <div className="relative bg-[#770D28] rounded-2xl p-12 text-center text-white">
           <p className="citation-text italic text-xl md:text-2xl leading-relaxed mb-6">
             « Grâce à l'intelligence artificielle, au big data et à des
             plateformes interactives, nous offrons aux praticiens des outils
@@ -642,7 +640,7 @@ export default function QuiSommesNous() {
             fill
             className="absolute inset-0 object-cover rounded-2xl"
           />
-        </div>
+        </div> */}
       </section>
 
       {/* ---------------- FOOTER ---------------- */}

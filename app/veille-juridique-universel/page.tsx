@@ -151,7 +151,7 @@ export default function VeilleJuridiquePage() {
           <section className="mb-12 lg:mb-16">
             <div className="text-left">
                 <h1 ref={titleRef} className="veille-title font-gobold text-3xl sm:text-4xl lg:text-5xl text-[#770D28] mb-6 leading-tight">
-                  Veille juridique
+                  Veille journalière
                 </h1>
                 <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -194,7 +194,7 @@ export default function VeilleJuridiquePage() {
                 {/* Texte */}
                 <div className="mb-8">
                   <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
-                    Notre veille juridique est un dispositif structuré de
+                    Notre veille journalière est un dispositif structuré de
                     <strong> surveillance</strong>, de collecte, d&apos;analyse et de diffusion continue
                     d&apos;informations législatives, réglementaires et
                     jurisprudentielles. Restez informé de l&apos;actualité dans <strong>tous
@@ -266,7 +266,7 @@ export default function VeilleJuridiquePage() {
                  {/* Texte en bas */}
                  <div className="max-w-4xl">
                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
-              Notre veille juridique est un dispositif structuré de
+              Notre veille journalière est un dispositif structuré de
                      <strong> surveillance</strong>, de collecte, d&apos;analyse et de diffusion continue
               d&apos;informations législatives, réglementaires et
                      jurisprudentielles. Restez informé de l&apos;actualité dans <strong>tous
@@ -288,7 +288,7 @@ export default function VeilleJuridiquePage() {
           {/* Avantages */}
           <section>
             <h2 className="font-gobold text-2xl sm:text-3xl text-[#770D28] mb-8">
-              Avantages dans notre veille juridique
+              Avantages dans notre veille journalière
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[

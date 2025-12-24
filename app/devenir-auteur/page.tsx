@@ -21,11 +21,11 @@ export default function DevenirAuteur() {
           {/* Content */}
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="font-gobold text-white mb-6 text-3xl sm:text-4xl lg:text-5xl leading-tight">
-              JURISTE, CHERCHEUR OU PRATICIEN ?
+              Universitaire, Praticien ou EXPERT D’UNE DISCIPLINE CONNEXE ?
             </h1>
             <p className="text-lg sm:text-xl text-white mb-8 max-w-4xl mx-auto leading-relaxed">
-              Publiez vos articles, analyses, chroniques jurisprudentielles, contributions doctrinales, notes de
-              lecture, ouvrages, revues juridiques et bien plus encore sur notre plateforme.
+              Publiez vos articles, analyses, chroniques, contributions doctrinales ou scientifiques, notes de
+              lecture, ouvrages, revues spécialisées et bien plus encore sur notre plateforme.
             </p>
             <a href="/devenir-auteur-form">
   <button className="bg-[#770D28] text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#5a0a1f] transition-colors">

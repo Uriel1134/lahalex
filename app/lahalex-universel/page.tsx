@@ -21,28 +21,28 @@ export default function LahalexUniverselPage() {
     const tl = gsap.timeline();
 
     // Animation du hero - plus visible
-    tl.fromTo(".hero-title", 
-      { opacity: 0, y: 100, scale: 0.5 }, 
+    tl.fromTo(".hero-title",
+      { opacity: 0, y: 100, scale: 0.5 },
       { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
     )
-    .fromTo(".hero-subtitle", 
-      { opacity: 0, x: -100 }, 
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" }, "-=0.5"
-    )
-    .fromTo(".hero-button", 
-      { opacity: 0, scale: 0, rotation: 360 }, 
-      { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: "elastic.out(1, 0.5)" }, "-=0.5"
-    )
-    .fromTo(".hero-image", 
-      { opacity: 0, x: 200, rotation: 45 }, 
-      { opacity: 1, x: 0, rotation: 0, duration: 1.5, ease: "power3.out" }, "-=1"
-    );
+      .fromTo(".hero-subtitle",
+        { opacity: 0, x: -100 },
+        { opacity: 1, x: 0, duration: 1, ease: "power2.out" }, "-=0.5"
+      )
+      .fromTo(".hero-button",
+        { opacity: 0, scale: 0, rotation: 360 },
+        { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: "elastic.out(1, 0.5)" }, "-=0.5"
+      )
+      .fromTo(".hero-image",
+        { opacity: 0, x: 200, rotation: 45 },
+        { opacity: 1, x: 0, rotation: 0, duration: 1.5, ease: "power3.out" }, "-=1"
+      );
 
     // Animation des services avec scroll trigger
     const ctx = gsap.context(() => {
       // Animation simple des cartes
-      gsap.fromTo(".service-card", 
-        { opacity: 0, y: 100, scale: 0.8 }, 
+      gsap.fromTo(".service-card",
+        { opacity: 0, y: 100, scale: 0.8 },
         {
           opacity: 1,
           y: 0,
@@ -59,8 +59,8 @@ export default function LahalexUniverselPage() {
       );
 
       // Animation des icônes
-      gsap.fromTo(".service-icon", 
-        { opacity: 0, scale: 0, rotation: -360 }, 
+      gsap.fromTo(".service-icon",
+        { opacity: 0, scale: 0, rotation: -360 },
         {
           opacity: 1,
           scale: 1,
@@ -78,8 +78,8 @@ export default function LahalexUniverselPage() {
       );
 
       // Animation des titres
-      gsap.fromTo(".service-title", 
-        { opacity: 0, x: -50 }, 
+      gsap.fromTo(".service-title",
+        { opacity: 0, x: -50 },
         {
           opacity: 1,
           x: 0,
@@ -96,8 +96,8 @@ export default function LahalexUniverselPage() {
       );
 
       // Animation des boutons
-      gsap.fromTo(".service-button", 
-        { opacity: 0, y: 30 }, 
+      gsap.fromTo(".service-button",
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
@@ -121,7 +121,7 @@ export default function LahalexUniverselPage() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Header />
-      
+
       <style jsx global>{`
         .hero-title, .hero-subtitle, .hero-button, .hero-image {
           opacity: 0;
@@ -141,15 +141,13 @@ export default function LahalexUniverselPage() {
                 LAHALEX UNIVERSEL
               </h1>
               <p className="hero-subtitle text-gray-700 text-base sm:text-lg mb-8 leading-relaxed">
-                Pensée pour accompagner les juristes, étudiants, doctorants, entreprises, institutions publiques et
-                privées, universités, notaires, avocats, commissaires de justice et tous les praticiens du droit,
-                LahaLex Universel vous donne un accès simplifié, intelligent et innovant à l'information juridique.
+                Pensée pour accompagner les professionnels, étudiants et chercheurs en <strong>Droit, Économie et Sciences de la Santé</strong>. Que vous soyez juriste, économiste, professionnel de santé, entreprise ou institution, LahaLex Universel vous donne un accès simplifié, intelligent et innovant à l'information spécialisée.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-                onClick={() => (window.location.href = "/essai-gratuit")}
-              >
+                <button
+                  className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+                  onClick={() => (window.location.href = "/essai-gratuit")}
+                >
                   Demandez un devis
                 </button>
                 <button
@@ -157,7 +155,7 @@ export default function LahalexUniverselPage() {
                   onClick={() => (window.location.href = "/nous-contacter")}
                 >
                   Demandez une démonstration
-              </button>
+                </button>
               </div>
             </div>
 
@@ -180,7 +178,7 @@ export default function LahalexUniverselPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {/* Recherche juridique avancée */}
+            {/* Recherche avancée */}
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
               <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,9 +190,9 @@ export default function LahalexUniverselPage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Recherche juridique avancée</h3>
+              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Recherche avancée</h3>
               <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Notre outil de recherche juridique avancée permet d'exploiter de façon structurée et intelligente un
+                Notre outil de recherche avancée permet d'exploiter de façon structurée et intelligente un
                 vaste ensembl...
               </p>
               <div className="flex-1"></div>
@@ -248,10 +246,10 @@ export default function LahalexUniverselPage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Veille juridique</h3>
+              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Veille journalière</h3>
               <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Notre veille juridique est un dispositif structuré de surveillance, de collecte, d'analyse et de
-                diffusion continue d'informations législa...
+                Notre veille journalière est un dispositif structuré de surveillance, de collecte, d'analyse et de
+                diffusion continue d'informations législatives, réglementaires et jurisprudentielles.
               </p>
               <div className="flex-1"></div>
               <div className="text-right mt-auto">

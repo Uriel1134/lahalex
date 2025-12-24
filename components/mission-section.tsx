@@ -39,21 +39,21 @@ export function MissionSection() {
   return (
     <section ref={sectionRef} className="w-full bg-[#770D28] py-16 md:py-20 lg:py-30 relative overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center">
-        <Image 
+        {/* <Image 
           src="/images/justice-icon.png" 
           alt="Justice icon" 
           width={300} 
           height={300} 
           className="object-contain w-[150px] sm:w-[200px] md:w-[250px] lg:w-[300px] h-auto opacity-20 md:opacity-30" 
-        />
+        /> */}
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <p className="text-white text-center text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] leading-[28px] sm:leading-[32px] md:leading-[36px] font-normal">
           <span className="text-[#D4C89A]">Lahalex</span> vous accompagne dans tous vos{" "}
-          <span className="text-[#D4C89A]">défis juridiques</span> en mettant à votre disposition des contenus issus{" "}
-          <span className="text-[#D4C89A]">d'experts reconnus</span> : analyses réalisées par des juges, universitaires,
-          praticiens et théoriciens du droit, <span className="text-[#D4C89A]">doctrines de référence</span>.
+          <span className="text-[#D4C89A]">défis</span> en vous proposant des contenus élaborés par{" "}
+          <span className="text-[#D4C89A]">des experts reconnus</span> : analyses menées par des universitaires et des professionnels,
+          alliant la pratique et la théorie , appuyées sur des <span className="text-[#D4C89A]">doctrines de référence</span>.
         </p>
       </div>
     </section>
