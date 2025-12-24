@@ -121,28 +121,26 @@ export function SolutionsSection() {
 
                 <div className="space-y-2 text-black text-[13px] sm:text-[14px] leading-[18px] sm:leading-[20px] mb-6 md:mb-8">
                   <p>
-                    <strong>Recherche avancée :</strong> législation,
-                    jurisprudence, doctrine et bien plus encore.
+                    Une base de données documentaire pluridisciplinaire de référence
                   </p>
                   <p>
-                    <strong>Filtres multicritères et outils de tri</strong> pour
-                    un accès immédiat à l'information.
+                    Base de données documentaire couvrant le droit, la médecine et 
+                    l’économie : législation, jurisprudence, doctrine, publications 
+                    scientifiques et analyses spécialisées.
                   </p>
                   <p>
-                    <strong>Textes juridiques constamment</strong> mis à jour et
-                    interface pensée pour gagner du temps.
+                    Recherche avancée avec filtres multicritères pour un accès rapide, 
+                    précis et ciblé à l’information.
                   </p>
                   <p>
-                    <strong>Bibliothèque numérique complète :</strong> le droit
-                    mais aussi d'autres disciplines.
+                    Contenus constamment mis à jour via une interface conçue pour optimiser 
+                    le temps des professionnels.
                   </p>
                   <p>
-                    <strong>Veille juridique continue :</strong> surveillance
-                    24h/24 et alertes instantanées.
+                    Bibliothèque numérique complète, intégrant le droit et d’autres disciplines connexes.
                   </p>
                   <p>
-                    <strong>Dictionnaire juridique :</strong> définitions
-                    fiables, précises et approfondies.
+                    Veille continue avec alertes personnalisées et dictionnaires spécialisés par domaine.
                   </p>
                 </div>
 
