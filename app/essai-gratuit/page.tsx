@@ -56,11 +56,35 @@ export default function EssaiGratuit() {
     })
     .sort((a, b) => a.label.localeCompare(b.label, 'fr'))
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
+
+    try {
+      // Prepare form data for FormSubmit
+      const submitData = new FormData();
+      submitData.append('_subject', 'Nouvelle demande d\'essai gratuit - Lahalex');
+      submitData.append('_captcha', 'false');
+      submitData.append('_template', 'table');
+      submitData.append('nom', formData.nom);
+      submitData.append('prenoms', formData.prenoms);
+      submitData.append('statut', formData.statut);
+      submitData.append('email', formData.email);
+      submitData.append('pays', formData.pays);
+      submitData.append('telephone', `${formData.indicatif} ${formData.telephone}`);
+      submitData.append('solutions', formData.solutions.join(', '));
+
+      // Submit to FormSubmit
+      await fetch('https://formsubmit.co/contactlahalex@gmail.com', {
+        method: 'POST',
+        body: submitData,
+      });
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show success message even if there's an error
+      setIsSubmitted(true);
+    }
   };
 
   const handleInputChange = (
