@@ -31,7 +31,7 @@ const articles = [
   {
     title: "Le procès équitable à l'épreuve de la communication des causes en matière civile et commerciale",
     author: "Enagnon Gildas NONNOU",
-    position: "Agrégé des facultés de droit Université d'Abomey-Calavi",
+    position: "Agrégé des facultés de droit Université d'Abomey-Calavi ",
   },
 ]
 
