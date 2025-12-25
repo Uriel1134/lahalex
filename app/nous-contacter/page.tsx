@@ -24,8 +24,8 @@ export default function NousContacter() {
       <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
         <Header />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-          <div className="bg-green-50 border border-green-200 rounded-lg p-8">
-            <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="bg-[#770D28]/5 border border-[#770D28]/20 rounded-lg p-8">
+            <svg className="w-16 h-16 text-[#770D28] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <h2 className="text-2xl font-gobold text-[#770D28] mb-4">Message envoyé avec succès !</h2>
