@@ -240,11 +240,11 @@ export default function RecherchePage() {
                   </div>
                   <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
                     Notre outil de recherche avancée permet d'exploiter
-                    de façon structurée et intelligente un vaste ensemble de
-                    contenus juridiques, médicaux et économiques tels que la législation, la jurisprudence,
-                    la doctrine, les publications médicales, les analyses économiques ou encore l'actualité. Grâce à des technologies
-                    performantes, il offre des résultats ciblés, précis et
-                    hiérarchisés.
+                    de façon <strong>structurée et intelligente</strong> un vaste ensemble de
+                    contenus <strong>juridiques, médicaux et économiques</strong> tels que la <strong>législation</strong>, la <strong>jurisprudence</strong>,
+                    la <strong>doctrine</strong>, les <strong>publications médicales</strong>, les <strong>analyses économiques</strong> ou encore l'<strong>actualité</strong>. Grâce à des <strong>technologies
+                      performantes</strong>, il offre des résultats <strong>ciblés, précis et
+                        hiérarchisés</strong>.
                   </p>
                 </div>
 

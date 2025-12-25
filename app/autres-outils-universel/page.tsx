@@ -183,17 +183,17 @@ export default function UniverselPage() {
         <section className="bg-white py-8 sm:py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-8">
-              Cette section de notre plateforme a été conçue comme un espace de
-              référence indispensable, tant pour les professionnels
+              Cette section de notre plateforme a été conçue comme un <strong>espace de
+                référence indispensable</strong>, tant pour les <strong>professionnels</strong>
               (juristes, professionnels de santé, économistes, entreprises) que
-              pour les étudiants et chercheurs. Elle regroupe des ressources fiables,
-              rigoureusement sélectionnées, permettant de réviser, consolider,
-              approfondir ou vérifier rapidement une notion, sans quitter
+              pour les <strong>étudiants et chercheurs</strong>. Elle regroupe des <strong>ressources fiables</strong>,
+              rigoureusement sélectionnées, permettant de <strong>réviser, consolider,
+                approfondir</strong> ou vérifier rapidement une notion, sans quitter
               l&apos;environnement numérique de travail.
             </p>
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
-              Chaque outil a été pensé pour répondre à un besoin concret,
-              quotidien et stratégique dans la maîtrise de votre domaine d&apos;expertise.
+              Chaque outil a été pensé pour répondre à un <strong>besoin concret,
+                quotidien et stratégique</strong> dans la maîtrise de votre <strong>domaine d&apos;expertise</strong>.
             </p>
           </div>
         </section>
@@ -266,8 +266,8 @@ export default function UniverselPage() {
                 {/* Content */}
                 <div
                   className={`flex items-start space-x-4 ${tool.reverse
-                      ? "order-1 lg:order-2"
-                      : "order-2 lg:order-1"
+                    ? "order-1 lg:order-2"
+                    : "order-2 lg:order-1"
                     }`}
                 >
                   <div className="w-12 h-12 bg-[#770D28] text-white rounded-full flex items-center justify-center font-gobold text-xl flex-shrink-0">
