@@ -19,6 +19,10 @@ export function VideoSection() {
             id: "QxaWV32_Mc8",
             title: "Vidéo 3",
         },
+        {
+            id: "i6AYljm1zYk",
+            title: "Vidéo 4",
+        },
     ]
 
     const opts = {

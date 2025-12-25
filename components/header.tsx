@@ -265,7 +265,7 @@ export function Header() {
           </div>
           {/* Logo centré */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <h1 className="text-[#770D28] text-[22px] font-bold tracking-[0.07em] font-gobold">LAHALEXE</h1>
+            <h1 className="text-[#770D28] text-[22px] font-bold tracking-[0.07em] font-gobold">LAHALEX</h1>
           </div>
           {/* Bouton Connexion */}
           <a href="/lahalex-connexion">
