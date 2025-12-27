@@ -174,95 +174,94 @@ export default function RecherchePage() {
               </a>
             </div>
 
-            {/* Disposition en triangle - image du milieu en haut, deux autres en bas */}
-            <div className="mb-16 mx-4 sm:-mx-24 lg:-mx-32 mt-2 sm:-mt-78">
-              {/* Image du milieu en haut */}
-              <div className="flex justify-center mb-8 lg:mb-0">
-                <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[1000px] w-[350px] sm:w-[500px] lg:w-[1000px] overflow-hidden">
-                  <Image
-                    src="/images/recherche-juridique-3.png"
-                    alt="Interface de recherche juridique"
-                    width={1800}
-                    height={1400}
-                    className="w-full h-full object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                      borderRadius: '12px'
-                    }}
-                  />
-                </div>
-              </div>
-
-              {/* Deux images en bas - exactement la même taille */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 -mt-70 lg:-mt-70">
-                <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[600px] sm:lg:h-[700px] lg:h-[800px] overflow-hidden -mt-20 lg:-mt-20">
-                  <Image
-                    src="/images/recherche-juridique.png"
-                    alt="Recherche avancée"
-                    width={1800}
-                    height={1400}
-                    className="w-full h-full object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                      borderRadius: '12px'
-                    }}
-                  />
-                </div>
-                <div className="recherche-image h-[600px] sm:h-[900px] lg:h-[600px] sm:lg:h-[700px] lg:h-[800px] overflow-hidden">
-                  <Image
-                    src="/images/recherche-juridique-4.png"
-                    alt="Outils de recherche juridique"
-                    width={1800}
-                    height={1400}
-                    className="w-full h-full object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                      borderRadius: '12px'
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div ref={contentRef} className="space-y-8">
-
-              {/* Avantages */}
-              <div className="space-y-16 relative">
-                {/* Ligne verticale décorative */}
-                <div className="absolute left-4 top-0 bottom-0 w-px bg-[#770D28]" />
-
-                {/* Bloc 1 */}
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0 relative z-10">
-                    <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
-                      <div className="w-4 h-4 bg-[#770D28] rounded-full"></div>
-                    </div>
-                  </div>
-                  <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
-                    Notre outil de recherche avancée permet d'exploiter
-                    de façon <strong>structurée et intelligente</strong> un vaste ensemble de
-                    contenus <strong>juridiques, médicaux et économiques</strong> tels que la <strong>législation</strong>, la <strong>jurisprudence</strong>,
-                    la <strong>doctrine</strong>, les <strong>publications médicales</strong>, les <strong>analyses économiques</strong> ou encore l'<strong>actualité</strong>. Grâce à des <strong>technologies
-                      performantes</strong>, il offre des résultats <strong>ciblés, précis et
-                        hiérarchisés</strong>.
+            <div ref={contentRef} className="space-y-16">
+              {/* Section 1 - Laptop avec loupe */}
+              <section className="mb-16">
+                {/* Texte descriptif au-dessus */}
+                <div className="max-w-5xl mx-auto mb-8 px-4">
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
+                    Notre outil de recherche avancée permet d'exploiter de façon <strong>structurée et intelligente</strong> un vaste ensemble de contenus <strong>juridiques, médicaux et économiques</strong> tels que la <strong>législation</strong>, la <strong>jurisprudence</strong>, la <strong>doctrine</strong>, les <strong>publications médicales</strong>, les <strong>analyses économiques</strong> ou encore l'<strong>actualité</strong>. Grâce à des <strong>technologies performantes</strong>, il offre des résultats <strong>ciblés, précis et hiérarchisés</strong>.
                   </p>
                 </div>
 
-                {/* Bloc 2 */}
-                <div className="flex items-start space-x-6 mt-8">
-                  <div className="flex-shrink-0 relative z-10">
-                    <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
-                      <div className="w-4 h-4 bg-[#770D28] rounded-full"></div>
-                    </div>
+                {/* Image laptop */}
+                <div className="recherche-image overflow-hidden mb-8">
+                  <Image
+                    src="/images/recherche-section-1.png"
+                    alt="Interface de recherche avec résultats"
+                    width={1200}
+                    height={600}
+                    className="w-full h-auto object-contain"
+                    style={{
+                      borderRadius: '12px'
+                    }}
+                  />
+                </div>
+
+                {/* Texte "Optimisez vos recherche..." */}
+                {/* <div className="max-w-3xl mx-auto px-4">
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                    <strong>Optimisez</strong> vos recherche jurisprudentielles grâce à un moteur intelligent qui classe les décisions par sens, thème et bien plus.
+                  </p>
+                </div> */}
+              </section>
+
+              {/* Section 2 - Codes */}
+              <section className="mb-16 bg-gray-100 py-12">
+                <div className="max-w-7xl mx-auto px-4">
+                  {/* Texte au-dessus */}
+                  <div className="mb-8">
+                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
+                      Des textes à jour, une interface
+                    </p>
                   </div>
-                  <p className="content-item text-black text-lg sm:text-xl lg:text-2xl leading-relaxed font-sf-pro text-left sm:text-justify">
-                    Des filtres multicritères, une interface intuitive et des
-                    fonctionnalités de tri facilitent l'accès rapide aux
-                    informations les plus pertinentes, constamment mises à jour
-                    et directement exploitables dans la pratique professionnelle.
+
+                  {/* Image codes */}
+                  <div className="recherche-image overflow-hidden">
+                    <Image
+                      src="/images/recherche-section-2.png"
+                      alt="Codes juridiques et interface"
+                      width={1400}
+                      height={500}
+                      className="w-full h-auto object-contain"
+                      style={{
+                        borderRadius: '12px'
+                      }}
+                    />
+                  </div>
+                </div>
+              </section>
+
+              {/* Section 3 - Interface de recherche */}
+              <section className="mb-16">
+                {/* Texte au-dessus */}
+                <div className="max-w-5xl mx-auto mb-8 px-4">
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
+                    Des filtres <strong>multicritères</strong>, une <strong>interface intuitive</strong> et des fonctionnalités de tri facilitent l'accès rapide aux informations les plus pertinentes, constamment mises à jour et directement exploitables dans la pratique professionnelle.
                   </p>
                 </div>
-              </div>
+
+                {/* Image interface */}
+                <div className="recherche-image overflow-hidden mb-8">
+                  <Image
+                    src="/images/recherche-section-3.png"
+                    alt="Interface de recherche avec filtres"
+                    width={1200}
+                    height={700}
+                    className="w-full h-auto object-contain"
+                    style={{
+                      borderRadius: '12px'
+                    }}
+                  />
+                </div>
+
+                {/* Texte final */}
+                <div className="max-w-5xl mx-auto px-4">
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
+                    À partir d'un <strong>simple mot-clé</strong>, le moteur de recherche <strong>analyse</strong>, <strong>croise</strong> et <strong>hiérarchise</strong> ces différentes sources afin de fournir rapidement <strong>l'information la plus fiable et la plus pertinente</strong>, parfaitement adaptée aux besoins de l'utilisateur.
+                  </p>
+                </div>
+              </section>
             </div>
           </div>
         </div>
