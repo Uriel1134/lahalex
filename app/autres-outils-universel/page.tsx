@@ -205,7 +205,7 @@ export default function UniverselPage() {
               {
                 number: "1",
                 title: "Fiches de synthèse",
-                desc: "Des synthèses claires, structurées et directement exploitables sur les principales notions juridiques. Elles s'appuient sur des cas concrets, avec des références législatives et jurisprudentielles pertinentes.",
+                desc: "Des synthèses claires, structurées et directement exploitables sur les principales notions. Elles s'appuient sur des cas concrets, avec des références législatives et jurisprudentielles pertinentes.",
                 utilite: "Aide-mémoire rapide, support de révision ou d'enseignement.",
                 avantage: "Clarté, gain de temps, accès immédiat à l'essentiel.",
                 reverse: false,
@@ -232,13 +232,23 @@ export default function UniverselPage() {
               },
               {
                 number: "4",
-                title: "Doctrine",
+                title: "Articles scientifiques",
                 desc: "Lahalex vous accompagne dans tous vos défis juridiques grâce à des contenus d'experts reconnus : actualités en temps réel, doctrines de référence, formation continue et jurisprudences commentées.",
                 utilite:
                   "Approfondissement des enjeux juridiques, construction d'argumentaires solides.",
                 avantage:
                   "Veille intellectuelle et stratégique, utile à la recherche, l'enseignement ou la pratique.",
                 reverse: true,
+              },
+              {
+                number: "5",
+                title: "Rencontres scientifique",
+                desc: "Agenda récapitulatif des séminaires à ne pas manquer, avec la mise à disposition d'un compte rendu pour chaque événement manqué.",
+                utilite:
+                  "Suivez tous les séminaires importants sans faille.",
+                avantage:
+                  "Rattrapez facilement ceux que vous avez manqués grâce aux comptes rendus.",
+                reverse: false,
               },
             ].map((tool, i) => (
               <div
@@ -251,7 +261,7 @@ export default function UniverselPage() {
                     }`}
                 >
                   <Image
-                    src={`/images/autre-outil${tool.number === "1" ? "" : tool.number === "2" ? "-2" : tool.number === "3" ? "-3" : tool.number === "4" ? "-4" : ""}.png`}
+                    src={`/images/${tool.number === "1" ? "autre-outil" : tool.number === "2" ? "autre-outil-2" : tool.number === "3" ? "autre-outil-3" : tool.number === "4" ? "autre-outil-4" : tool.number === "5" ? "rencontres-juridiques" : "autre-outil"}.png`}
                     alt={tool.title}
                     width={800}
                     height={450}
