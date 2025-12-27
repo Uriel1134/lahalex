@@ -223,14 +223,14 @@ export default function RecherchePage() {
               </section>
 
               {/* Section 2 - Codes */}
-              <section className="mb-16 bg-gray-100 py-12">
+              <section className="mb-16 py-12" style={{ backgroundColor: 'rgba(188, 188, 188, 0.7)' }}>
                 <div className="max-w-7xl mx-auto px-4">
                   {/* Texte au-dessus */}
-                  {/* <div className="mb-8">
+                  <div className="mb-8">
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
                       Des textes à jour, une interface
                     </p>
-                  </div> */}
+                  </div>
 
                   {/* Image codes */}
                   <div className="recherche-image overflow-hidden">
