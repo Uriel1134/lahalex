@@ -223,7 +223,11 @@ export default function RecherchePage() {
               </section>
 
               {/* Section 2 - Codes */}
-              <section className="mb-16 -mx-4 sm:-mx-6 lg:-mx-8 py-12" style={{ backgroundColor: 'rgba(188, 188, 188, 0.7)' }}>
+              <section className="mb-16 relative py-12" style={{
+                backgroundColor: 'rgba(188, 188, 188, 0.7)',
+                width: '100vw',
+                marginLeft: 'calc(-50vw + 50%)'
+              }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   {/* Image codes */}
                   <div className="recherche-image overflow-hidden">
