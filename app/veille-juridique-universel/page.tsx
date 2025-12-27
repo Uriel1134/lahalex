@@ -172,25 +172,8 @@ export default function VeilleJuridiquePage() {
 
           {/* Section avec images et texte */}
           <section className="mb-12">
-            {/* Mobile : image PC - texte - image téléphone */}
+            {/* Mobile : texte - image */}
             <div className="block lg:hidden">
-              <div className="mb-8">
-                {/* Image 1 - PC */}
-                <div className="veille-image h-[400px] sm:h-[500px] overflow-hidden">
-                  <Image
-                    src="/images/veille-juridique-2-1.png"
-                    alt="Interface veille juridique"
-                    width={800}
-                    height={800}
-                    className="w-full h-full object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                      borderRadius: '12px'
-                    }}
-                  />
-                </div>
-              </div>
-
               {/* Texte */}
               <div className="mb-8">
                 <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
@@ -206,22 +189,21 @@ export default function VeilleJuridiquePage() {
                   pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
                   un environnement professionnel qui change chaque jour, prendre du
                   retard sur l&apos;information peut coûter cher. Notre veille
-                  pluridisciplinaire spécialisée veille pour vous <strong> 24h/24</strong> et vous<strong> alerte dès</strong>
+                  pluridisciplinaire spécialisée veille pour vous <strong> 24h/24h</strong> et vous<strong> alerte dès</strong>
                   qu&apos;une nouveauté mérite votre attention.
                 </p>
               </div>
 
-              {/* Image 2 - téléphone */}
+              {/* Image */}
               <div className="mb-8">
                 <div className="veille-image h-[400px] sm:h-[500px] overflow-hidden">
                   <Image
-                    src="/images/veille-juridique-02.png"
-                    alt="Fonctionnalités veille juridique"
-                    width={600}
+                    src="/images/veille-nouvelle.png"
+                    alt="Interface veille juridique"
+                    width={800}
                     height={600}
                     className="w-full h-full object-contain"
                     style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
                       borderRadius: '12px'
                     }}
                   />
@@ -229,34 +211,18 @@ export default function VeilleJuridiquePage() {
               </div>
             </div>
 
-            {/* Desktop/Tablette : images en haut - texte en bas */}
+            {/* Desktop/Tablette : image unique - texte en bas */}
             <div className="hidden lg:block">
-              <div className="grid lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 mb-8">
-                {/* Image 1 - grande */}
-                <div className="veille-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden lg:-ml-16 md:-ml-8">
+              {/* Image unique */}
+              <div className="mb-8">
+                <div className="veille-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
                   <Image
-                    src="/images/veille-juridique-2-1.png"
+                    src="/images/veille-nouvelle.png"
                     alt="Interface veille juridique"
                     width={1200}
-                    height={1200}
+                    height={800}
                     className="w-full h-full object-contain"
                     style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                      borderRadius: '12px'
-                    }}
-                  />
-                </div>
-
-                {/* Image 2 */}
-                <div className="veille-image h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
-                  <Image
-                    src="/images/veille-juridique-02.png"
-                    alt="Fonctionnalités veille juridique"
-                    width={600}
-                    height={600}
-                    className="w-full h-full object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
                       borderRadius: '12px'
                     }}
                   />
@@ -264,7 +230,7 @@ export default function VeilleJuridiquePage() {
               </div>
 
               {/* Texte en bas */}
-              <div className="max-w-4xl">
+              <div className="max-w-4xl mx-auto">
                 <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left sm:text-justify">
                   Notre veille journalière est un dispositif structuré de
                   <strong> surveillance</strong>, de collecte, d&apos;analyse et de diffusion continue
@@ -278,7 +244,7 @@ export default function VeilleJuridiquePage() {
                   pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
                   un environnement professionnel qui change chaque jour, prendre du
                   retard sur l&apos;information peut coûter cher. Notre veille
-                  pluridisciplinaire spécialisée veille pour vous <strong> 24h/24</strong> et vous<strong> alerte dès</strong>
+                  pluridisciplinaire spécialisée veille pour vous <strong> 24h/24h</strong> et vous<strong> alerte dès</strong>
                   qu&apos;une nouveauté mérite votre attention.
                 </p>
               </div>

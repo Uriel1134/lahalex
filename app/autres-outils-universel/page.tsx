@@ -205,49 +205,49 @@ export default function UniverselPage() {
               {
                 number: "1",
                 title: "Fiches de synthèse",
-                desc: "Des synthèses claires, structurées et directement exploitables sur les principales notions. Elles s'appuient sur des cas concrets, avec des références législatives et jurisprudentielles pertinentes.",
-                utilite: "Aide-mémoire rapide, support de révision ou d'enseignement.",
-                avantage: "Clarté, gain de temps, accès immédiat à l'essentiel.",
+                desc: "Des synthèses claires, structurées et directement exploitables sur les principales notions juridiques, médicales et économiques. Elles s'appuient sur des cas concrets, avec des références législatives, réglementaires, scientifiques et académiques pertinentes. Chaque fiche est accompagnée de QCM pour tester vos connaissances.",
+                utilite: "Aide-mémoire rapide, support de révision ou d'enseignement dans tous les domaines professionnels.",
+                avantage: "Clarté, gain de temps, accès immédiat à l'essentiel dans votre domaine d'expertise.",
                 reverse: false,
               },
               {
                 number: "2",
                 title: "Fiches de méthode",
-                desc: "Des guides pratiques conçus pour maîtriser les exigences académiques et professionnelles. Elles couvrent des formats essentiels comme le cas pratique, le commentaire d'arrêt, la dissertation juridique, mais aussi la rédaction de conclusions, et d'autres écrits professionnels.",
+                desc: "Des guides pratiques conçus pour maîtriser les exigences académiques et professionnelles en droit, médecine et économie. Elles couvrent des formats essentiels comme le cas pratique, le commentaire d'arrêt, la dissertation, l'analyse de cas cliniques, les études économiques, ainsi que la rédaction de rapports et d'autres écrits professionnels.",
                 utilite:
-                  "Renforce les compétences méthodologiques, structure le raisonnement juridique.",
+                  "Renforce les compétences méthodologiques, structure le raisonnement professionnel dans votre discipline.",
                 avantage:
-                  "Clarifie les attentes, propose des schémas types et des conseils concrets adaptés à chaque exercice.",
+                  "Clarifie les attentes, propose des schémas types et des conseils concrets adaptés à chaque exercice et domaine.",
                 reverse: true,
               },
               {
                 number: "3",
-                title: "Dictionnaire juridique avancé",
-                desc: "Notre dictionnaire juridique est un outil numérique avancé conçu pour offrir aux professionnels et étudiants du droit une compréhension claire, précise et approfondie du vocabulaire juridique.",
+                title: "Dictionnaire spécialisé",
+                desc: "Notre dictionnaire spécialisé est un outil numérique avancé conçu pour offrir aux professionnels et étudiants une compréhension claire, précise et approfondie.",
                 utilite:
-                  "Clarifie les termes techniques et juridiques souvent complexes.",
+                  "Clarifie les termes techniques et spécialisés souvent complexes dans tous les domaines.",
                 avantage:
-                  "Compréhension rapide, fiabilité terminologique, utile en rédaction et en argumentation.",
+                  "Compréhension rapide, fiabilité terminologique, utile en rédaction et en argumentation professionnelle.",
                 reverse: false,
               },
               {
                 number: "4",
                 title: "Articles scientifiques",
-                desc: "Lahalex vous accompagne dans tous vos défis juridiques grâce à des contenus d'experts reconnus : actualités en temps réel, doctrines de référence, formation continue et jurisprudences commentées.",
+                desc: "Lahalex vous accompagne dans tous vos défis professionnels grâce à des contenus d'experts reconnus en droit, médecine et économie : actualités en temps réel, articles de référence, formation continue et analyses commentées.",
                 utilite:
-                  "Approfondissement des enjeux juridiques, construction d'argumentaires solides.",
+                  "Approfondissement des enjeux professionnels, construction d'argumentaires solides et pluridisciplinaires.",
                 avantage:
-                  "Veille intellectuelle et stratégique, utile à la recherche, l'enseignement ou la pratique.",
+                  "Veille intellectuelle et stratégique, utile à la recherche, l'enseignement ou la pratique dans tous les domaines.",
                 reverse: true,
               },
               {
                 number: "5",
                 title: "Rencontres scientifique",
-                desc: "Agenda récapitulatif des séminaires à ne pas manquer, avec la mise à disposition d'un compte rendu pour chaque événement manqué.",
+                desc: "Agenda récapitulatif des séminaires, colloques et conférences en droit, médecine et économie à ne pas manquer, avec la mise à disposition d'un compte rendu pour chaque événement manqué.",
                 utilite:
-                  "Suivez tous les séminaires importants sans faille.",
+                  "Suivez tous les événements scientifiques et professionnels importants sans faille.",
                 avantage:
-                  "Rattrapez facilement ceux que vous avez manqués grâce aux comptes rendus.",
+                  "Rattrapez facilement ceux que vous avez manqués grâce aux comptes rendus détaillés.",
                 reverse: false,
               },
             ].map((tool, i) => (
@@ -257,7 +257,7 @@ export default function UniverselPage() {
               >
                 {/* Image */}
                 <div
-                  className={`h-64 sm:h-80 lg:h-96 rounded-lg ${tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
+                  className={`h-64 sm:h-80 lg:h-96 rounded-lg relative ${tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
                     }`}
                 >
                   <Image
@@ -271,6 +271,28 @@ export default function UniverselPage() {
                       borderRadius: '12px'
                     }}
                   />
+                  {/* QCM Magnifying Glass for Tool 1 */}
+                  {tool.number === "1" && (
+                    <div className="absolute -right-6 top-1/2 -translate-y-2/2 w-28 h-28 sm:w-36 sm:h-36">
+                      {/* Magnifying glass circle */}
+                      <div className="relative w-full h-full rounded-full border-8 border-[#770D28] bg-white shadow-2xl overflow-hidden">
+                        {/* QCM Preview Image inside magnifying glass */}
+                        <div className="absolute inset-2 flex items-center justify-center">
+                          <Image
+                            src="/images/qcm-preview.png"
+                            alt="QCM Preview"
+                            width={200}
+                            height={200}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        {/* Glass shine effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent rounded-full pointer-events-none"></div>
+                      </div>
+                      {/* Magnifying glass handle */}
+                      <div className="absolute bottom-0 right-0 w-12 h-16 bg-[#770D28] rounded-b-full transform translate-y-8 translate-x-2 rotate-45 shadow-lg"></div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}

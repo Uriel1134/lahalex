@@ -528,7 +528,7 @@ export default function EssaiGratuit() {
                             className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
                           />
                           <label htmlFor="universel" className="text-sm font-medium text-gray-700 cursor-pointer">
-                            Lahalex Universel
+                            Lahalex Universel - Droit 
                           </label>
                         </div>
 
@@ -543,7 +543,7 @@ export default function EssaiGratuit() {
                             className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
                           />
                           <label htmlFor="avocat" className="text-sm font-medium text-gray-700 cursor-pointer">
-                            Lahalex Avocat
+                            Lahalex Universel - Économie 
                           </label>
                         </div>
 
@@ -558,6 +558,36 @@ export default function EssaiGratuit() {
                             className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
                           />
                           <label htmlFor="notaire" className="text-sm font-medium text-gray-700 cursor-pointer">
+                            Lahalex Universel - Médecine
+                          </label>
+                        </div>
+                        
+                        <div className="flex items-start space-x-3">
+                          <input
+                            type="checkbox"
+                            id="commissaire"
+                            name="solutions"
+                            value="commissaire"
+                            checked={formData.solutions.includes("commissaire")}
+                            onChange={handleInputChange}
+                            className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                          />
+                          <label htmlFor="commissaire" className="text-sm font-medium text-gray-700 cursor-pointer">
+                            Lahalex Avocat
+                          </label>
+                        </div>
+
+                        <div className="flex items-start space-x-3">
+                          <input
+                            type="checkbox"
+                            id="commissaire"
+                            name="solutions"
+                            value="commissaire"
+                            checked={formData.solutions.includes("commissaire")}
+                            onChange={handleInputChange}
+                            className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
+                          />
+                          <label htmlFor="commissaire" className="text-sm font-medium text-gray-700 cursor-pointer">
                             Lahalex Notaire
                           </label>
                         </div>

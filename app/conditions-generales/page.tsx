@@ -429,7 +429,7 @@ export default function ConditionsGeneralesPage() {
                           <div>
                             <h4 className="text-sm sm:text-base font-medium text-gray-800 mb-2">9.1.2 Disponibilité des Services</h4>
                             <p className="text-gray-700 leading-relaxed mb-2 text-sm sm:text-base">
-                              Les services sont accessibles en principe 24h/24 et 7j/7, sous réserve d'interruptions pour :
+                              Les services sont accessibles en principe 24h/24h et 7j/7, sous réserve d'interruptions pour :
                             </p>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base">
                               <li>Maintenance préventive ou corrective</li>
