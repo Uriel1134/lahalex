@@ -177,11 +177,27 @@ export default function RecherchePage() {
             <div ref={contentRef} className="space-y-16">
               {/* Section 1 - Laptop avec loupe */}
               <section className="mb-16">
-                {/* Texte descriptif au-dessus */}
-                <div className="max-w-5xl mx-auto mb-8 px-4">
-                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
-                    Notre outil de recherche avancée permet d'exploiter de façon <strong>structurée et intelligente</strong> un vaste ensemble de contenus <strong>juridiques, médicaux et économiques</strong> tels que la <strong>législation</strong>, la <strong>jurisprudence</strong>, la <strong>doctrine</strong>, les <strong>publications médicales</strong>, les <strong>analyses économiques</strong> ou encore l'<strong>actualité</strong>. Grâce à des <strong>technologies performantes</strong>, il offre des résultats <strong>ciblés, précis et hiérarchisés</strong>.
-                  </p>
+                {/* Texte descriptif au-dessus avec image décorative */}
+                <div className="relative max-w-7xl mx-auto mb-8 px-4">
+                  <div className="flex items-start justify-between gap-8">
+                    {/* Texte à gauche */}
+                    <div className="flex-1 max-w-3xl">
+                      <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left">
+                        Notre outil de recherche avancée permet d'exploiter de façon <strong>structurée et intelligente</strong> un vaste ensemble de contenus <strong>juridiques, médicaux et économiques</strong> tels que la <strong>législation</strong>, la <strong>jurisprudence</strong>, la <strong>doctrine</strong>, les <strong>publications médicales</strong>, les <strong>analyses économiques</strong> ou encore l'<strong>actualité</strong>. Grâce à des <strong>technologies performantes</strong>, il offre des résultats <strong>ciblés, précis et hiérarchisés</strong>.
+                      </p>
+                    </div>
+
+                    {/* Image décorative à droite */}
+                    <div className="hidden lg:block flex-shrink-0">
+                      <Image
+                        src="/images/decoration-courbes.png"
+                        alt="Décoration"
+                        width={150}
+                        height={150}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Image laptop */}
@@ -210,11 +226,11 @@ export default function RecherchePage() {
               <section className="mb-16 bg-gray-100 py-12">
                 <div className="max-w-7xl mx-auto px-4">
                   {/* Texte au-dessus */}
-                  <div className="mb-8">
+                  {/* <div className="mb-8">
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
                       Des textes à jour, une interface
                     </p>
-                  </div>
+                  </div> */}
 
                   {/* Image codes */}
                   <div className="recherche-image overflow-hidden">
