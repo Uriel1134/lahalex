@@ -176,7 +176,19 @@ export default function RecherchePage() {
 
             <div ref={contentRef} className="space-y-16">
               {/* Section 1 - Laptop avec loupe */}
-              <section className="mb-16">
+              <section className="mb-16 relative">
+
+                {/* Image décorative à droite - vraiment collée au bord de l'écran */}
+                <div className="absolute -right-2 top-0 hidden lg:block">
+                  <Image
+                    src="/images/decoration-courbes.png"
+                    alt="Décoration"
+                    width={150}
+                    height={150}
+                    className="object-contain"
+                  />
+                </div>
+
                 {/* Texte descriptif au-dessus avec image décorative */}
                 <div className="relative max-w-7xl mx-auto mb-8 px-4">
                   <div className="flex items-start justify-between gap-8">
@@ -187,8 +199,8 @@ export default function RecherchePage() {
                       </p>
                     </div>
 
-                    {/* Image décorative à droite */}
-                    <div className="hidden lg:block flex-shrink-0">
+                    {/* Image décorative à droite - positionnée absolument au bord */}
+                    <div className="absolute left--10 top-60 hidden lg:block">
                       <Image
                         src="/images/decoration-courbes.png"
                         alt="Décoration"
