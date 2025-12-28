@@ -176,7 +176,28 @@ export default function RecherchePage() {
 
             <div ref={contentRef} className="space-y-16">
               {/* Section 1 - Laptop avec loupe */}
-              <section className="mb-16">
+              <section className="mb-16 relative">
+                {/* Décorations - Courbe rouge gauche */}
+                <div className="absolute -left-8 top-32 hidden lg:block">
+                  <Image
+                    src="/images/decoration-rouge.png"
+                    alt=""
+                    width={120}
+                    height={150}
+                    className="object-contain"
+                  />
+                </div>
+
+                {/* Décorations - Courbe rouge droite haut */}
+                <div className="absolute -right-8 top-0 hidden lg:block">
+                  <Image
+                    src="/images/decoration-rouge.png"
+                    alt=""
+                    width={150}
+                    height={180}
+                    className="object-contain transform scale-x-[-1]"
+                  />
+                </div>
                 {/* Texte descriptif au-dessus avec image décorative */}
                 <div className="relative max-w-7xl mx-auto mb-8 px-4">
                   <div className="flex items-start justify-between gap-8">
@@ -246,7 +267,17 @@ export default function RecherchePage() {
               </section>
 
               {/* Section 3 - Interface de recherche */}
-              <section className="mb-16">
+              <section className="mb-16 relative">
+                {/* Décorations - Courbe rouge droite */}
+                <div className="absolute -right-8 top-1/3 hidden lg:block">
+                  <Image
+                    src="/images/decoration-rouge.png"
+                    alt=""
+                    width={130}
+                    height={160}
+                    className="object-contain transform scale-x-[-1]"
+                  />
+                </div>
                 {/* Texte au-dessus */}
                 <div className="max-w-5xl mx-auto mb-8 px-4">
                   <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
