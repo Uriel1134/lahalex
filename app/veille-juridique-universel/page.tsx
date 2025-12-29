@@ -188,9 +188,7 @@ export default function VeilleJuridiquePage() {
                   simplifie votre quotidien pour que vous puissiez vous consacrer
                   pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
                   un environnement professionnel qui change chaque jour, prendre du
-                  retard sur l&apos;information peut coûter cher. Notre veille
-                  pluridisciplinaire spécialisée veille pour vous <strong> 24H/24H</strong> et vous<strong> alerte dès</strong>
-                  qu&apos;une nouveauté mérite votre attention.
+                  retard sur l&apos;information peut coûter cher.
                 </p>
               </div>
 
@@ -215,7 +213,12 @@ export default function VeilleJuridiquePage() {
             <div className="hidden lg:block">
               {/* Image unique */}
               <div className="mb-8">
-                <div className="veille-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
+                <div className="veille-image h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden relative">
+                  <div className="absolute top-0 right-25 max-w-md z-10 hidden lg:block">
+                    <p className="text-gray-700 text-lg leading-relaxed text-left font-medium">
+                      Notre veille pluridisciplinaire spécialisée veille pour vous <strong>24H/24H</strong> et vous alerte dès qu&apos;une nouveauté mérite votre attention.
+                    </p>
+                  </div>
                   <Image
                     src="/images/veille-nouvelle.png"
                     alt="Interface veille juridique"
@@ -243,9 +246,7 @@ export default function VeilleJuridiquePage() {
                   simplifie votre quotidien pour que vous puissiez vous consacrer
                   pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
                   un environnement professionnel qui change chaque jour, prendre du
-                  retard sur l&apos;information peut coûter cher. Notre veille
-                  pluridisciplinaire spécialisée veille pour vous <strong> 24H/24H</strong> et vous<strong> alerte dès</strong>
-                  qu&apos;une nouveauté mérite votre attention.
+                  retard sur l&apos;information peut coûter cher.
                 </p>
               </div>
             </div>
