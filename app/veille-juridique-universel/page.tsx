@@ -189,7 +189,7 @@ export default function VeilleJuridiquePage() {
                   pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
                   un environnement professionnel qui change chaque jour, prendre du
                   retard sur l&apos;information peut coûter cher. Notre veille
-                  pluridisciplinaire spécialisée veille pour vous <strong> 24h/24h</strong> et vous<strong> alerte dès</strong>
+                  pluridisciplinaire spécialisée veille pour vous <strong> 24H/24H</strong> et vous<strong> alerte dès</strong>
                   qu&apos;une nouveauté mérite votre attention.
                 </p>
               </div>
@@ -244,7 +244,7 @@ export default function VeilleJuridiquePage() {
                   pleinement à l&apos;essentiel. Anticipez plutôt que de subir. Dans
                   un environnement professionnel qui change chaque jour, prendre du
                   retard sur l&apos;information peut coûter cher. Notre veille
-                  pluridisciplinaire spécialisée veille pour vous <strong> 24h/24h</strong> et vous<strong> alerte dès</strong>
+                  pluridisciplinaire spécialisée veille pour vous <strong> 24H/24H</strong> et vous<strong> alerte dès</strong>
                   qu&apos;une nouveauté mérite votre attention.
                 </p>
               </div>
