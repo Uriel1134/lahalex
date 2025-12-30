@@ -194,7 +194,7 @@ export default function VeilleJuridiquePage() {
               <div className="mb-8">
                 <div className="veille-image h-[400px] sm:h-[500px] overflow-hidden relative">
                   <div className="absolute top-0 right-2 max-w-[50%] z-10 block lg:hidden">
-                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-right font-medium">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-left font-medium">
                       Notre veille pluridisciplinaire spécialisée veille pour vous <strong>24H/24H</strong> et vous alerte dès qu&apos;une nouveauté mérite votre attention.
                     </p>
                   </div>
