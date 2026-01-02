@@ -282,7 +282,7 @@ export default function VeilleJuridiquePage() {
                   border: false,
                   textColor: "white",
                   title: "Personnalisation du suivi",
-                  desc: "Possibilité de configurer des alertes thématiques, de suivre des domaines spécifiques (droit du travail, fiscalité, droit international, etc.), ou encore des juridictions ou législateurs précis.",
+                  desc: "Possibilité de configurer des alertes thématiques, de suivre des domaines spécifiques, ou encore des sources précises.",
                 },
                 {
                   id: "4",
@@ -290,7 +290,7 @@ export default function VeilleJuridiquePage() {
                   border: true,
                   textColor: "#770D28",
                   title: "Outil d'aide à la décision",
-                  desc: "En anticipant les évolutions juridiques, la veille permet aux entreprises, avocats et juristes d'adapter rapidement leur stratégie ou leurs contrats.",
+                  desc: "En anticipant les évolutions de votre secteur, la veille permet aux entreprises d'adapter rapidement leur stratégie.",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-start space-x-4">

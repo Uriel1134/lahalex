@@ -15,13 +15,13 @@ const vosBesoinsMenu = [
     ]
   },
   {
-    title: "Veille juridique",
+    title: "Veille journalière",
     submenu: [
       { title: "Lahalex Universel", href: "/veille-juridique-universel" }
     ]
   },
   {
-    title: "Rencontres juridiques",
+    title: "Rencontres scientifiques",
     submenu: [
       { title: "Lahalex Universel", href: "/autres-outils-universel" }
     ]
