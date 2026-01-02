@@ -530,7 +530,7 @@ export function Header() {
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Veille juridique</div>
+                      <div className="text-white text-lg font-semibold mb-2">Veille journalière</div>
                       <div className="ml-4 space-y-1">
                         <a href="/veille-juridique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
                           Lahalex Universel
