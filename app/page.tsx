@@ -16,7 +16,7 @@ export default function HomePage() {
       <MissionSection />
       <ArticlesSection />
       <VideoSection />
-      <Footer />
+      <Footer/>
       <CookieConsent />
     </main>
   )

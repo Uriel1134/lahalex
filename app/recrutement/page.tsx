@@ -21,8 +21,8 @@ const JOBS: Job[] = [
   {
     id: "dev-fullstack",
     poste: "Développeur Full Stack (Front-end & Back-end)",
-    secteur: "LegalTech / Développement logiciel SaaS",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    secteur: "Développement logiciel SaaS",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le développeur full stack participe à la conception, au développement et à la maintenance des solutions numériques de LAHALEX. Il intervient sur l'ensemble de la chaîne technique, du front-end au back-end, afin de garantir la performance, la sécurité et l'ergonomie des logiciels métiers.",
     activites: [
@@ -39,12 +39,13 @@ const JOBS: Job[] = [
       "Expérience avec les API, microservices et architectures SaaS",
       "Sens de l'innovation, autonomie et travail en équipe",
     ],
+    diplomes: "Licence, Master ou diplôme équivalent en informatique, génie logiciel ou domaine connexe",
   },
   {
     id: "resp-communication",
     poste: "Responsable communication / Chargé de communication",
-    secteur: "Communication / Marketing / Médias – LegalTech & Édition",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    secteur: "Communication / Marketing / Médias & Édition",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le responsable communication définit et met en œuvre la stratégie de communication interne et externe de l'organisation. Il valorise l'image de marque, développe la visibilité sur les différents canaux (presse, réseaux sociaux, web) et veille à la cohérence des messages.",
     activites: [
@@ -61,12 +62,13 @@ const JOBS: Job[] = [
       "Organisation, rigueur et capacité de gestion de projet",
       "Connaissance du secteur juridique est un atout",
     ],
+    diplomes: "Licence ou Master en communication, marketing, journalisme ou domaine connexe",
   },
   {
     id: "assistant-admin",
     poste: "Assistant administratif / Secrétaire exécutif",
     secteur: "Administration / Gestion – Support aux métiers du droit et de la technologie",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "L'assistant administratif assure la gestion quotidienne des tâches administratives et le soutien organisationnel des équipes dirigeantes. Il veille à la bonne circulation de l'information et à l'efficacité des opérations internes.",
     activites: [
@@ -83,12 +85,13 @@ const JOBS: Job[] = [
       "Bonnes capacités rédactionnelles",
       "Maîtrise du français écrit et oral ; l'anglais est un plus",
     ],
+    diplomes: "BTS, Licence professionnelle ou diplôme équivalent en administration, secrétariat ou gestion",
   },
   {
     id: "resp-comptable",
     poste: "Responsable comptable / Comptable",
-    secteur: "Comptabilité / Finance – LegalTech & Édition",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    secteur: "Comptabilité / Finance & Édition",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le responsable comptable supervise la comptabilité générale, garantit la fiabilité des comptes et veille au respect des obligations fiscales et sociales. Le comptable, quant à lui, assure l'enregistrement et le suivi des opérations financières.",
     activites: [
@@ -105,12 +108,13 @@ const JOBS: Job[] = [
       "Rigueur, organisation et sens des responsabilités",
       "Discrétion et intégrité professionnelle",
     ],
+    diplomes: "Licence, Master ou diplôme équivalent en comptabilité, finance ou gestion",
   },
   {
     id: "juriste-articles",
-    poste: "Juriste – Rédacteur d'articles juridiques",
-    secteur: "Édition juridique / LegalTech / Communication juridique",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    poste: "Rédacteur d'articles(droit, médecine, agriculture, économie, stim)",
+    secteur: "Édition juridique / Communication juridique",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le juriste rédacteur d'articles produit des contenus juridiques destinés à l'information et à la vulgarisation. Il contribue à rendre le droit accessible aux professionnels et au grand public.",
     activites: [
@@ -126,12 +130,13 @@ const JOBS: Job[] = [
       "Rigueur intellectuelle et esprit critique",
       "Bonne maîtrise des outils numériques et de publication",
     ],
+    diplomes: "Master en droit, journalisme spécialisé, rédaction ou domaine équivalent",
   },
   {
     id: "juriste-actes",
     poste: "Juriste – Rédacteur d'actes juridiques",
-    secteur: "Services juridiques / LegalTech",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    secteur: "Services juridiques",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le juriste rédacteur d'actes élabore et sécurise les contrats, conventions et actes juridiques pour l'entreprise et ses clients. Il garantit leur conformité aux règles légales et réglementaires.",
     activites: [
@@ -147,12 +152,13 @@ const JOBS: Job[] = [
       "Compétences en analyse et en conseil",
       "Discrétion et éthique professionnelle",
     ],
+    diplomes: "Master en droit privé, droit des affaires ou équivalent",
   },
   {
     id: "juriste-ohada",
     poste: "Juriste – Spécialiste du droit OHADA",
-    secteur: "Droit des affaires / OHADA / LegalTech",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    secteur: "Droit des affaires / OHADA",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le juriste spécialiste en droit OHADA apporte une expertise pointue sur l'interprétation et l'application des Actes uniformes et des décisions de la CCJA.",
     activites: [
@@ -160,7 +166,7 @@ const JOBS: Job[] = [
       "Conseiller sur les questions de droit des sociétés, droit commercial, procédures collectives, sûretés, etc.",
       "Rédiger des études, mémos et notes de synthèse",
       "Former et sensibiliser les étudiants et professionnels au droit OHADA",
-      "Participer au développement d'outils LegalTech dédiés",
+      "Participer au développement d'outils dédiés",
     ],
     competences: [
       "Maîtrise approfondie du droit OHADA",
@@ -169,12 +175,13 @@ const JOBS: Job[] = [
       "Pédagogie et capacité de transmission",
       "Esprit de recherche et innovation juridique",
     ],
+    diplomes: "Master ou Doctorat en droit des affaires, droit OHADA ou équivalent",
   },
   {
     id: "juriste-generaliste",
     poste: "Juriste généraliste / Juriste polyvalent",
-    secteur: "Services juridiques / Entreprise / LegalTech",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    secteur: "Services juridiques / Entreprise",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le juriste généraliste intervient sur l'ensemble des problématiques juridiques de l'organisation, couvrant plusieurs branches du droit afin d'apporter un soutien complet et polyvalent.",
     activites: [
@@ -191,12 +198,13 @@ const JOBS: Job[] = [
       "Solides qualités rédactionnelles",
       "Sens de la confidentialité et de l'éthique",
     ],
+    diplomes: "Master en droit ou diplôme équivalent",
   },
   {
     id: "directeur-executif",
     poste: "Directeur exécutif",
-    secteur: "LegalTech / Management / Développement stratégique et opérationnel",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    secteur: "Management / Développement stratégique et opérationnel",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le Directeur exécutif est responsable de la direction et de la coordination des activités de LAHALEX dans un pays donné. Il supervise l'ensemble des opérations locales, gère les équipes sur place et assure le suivi des relations avec les plus gros clients et partenaires stratégiques.",
     activites: [
@@ -213,14 +221,15 @@ const JOBS: Job[] = [
       "Excellentes capacités en management d'équipe et leadership",
       "Sens aigu de la gestion des clients grands comptes",
     ],
+    diplomes: "Master en gestion, administration, droit, commerce ou équivalent",
   },
   {
     id: "analyste-veille",
-    poste: "Analyste en veille juridique",
-    secteur: "LegalTech / Droit & Technologies de l'information",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    poste: "Chargé de veille(droit, agriculture, économie, santé, STIM)",
+    secteur: "Droit & Technologies de l'information",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
-      "L'analyste en veille juridique est chargé d'identifier, collecter, analyser et synthétiser les évolutions législatives, réglementaires et jurisprudentielles. Il fournit des informations stratégiques permettant aux professionnels et aux étudiants d'accéder à un droit actualisé et fiable.",
+      "Le Chargé de veille a pour rôle d'identifier, collecter, analyser et synthétiser les évolutions législatives, réglementaires et jurisprudentielles. Il fournit des informations stratégiques permettant aux professionnels et aux étudiants d'accéder à un droit actualisé et fiable.",
     activites: [
       "Assurer une veille quotidienne sur les textes officiels, jurisprudences et réformes",
       "Élaborer des notes de synthèse claires et structurées",
@@ -235,14 +244,15 @@ const JOBS: Job[] = [
       "Rigueur, esprit critique et sens de la confidentialité",
       "Maîtrise du français juridique ; l'anglais est un atout",
     ],
+    diplomes: "Master en droit, information documentaire, veille stratégique ou équivalent",
   },
   {
     id: "resp-etudes-doctrine",
-    poste: "Responsable des études et de la doctrine juridique",
-    secteur: "Droit / Recherche juridique / Doctrine / Édition juridique / LegalTech",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    poste: "Responsable des études et de la doctrine",
+    secteur: "Droit / Recherche juridique / Doctrine / Édition juridique",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
-      "Le Responsable des études et de la doctrine juridique pilote la production intellectuelle et scientifique dans le domaine du droit. Il coordonne la rédaction, l'analyse et la diffusion d'articles, de notes et d'études juridiques destinées à enrichir la doctrine.",
+      "Le Responsable des études et de la doctrine pilote la production intellectuelle et scientifique dans le domaine du droit. Il coordonne la rédaction, l'analyse et la diffusion d'articles, de notes et d'études juridiques destinées à enrichir la doctrine.",
     activites: [
       "Superviser et coordonner la production d'études juridiques, de notes doctrinales et de commentaires de jurisprudence",
       "Conduire des recherches approfondies sur les évolutions législatives, réglementaires et jurisprudentielles",
@@ -263,12 +273,13 @@ const JOBS: Job[] = [
       "Maîtrise des outils numériques de recherche et de diffusion de la doctrine",
       "Ouverture intellectuelle et capacité à vulgariser des sujets complexes",
     ],
+    diplomes: "Master ou Doctorat en droit, recherche juridique ou équivalent",
   },
   {
     id: "chef-produit",
     poste: "Chef de produit / Responsable produit",
-    secteur: "LegalTech / Développement de logiciels juridiques / Innovation technologique",
-    pays: "Togo, Sénégal, Niger, Côte d'Ivoire",
+    secteur: "Développement de logiciels juridiques / Innovation technologique",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
       "Le Chef de produit (ou Responsable produit) est chargé de piloter la stratégie, la conception, l'évolution et la gestion des produits numériques juridiques de LAHALEX, notamment LAHALEX AVOCAT, LAHALEX NOTAIRE et LAHALEX COMMISSAIRE DE JUSTICE.",
     activites: [
@@ -278,7 +289,7 @@ const JOBS: Job[] = [
       "Assurer le suivi des retours clients et proposer des améliorations continues",
       "Rédiger les cahiers des charges et spécifications fonctionnelles en collaboration avec les développeurs",
       "Suivre le cycle de vie des produits : conception, lancement, mise à jour, support",
-      "Réaliser des benchmarks et une veille concurrentielle sur les LegalTech locales et internationales",
+      "Réaliser des benchmarks et une veille concurrentielle sur les locales et internationales",
       "Former les équipes commerciales et assurer la promotion des produits auprès des clients et partenaires",
       "Contribuer à la stratégie de diffusion des produits et accompagner leur adoption par les utilisateurs",
     ],
@@ -290,22 +301,93 @@ const JOBS: Job[] = [
       "Esprit d'innovation, sens de l'écoute et orientation client",
       "Capacité à travailler en transversalité avec des équipes pluridisciplinaires (technique, juridique, commerciale)",
     ],
+    diplomes: "Master en gestion de produit, informatique, droit, management ou équivalent",
+  },
+  {
+    id: "charge-compte-rendu-scientifique",
+    poste: "Chargé(e) de compte-rendu scientifique",
+    secteur: "Recherche scientifique / Communication scientifique / Rédaction",
+    pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
+    resume:
+      "Le/la chargé(e) de compte-rendu scientifique a pour mission de suivre et de documenter l’ensemble des rencontres scientifiques organisées ou suivies par l’institution (webinaires, conférences, colloques, séminaires) et de produire des comptes-rendus précis et synthétiques destinés à la diffusion interne et externe.",
+    activites: [
+      "Participer ou assister à des webinaires, conférences, colloques et séminaires",
+      "Recueillir toutes les informations essentielles sur le contenu scientifique présenté",
+      "Produire des comptes-rendus détaillés et/ou synthétiques des événements",
+      "Identifier les points clés, recommandations, conclusions et perspectives",
+      "Classer et archiver les comptes-rendus de manière structurée pour un accès facile",
+      "Maintenir une base de données des événements et des documents associés",
+      "Travailler en lien avec les équipes scientifiques, éditoriales et communication",
+      "Assurer une veille sur les thématiques scientifiques pertinentes pour l’institution",
+      "Participer ponctuellement à des événements en soirée ou le week-end selon le calendrier scientifique",
+      "Faire des rapports réguliers à la hiérarchie sur l’avancement des comptes-rendus",
+    ],
+    competences: [
+      "Formation supérieure en sciences, communication scientifique, journalisme scientifique ou équivalent",
+      "Excellentes compétences rédactionnelles et orthographe irréprochable",
+      "Capacité à synthétiser des informations complexes de manière claire et structurée",
+      "Maîtrise des outils bureautiques (Word, Excel, PowerPoint) et des plateformes de webinaires",
+      "Anglais scientifique souhaité selon les événements internationaux",
+      "Rigueur, organisation et respect des délais",
+      "Sens de l’analyse et esprit de synthèse",
+    ],
+    aptitudes: [
+      "Curiosité intellectuelle et intérêt pour la recherche scientifique",
+      "Autonomie et capacité à travailler sur plusieurs événements simultanément",
+      "Bon relationnel et capacité à collaborer avec divers interlocuteurs",
+      "Capacité à restituer l’information de manière neutre et objective",
+      "Possibilité de télétravail partiel selon l’organisation",
+    ],
+    diplomes: "Formation supérieure en sciences, communication scientifique, journalisme scientifique ou équivalent",
   },
 ]
 
 export default function RecrutementPage() {
   const [query, setQuery] = useState("")
+  const [selectedPays, setSelectedPays] = useState("")
+  const [selectedDiplome, setSelectedDiplome] = useState("")
   const [detailsId, setDetailsId] = useState<string | null>(null)
   const [applyFor, setApplyFor] = useState<string | null>(null)
 
+  const paysOptions = useMemo(() => {
+    const allCountries = JOBS.flatMap((job) =>
+      job.pays.split(",").map((country) => country.trim())
+    )
+
+    return [...new Set(allCountries)].sort((a, b) => a.localeCompare(b, "fr"))
+  }, [])
+
+  const diplomeOptions = useMemo(() => {
+    const allDiplomes = JOBS.map((job) => job.diplomes).filter(Boolean) as string[]
+    return [...new Set(allDiplomes)].sort((a, b) => a.localeCompare(b, "fr"))
+  }, [])
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
-    if (!q) return JOBS
-    return JOBS.filter(
-      (j) =>
-        j.poste.toLowerCase().includes(q) || j.secteur.toLowerCase().includes(q) || j.resume.toLowerCase().includes(q),
-    )
-  }, [query])
+    const pays = selectedPays.trim().toLowerCase()
+    const diplome = selectedDiplome.trim().toLowerCase()
+
+    return JOBS.filter((j) => {
+      const matchesQuery =
+        !q ||
+        j.poste.toLowerCase().includes(q) ||
+        j.secteur.toLowerCase().includes(q) ||
+        j.resume.toLowerCase().includes(q) ||
+        (j.diplomes ?? "").toLowerCase().includes(q)
+
+      const matchesPays =
+        !pays ||
+        j.pays
+          .split(",")
+          .map((country) => country.trim().toLowerCase())
+          .includes(pays)
+
+      const matchesDiplome =
+        !diplome || (j.diplomes ?? "").toLowerCase() === diplome
+
+      return matchesQuery && matchesPays && matchesDiplome
+    })
+  }, [query, selectedPays, selectedDiplome])
 
   const jobById = (id: string) => JOBS.find((j) => j.id === id)!
 
@@ -314,18 +396,18 @@ export default function RecrutementPage() {
       <Header />
 
       <main className="flex-1">
-        {/* Titre / intro */}
         <section className="bg-white py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center md:text-left mb-8">
-              <h1 className="font-gobold text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-6 text-[#770D28]">RECRUTEMENT</h1>
+              <h1 className="font-gobold text-3xl sm:text-4xl lg:text-5xl text-[#D4AF37] mb-6">
+                RECRUTEMENT
+              </h1>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto md:mx-0 leading-relaxed">
                 Nous sommes toujours à la recherche de talents engagés. <br />
                 Découvrez nos offres d&apos;emploi ou envoyez une candidature spontanée.
               </p>
             </div>
 
-            {/* Image */}
             <div className="mb-12">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/man-holding-contract-his-new-office-job-after-interview%201-YQaApXjl5pHho5KHue0kud395u2rIF.png"
@@ -337,43 +419,85 @@ export default function RecrutementPage() {
               />
             </div>
 
-            {/* Recherche */}
-            <div className="max-w-2xl mx-auto mb-12 relative">
-              <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Taper votre recherche"
-                className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#770D28]"
-              />
-              <svg
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            <div className="max-w-5xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="relative md:col-span-1">
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Taper votre recherche"
+                  className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 />
-              </svg>
+                <svg
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </div>
+
+              <select
+                value={selectedPays}
+                onChange={(e) => setSelectedPays(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+              >
+                <option value="">Filtrer par pays</option>
+                {paysOptions.map((pays) => (
+                  <option key={pays} value={pays}>
+                    {pays}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                value={selectedDiplome}
+                onChange={(e) => setSelectedDiplome(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+              >
+                <option value="">Filtrer par diplôme</option>
+                {diplomeOptions.map((diplome) => (
+                  <option key={diplome} value={diplome}>
+                    {diplome}
+                  </option>
+                ))}
+              </select>
             </div>
 
-            {/* Tableau des offres */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <button
+                onClick={() => {
+                  setQuery("")
+                  setSelectedPays("")
+                  setSelectedDiplome("")
+                }}
+                className="border border-[#D4AF37] text-[#D4AF37] px-5 py-2 rounded-lg hover:bg-[#FFF8E1] transition"
+              >
+                Réinitialiser les filtres
+              </button>
+            </div>
+
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-gray-50">
                     <tr>
                       <th className="px-6 py-4 text-left text-sm font-medium text-gray-900">Poste</th>
-                      <th className="px-6 py-4 text-left text-sm font-medium text-gray-900 hidden md:table-cell">
+                      <th className="px-6 py-4 text-left text-sm font-medium text-gray-900 hidden lg:table-cell">
                         Secteur
                       </th>
-{/*                      <th className="px-6 py-4 text-left text-sm font-medium text-gray-900 hidden lg:table-cell">
+                      <th className="px-6 py-4 text-left text-sm font-medium text-gray-900 hidden md:table-cell">
                         Pays
-                      </th>*/}
+                      </th>
+                      <th className="px-6 py-4 text-left text-sm font-medium text-gray-900 hidden xl:table-cell">
+                        Diplôme
+                      </th>
                       <th className="px-6 py-4 text-right text-sm font-medium text-gray-900">Action</th>
                     </tr>
                   </thead>
@@ -381,19 +505,26 @@ export default function RecrutementPage() {
                     {filtered.map((job) => (
                       <tr key={job.id} className="hover:bg-gray-50">
                         <td className="px-6 py-4 text-sm text-gray-900">{job.poste}</td>
-                        <td className="px-6 py-4 text-sm text-gray-600 hidden md:table-cell">{job.secteur}</td>
-{/*                        <td className="px-6 py-4 text-sm text-gray-600 hidden lg:table-cell">{job.pays}</td>*/}
+                        <td className="px-6 py-4 text-sm text-gray-600 hidden lg:table-cell">
+                          {job.secteur}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-600 hidden md:table-cell">
+                          {job.pays}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-600 hidden xl:table-cell">
+                          {job.diplomes ?? "Non précisé"}
+                        </td>
                         <td className="px-6 py-4">
                           <div className="flex justify-end gap-2">
                             <button
                               onClick={() => setDetailsId(job.id)}
-                              className="text-[#770D28] hover:text-[#5a0a1f] text-sm font-medium"
+                              className="text-[#D4AF37] hover:text-[#B8922E] text-sm font-medium"
                             >
                               Voir l&apos;offre
                             </button>
                             <button
                               onClick={() => setApplyFor(job.poste)}
-                              className="border border-[#770D28] text-[#770D28] px-4 py-2 rounded hover:bg-[#fdf2f8] text-sm"
+                              className="border border-[#D4AF37] text-[#D4AF37] px-4 py-2 rounded hover:bg-[#FFF8E1] text-sm"
                             >
                               Postuler
                             </button>
@@ -403,7 +534,7 @@ export default function RecrutementPage() {
                     ))}
                     {filtered.length === 0 && (
                       <tr>
-                        <td colSpan={4} className="px-6 py-8 text-center text-sm text-gray-500">
+                        <td colSpan={5} className="px-6 py-8 text-center text-sm text-gray-500">
                           Aucune offre ne correspond à votre recherche.
                         </td>
                       </tr>
@@ -415,11 +546,10 @@ export default function RecrutementPage() {
           </div>
         </section>
 
-        {/* Modal détails du poste */}
         {detailsId && (
           <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
             <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-              <div className="bg-[#770D28] text-white p-6 flex justify-between items-center">
+              <div className="bg-[#D4AF37] text-white p-6 flex justify-between items-center">
                 <h2 className="font-gobold text-xl">DÉTAILS DU POSTE</h2>
                 <button
                   onClick={() => setDetailsId(null)}
@@ -454,7 +584,9 @@ export default function RecrutementPage() {
                           <td className="p-4">{j.resume}</td>
                         </tr>
                         <tr className="border-b border-gray-300 align-top">
-                          <td className="border-r border-gray-300 p-4 font-medium bg-gray-50">Principales activités</td>
+                          <td className="border-r border-gray-300 p-4 font-medium bg-gray-50">
+                            Principales activités
+                          </td>
                           <td className="p-4">
                             <ul className="list-disc list-inside space-y-2">
                               {j.activites.map((a, i) => (
@@ -464,7 +596,9 @@ export default function RecrutementPage() {
                           </td>
                         </tr>
                         <tr className="border-b border-gray-300 align-top">
-                          <td className="border-r border-gray-300 p-4 font-medium bg-gray-50">Compétences requises</td>
+                          <td className="border-r border-gray-300 p-4 font-medium bg-gray-50">
+                            Compétences requises
+                          </td>
                           <td className="p-4">
                             <ul className="list-disc list-inside space-y-2">
                               {j.competences.map((c, i) => (
@@ -500,7 +634,6 @@ export default function RecrutementPage() {
           </div>
         )}
 
-        {/* Modal candidature */}
         {applyFor && (
           <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
             <div className="bg-white rounded-lg max-w-md w-full">
@@ -509,7 +642,11 @@ export default function RecrutementPage() {
                 <p className="text-center text-gray-600 mb-8">"{applyFor}"</p>
 
                 <form className="space-y-4">
-                  <input type="text" placeholder="Nom" className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
+                  <input
+                    type="text"
+                    placeholder="Nom"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                  />
                   <input
                     type="text"
                     placeholder="Prénom"
@@ -529,11 +666,15 @@ export default function RecrutementPage() {
                   <div className="flex justify-center gap-4 pt-4">
                     <button
                       type="submit"
-                      className="border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg hover:bg-[#fdf2f8]"
+                      className="border border-[#D4AF37] text-[#D4AF37] px-6 py-2 rounded-lg hover:bg-[#FFF8E1]"
                     >
                       Envoyer
                     </button>
-                    <button type="button" onClick={() => setApplyFor(null)} className="text-gray-600 px-6 py-2">
+                    <button
+                      type="button"
+                      onClick={() => setApplyFor(null)}
+                      className="text-gray-600 px-6 py-2"
+                    >
                       Annuler
                     </button>
                   </div>

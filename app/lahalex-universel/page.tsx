@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
 import { useEffect, useRef } from "react";
@@ -9,39 +10,76 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+const BRAND_PRIMARY = "#D4C89A";
+const BRAND_PRIMARY_DARK = "#B4AB6B";
+const BRAND_TEXT = "#111111";
+const BRAND_BG = "#FFFFFF";
+const BRAND_SOFT = "rgba(212, 200, 154, 0.15)";
+const BRAND_SOFT_LIGHT = "rgba(212, 200, 154, 0.10)";
+
 export default function LahalexUniverselPage() {
-  // Refs pour les animations
   const heroRef = useRef<HTMLElement>(null);
   const servicesRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Animation simple et visible au chargement de la page
     const tl = gsap.timeline();
 
-    // Animation du hero - plus visible
-    tl.fromTo(".hero-title",
+    tl.fromTo(
+      ".hero-title",
       { opacity: 0, y: 100, scale: 0.5 },
       { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
     )
-      .fromTo(".hero-subtitle",
+      .fromTo(
+        ".hero-subtitle",
         { opacity: 0, x: -100 },
-        { opacity: 1, x: 0, duration: 1, ease: "power2.out" }, "-=0.5"
+        { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+        "-=0.5"
       )
-      .fromTo(".hero-button",
+      .fromTo(
+        ".hero-button",
         { opacity: 0, scale: 0, rotation: 360 },
-        { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: "elastic.out(1, 0.5)" }, "-=0.5"
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 1,
+          ease: "elastic.out(1, 0.5)",
+        },
+        "-=0.5"
       )
-      .fromTo(".hero-image",
-        { opacity: 0, x: 200, rotation: 45 },
-        { opacity: 1, x: 0, rotation: 0, duration: 1.5, ease: "power3.out" }, "-=1"
+      .fromTo(
+        ".hero-stack-image",
+        { opacity: 0, x: 200, rotation: 45, scale: 0.8 },
+        {
+          opacity: 1,
+          x: 0,
+          rotation: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          stagger: 0.15,
+        },
+        "-=1"
       );
 
-    // Animation des services avec scroll trigger
+    const floatingImages = gsap.utils.toArray<HTMLElement>(".hero-stack-image");
+    floatingImages.forEach((image, index) => {
+      gsap.to(image, {
+        y: index % 2 === 0 ? -12 : 12,
+        x: index % 2 === 0 ? 6 : -6,
+        rotation: index % 2 === 0 ? -2 : 2,
+        duration: 2.8 + index * 0.4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    });
+
     const ctx = gsap.context(() => {
-      // Animation simple des cartes
-      gsap.fromTo(".service-card",
+      gsap.fromTo(
+        ".service-card",
         { opacity: 0, y: 100, scale: 0.8 },
         {
           opacity: 1,
@@ -58,8 +96,8 @@ export default function LahalexUniverselPage() {
         }
       );
 
-      // Animation des icônes
-      gsap.fromTo(".service-icon",
+      gsap.fromTo(
+        ".service-icon",
         { opacity: 0, scale: 0, rotation: -360 },
         {
           opacity: 1,
@@ -77,8 +115,8 @@ export default function LahalexUniverselPage() {
         }
       );
 
-      // Animation des titres
-      gsap.fromTo(".service-title",
+      gsap.fromTo(
+        ".service-title",
         { opacity: 0, x: -50 },
         {
           opacity: 1,
@@ -95,8 +133,8 @@ export default function LahalexUniverselPage() {
         }
       );
 
-      // Animation des boutons
-      gsap.fromTo(".service-button",
+      gsap.fromTo(
+        ".service-button",
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -112,46 +150,75 @@ export default function LahalexUniverselPage() {
           },
         }
       );
-
-    }, [servicesRef]);
+    }, servicesRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
+    <div className="min-h-screen" style={{ backgroundColor: BRAND_BG }}>
       <Header />
 
       <style jsx global>{`
-        .hero-title, .hero-subtitle, .hero-button, .hero-image {
+        .hero-title,
+        .hero-subtitle,
+        .hero-button,
+        .hero-stack-image {
           opacity: 0;
         }
-        .service-card, .service-icon, .service-title, .service-button {
+
+        .service-card,
+        .service-icon,
+        .service-title,
+        .service-button {
           opacity: 0;
         }
       `}</style>
 
       {/* Hero Section */}
-      <section className="bg-white py-12 sm:py-16 lg:py-20">
+      <section ref={heroRef} className="bg-white py-12 sm:py-16 lg:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Column - Content */}
+            {/* Left Column */}
             <div className="order-2 lg:order-1">
-              <h1 className="hero-title font-gobold text-3xl sm:text-4xl lg:text-5xl text-[#770D28] mb-6 lg:mb-8 leading-tight">
+              <h1
+                className="hero-title font-gobold text-3xl sm:text-4xl lg:text-5xl mb-6 lg:mb-8 leading-tight"
+                style={{ color: BRAND_TEXT }}
+              >
                 LAHALEX UNIVERSEL
               </h1>
+
               <p className="hero-subtitle text-gray-700 text-base sm:text-lg mb-8 leading-relaxed">
-                Pensée pour accompagner les professionnels, étudiants et chercheurs en <strong>Droit, Économie et Sciences de la Santé</strong>. Que vous soyez juriste, économiste, professionnel de santé, entreprise ou institution, LahaLex Universel vous donne un accès simplifié, intelligent et innovant à l'information spécialisée.
+                Pensée pour accompagner les professionnels, étudiants et chercheurs en{" "}
+                <strong>Droit, Agriculture, STIM, Économie et Sciences de la Santé</strong>. Que vous soyez juriste,
+                économiste, professionnel de santé, entreprise ou institution, LahaLex Universel
+                vous donne un accès simplifié, intelligent et innovant à l'information spécialisée.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  className="hero-button bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+                  className="hero-button px-8 py-3 rounded-lg font-medium transition-colors text-black"
+                  style={{
+                    background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
+                  }}
                   onClick={() => (window.location.href = "/essai-gratuit")}
                 >
                   Demandez un devis
                 </button>
+
                 <button
-                  className="hero-button border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-colors"
+                  className="hero-button px-8 py-3 rounded-lg font-medium transition-colors"
+                  style={{
+                    border: `2px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
                   onClick={() => (window.location.href = "/nous-contacter")}
                 >
                   Demandez une démonstration
@@ -159,29 +226,62 @@ export default function LahalexUniverselPage() {
               </div>
             </div>
 
-            {/* Right Column - Video */}
+            {/* Right Column - Images superposées sans cards blanches */}
             <div className="order-1 lg:order-2 flex justify-center items-center">
-              <img
-                src="/images/lahalex-universel-2.png"
-                alt="LahaLex Universel"
-                className="hero-image h-64 sm:h-80 lg:h-96 w-auto object-contain"
-              />
+              <div className="relative w-full max-w-[520px] h-[420px] sm:h-[460px] lg:h-[520px]">
+                <img
+                  src="/images/carousel-image-2.png"
+                  alt="Lahalex carousel 1"
+                  className="hero-stack-image absolute top-4 left-4 sm:left-8 w-[72%] h-auto object-contain z-[1] pointer-events-none select-none"
+                />
+
+                <img
+                  src="/images/carousel-image-3.png"
+                  alt="Lahalex carousel 2"
+                  className="hero-stack-image absolute top-12 right-2 sm:right-6 w-[72%] h-auto object-contain z-[2] pointer-events-none select-none"
+                />
+
+                <img
+                  src="/images/carousel-image-agro.png"
+                  alt="Lahalex carousel agro"
+                  className="hero-stack-image absolute bottom-16 left-6 sm:left-10 w-[72%] h-auto object-contain z-[3] pointer-events-none select-none"
+                />
+
+                <img
+                  src="/images/carousel-image-stim.png"
+                  alt="Lahalex carousel stim"
+                  className="hero-stack-image absolute bottom-4 right-4 sm:right-8 w-[72%] h-auto object-contain z-[4] pointer-events-none select-none"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Cards Section with 4 cards for Universel */}
+      {/* Services Cards */}
       <section ref={servicesRef} className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        {/* Background */}
-        <div className="services-bg absolute inset-0" style={{ backgroundColor: "#770D28" }}></div>
+        <div
+          className="services-bg absolute inset-0"
+          style={{
+            background: `linear-gradient(135deg, ${BRAND_PRIMARY_DARK}, ${BRAND_PRIMARY})`,
+          }}
+        ></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Recherche avancée */}
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div
+                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: BRAND_SOFT }}
+              >
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: BRAND_TEXT }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -190,15 +290,32 @@ export default function LahalexUniverselPage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Recherche avancée</h3>
+
+              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
+                Recherche avancée
+              </h3>
+
               <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Notre outil de recherche avancée permet d'exploiter de façon structurée et intelligente un
                 vaste ensembl...
               </p>
+
               <div className="flex-1"></div>
+
               <div className="text-right mt-auto">
                 <button
-                  className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
+                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
                   onClick={() => (window.location.href = "/recherche-juridique-universel")}
                 >
                   En savoir plus
@@ -208,8 +325,17 @@ export default function LahalexUniverselPage() {
 
             {/* Bibliothèque pluridisciplinaire */}
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div
+                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: BRAND_SOFT }}
+              >
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: BRAND_TEXT }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -218,15 +344,32 @@ export default function LahalexUniverselPage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Bibliothèque pluridisciplinaire</h3>
+
+              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
+                Bibliothèque pluridisciplinaire
+              </h3>
+
               <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Notre bibliothèque pluridisciplinaire est une plateforme en ligne dédiée à la consultation d'un vaste
                 ensemble d'ouvrages et de documents en version numé...
               </p>
+
               <div className="flex-1"></div>
+
               <div className="text-right mt-auto">
                 <button
-                  className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
+                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
                   onClick={() => (window.location.href = "/bibliotheque-numerique-universel")}
                 >
                   En savoir plus
@@ -234,10 +377,19 @@ export default function LahalexUniverselPage() {
               </div>
             </div>
 
-            {/* Veille juridique */}
+            {/* Veille journalière */}
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div
+                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: BRAND_SOFT }}
+              >
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: BRAND_TEXT }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -246,15 +398,32 @@ export default function LahalexUniverselPage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Veille journalière</h3>
+
+              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
+                Veille journalière
+              </h3>
+
               <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Notre veille journalière est un dispositif structuré de surveillance, de collecte, d'analyse et de
                 diffusion continue d'informations législatives, réglementaires et jurisprudentielles.
               </p>
+
               <div className="flex-1"></div>
+
               <div className="text-right mt-auto">
                 <button
-                  className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
+                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
                   onClick={() => (window.location.href = "/veille-juridique-universel")}
                 >
                   En savoir plus
@@ -264,8 +433,17 @@ export default function LahalexUniverselPage() {
 
             {/* Autres outils */}
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div className="service-icon w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-[#770D28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div
+                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: BRAND_SOFT }}
+              >
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: BRAND_TEXT }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -280,15 +458,32 @@ export default function LahalexUniverselPage() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="service-title font-sf-pro text-lg text-[#770D28] mb-4">Autres outils</h3>
+
+              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
+                Autres outils
+              </h3>
+
               <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
                 Cette section de notre plateforme a été conçue comme un espace de référence indispensable, tant pour les
                 professionnels du droit (avocat...
               </p>
+
               <div className="flex-1"></div>
+
               <div className="text-right mt-auto">
                 <button
-                  className="service-button border border-[#770D28] text-[#770D28] px-6 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition-colors"
+                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
                   onClick={() => (window.location.href = "/autres-outils-universel")}
                 >
                   En savoir plus
@@ -301,5 +496,5 @@ export default function LahalexUniverselPage() {
 
       <Footer />
     </div>
-  )
+  );
 }

@@ -1,405 +1,389 @@
 "use client"
-
-import { Header } from "@/components/other-header"
-import { Footer } from "@/components/footer"
-import Image from "next/image"
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { Header } from "@/components/other-header";
+import { Footer } from "@/components/footer";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function UniverselPage() {
-  // Refs pour les animations GSAP
-  const mainRef = useRef<HTMLDivElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
+const BRAND_PRIMARY = "#D4C89A";
+const BRAND_PRIMARY_DARK = "#B4AB6B";
+const BRAND_TEXT = "#111111";
+const BRAND_BG = "#FFFFFF";
+const BRAND_SOFT = "rgba(212, 200, 154, 0.15)";
+const BRAND_SOFT_LIGHT = "rgba(212, 200, 154, 0.10)";
 
-  // Animations GSAP spectaculaires - style lahalex-universel
+export default function LahalexCommissaireJusticePage() {
+  const heroRef = useRef<HTMLElement>(null);
+  const servicesRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    if (typeof window === "undefined") return
+    if (typeof window === "undefined") return;
+
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      ".hero-title",
+      { opacity: 0, y: 100, scale: 0.5 },
+      { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
+    )
+      .fromTo(
+        ".hero-subtitle",
+        { opacity: 0, x: -100 },
+        { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+        "-=0.5"
+      )
+      .fromTo(
+        ".hero-button",
+        { opacity: 0, scale: 0, rotation: 360 },
+        { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: "elastic.out(1, 0.5)" },
+        "-=0.5"
+      )
+      .fromTo(
+        ".hero-image",
+        { opacity: 0, x: 200, rotation: 45 },
+        { opacity: 1, x: 0, rotation: 0, duration: 1.5, ease: "power3.out" },
+        "-=1"
+      );
 
     const ctx = gsap.context(() => {
-      // Animation du titre principal - effet bounce spectaculaire
-      gsap.fromTo(".autres-title",
-        { opacity: 0, y: 100, scale: 0.5 },
-        { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
-      )
-
-      // Animation des images avec rotation
-      gsap.fromTo(".autres-image",
-        { opacity: 0, y: 100, rotation: -30 },
+      gsap.fromTo(
+        ".service-card",
+        { opacity: 0, y: 100, scale: 0.8 },
         {
           opacity: 1,
           y: 0,
-          rotation: 0,
-          duration: 1.2,
-          ease: "power3.out",
+          scale: 1,
+          duration: 1,
+          ease: "power2.out",
+          stagger: 0.3,
           scrollTrigger: {
-            trigger: ".autres-image",
-            start: "top 80%",
+            trigger: ".service-card",
+            start: "top 90%",
             toggleActions: "play none none reverse",
           },
         }
-      )
+      );
 
-      // Animation du contenu avec ScrollTrigger
-      if (contentRef.current) {
-        gsap.fromTo(
-          contentRef.current,
-          {
-            opacity: 0,
-            y: 150,
-            scale: 0.8,
-            rotation: -5,
-            transformOrigin: "center center"
+      gsap.fromTo(
+        ".service-icon",
+        { opacity: 0, scale: 0, rotation: -360 },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 1.5,
+          ease: "elastic.out(1, 0.6)",
+          stagger: 0.3,
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: ".service-card",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
           },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            rotation: 0,
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: contentRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        )
+        }
+      );
 
-        // Animation des éléments de contenu en cascade avec effets spectaculaires
-        const contentItems = contentRef.current.querySelectorAll('.content-item')
-        gsap.fromTo(
-          contentItems,
-          {
-            opacity: 0,
-            y: 80,
-            scale: 0.7,
-            rotation: 10,
-            transformOrigin: "center bottom"
+      gsap.fromTo(
+        ".service-title",
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0.3,
+          delay: 0.8,
+          scrollTrigger: {
+            trigger: ".service-card",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
           },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            rotation: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: "elastic.out(1, 0.6)",
-            delay: 0.3,
-            scrollTrigger: {
-              trigger: contentRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        )
-      }
-    }, mainRef)
+        }
+      );
 
-    return () => ctx.revert()
-  }, [])
+      gsap.fromTo(
+        ".service-button",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "bounce.out",
+          stagger: 0.3,
+          delay: 1.1,
+          scrollTrigger: {
+            trigger: ".service-card",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, servicesRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div ref={mainRef} className="flex flex-col min-h-screen bg-white font-sf-pro relative overflow-hidden">
+    <div className="min-h-screen" style={{ backgroundColor: BRAND_BG }}>
       <Header />
 
-      {/* Effets de particules flottantes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-[#770D28]/10 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-[#770D28]/8 rounded-full animate-drift" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-[#770D28]/12 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-[#770D28]/10 rounded-full animate-drift" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-[#770D28]/15 rounded-full animate-orbit" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-[#770D28]/12 rounded-full animate-drift" style={{ animationDelay: '0.8s' }}></div>
-        <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-[#770D28]/10 rounded-full animate-orbit" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>
-      </div>
+      <style jsx global>{`
+        .hero-title,
+        .hero-subtitle,
+        .hero-button,
+        .hero-image {
+          opacity: 0;
+        }
+        .service-card,
+        .service-icon,
+        .service-title,
+        .service-button {
+          opacity: 0;
+        }
+      `}</style>
 
-      {/* Retour */}
-      <section className="bg-gray-50 py-4 relative z-10">
+      {/* Hero Section */}
+      <section ref={heroRef} className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-sm">
-            <a
-              href="/lahalex-universel"
-              className="flex items-center text-gray-600 hover:text-[#770D28] transition-colors"
-            >
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Column - Content */}
+            <div className="order-2 lg:order-1">
+              <h1
+                className="hero-title font-gobold text-3xl sm:text-4xl lg:text-5xl mb-6 lg:mb-8 leading-tight"
+                style={{ color: BRAND_TEXT }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              Lahalex Universel
-            </a>
+                LAHALEX COMMISSAIRE DE JUSTICE
+              </h1>
+
+              <p className="hero-subtitle text-gray-700 text-base sm:text-lg mb-8 leading-relaxed">
+                Prenez une longueur d'avance. Pilotez votre étude en toute simplicité avec une
+                technologie pensée pour votre quotidien.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/essai-gratuit"
+                  className="hero-button px-8 py-3 rounded-lg font-medium transition-colors text-black text-center"
+                  style={{
+                    background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
+                  }}
+                >
+                  Demandez un devis
+                </a>
+
+                <a
+                  href="/nous-contacter"
+                  className="hero-button px-8 py-3 rounded-lg font-medium transition-colors text-center"
+                  style={{
+                    border: `2px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
+                >
+                  Demandez une démonstration
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <img
+                src="/images/lahalex-commissaire-2.png"
+                alt="Illustration LahaLex Commissaire de Justice"
+                className="hero-image h-64 sm:h-80 lg:h-96 w-full max-w-md object-contain"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <main className="flex-1 relative z-10">
-        {/* Hero Section */}
-        <section className="bg-white py-12 sm:py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Content */}
-              <div className="order-2 lg:order-1">
-                <h1 ref={titleRef} className="autres-title font-gobold text-3xl sm:text-4xl lg:text-5xl text-[#770D28] mb-6 lg:mb-8 leading-tight">
-                  Autres outils
-                </h1>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="/essai-gratuit"
-                    className="autres-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
-                  >
-                    Demandez un devis
-                  </a>
-                  <a
-                    href="/nous-contacter"
-                    className="autres-button inline-block border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-colors"
-                  >
-                    Demandez une démonstration
-                  </a>
-                </div>
+      {/* Services Cards Section */}
+      <section ref={servicesRef} className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <div
+          className="services-bg absolute inset-0"
+          style={{
+            background: `linear-gradient(135deg, ${BRAND_PRIMARY_DARK}, ${BRAND_PRIMARY})`,
+          }}
+        ></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {/* Gestion simplifiée de votre cabinet */}
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
+              <div
+                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: BRAND_SOFT }}
+              >
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: BRAND_TEXT }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  ></path>
+                </svg>
               </div>
 
-              {/* Placeholder image */}
+              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
+                Gestion simplifiée de votre cabinet
+              </h3>
+
+              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
+                Prenez le contrôle total de votre cabinet avec un module pensé pour les
+                professionnels du droit exigeants. Suivi des dossiers,...
+              </p>
+
+              <div className="flex-1"></div>
+
+              <div className="text-right mt-auto">
+                <a
+                  href="/gestion-etude-commissaire"
+                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors inline-block"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
+                >
+                  En savoir plus
+                </a>
+              </div>
+            </div>
+
+            {/* Rédaction d'actes juridiques assistées et avancées */}
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
+              <div
+                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: BRAND_SOFT }}
+              >
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: BRAND_TEXT }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                  ></path>
+                </svg>
+              </div>
+
+              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
+                Rédaction d'actes juridiques assistées et avancées
+              </h3>
+
+              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
+                Gagnez en efficacité, en rigueur et en sécurité grâce au module Rédaction de
+                LahaLex Avocat :...
+              </p>
+
+              <div className="flex-1"></div>
+
+              <div className="text-right mt-auto">
+                <a
+                  href="/redaction-actes-commissaire"
+                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors inline-block"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
+                >
+                  En savoir plus
+                </a>
+              </div>
+            </div>
+
+            {/* Outil d'assistance IA */}
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
+              <div
+                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: BRAND_SOFT }}
+              >
+                <svg
+                  className="w-6 h-6"
+                  style={{ color: BRAND_TEXT }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  ></path>
+                </svg>
+              </div>
+
+              <h3 className="service-title font-gobold text-lg mb-4" style={{ color: BRAND_TEXT }}>
+                Outil d'assistance IA dédié à l'optimisation de vos activités
+              </h3>
+
+              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
+                Boostez votre efficacité juridique avec l'assistant IA intégré à notre logiciel.
+              </p>
+
+              <div className="flex-1"></div>
+
+              <div className="text-right mt-auto">
+                <a
+                  href="/assistance-ia-commissaire"
+                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors inline-block"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
+                    color: BRAND_TEXT,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
+                >
+                  En savoir plus
+                </a>
+              </div>
             </div>
           </div>
-        </section>
-
-        {/* Description */}
-        <section className="bg-white py-8 sm:py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-8">
-              Cette section de notre plateforme a été conçue comme un <strong>espace de
-                référence indispensable</strong>, tant pour les <strong>professionnels</strong>
-              (juristes, professionnels de santé, économistes, entreprises) que
-              pour les <strong>étudiants et chercheurs</strong>. Elle regroupe des <strong>ressources fiables</strong>,
-              rigoureusement sélectionnées, permettant de <strong>réviser, consolider,
-                approfondir</strong> ou vérifier rapidement une notion, sans quitter
-              l&apos;environnement numérique de travail.
-            </p>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
-              Chaque outil a été pensé pour répondre à un <strong>besoin concret,
-                quotidien et stratégique</strong> dans la maîtrise de votre <strong>domaine d&apos;expertise</strong>.
-            </p>
-          </div>
-        </section>
-
-        {/* Tools Sections */}
-        <section className="bg-white py-8 sm:py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
-            {[
-              {
-                number: "1",
-                title: "Fiches de synthèse",
-                desc: "Des synthèses claires, structurées et directement exploitables sur les principales notions juridiques, médicales et économiques. Elles s'appuient sur des cas concrets, avec des références législatives, réglementaires, scientifiques et académiques pertinentes. Chaque fiche est accompagnée de QCM pour tester vos connaissances.",
-                utilite: "Aide-mémoire rapide, support de révision ou d'enseignement dans tous les domaines professionnels.",
-                avantage: "Clarté, gain de temps, accès immédiat à l'essentiel dans votre domaine d'expertise.",
-                reverse: false,
-              },
-              {
-                number: "2",
-                title: "Fiches de méthode",
-                desc: "Des guides pratiques conçus pour maîtriser les exigences académiques et professionnelles en droit, médecine et économie. Elles couvrent des formats essentiels comme le cas pratique, le commentaire d'arrêt, la dissertation, l'analyse de cas cliniques, les études économiques, ainsi que la rédaction de rapports et d'autres écrits professionnels.",
-                utilite:
-                  "Renforce les compétences méthodologiques, structure le raisonnement professionnel dans votre discipline.",
-                avantage:
-                  "Clarifie les attentes, propose des schémas types et des conseils concrets adaptés à chaque exercice et domaine.",
-                reverse: true,
-              },
-              {
-                number: "3",
-                title: "Dictionnaire spécialisé",
-                desc: "Notre dictionnaire spécialisé est un outil numérique avancé conçu pour offrir aux professionnels et étudiants une compréhension claire, précise et approfondie.",
-                utilite:
-                  "Clarifie les termes techniques et spécialisés souvent complexes dans tous les domaines.",
-                avantage:
-                  "Compréhension rapide, fiabilité terminologique, utile en rédaction et en argumentation professionnelle.",
-                reverse: false,
-              },
-              {
-                number: "4",
-                title: "Articles scientifiques",
-                desc: "Lahalex vous accompagne dans tous vos défis professionnels grâce à des contenus d'experts reconnus en droit, médecine et économie : actualités en temps réel, articles de référence, formation continue et analyses commentées.",
-                utilite:
-                  "Approfondissement des enjeux professionnels, construction d'argumentaires solides et pluridisciplinaires.",
-                avantage:
-                  "Veille intellectuelle et stratégique, utile à la recherche, l'enseignement ou la pratique dans tous les domaines.",
-                reverse: true,
-              },
-              {
-                number: "5",
-                title: "Rencontres scientifique",
-                desc: "Agenda récapitulatif des séminaires, colloques et conférences en droit, médecine et économie à ne pas manquer, avec la mise à disposition d'un compte rendu pour chaque événement manqué.",
-                utilite:
-                  "Suivez tous les événements scientifiques et professionnels importants sans faille.",
-                avantage:
-                  "Rattrapez facilement ceux que vous avez manqués grâce aux comptes rendus détaillés.",
-                reverse: false,
-              },
-            ].map((tool, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center`}
-              >
-                {/* Image */}
-                <div
-                  className={`h-64 sm:h-80 lg:h-96 rounded-lg relative ${tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
-                    }`}
-                >
-                  <Image
-                    src={`/images/${tool.number === "1" ? "autre-outil" : tool.number === "2" ? "autre-outil-2" : tool.number === "3" ? "autre-outil-3" : tool.number === "4" ? "autre-outil-4" : tool.number === "5" ? "rencontres-juridiques" : "autre-outil"}.png`}
-                    alt={tool.title}
-                    width={800}
-                    height={450}
-                    className="autres-image w-full h-full object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                      borderRadius: '12px'
-                    }}
-                  />
-                  {/* QCM Magnifying Glass for Tool 1 */}
-                  {tool.number === "1" && (
-                    <div className="absolute -right-6 top-1/2 -translate-y-2/2 w-28 h-28 sm:w-36 sm:h-36">
-                      {/* Magnifying glass circle */}
-                      <div className="relative w-full h-full rounded-full border-8 border-[#770D28] bg-white shadow-2xl overflow-hidden">
-                        {/* QCM Preview Image inside magnifying glass */}
-                        <div className="absolute inset-2 flex items-center justify-center">
-                          <Image
-                            src="/images/qcm-preview.png"
-                            alt="QCM Preview"
-                            width={200}
-                            height={200}
-                            className="w-full h-full object-contain"
-                          />
-                        </div>
-                        {/* Glass shine effect */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent rounded-full pointer-events-none"></div>
-                      </div>
-                      {/* Magnifying glass handle */}
-                      <div className="absolute bottom-0 right-0 w-12 h-16 bg-[#770D28] rounded-b-full transform translate-y-8 translate-x-2 rotate-45 shadow-lg"></div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Content */}
-                <div
-                  className={`flex items-start space-x-4 ${tool.reverse
-                    ? "order-1 lg:order-2"
-                    : "order-2 lg:order-1"
-                    }`}
-                >
-                  <div className="w-12 h-12 bg-[#770D28] text-white rounded-full flex items-center justify-center font-gobold text-xl flex-shrink-0">
-                    {tool.number}
-                  </div>
-                  <div>
-                    <h3 className="font-gobold text-xl sm:text-2xl text-gray-900 mb-4">
-                      {tool.title} :
-                    </h3>
-                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
-                      {tool.desc}
-                    </p>
-                    <div className="space-y-4">
-                      <div className="bg-[#770D28]/5 p-4 rounded-lg">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-6 h-6 bg-[#770D28] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
-                            U
-                          </div>
-                          <div>
-                            <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
-                              Utilité
-                            </span>
-                            <span className="text-gray-700 text-sm leading-relaxed">{tool.utilite}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="bg-[#770D28]/5 p-4 rounded-lg">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-6 h-6 bg-[#770D28] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
-                            A
-                          </div>
-                          <div>
-                            <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
-                              Avantage
-                            </span>
-                            <span className="text-gray-700 text-sm leading-relaxed">{tool.avantage}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
       <Footer />
-
-      <style jsx global>{`
-        /* Classes pour les animations GSAP - style lahalex-universel */
-        .autres-image {
-          opacity: 0;
-        }
-
-        /* Animations pour les particules flottantes */
-        @keyframes float {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) rotate(0deg); 
-            opacity: 0.3;
-          }
-          25% { 
-            transform: translateY(-20px) translateX(10px) rotate(90deg); 
-            opacity: 0.8;
-          }
-          50% { 
-            transform: translateY(-10px) translateX(-15px) rotate(180deg); 
-            opacity: 0.5;
-          }
-          75% { 
-            transform: translateY(-30px) translateX(5px) rotate(270deg); 
-            opacity: 0.7;
-          }
-        }
-
-        @keyframes drift {
-          0% { transform: translateX(0px) translateY(0px); }
-          33% { transform: translateX(30px) translateY(-20px); }
-          66% { transform: translateX(-20px) translateY(10px); }
-          100% { transform: translateX(0px) translateY(0px); }
-        }
-
-        @keyframes orbit {
-          0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
-          100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
-        }
-
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-drift {
-          animation: drift 8s ease-in-out infinite;
-        }
-
-        .animate-orbit {
-          animation: orbit 12s linear infinite;
-        }
-      `}</style>
     </div>
   )
 }

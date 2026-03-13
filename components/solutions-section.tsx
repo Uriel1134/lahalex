@@ -11,15 +11,17 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+// Remplace cette valeur par la vraie couleur principale de ta charte graphique
+const BRAND_PRIMARY = "#YOUR_BRAND_COLOR";
+const BRAND_SECONDARY = "#D4C89A";
+
 export function SolutionsSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const ctx = gsap.context(() => {
-      // Fade in animation for the entire section
       gsap.fromTo(
         sectionRef.current,
         { opacity: 0, y: 50 },
@@ -36,8 +38,8 @@ export function SolutionsSection() {
         }
       );
 
-      // Animate individual solution cards
       const cards = sectionRef.current?.querySelectorAll(".solution-card");
+
       cards?.forEach((card, index) => {
         gsap.fromTo(
           card,
@@ -65,18 +67,16 @@ export function SolutionsSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section title */}
         <h2
-          ref={titleRef}
-          className="text-[#770D28] text-[24px] md:text-[36px] font-normal leading-[43px] font-['Gobold_Extra1'] mb-8 md:mb-16"
+          className="text-[24px] md:text-[36px] font-normal leading-[1.2] font-['Gobold_Extra1'] mb-8 md:mb-16"
+          style={{ color: BRAND_PRIMARY }}
         >
           NOS SOLUTIONS
         </h2>
 
-        {/* Solutions grid */}
         <div className="space-y-8 md:space-y-16">
           {/* Lahalex Universel */}
           <div className="solution-card relative">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-              {/* Bloc Laptop + Connexions */}
               <div className="relative flex-1 min-h-[220px] xs:min-h-[280px] sm:min-h-[340px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center">
                 <div className="w-full flex justify-center items-center sm:absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-10">
                   <video
@@ -90,9 +90,11 @@ export function SolutionsSection() {
                 </div>
               </div>
 
-              {/* Texte descriptif */}
               <div className="flex-1 max-w-[400px] lg:ml-18 relative z-20">
-                <h3 className="text-[#770D28] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6">
+                <h3
+                  className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6"
+                  style={{ color: BRAND_PRIMARY }}
+                >
                   <span className="font-normal">
                     <TextType
                       text={["Lahalex "]}
@@ -102,7 +104,7 @@ export function SolutionsSection() {
                       cursorCharacter="|"
                       startOnVisible={true}
                       loop={false}
-                      textColors={["#770D28"]}
+                      textColors={[BRAND_PRIMARY]}
                     />
                   </span>
                   <span className="font-bold">
@@ -114,27 +116,24 @@ export function SolutionsSection() {
                       cursorCharacter="|"
                       startOnVisible={true}
                       loop={false}
-                      textColors={["#770D28"]}
+                      textColors={[BRAND_PRIMARY]}
                     />
                   </span>
                 </h3>
 
-                <div className="space-y-2 text-black text-[13px] sm:text-[14px] leading-[18px] sm:leading-[20px] mb-6 md:mb-8">
+                <div className="space-y-2 text-gray-600 text-[13px] sm:text-[14px] leading-[18px] sm:leading-[20px] mb-6 md:mb-8">
                   <p>
-                    Une <strong>base de données documentaire pluridisciplinaire</strong> de référence
+                    Une <strong>base de données documentaire pluridisciplinaire</strong> de référence.
                   </p>
                   <p>
-                    <strong>Base de données documentaire couvrant le droit, la médecine et 
-                    l’économie</strong> : législation, jurisprudence, doctrine, publications 
-                    scientifiques et analyses spécialisées.
+                    <strong>Base de données documentaire couvrant le droit, la médecine et l’économie</strong> :
+                    législation, jurisprudence, doctrine, publications scientifiques et analyses spécialisées.
                   </p>
                   <p>
-                    <strong>Recherche avancée avec filtres multicritères</strong> pour un accès rapide, 
-                    précis et ciblé à l’information.
+                    <strong>Recherche avancée avec filtres multicritères</strong> pour un accès rapide, précis et ciblé à l’information.
                   </p>
                   <p>
-                    <strong>Contenus constamment mis à jour</strong> via une interface conçue pour optimiser 
-                    le temps des professionnels.
+                    <strong>Contenus constamment mis à jour</strong> via une interface conçue pour optimiser le temps des professionnels.
                   </p>
                   <p>
                     <strong>Bibliothèque numérique complète</strong>, intégrant le droit et d’autres disciplines connexes.
@@ -147,14 +146,34 @@ export function SolutionsSection() {
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                   <Button
                     variant="outline"
-                    className="border border-[#770D28] text-[#770D28] rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] hover:bg-[#770D28] hover:text-white bg-transparent"
-                    onClick={() => window.location.href = '/lahalex-universel'}
+                    className="rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] bg-transparent transition-colors"
+                    style={{
+                      border: `1px solid ${BRAND_PRIMARY}`,
+                      color: BRAND_PRIMARY,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
+                      e.currentTarget.style.color = "#ffffff";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "transparent";
+                      e.currentTarget.style.color = BRAND_PRIMARY;
+                    }}
+                    onClick={() => (window.location.href = "/lahalex-universel")}
                   >
                     En savoir plus
                   </Button>
-                  <Button 
-                    className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] hover:bg-[#770D28]/90"
-                    onClick={() => window.location.href = '/nous-contacter'}
+
+                  <Button
+                    className="text-white rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] transition-opacity"
+                    style={{ backgroundColor: BRAND_PRIMARY }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.opacity = "0.9";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.opacity = "1";
+                    }}
+                    onClick={() => (window.location.href = "/nous-contacter")}
                   >
                     Demandez une démo
                   </Button>
@@ -164,8 +183,10 @@ export function SolutionsSection() {
           </div>
 
           {/* Lahalex Avocat */}
-          <div className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 bg-[#D4C89A] rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12">
-            {/* Image à droite sur PC, au-dessus sur mobile */}
+          <div
+            className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12"
+            style={{ backgroundColor: BRAND_SECONDARY }}
+          >
             <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] overflow-hidden">
               <Image
                 src="/images/lahalex-notaire.png"
@@ -177,7 +198,10 @@ export function SolutionsSection() {
             </div>
 
             <div className="flex-1">
-              <h3 className="text-[#770D28] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6">
+              <h3
+                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6"
+                style={{ color: BRAND_PRIMARY }}
+              >
                 <span className="font-normal">
                   <TextType
                     text={["Lahalex "]}
@@ -187,7 +211,7 @@ export function SolutionsSection() {
                     cursorCharacter="|"
                     startOnVisible={true}
                     loop={false}
-                    textColors={["#770D28"]}
+                    textColors={[BRAND_PRIMARY]}
                   />
                 </span>
                 <span className="font-bold">
@@ -199,40 +223,54 @@ export function SolutionsSection() {
                     cursorCharacter="|"
                     startOnVisible={true}
                     loop={false}
-                    textColors={["#770D28"]}
+                    textColors={[BRAND_PRIMARY]}
                   />
                 </span>
               </h3>
 
-              <p className="text-black text-[13px] sm:text-[14px] md:text-[15px] leading-[20px] sm:leading-[24px] md:leading-[30px] mb-6 md:mb-8">
-               <strong>Gestion complète du cabinet: </strong> dossiers,
-                clients, facturation, finance.
+              <p className="text-gray-600 text-[13px] sm:text-[14px] md:text-[15px] leading-[20px] sm:leading-[24px] md:leading-[30px] mb-6 md:mb-8">
+                <strong>Gestion complète du cabinet :</strong> dossiers, clients, facturation, finance.
                 <br />
-                <strong>Base de données intelligente : </strong>clients,
-                magistrats, adversaires, prestataires.
+                <strong>Base de données intelligente :</strong> clients, magistrats, adversaires, prestataires.
                 <br />
-               <strong>Facturation intégrée : </strong> factures personnalisées,
-                suivi des paiements, relances automatiques.
+                <strong>Facturation intégrée :</strong> factures personnalisées, suivi des paiements, relances automatiques.
                 <br />
-                Alertes d'information sur le métier d'avocat
+                Alertes d'information sur le métier d'avocat.
                 <br />
-                
-                  Bibliothèque de <strong>+1000 modèles d'actes conformes</strong> et
-                  régulièrement actualisés.
-                
+                Bibliothèque de <strong>+1000 modèles d'actes conformes</strong> et régulièrement actualisés.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <Button
                   variant="outline"
-                  className="border border-[#770D28] text-[#770D28] rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] hover:bg-[#770D28] hover:text-white bg-transparent"
-                  onClick={() => window.location.href = '/lahalex-avocat'}
+                  className="rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] bg-transparent transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY}`,
+                    color: BRAND_PRIMARY,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
+                    e.currentTarget.style.color = "#ffffff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = BRAND_PRIMARY;
+                  }}
+                  onClick={() => (window.location.href = "/lahalex-avocat")}
                 >
                   En savoir plus
                 </Button>
-                <Button 
-                  className="bg-[#770D28] text-white rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] hover:bg-[#770D28]/90"
-                  onClick={() => window.location.href = '/nous-contacter'}
+
+                <Button
+                  className="text-white rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] transition-opacity"
+                  style={{ backgroundColor: BRAND_PRIMARY }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = "0.9";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = "1";
+                  }}
+                  onClick={() => (window.location.href = "/nous-contacter")}
                 >
                   Demandez une démo
                 </Button>
@@ -242,7 +280,6 @@ export function SolutionsSection() {
 
           {/* Lahalex Notaire */}
           <div className="solution-card flex flex-col lg:flex-row items-center gap-6 md:gap-8 lg:gap-16">
-            {/* Image d'abord en mobile */}
             <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] overflow-hidden order-1 lg:order-none">
               <Image
                 src="/images/lahalex-avocat.png"
@@ -254,7 +291,10 @@ export function SolutionsSection() {
             </div>
 
             <div className="flex-1 order-2 lg:order-none">
-              <h3 className="text-[#770D28] text-[28px] md:text-[36px] leading-[43px] mb-6">
+              <h3
+                className="text-[28px] md:text-[36px] leading-[1.2] mb-6"
+                style={{ color: BRAND_PRIMARY }}
+              >
                 <span className="font-normal">
                   <TextType
                     text={["Lahalex "]}
@@ -264,9 +304,7 @@ export function SolutionsSection() {
                     cursorCharacter="|"
                     startOnVisible={true}
                     loop={false}
-                    variableSpeed={undefined}
-                    onSentenceComplete={undefined}
-                    textColors={["#770D28"]}
+                    textColors={[BRAND_PRIMARY]}
                   />
                 </span>
                 <span className="font-bold">
@@ -278,44 +316,56 @@ export function SolutionsSection() {
                     cursorCharacter="|"
                     startOnVisible={true}
                     loop={false}
-                    variableSpeed={undefined}
-                    onSentenceComplete={undefined}
-                    textColors={["#770D28"]}
+                    textColors={[BRAND_PRIMARY]}
                   />
                 </span>
               </h3>
 
-              <p className="text-black text-[14px] md:text-[15px] leading-[24px] md:leading-[30px] mb-8">
-                <strong>Vérification automatique :</strong> détection des pièces
-                manquantes ou non conformes.
+              <p className="text-gray-600 text-[14px] md:text-[15px] leading-[24px] md:leading-[30px] mb-8">
+                <strong>Vérification automatique :</strong> détection des pièces manquantes ou non conformes.
                 <br />
-                <strong>Agenda intégré :</strong> rappels pour signatures,
-                enregistrements et dépôts.
+                <strong>Agenda intégré :</strong> rappels pour signatures, enregistrements et dépôts.
                 <br />
-                <strong>Pilotage financier :</strong> chiffre d'affaires, marges
-                et résultats en temps réel.
+                <strong>Pilotage financier :</strong> chiffre d'affaires, marges et résultats en temps réel.
                 <br />
-                <strong>Bibliothèque de +500 modèles</strong> notariaux
-                actualisés (vente, succession, donation, SCI, etc.).
+                <strong>Bibliothèque de +500 modèles</strong> notariaux actualisés (vente, succession, donation, SCI, etc.).
                 <br />
-                <strong>Classement intelligent :</strong> accès rapide au bon
-                modèle selon l'opération et les parties.
+                <strong>Classement intelligent :</strong> accès rapide au bon modèle selon l'opération et les parties.
                 <br />
-                <strong>Assistant IA intégré :</strong> automatisation des
-                tâches répétitives et gain de temps.
+                <strong>Assistant IA intégré :</strong> automatisation des tâches répétitives et gain de temps.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   variant="outline"
-                  className="border border-[#770D28] text-[#770D28] rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28] hover:text-white bg-transparent"
-                  onClick={() => window.location.href = '/lahalex-notaire'}
+                  className="rounded-[30px] px-6 md:px-8 py-3 md:py-4 bg-transparent transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY}`,
+                    color: BRAND_PRIMARY,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
+                    e.currentTarget.style.color = "#ffffff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = BRAND_PRIMARY;
+                  }}
+                  onClick={() => (window.location.href = "/lahalex-notaire")}
                 >
                   En savoir plus
                 </Button>
-                <Button 
-                  className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90"
-                  onClick={() => window.location.href = '/nous-contacter'}
+
+                <Button
+                  className="text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 transition-opacity"
+                  style={{ backgroundColor: BRAND_PRIMARY }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = "0.9";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = "1";
+                  }}
+                  onClick={() => (window.location.href = "/nous-contacter")}
                 >
                   Demandez une démo
                 </Button>
@@ -324,8 +374,10 @@ export function SolutionsSection() {
           </div>
 
           {/* Lahalex Commissaire de justice */}
-          <div className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 bg-[#D4C89A] rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12">
-            {/* Image à droite sur PC, au-dessus sur mobile */}
+          <div
+            className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12"
+            style={{ backgroundColor: BRAND_SECONDARY }}
+          >
             <div className="w-full lg:w-[350px] xl:w-[400px] 2xl:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] overflow-hidden">
               <Image
                 src="/images/Gradient.png"
@@ -337,7 +389,10 @@ export function SolutionsSection() {
             </div>
 
             <div className="flex-1">
-              <h3 className="text-[#770D28] text-[28px] md:text-[36px] leading-[43px] mb-6">
+              <h3
+                className="text-[28px] md:text-[36px] leading-[1.2] mb-6"
+                style={{ color: BRAND_PRIMARY }}
+              >
                 <span className="font-normal">
                   <TextType
                     text={["Lahalex "]}
@@ -347,6 +402,7 @@ export function SolutionsSection() {
                     cursorCharacter="|"
                     startOnVisible={true}
                     loop={false}
+                    textColors={[BRAND_PRIMARY]}
                   />
                 </span>
                 <span className="font-bold">
@@ -358,42 +414,56 @@ export function SolutionsSection() {
                     cursorCharacter="|"
                     startOnVisible={true}
                     loop={false}
-                    textColors={["#770D28"]}
+                    textColors={[BRAND_PRIMARY]}
                   />
                 </span>
               </h3>
 
-              <p className="text-black text-[14px] md:text-[15px] leading-[24px] md:leading-[30px]  mb-8">
-                <strong>Base de données structurée :</strong> clients, contrats,
-                juridictions connectées à vos actes.
+              <p className="text-gray-600 text-[14px] md:text-[15px] leading-[24px] md:leading-[30px] mb-8">
+                <strong>Base de données structurée :</strong> clients, contrats, juridictions connectées à vos actes.
                 <br />
-                <strong>Gestion complète :</strong> assignations, constats,
-                recouvrements avec alertes automatiques.
+                <strong>Gestion complète :</strong> assignations, constats, recouvrements avec alertes automatiques.
                 <br />
-                <strong>Recouvrement simplifié :</strong> paiement en ligne en
-                un clic pour les débiteurs.
+                <strong>Recouvrement simplifié :</strong> paiement en ligne en un clic pour les débiteurs.
                 <br />
-                <strong>Tournées géolocalisées :</strong> trajets optimisés
-                selon missions et urgences.
+                <strong>Tournées géolocalisées :</strong> trajets optimisés selon missions et urgences.
                 <br />
-                <strong>Constats digitalisés :</strong> capture et
-                enregistrement automatique dans le cloud.
+                <strong>Constats digitalisés :</strong> capture et enregistrement automatique dans le cloud.
                 <br />
-                <strong>Facturation automatisée :</strong> borderaux, relances
-                par e-mail ou SMS.
+                <strong>Facturation automatisée :</strong> bordereaux, relances par e-mail ou SMS.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   variant="outline"
-                  className="border border-[#770D28] text-[#770D28] rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28] hover:text-white bg-transparent"
-                  onClick={() => window.location.href = '/lahalex-commissaire-justice'}
+                  className="rounded-[30px] px-6 md:px-8 py-3 md:py-4 bg-transparent transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY}`,
+                    color: BRAND_PRIMARY,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
+                    e.currentTarget.style.color = "#ffffff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = BRAND_PRIMARY;
+                  }}
+                  onClick={() => (window.location.href = "/lahalex-commissaire-justice")}
                 >
                   En savoir plus
                 </Button>
-                <Button 
-                  className="bg-[#770D28] text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 hover:bg-[#770D28]/90"
-                  onClick={() => window.location.href = '/nous-contacter'}
+
+                <Button
+                  className="text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 transition-opacity"
+                  style={{ backgroundColor: BRAND_PRIMARY }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = "0.9";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = "1";
+                  }}
+                  onClick={() => (window.location.href = "/nous-contacter")}
                 >
                   Demandez une démo
                 </Button>
