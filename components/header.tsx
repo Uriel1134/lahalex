@@ -11,11 +11,14 @@ const BRAND_ACCENT = "#D4C89A"
 const BRAND_ACCENT_DARK = "#B4AB6B"
 const BRAND_TEXT = "#111111"
 const BRAND_BLACK = "#000000"
-const BRAND_OVERLAY = "#111111"
-const BRAND_OVERLAY_SECONDARY = "#1A1A1A"
+const BRAND_OVERLAY = "#D4C89A"
+const BRAND_OVERLAY_SECONDARY = "#CBBE88"
 const BRAND_MUTED = "#515560"
 const BRAND_BORDER = "#E5E7EB"
 const BRAND_PANEL = "#F8F8F8"
+const MOBILE_MENU_TEXT = "#6B7280"
+const MOBILE_MENU_SUBTEXT = "#4B5563"
+const MOBILE_MENU_BORDER = "rgba(107, 114, 128, 0.18)"
 
 // Structure du menu VOS BESOINS avec routes spécifiques vers les sous-rubriques
 const vosBesoinsMenu = [
@@ -101,7 +104,7 @@ export function Header() {
       const timer = setTimeout(() => {
         gsap.set(".mobile-menu-overlay", {
           opacity: 0,
-          scale: 0.8,
+          scale: 0.1,
           filter: "blur(20px)",
         })
 
@@ -489,15 +492,15 @@ export function Header() {
       {mobileMenuOpen && (
         <div
           className="mobile-menu-overlay fixed inset-0 z-50 flex flex-col overflow-hidden"
-          style={{ backgroundColor: BRAND_OVERLAY }}
         >
           <div className="mobile-menu-content flex flex-col h-full overflow-hidden">
             {/* Close button */}
             <div className="flex justify-end p-6 flex-shrink-0">
               <button
                 onClick={closeMobileMenu}
-                className="text-white text-3xl font-light hover:opacity-70 transition-opacity hover:scale-110 transform transition-transform"
+                className="text-3xl font-light hover:opacity-70 transition-opacity hover:scale-110 transform transition-transform"
                 aria-label="Fermer le menu"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 ×
               </button>
@@ -507,14 +510,16 @@ export function Header() {
             <nav className="flex flex-col px-16 py-8 space-y-8 flex-1 overflow-y-auto scrollbar-hide">
               <a
                 href="#"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 ACCUEIL
               </a>
 
               <a
                 href="/qui-sommes-nous"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 QUI SOMMES - NOUS ?
               </a>
@@ -522,7 +527,8 @@ export function Header() {
               <div className="relative mobile-menu-item">
                 <button
                   onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                  className="flex items-center text-white text-2xl font-bold uppercase hover:opacity-70 transition-opacity font-gobold"
+                  className="flex items-center text-2xl font-bold uppercase hover:opacity-70 transition-opacity font-gobold"
+                  style={{ color: MOBILE_MENU_TEXT }}
                 >
                   NOS SOLUTIONS
                   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -532,16 +538,32 @@ export function Header() {
 
                 {mobileSolutionsOpen && (
                   <div className="mt-4 ml-4 space-y-4">
-                    <a href="/lahalex-universel" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                    <a
+                      href="/lahalex-universel"
+                      className="block text-lg hover:opacity-70 transition-opacity font-gobold"
+                      style={{ color: MOBILE_MENU_SUBTEXT }}
+                    >
                       Lahalex Universel
                     </a>
-                    <a href="/lahalex-avocat" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                    <a
+                      href="/lahalex-avocat"
+                      className="block text-lg hover:opacity-70 transition-opacity font-gobold"
+                      style={{ color: MOBILE_MENU_SUBTEXT }}
+                    >
                       Lahalex Avocat
                     </a>
-                    <a href="/lahalex-notaire" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                    <a
+                      href="/lahalex-notaire"
+                      className="block text-lg hover:opacity-70 transition-opacity font-gobold"
+                      style={{ color: MOBILE_MENU_SUBTEXT }}
+                    >
                       Lahalex Notaire
                     </a>
-                    <a href="/lahalex-commissaire-justice" className="block text-white text-lg hover:opacity-70 transition-opacity font-gobold">
+                    <a
+                      href="/lahalex-commissaire-justice"
+                      className="block text-lg hover:opacity-70 transition-opacity font-gobold"
+                      style={{ color: MOBILE_MENU_SUBTEXT }}
+                    >
                       Lahalex Commissaire de justice
                     </a>
                   </div>
@@ -551,7 +573,8 @@ export function Header() {
               <div className="relative mobile-menu-item">
                 <button
                   onClick={() => setMobileVosBesoinsOpen(!mobileVosBesoinsOpen)}
-                  className="flex items-center text-white text-2xl font-bold uppercase hover:opacity-70 transition-opacity font-gobold"
+                  className="flex items-center text-2xl font-bold uppercase hover:opacity-70 transition-opacity font-gobold"
+                  style={{ color: MOBILE_MENU_TEXT }}
                 >
                   VOS BESOINS
                   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -562,93 +585,163 @@ export function Header() {
                 {mobileVosBesoinsOpen && (
                   <div className="mt-4 space-y-4">
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Recherche documentaire</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Recherche documentaire
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/recherche-juridique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/recherche-juridique-universel"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Universel
                         </a>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Veille journalière</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Veille journalière
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/veille-juridique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/veille-juridique-universel"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Universel
                         </a>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Bibliothèque</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Bibliothèque
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/bibliotheque-numerique-universel" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/bibliotheque-numerique-universel"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Universel
                         </a>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Rédaction d'actes</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Rédaction d'actes
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/redaction-actes-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/redaction-actes-avocat"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Avocat
                         </a>
-                        <a href="/redaction-actes-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/redaction-actes-notaire"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Notaire
                         </a>
-                        <a href="/redaction-actes-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/redaction-actes-commissaire"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Commissaire de justice
                         </a>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Gestion des clients/collaborateurs</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Gestion des clients/collaborateurs
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/gestion-cabinet-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/gestion-cabinet-avocat"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Avocat
                         </a>
-                        <a href="/gestion-office-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/gestion-office-notaire"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Notaire
                         </a>
-                        <a href="/gestion-etude-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/gestion-etude-commissaire"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Commissaire de justice
                         </a>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Gestion de cabinet</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Gestion de cabinet
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/gestion-cabinet-avocat" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/gestion-cabinet-avocat"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Avocat
                         </a>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Gestion de l'office</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Gestion de l'office
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/gestion-office-notaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/gestion-office-notaire"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Notaire
                         </a>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Gestion de l'étude</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Gestion de l'étude
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/gestion-etude-commissaire" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/gestion-etude-commissaire"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Lahalex Commissaire de justice
                         </a>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-white text-lg font-semibold mb-2">Solutions personnalisées</div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Solutions personnalisées
+                      </div>
                       <div className="ml-4 space-y-1">
-                        <a href="/nous-contacter" className="block text-white text-base hover:opacity-70 transition-opacity">
+                        <a
+                          href="/nous-contacter"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
                           Nous contacter
                         </a>
                       </div>
@@ -659,49 +752,56 @@ export function Header() {
 
               <a
                 href="/paiement-abonnements"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 NOS FORMULES
               </a>
 
               <a
                 href="/recrutement"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 RECRUTEMENT
               </a>
 
               <a
                 href="/devenir-auteur"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 DEVENIR AUTEUR
               </a>
 
               <a
                 href="/essai-gratuit"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 ESSAI GRATUIT
               </a>
 
               <a
                 href="/nous-contacter"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 NOUS CONTACTER
               </a>
 
               <a
                 href="/lahalex-connexion"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 CONNEXION
               </a>
 
               <a
                 href="/faq"
-                className="mobile-menu-item text-white text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                className="mobile-menu-item text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition-opacity font-gobold hover:scale-105 transform transition-transform"
+                style={{ color: MOBILE_MENU_TEXT }}
               >
                 FAQ
               </a>
@@ -752,8 +852,13 @@ export function Header() {
         }
 
         .mobile-menu-overlay {
-          backdrop-filter: blur(10px);
-          background: linear-gradient(135deg, ${BRAND_OVERLAY}, ${BRAND_OVERLAY_SECONDARY});
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          background: linear-gradient(
+            135deg,
+            ${BRAND_OVERLAY} 0%,
+            ${BRAND_OVERLAY_SECONDARY} 100%
+          );
         }
 
         .mobile-menu-item .mt-4 {
@@ -774,7 +879,7 @@ export function Header() {
         @media (max-width: 640px) {
           .mobile-menu-item {
             padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid ${MOBILE_MENU_BORDER};
           }
 
           .mobile-menu-item:last-child {

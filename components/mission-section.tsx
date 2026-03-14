@@ -59,11 +59,30 @@ export function MissionSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <p className="text-gray-600 text-center text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] leading-[28px] sm:leading-[32px] md:leading-[36px] font-normal">
-          <span style={{ color: BRAND_ACCENT }}>Lahalex</span> vous accompagne dans tous vos{" "}
-          <span style={{ color: BRAND_ACCENT }}>défis</span> en vous proposant des contenus élaborés par{" "}
-          <span style={{ color: BRAND_ACCENT }}>des experts reconnus</span> : analyses menées par des universitaires et des professionnels,
+          
+          <span style={{ color: BRAND_ACCENT }} className="font-bold">
+            Lahalex
+          </span>{" "}
+          
+          vous accompagne dans tous vos{" "}
+          
+          <span style={{ color: BRAND_ACCENT }} className="font-bold">
+            défis
+          </span>{" "}
+          
+          en vous proposant des contenus élaborés par{" "}
+          
+          <span style={{ color: BRAND_ACCENT }} className="font-bold">
+            des experts reconnus
+          </span>{" "}
+          
+          : analyses menées par des universitaires et des professionnels,
           alliant la pratique et la théorie, appuyées sur des{" "}
-          <span style={{ color: BRAND_ACCENT }}>doctrines de référence</span>.
+          
+          <span style={{ color: BRAND_ACCENT }} className="font-bold">
+            doctrines de référence
+          </span>.
+          
         </p>
       </div>
     </section>

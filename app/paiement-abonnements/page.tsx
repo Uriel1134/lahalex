@@ -389,27 +389,6 @@ export default function PaiementAbonnements() {
 
           {(activeTab === "avocat" || activeTab === "notaire" || activeTab === "commissaire") && (
             <div ref={cardsRef} className="pricing-content">
-              {/* Header */}
-              <div
-                className="animated-header rounded-3xl shadow-2xl mb-12 overflow-hidden relative"
-                style={{
-                  background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent"></div>
-                <div className="relative p-8 text-black">
-                  <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0">
-                    <div className="flex items-center">
-                      <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm mr-6">
-                        {activeTab === "avocat" && <Scale className="w-8 h-8" style={{ color: BRAND_TEXT }} />}
-                        {activeTab === "notaire" && <FileText className="w-8 h-8" style={{ color: BRAND_TEXT }} />}
-                        {activeTab === "commissaire" && <Building2 className="w-8 h-8" style={{ color: BRAND_TEXT }} />}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <div className="max-w-4xl mx-auto">
                 <div className="pricing-card group relative bg-white rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-700 ease-out">
                   <div

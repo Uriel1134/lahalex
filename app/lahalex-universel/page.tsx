@@ -229,6 +229,12 @@ export default function LahalexUniverselPage() {
             {/* Right Column - Images superposées sans cards blanches */}
             <div className="order-1 lg:order-2 flex justify-center items-center">
               <div className="relative w-full max-w-[520px] h-[420px] sm:h-[460px] lg:h-[520px]">
+
+                 <img
+                  src="/images/universel-laptop.png"
+                  alt="Lahalex carousel 1"
+                  className="hero-stack-image absolute top-4 left-4 sm:left-8 w-[72%] h-auto object-contain z-[1] pointer-events-none select-none"
+                />
                 <img
                   src="/images/carousel-image-2.png"
                   alt="Lahalex carousel 1"

@@ -11,9 +11,9 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-// Remplace cette valeur par la vraie couleur principale de ta charte graphique
-const BRAND_PRIMARY = "#YOUR_BRAND_COLOR";
+const BRAND_PRIMARY = "#D4C89A";
 const BRAND_SECONDARY = "#D4C89A";
+const BUTTON_TEXT_GRAY = "#6B7280";
 
 export function SolutionsSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -65,7 +65,6 @@ export function SolutionsSection() {
   return (
     <section ref={sectionRef} className="w-full bg-white py-8 md:py-16">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        {/* Section title */}
         <h2
           className="text-[24px] md:text-[36px] font-normal leading-[1.2] font-['Gobold_Extra1'] mb-8 md:mb-16"
           style={{ color: BRAND_PRIMARY }}
@@ -149,7 +148,7 @@ export function SolutionsSection() {
                     className="rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] bg-transparent transition-colors"
                     style={{
                       border: `1px solid ${BRAND_PRIMARY}`,
-                      color: BRAND_PRIMARY,
+                      color: BUTTON_TEXT_GRAY,
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
@@ -157,7 +156,7 @@ export function SolutionsSection() {
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = "transparent";
-                      e.currentTarget.style.color = BRAND_PRIMARY;
+                      e.currentTarget.style.color = BUTTON_TEXT_GRAY;
                     }}
                     onClick={() => (window.location.href = "/lahalex-universel")}
                   >
@@ -165,8 +164,11 @@ export function SolutionsSection() {
                   </Button>
 
                   <Button
-                    className="text-white rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] transition-opacity"
-                    style={{ backgroundColor: BRAND_PRIMARY }}
+                    className="rounded-[30px] px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] md:text-[18px] transition-opacity"
+                    style={{
+                      backgroundColor: BRAND_PRIMARY,
+                      color: BUTTON_TEXT_GRAY,
+                    }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.opacity = "0.9";
                     }}
@@ -246,7 +248,7 @@ export function SolutionsSection() {
                   className="rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] bg-transparent transition-colors"
                   style={{
                     border: `1px solid ${BRAND_PRIMARY}`,
-                    color: BRAND_PRIMARY,
+                    color: BUTTON_TEXT_GRAY,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
@@ -254,7 +256,7 @@ export function SolutionsSection() {
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = BRAND_PRIMARY;
+                    e.currentTarget.style.color = BUTTON_TEXT_GRAY;
                   }}
                   onClick={() => (window.location.href = "/lahalex-avocat")}
                 >
@@ -262,8 +264,11 @@ export function SolutionsSection() {
                 </Button>
 
                 <Button
-                  className="text-white rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] transition-opacity"
-                  style={{ backgroundColor: BRAND_PRIMARY }}
+                  className="rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] transition-opacity"
+                  style={{
+                    backgroundColor: BRAND_PRIMARY,
+                    color: BUTTON_TEXT_GRAY,
+                  }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.opacity = "0.9";
                   }}
@@ -341,7 +346,7 @@ export function SolutionsSection() {
                   className="rounded-[30px] px-6 md:px-8 py-3 md:py-4 bg-transparent transition-colors"
                   style={{
                     border: `1px solid ${BRAND_PRIMARY}`,
-                    color: BRAND_PRIMARY,
+                    color: BUTTON_TEXT_GRAY,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
@@ -349,7 +354,7 @@ export function SolutionsSection() {
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = BRAND_PRIMARY;
+                    e.currentTarget.style.color = BUTTON_TEXT_GRAY;
                   }}
                   onClick={() => (window.location.href = "/lahalex-notaire")}
                 >
@@ -357,8 +362,11 @@ export function SolutionsSection() {
                 </Button>
 
                 <Button
-                  className="text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 transition-opacity"
-                  style={{ backgroundColor: BRAND_PRIMARY }}
+                  className="rounded-[30px] px-6 md:px-8 py-3 md:py-4 transition-opacity"
+                  style={{
+                    backgroundColor: BRAND_PRIMARY,
+                    color: BUTTON_TEXT_GRAY,
+                  }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.opacity = "0.9";
                   }}
@@ -439,7 +447,7 @@ export function SolutionsSection() {
                   className="rounded-[30px] px-6 md:px-8 py-3 md:py-4 bg-transparent transition-colors"
                   style={{
                     border: `1px solid ${BRAND_PRIMARY}`,
-                    color: BRAND_PRIMARY,
+                    color: BUTTON_TEXT_GRAY,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
@@ -447,7 +455,7 @@ export function SolutionsSection() {
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = BRAND_PRIMARY;
+                    e.currentTarget.style.color = BUTTON_TEXT_GRAY;
                   }}
                   onClick={() => (window.location.href = "/lahalex-commissaire-justice")}
                 >
@@ -455,8 +463,11 @@ export function SolutionsSection() {
                 </Button>
 
                 <Button
-                  className="text-white rounded-[30px] px-6 md:px-8 py-3 md:py-4 transition-opacity"
-                  style={{ backgroundColor: BRAND_PRIMARY }}
+                  className="rounded-[30px] px-6 md:px-8 py-3 md:py-4 transition-opacity"
+                  style={{
+                    backgroundColor: BRAND_PRIMARY,
+                    color: BUTTON_TEXT_GRAY,
+                  }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.opacity = "0.9";
                   }}

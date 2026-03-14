@@ -23,15 +23,17 @@ export default function DevenirAuteur() {
             <h1 className="font-gobold text-white mb-6 text-3xl sm:text-4xl lg:text-5xl leading-tight">
               Universitaire, Praticien ou EXPERT D’UNE DISCIPLINE CONNEXE ?
             </h1>
+
             <p className="text-lg sm:text-xl text-white mb-8 max-w-4xl mx-auto leading-relaxed">
               Publiez vos articles, analyses, chroniques, contributions doctrinales ou scientifiques, notes de
               lecture, ouvrages, revues spécialisées et bien plus encore sur notre plateforme.
             </p>
+
             <a href="/devenir-auteur-form">
-  <button className="bg-[#770D28] text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#5a0a1f] transition-colors">
-    Devenir auteur
-  </button>
-</a>
+              <button className="bg-[#C8A96B] text-gray-800 px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#B8934F] transition-colors">
+                Devenir auteur
+              </button>
+            </a>
           </div>
         </section>
       </main>

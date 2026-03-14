@@ -377,7 +377,6 @@ export default function QuiSommesNous() {
           },
         }
       );
-
     }, [heroRef, visionRef, valuesRef, impactRef, dimensionRef, citationRef]);
 
     return () => ctx.revert();
@@ -397,14 +396,14 @@ export default function QuiSommesNous() {
             fill
             className="rounded-2xl object-cover"
           />
-          <div className="absolute inset-0 bg-[#770D28]/88 rounded-2xl"></div>
+          <div className="absolute inset-0 bg-[#C8A96B]/85 rounded-2xl"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-            <h1 className="hero-title text-white font-gobold text-4xl md:text-6xl mb-6">
+            <h1 className="hero-title text-gray-800 font-gobold text-4xl md:text-6xl mb-6">
               QUI SOMMES-NOUS ?
             </h1>
             <p className="hero-subtitle text-white text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Experts dans la conception et l’édition de bases de données documentaires 
-              et de logiciels métiers pluridisciplinaires, dédiés aux professionnels, 
+              Experts dans la conception et l’édition de bases de données documentaires
+              et de logiciels métiers pluridisciplinaires, dédiés aux professionnels,
               aux institutions et aux acteurs de la recherche.
             </p>
           </div>
@@ -412,25 +411,28 @@ export default function QuiSommesNous() {
       </section>
 
       {/* ---------------- VISION & MISSION ---------------- */}
-      <section ref={visionRef} className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
+      <section
+        ref={visionRef}
+        className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center"
+      >
         <div className="vision-content">
-          <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
+          <h2 className="text-[#C8A96B] text-3xl md:text-4xl font-semibold mb-6">
             Vision et mission
           </h2>
-          <p className="text-[#293240] text-lg leading-8 mb-4">
-            Chez <strong>LAHALEX</strong>, <strong>notre mission</strong> est de structurer, sécuriser et valoriser 
-            l’information afin de la transformer en un véritable levier de performance, de décision et d’innovation. 
-            Nous développons des solutions numériques fiables, intuitives et évolutives, conçues pour répondre aux 
+          <p className="text-gray-700 text-lg leading-8 mb-4">
+            Chez <strong>LAHALEX</strong>, <strong>notre mission</strong> est de structurer, sécuriser et valoriser
+            l’information afin de la transformer en un véritable levier de performance, de décision et d’innovation.
+            Nous développons des solutions numériques fiables, intuitives et évolutives, conçues pour répondre aux
             exigences des environnements professionnels et académiques.
           </p>
-          <p className="text-[#293240] text-lg leading-8 mb-4">
-            Nos expertises s’inscrivent particulièrement dans les domaines du droit, 
-            de la médecine et des sciences économiques, où l’accès à une information rigoureuse, actualisée et 
-            exploitable est essentiel. À travers nos bases de données spécialisées et nos logiciels métiers, 
-            nous accompagnons les praticiens, chercheurs, enseignants, étudiants et décideurs dans leurs 
+          <p className="text-gray-700 text-lg leading-8 mb-4">
+            Nos expertises s’inscrivent particulièrement dans les domaines du droit,
+            de la médecine et des sciences économiques, où l’accès à une information rigoureuse, actualisée et
+            exploitable est essentiel. À travers nos bases de données spécialisées et nos logiciels métiers,
+            nous accompagnons les praticiens, chercheurs, enseignants, étudiants et décideurs dans leurs
             activités quotidiennes.
           </p>
-          <p className="text-[#293240] text-lg leading-8">
+          <p className="text-gray-700 text-lg leading-8">
             À l’intersection du savoir, de la technologie et des usages métiers, nous plaçons l’expertise documentaire, la qualité scientifique et l’innovation numérique au cœur de chacune de nos solutions.
           </p>
         </div>
@@ -460,8 +462,8 @@ export default function QuiSommesNous() {
           {/* Contenu */}
           <div className="relative z-10 p-8 md:p-12">
             {/* Titre */}
-            <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold text-center mb-12">
-              Valeurs <span className="font-normal">fondatrices</span>
+            <h2 className="text-[#C8A96B] text-3xl md:text-4xl font-semibold text-center mb-12">
+              Valeurs <span className="font-normal text-gray-700">fondatrices</span>
             </h2>
 
             {/* Grid */}
@@ -476,10 +478,10 @@ export default function QuiSommesNous() {
                   className="value-icon w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="value-title text-[#770D28] text-2xl font-bold mb-2">
+                  <h3 className="value-title text-[#C8A96B] text-2xl font-bold mb-2">
                     Accessibilité
                   </h3>
-                  <p className="value-description text-gray-800 text-base md:text-lg">
+                  <p className="value-description text-gray-700 text-base md:text-lg">
                     Un savoir compréhensible et disponible pour tous.
                   </p>
                 </div>
@@ -495,10 +497,10 @@ export default function QuiSommesNous() {
                   className="value-icon w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="value-title text-[#770D28] text-2xl font-bold mb-2">
+                  <h3 className="value-title text-[#C8A96B] text-2xl font-bold mb-2">
                     Innovation
                   </h3>
-                  <p className="value-description text-gray-800 text-base md:text-lg">
+                  <p className="value-description text-gray-700 text-base md:text-lg">
                     Intégrer l'IA et les nouvelles technologies au service de la
                     justice.
                   </p>
@@ -515,10 +517,10 @@ export default function QuiSommesNous() {
                   className="value-icon w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="value-title text-[#770D28] text-2xl font-bold mb-2">
+                  <h3 className="value-title text-[#C8A96B] text-2xl font-bold mb-2">
                     Fiabilité
                   </h3>
-                  <p className="value-description text-gray-800 text-base md:text-lg">
+                  <p className="value-description text-gray-700 text-base md:text-lg">
                     Des contenus validés par des experts.
                   </p>
                 </div>
@@ -534,10 +536,10 @@ export default function QuiSommesNous() {
                   className="value-icon w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="value-title text-[#770D28] text-2xl font-bold mb-2">
+                  <h3 className="value-title text-[#C8A96B] text-2xl font-bold mb-2">
                     Engagement
                   </h3>
-                  <p className="value-description text-gray-800 text-base md:text-lg">
+                  <p className="value-description text-gray-700 text-base md:text-lg">
                     Soutenir la formation et l'excellence académique en Afrique.
                   </p>
                 </div>
@@ -548,11 +550,14 @@ export default function QuiSommesNous() {
       </section>
 
       {/* ---------------- IMPACT ---------------- */}
-      <section ref={impactRef} className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
+      <section
+        ref={impactRef}
+        className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center"
+      >
         {/* Bloc image avec décor */}
         <div className="relative">
-          {/* Bloc olive derrière */}
-          <div className="decorative-element absolute -bottom-10 -left-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
+          {/* Bloc doré derrière */}
+          <div className="decorative-element absolute -bottom-10 -left-8 w-[315px] h-[235px] bg-[#C8A96B] rounded-lg z-0"></div>
 
           {/* Image principale */}
           <Image
@@ -575,10 +580,10 @@ export default function QuiSommesNous() {
 
         {/* Texte */}
         <div>
-          <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
+          <h2 className="text-[#C8A96B] text-3xl md:text-4xl font-semibold mb-6">
             Impact social et éducatif
           </h2>
-          <p className="text-[#293240] text-lg leading-8 max-w-[538px]">
+          <p className="text-gray-700 text-lg leading-8 max-w-[538px]">
             Nous croyons que l'accès au savoir contribue à renforcer
             l'État de droit et la démocratie. À travers des partenariats avec
             universités, barreaux et institutions, LAHALEX soutient la formation
@@ -589,12 +594,15 @@ export default function QuiSommesNous() {
       </section>
 
       {/* ---------------- DIMENSION ---------------- */}
-      <section ref={dimensionRef} className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center">
+      <section
+        ref={dimensionRef}
+        className="relative w-[90%] max-w-[1320px] mx-auto py-16 grid md:grid-cols-2 gap-12 items-center"
+      >
         <div className="relative">
-          <h2 className="text-[#770D28] text-3xl md:text-4xl font-semibold mb-6">
+          <h2 className="text-[#C8A96B] text-3xl md:text-4xl font-semibold mb-6">
             Dimension panafricaine et internationale
           </h2>
-          <p className="text-[#293240] text-lg leading-8">
+          <p className="text-gray-700 text-lg leading-8">
             Présente dans plusieurs pays d'Afrique francophone et ouverte sur le
             monde, LAHALEX s'impose comme un pont entre les réalités locales et
             les standards internationaux.
@@ -610,8 +618,8 @@ export default function QuiSommesNous() {
         </div>
 
         <div className="relative">
-          {/* Bloc olive derrière */}
-          <div className="decorative-element absolute -bottom-10 -right-8 w-[315px] h-[235px] bg-[#B4AB6B] rounded-lg z-0"></div>
+          {/* Bloc doré derrière */}
+          <div className="decorative-element absolute -bottom-10 -right-8 w-[315px] h-[235px] bg-[#C8A96B] rounded-lg z-0"></div>
 
           {/* Image au-dessus */}
           <Image
@@ -626,7 +634,7 @@ export default function QuiSommesNous() {
 
       {/* ---------------- CITATION ---------------- */}
       <section ref={citationRef} className="relative w-[90%] max-w-[1324px] mx-auto py-20">
-        {/* <div className="relative bg-[#770D28] rounded-2xl p-12 text-center text-white">
+        {/* <div className="relative bg-[#C8A96B] rounded-2xl p-12 text-center text-gray-800">
           <p className="citation-text italic text-xl md:text-2xl leading-relaxed mb-6">
             « Grâce à l'intelligence artificielle, au big data et à des
             plateformes interactives, nous offrons aux praticiens des outils
@@ -644,7 +652,6 @@ export default function QuiSommesNous() {
       </section>
 
       {/* ---------------- FOOTER ---------------- */}
-
       <Footer />
     </main>
   );

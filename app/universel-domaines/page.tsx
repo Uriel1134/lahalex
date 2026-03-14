@@ -40,7 +40,7 @@ const domaines = [
     buttonHoverText: "#ffffff",
   },
   {
-    title: "Économie",
+    title: "Économie et Gestion",
     link: "https://science-eco.lahalex.com/login",
     logo: "/images/lahalex-universel eco.png",
     bgColor: "#002546",

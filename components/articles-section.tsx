@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useRef, useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from "swiper/modules"
@@ -16,40 +17,71 @@ const articles = [
       "La prise en charge financière des enquêtes sociales dans les procédures impliquant des mineurs : un vide juridique à combler en droit béninois",
     author: "Nicoli ASSOGBA",
     position: "Substitut du procureur, tribunal de Lokossa",
+    image: "/images/Avatar.jpg",
   },
   {
     title:
       "Pas de preuves, pas de répit : le juge serre la vis face aux emprunteurs défaillants en microfinance",
     author: "Noé GOKPON",
     position: "Juriste spécialiste",
+    image: "/images/Avatar.jpg",
   },
   {
     title:
       "LE PRINCIPE DE SÉCURITÉ JURIDIQUE : GARANT OU MIRAGE DANS LES ACTES DE L'ADMINISTRATION BÉNINOISE ?",
     author: "James ATINDEHOU",
     position: "Magistrat au Tribunal de Première instance de deuxième classe de Ouidah",
+    image: "/images/Avatar.jpg",
   },
   {
-    title: "LA MONOGAMIE COMME PRINCIPE PAR DÉFAUT : IMPLICATIONS SOCIÉTALES ET JURIDIQUES",
+    title:
+      "LA MONOGAMIE COMME PRINCIPE PAR DÉFAUT : IMPLICATIONS SOCIÉTALES ET JURIDIQUES",
     author: "Maëlle Ophélia Ariane da TRINIDADE",
     position: "Magistrat au Tribunal de Première instance de deuxième classe de Lokossa",
+    image: "/images/Avatar.jpg",
   },
   {
-    title: "Le procès équitable à l'épreuve de la communication des causes en matière civile et commerciale",
+    title:
+      "Le procès équitable à l'épreuve de la communication des causes en matière civile et commerciale",
     author: "Enagnon Gildas NONNOU",
     position: "Agrégé des facultés de droit Université d'Abomey-Calavi",
+    image: "/images/Gildas.jpeg",
+  },
+  {
+    title:
+      "L'infrastructure numérique comme nouveau champ de régulation : Les fintechs et la stabilité financière systémique dans les pays en développement",
+    author: "Magloire LANHA",
+    position: "Professeur titulaire agrégé des Facultés d'Economie et de Gestion",
+    image: "/images/Magloire.jpg",
+  },
+  {
+    title:
+      "Nouvelles perspectives sur la politique fiscale, les inégalités de revenus et le secteur informel : cas des pays de l'Afrique subsaharienne",
+    author: "Bernard-Didier Benissan -Docteur en économie",
+    position: "Auteur de l'article",
+    image: "/images/photoBenissan.png",
   },
 ]
 
 const ChevronLeft = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M15 19l-7-7 7-7"
+    />
   </svg>
 )
 
 const ChevronRight = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 5l7 7-7 7"
+    />
   </svg>
 )
 
@@ -77,10 +109,7 @@ export function ArticlesSection() {
   }
 
   return (
-    <section
-      className="w-full py-8 md:py-16"
-      style={{ backgroundColor: BRAND_BG }}
-    >
+    <section className="w-full py-8 md:py-16" style={{ backgroundColor: BRAND_BG }}>
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <h2
           className="text-[24px] md:text-[36px] font-normal leading-[1.2] font-['Gobold_Extra1'] mb-8 md:mb-16"
@@ -121,19 +150,33 @@ export function ArticlesSection() {
                         {article.title}
                       </h3>
 
-                      <div className="absolute bottom-[15px] sm:bottom-[20px] left-[15px] sm:left-[20px] right-[15px] sm:right-[20px]">
-                        <p
-                          className="text-[12px] sm:text-[14px] md:text-[16px] font-semibold"
-                          style={{ color: BRAND_TEXT }}
-                        >
-                          {article.author}
-                        </p>
-                        <p
-                          className="text-[10px] sm:text-[12px] md:text-[14px] font-normal mt-1"
-                          style={{ color: BRAND_TEXT }}
-                        >
-                          {article.position}
-                        </p>
+                      <div className="absolute bottom-[15px] sm:bottom-[20px] left-[15px] sm:left-[20px] right-[15px] sm:right-[20px] flex items-start gap-3">
+                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-gray-300 shrink-0">
+                          <Image
+                            src={article.image}
+                            alt={article.author}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+
+                        <div className="min-w-0">
+                          <p
+                            className="text-[12px] sm:text-[14px] md:text-[16px] font-semibold"
+                            style={{ color: BRAND_TEXT }}
+                          >
+                            {article.author}
+                          </p>
+
+                          {article.position && (
+                            <p
+                              className="text-[10px] sm:text-[12px] md:text-[14px] font-normal mt-1"
+                              style={{ color: BRAND_TEXT }}
+                            >
+                              {article.position}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </div>
 
