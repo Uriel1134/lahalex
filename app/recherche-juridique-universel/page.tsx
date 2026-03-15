@@ -262,7 +262,7 @@ export default function RecherchePage() {
                   <div className="flex items-start justify-between gap-8">
                     <div className="flex-1 max-w-3xl">
                       <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-left">
-                        Notre outil de recherche avancée permet d'exploiter de façon <strong>structurée et intelligente</strong> un vaste ensemble de contenus <strong>juridiques, médicaux et économiques</strong> tels que la <strong>législation</strong>, la <strong>jurisprudence</strong>, la <strong>doctrine</strong>, les <strong>publications médicales</strong>, les <strong>analyses économiques</strong> ou encore l'<strong>actualité</strong>. Grâce à des <strong>technologies performantes</strong>, il offre des résultats <strong>ciblés, précis et hiérarchisés</strong>.
+                        Notre outil de recherche avancée permet d'exploiter de façon <strong>structurée et intelligente</strong> un vaste ensemble de contenus  tels que la <strong>législation</strong>, la <strong>jurisprudence</strong>, la <strong>doctrine</strong>, les <strong>publications médicales</strong>, les <strong>analyses économiques</strong> ou encore l'<strong>actualité</strong>. Grâce à des <strong>technologies performantes</strong>, il offre des résultats <strong>ciblés, précis et hiérarchisés</strong>.
                       </p>
                     </div>
                   </div>

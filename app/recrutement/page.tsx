@@ -342,12 +342,37 @@ const JOBS: Job[] = [
   },
 ]
 
+type FormState = {
+  nom: string
+  prenom: string
+  email: string
+  telephone: string
+  cv: File | null
+}
+
+const initialFormState: FormState = {
+  nom: "",
+  prenom: "",
+  email: "",
+  telephone: "",
+  cv: null,
+}
+
+type ApiResponse = {
+  message?: string
+}
+
 export default function RecrutementPage() {
   const [query, setQuery] = useState("")
   const [selectedPays, setSelectedPays] = useState("")
   const [selectedDiplome, setSelectedDiplome] = useState("")
   const [detailsId, setDetailsId] = useState<string | null>(null)
   const [applyFor, setApplyFor] = useState<string | null>(null)
+
+  const [form, setForm] = useState<FormState>(initialFormState)
+  const [isSending, setIsSending] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
 
   const paysOptions = useMemo(() => {
     const allCountries = JOBS.flatMap((job) =>
@@ -390,6 +415,90 @@ export default function RecrutementPage() {
   }, [query, selectedPays, selectedDiplome])
 
   const jobById = (id: string) => JOBS.find((j) => j.id === id)!
+
+  const resetApplicationForm = () => {
+    setForm(initialFormState)
+    setErrorMessage("")
+    setSuccessMessage("")
+    setIsSending(false)
+  }
+
+  const openApplyModal = (poste: string) => {
+    setApplyFor(poste)
+    resetApplicationForm()
+  }
+
+  const closeApplyModal = () => {
+    setApplyFor(null)
+    resetApplicationForm()
+  }
+
+  const handleSubmitApplication = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    setErrorMessage("")
+    setSuccessMessage("")
+
+    if (!applyFor) {
+      setErrorMessage("Aucun poste sélectionné.")
+      return
+    }
+
+    if (!form.nom || !form.prenom || !form.email || !form.telephone || !form.cv) {
+      setErrorMessage("Veuillez remplir tous les champs et joindre votre fichier.")
+      return
+    }
+
+    if (form.cv.size > 10 * 1024 * 1024) {
+      setErrorMessage("Le fichier est trop volumineux. Taille maximale : 10 MB.")
+      return
+    }
+
+    try {
+      setIsSending(true)
+
+      const formData = new FormData()
+      formData.append("poste", applyFor)
+      formData.append("nom", form.nom)
+      formData.append("prenom", form.prenom)
+      formData.append("email", form.email)
+      formData.append("telephone", form.telephone)
+      formData.append("cv", form.cv)
+
+      const response = await fetch("/recrutement/apply", {
+        method: "POST",
+        body: formData,
+      })
+
+      const rawText = await response.text()
+
+      let data: ApiResponse = {}
+      try {
+        data = rawText ? JSON.parse(rawText) : {}
+      } catch {
+        throw new Error(rawText || "Réponse invalide du serveur.")
+      }
+
+      if (!response.ok) {
+        throw new Error(data?.message || "Une erreur est survenue lors de l'envoi.")
+      }
+
+      setSuccessMessage(data?.message || "Votre candidature a été envoyée avec succès.")
+      setForm(initialFormState)
+
+      setTimeout(() => {
+        closeApplyModal()
+      }, 1800)
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Impossible d'envoyer votre candidature pour le moment."
+      )
+    } finally {
+      setIsSending(false)
+    }
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-white font-sf-pro">
@@ -523,7 +632,7 @@ export default function RecrutementPage() {
                               Voir l&apos;offre
                             </button>
                             <button
-                              onClick={() => setApplyFor(job.poste)}
+                              onClick={() => openApplyModal(job.poste)}
                               className="border border-[#D4AF37] text-[#D4AF37] px-4 py-2 rounded hover:bg-[#FFF8E1] text-sm"
                             >
                               Postuler
@@ -636,44 +745,139 @@ export default function RecrutementPage() {
 
         {applyFor && (
           <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg max-w-md w-full">
+            <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl">
               <div className="p-8">
-                <h2 className="text-xl font-medium text-center mb-2">Postuler à l&apos;offre</h2>
-                <p className="text-center text-gray-600 mb-8">"{applyFor}"</p>
+                <h2 className="text-xl font-semibold text-center mb-2 text-gray-900">
+                  Postuler à l&apos;offre
+                </h2>
+                <p className="text-center text-gray-600 mb-8">&quot;{applyFor}&quot;</p>
 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmitApplication}>
                   <input
                     type="text"
                     placeholder="Nom"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                    value={form.nom}
+                    onChange={(e) => setForm((prev) => ({ ...prev, nom: e.target.value }))}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                   />
+
                   <input
                     type="text"
                     placeholder="Prénom"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                    value={form.prenom}
+                    onChange={(e) => setForm((prev) => ({ ...prev, prenom: e.target.value }))}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                   />
+
                   <input
                     type="email"
                     placeholder="Email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                    value={form.email}
+                    onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                   />
+
                   <input
                     type="tel"
                     placeholder="Contact téléphonique"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                    value={form.telephone}
+                    onChange={(e) => setForm((prev) => ({ ...prev, telephone: e.target.value }))}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                   />
-                  <input type="file" accept=".pdf,.doc,.docx" className="w-full text-sm text-gray-600" />
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      CV / Lettre de motivation
+                    </label>
+
+                    <label className="flex items-center gap-3 w-full border border-gray-300 rounded-lg px-4 py-3 cursor-pointer hover:border-[#D4AF37] transition">
+                      <div className="shrink-0 text-[#D4AF37]">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M7 8h10M7 12h10M7 16h6M8 3h6l5 5v11a2 2 0 01-2 2H8a2 2 0 01-2-2V5a2 2 0 012-2z"
+                          />
+                        </svg>
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <span className="block text-sm text-gray-700 truncate">
+                          {form.cv ? form.cv.name : "Choisir un fichier (.pdf, .doc, .docx)"}
+                        </span>
+                      </div>
+
+                      <span className="text-xs text-[#D4AF37] font-medium whitespace-nowrap">
+                        Parcourir
+                      </span>
+
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        className="hidden"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0] || null
+
+                          if (
+                            file &&
+                            ![
+                              "application/pdf",
+                              "application/msword",
+                              "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                            ].includes(file.type)
+                          ) {
+                            setErrorMessage("Formats autorisés : PDF, DOC, DOCX.")
+                            return
+                          }
+
+                          if (file && file.size > 10 * 1024 * 1024) {
+                            setErrorMessage("Le fichier est trop volumineux. Taille maximale : 10 MB.")
+                            return
+                          }
+
+                          setErrorMessage("")
+                          setForm((prev) => ({
+                            ...prev,
+                            cv: file,
+                          }))
+                        }}
+                      />
+                    </label>
+                  </div>
+
+                  {errorMessage && (
+                    <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  {successMessage && (
+                    <div className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3">
+                      {successMessage}
+                    </div>
+                  )}
+
                   <div className="flex justify-center gap-4 pt-4">
                     <button
                       type="submit"
-                      className="border border-[#D4AF37] text-[#D4AF37] px-6 py-2 rounded-lg hover:bg-[#FFF8E1]"
+                      disabled={isSending}
+                      className="border border-[#D4AF37] text-[#D4AF37] px-6 py-2 rounded-lg hover:bg-[#FFF8E1] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Envoyer
+                      {isSending ? "Envoi..." : "Envoyer"}
                     </button>
+
                     <button
                       type="button"
-                      onClick={() => setApplyFor(null)}
-                      className="text-gray-600 px-6 py-2"
+                      onClick={closeApplyModal}
+                      disabled={isSending}
+                      className="text-gray-600 px-6 py-2 disabled:opacity-50"
                     >
                       Annuler
                     </button>

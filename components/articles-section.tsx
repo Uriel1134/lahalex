@@ -57,9 +57,23 @@ const articles = [
   {
     title:
       "Nouvelles perspectives sur la politique fiscale, les inégalités de revenus et le secteur informel : cas des pays de l'Afrique subsaharienne",
-    author: "Bernard-Didier Benissan -Docteur en économie",
-    position: "Auteur de l'article",
+    author: "Bernard-Didier Benissan",
+    position: "-Docteur en économie",
     image: "/images/photoBenissan.png",
+  },
+    {
+    title:
+      "La pêcherie du lac toho (bénin, afrique de l’ouest) : typologie, organisation, acteurs, engins et commercialisation du poisson",
+    author: "Clovis HOUNTCHEME ",
+    position: "Spécialiste en Agronomie",
+    image: "/images/Clovi.jpeg",
+  },
+   {
+    title:
+      "Anatomie du rectum et implications cliniques : revue anatomique descriptive, fonctionnelle et prospective",
+    author: "Marcelin GANMENON",
+    position: "Médecin Généraliste",
+    image: "/images/Marcelin.jpeg",
   },
 ]
 

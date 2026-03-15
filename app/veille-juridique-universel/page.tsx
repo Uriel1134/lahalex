@@ -341,7 +341,7 @@ export default function VeilleJuridiquePage() {
                   <strong> surveillance</strong>, de collecte, d&apos;analyse et de diffusion continue
                   d&apos;informations législatives, réglementaires, jurisprudentielles,
                   médicales et économiques. Restez informé de l&apos;actualité dans <strong>tous
-                    les domaines juridiques, médicaux et économiques </strong> grâce à notre service alimenté chaque jour
+                    les domaines </strong> grâce à notre service alimenté chaque jour
                   par nos experts. Interface intuitive adaptée à <strong> tous vos écrans</strong>,
                   notifications ciblées sur vos centres d&apos;intérêt, et outils
                   pratiques pour traiter l&apos;information efficacement. LahaLex
