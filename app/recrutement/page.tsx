@@ -371,8 +371,8 @@ export default function RecrutementPage() {
 
   const [form, setForm] = useState<FormState>(initialFormState)
   const [isSending, setIsSending] = useState(false)
-  const [successMessage, setSuccessMessage] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
+  const [successDialogOpen, setSuccessDialogOpen] = useState(false)
 
   const paysOptions = useMemo(() => {
     const allCountries = JOBS.flatMap((job) =>
@@ -419,7 +419,6 @@ export default function RecrutementPage() {
   const resetApplicationForm = () => {
     setForm(initialFormState)
     setErrorMessage("")
-    setSuccessMessage("")
     setIsSending(false)
   }
 
@@ -437,7 +436,6 @@ export default function RecrutementPage() {
     e.preventDefault()
 
     setErrorMessage("")
-    setSuccessMessage("")
 
     if (!applyFor) {
       setErrorMessage("Aucun poste sélectionné.")
@@ -483,12 +481,9 @@ export default function RecrutementPage() {
         throw new Error(data?.message || "Une erreur est survenue lors de l'envoi.")
       }
 
-      setSuccessMessage(data?.message || "Votre candidature a été envoyée avec succès.")
       setForm(initialFormState)
-
-      setTimeout(() => {
-        closeApplyModal()
-      }, 1800)
+      closeApplyModal()
+      setSuccessDialogOpen(true)
     } catch (error) {
       setErrorMessage(
         error instanceof Error
@@ -858,12 +853,6 @@ export default function RecrutementPage() {
                     </div>
                   )}
 
-                  {successMessage && (
-                    <div className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3">
-                      {successMessage}
-                    </div>
-                  )}
-
                   <div className="flex justify-center gap-4 pt-4">
                     <button
                       type="submit"
@@ -883,6 +872,46 @@ export default function RecrutementPage() {
                     </button>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {successDialogOpen && (
+          <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl">
+              <div className="p-8 text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-green-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+
+                <h2 className="text-xl font-semibold text-gray-900 mb-3">
+                  Candidature envoyée
+                </h2>
+
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Merci d&apos;avoir postulé. Nous vous recontacterons.
+                </p>
+
+                <button
+                  onClick={() => setSuccessDialogOpen(false)}
+                  className="border border-[#D4AF37] text-[#D4AF37] px-6 py-2 rounded-lg hover:bg-[#FFF8E1]"
+                >
+                  Fermer
+                </button>
               </div>
             </div>
           </div>
