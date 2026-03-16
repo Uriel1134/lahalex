@@ -58,7 +58,7 @@ const articles = [
     title:
       "Nouvelles perspectives sur la politique fiscale, les inégalités de revenus et le secteur informel : cas des pays de l'Afrique subsaharienne",
     author: "Bernard-Didier Benissan",
-    position: "-Docteur en économie",
+    position: "Docteur en économie",
     image: "/images/photoBenissan.png",
   },
     {
