@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Header } from "@/components/other-header";
 import { Footer } from "@/components/footer";
 import Image from "next/image";
@@ -13,17 +13,121 @@ const BRAND_BG = "#FFFFFF";
 const BRAND_SOFT = "rgba(212, 200, 154, 0.10)";
 const BRAND_SOFT_BORDER = "rgba(212, 200, 154, 0.30)";
 
-export default function NousContacter() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+type FormDataType = {
+  prenom: string;
+  nom: string;
+  societe: string;
+  telephone: string;
+  email: string;
+  activite: string;
+  pays: string;
+  indicatif: string;
+  commentaires: string;
+};
 
-  const countryOptions = countries
-    .filter((country) => country.idd && country.idd.root && country.idd.suffixes)
-    .map((country) => ({
-      value: country.cca2,
-      label: `${country.flag} ${country.name.common}`,
-      code: country.cca2,
-    }))
-    .sort((a, b) => a.label.localeCompare(b.label, "fr"));
+export default function NousContacter() {
+  const countryOptions = useMemo(() => {
+    return countries
+      .filter(
+        (country) =>
+          country.idd &&
+          country.idd.root &&
+          country.idd.suffixes &&
+          country.idd.suffixes.length > 0
+      )
+      .map((country) => ({
+        value: country.cca2,
+        code: country.cca2,
+        name: country.name.common,
+        label: `${country.flag} ${country.name.common}`,
+        dialCode: `${country.idd.root}${country.idd.suffixes[0] || ""}`,
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name, "fr"));
+  }, []);
+
+  const beninOption =
+    countryOptions.find((country) => country.code === "BJ") || countryOptions[0];
+
+  const initialFormData: FormDataType = {
+    prenom: "",
+    nom: "",
+    societe: "",
+    telephone: "",
+    email: "",
+    activite: "",
+    pays: beninOption?.value || "",
+    indicatif: beninOption?.dialCode || "",
+    commentaires: "",
+  };
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [formData, setFormData] = useState<FormDataType>(initialFormData);
+
+  const selectedCountry =
+    countryOptions.find((country) => country.value === formData.pays) || beninOption;
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+
+    if (name === "pays") {
+      const foundCountry = countryOptions.find((country) => country.value === value);
+
+      setFormData((prev) => ({
+        ...prev,
+        pays: value,
+        indicatif: foundCountry?.dialCode || "",
+      }));
+      return;
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setIsLoading(true);
+
+    try {
+      const payload = {
+        ...formData,
+        telephone: `${formData.indicatif} ${formData.telephone}`.trim(),
+        pays: selectedCountry?.name || formData.pays,
+      };
+
+      const response = await fetch("/nous-contacter/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result?.message || "Une erreur est survenue lors de l'envoi.");
+      }
+
+      setIsSubmitted(true);
+      setFormData(initialFormData);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Impossible d'envoyer votre message pour le moment."
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   if (isSubmitted) {
     return (
@@ -64,7 +168,10 @@ export default function NousContacter() {
             </p>
 
             <button
-              onClick={() => setIsSubmitted(false)}
+              onClick={() => {
+                setIsSubmitted(false);
+                setErrorMessage("");
+              }}
               className="text-black font-sf-pro px-6 py-2 rounded-md transition-all"
               style={{
                 background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
@@ -83,7 +190,6 @@ export default function NousContacter() {
     <div className="min-h-screen" style={{ backgroundColor: BRAND_BG }}>
       <Header />
 
-      {/* Hero Section */}
       <section className="relative w-full mt-20">
         <div className="relative w-[90%] max-w-[1320px] h-[529px] mx-auto">
           <Image
@@ -91,11 +197,12 @@ export default function NousContacter() {
             alt="Hero"
             fill
             className="rounded-2xl object-cover"
+            priority
           />
           <div
             className="absolute inset-0 rounded-2xl"
             style={{ backgroundColor: "rgba(17, 17, 17, 0.72)" }}
-          ></div>
+          />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
             <h1 className="hero-title text-white font-gobold text-4xl md:text-6xl mb-6">
               NOUS CONTACTER
@@ -104,33 +211,16 @@ export default function NousContacter() {
         </div>
       </section>
 
-      {/* Formulaire */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 mt-16">
-        <form
-          action="https://formsubmit.co/contactlahalex@gmail.com"
-          method="POST"
-          className="space-y-8"
-          onSubmit={() => setIsSubmitted(true)}
-        >
-          <input
-            type="hidden"
-            name="_subject"
-            value="Nouveau contact depuis le site Lahalex"
-          />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input
-            type="hidden"
-            name="_next"
-            value={typeof window !== "undefined" ? window.location.href : ""}
-          />
-
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="flex flex-col space-y-2">
               <label className="font-sf-pro text-sm text-gray-700">Prénom*</label>
               <input
                 type="text"
                 name="prenom"
+                value={formData.prenom}
+                onChange={handleChange}
                 className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro outline-none focus:ring-2"
                 style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
                 required
@@ -142,6 +232,8 @@ export default function NousContacter() {
               <input
                 type="text"
                 name="nom"
+                value={formData.nom}
+                onChange={handleChange}
                 className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro outline-none focus:ring-2"
                 style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
                 required
@@ -153,6 +245,8 @@ export default function NousContacter() {
               <input
                 type="text"
                 name="societe"
+                value={formData.societe}
+                onChange={handleChange}
                 className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro outline-none focus:ring-2"
                 style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
                 required
@@ -161,13 +255,23 @@ export default function NousContacter() {
 
             <div className="flex flex-col space-y-2">
               <label className="font-sf-pro text-sm text-gray-700">Téléphone*</label>
-              <input
-                type="tel"
-                name="telephone"
-                className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro outline-none focus:ring-2"
-                style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
-                required
-              />
+              <div className="flex items-center border border-gray-300 rounded-md overflow-hidden focus-within:ring-2 bg-white">
+                <span
+                  className="px-4 py-2 border-r border-gray-300 font-sf-pro text-sm text-gray-700 bg-gray-50 whitespace-nowrap"
+                  style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
+                >
+                  {formData.indicatif || "+---"}
+                </span>
+                <input
+                  type="tel"
+                  name="telephone"
+                  value={formData.telephone}
+                  onChange={handleChange}
+                  placeholder="01 90 00 00 00"
+                  className="w-full px-4 py-2 font-sf-pro outline-none"
+                  required
+                />
+              </div>
             </div>
           </div>
 
@@ -178,6 +282,8 @@ export default function NousContacter() {
             <input
               type="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro outline-none focus:ring-2"
               style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
               required
@@ -189,6 +295,8 @@ export default function NousContacter() {
               <label className="font-sf-pro text-sm text-gray-700">Activité*</label>
               <select
                 name="activite"
+                value={formData.activite}
+                onChange={handleChange}
                 className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro outline-none focus:ring-2 bg-white"
                 style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
                 required
@@ -203,16 +311,18 @@ export default function NousContacter() {
             </div>
 
             <div className="flex flex-col space-y-2">
-              <label className="font-sf-pro text-sm text-gray-700">Pays</label>
+              <label className="font-sf-pro text-sm text-gray-700">Pays*</label>
               <select
                 name="pays"
+                value={formData.pays}
+                onChange={handleChange}
                 className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro outline-none focus:ring-2 bg-white"
                 style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
+                required
               >
-                <option value="">Sélectionner</option>
                 {countryOptions.map((country) => (
                   <option key={country.code} value={country.value}>
-                    {country.label}
+                    {country.label} ({country.dialCode})
                   </option>
                 ))}
               </select>
@@ -223,6 +333,8 @@ export default function NousContacter() {
             <label className="font-sf-pro text-sm text-gray-700">Commentaires</label>
             <textarea
               name="commentaires"
+              value={formData.commentaires}
+              onChange={handleChange}
               className="border border-gray-300 rounded-md px-4 py-2 font-sf-pro min-h-[100px] outline-none focus:ring-2"
               style={{ ["--tw-ring-color" as any]: BRAND_PRIMARY_DARK }}
             />
@@ -243,14 +355,21 @@ export default function NousContacter() {
             .
           </div>
 
+          {errorMessage && (
+            <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {errorMessage}
+            </div>
+          )}
+
           <button
             type="submit"
-            className="w-full sm:w-auto text-black font-sf-pro px-8 py-3 rounded-md text-lg font-semibold shadow transition-all"
+            disabled={isLoading}
+            className="w-full sm:w-auto text-black font-sf-pro px-8 py-3 rounded-md text-lg font-semibold shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             style={{
               background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
             }}
           >
-            ENVOYER
+            {isLoading ? "ENVOI EN COURS..." : "ENVOYER"}
           </button>
 
           <div className="text-xs text-gray-500 font-sf-pro mt-2">

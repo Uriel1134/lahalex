@@ -91,33 +91,19 @@ export function SolutionsSection() {
 
               <div className="flex-1 max-w-[400px] lg:ml-18 relative z-20">
                 <h3
-                  className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6"
-                  style={{ color: BRAND_PRIMARY }}
+                  className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6 font-bold"
+                  style={{ color: BUTTON_TEXT_GRAY }}
                 >
-                  <span className="font-normal">
-                    <TextType
-                      text={["Lahalex "]}
-                      typingSpeed={75}
-                      pauseDuration={1500}
-                      showCursor={true}
-                      cursorCharacter="|"
-                      startOnVisible={true}
-                      loop={false}
-                      textColors={[BRAND_PRIMARY]}
-                    />
-                  </span>
-                  <span className="font-bold">
-                    <TextType
-                      text={["Universel"]}
-                      typingSpeed={75}
-                      pauseDuration={1500}
-                      showCursor={true}
-                      cursorCharacter="|"
-                      startOnVisible={true}
-                      loop={false}
-                      textColors={[BRAND_PRIMARY]}
-                    />
-                  </span>
+                  <TextType
+                    text={["Lahalex Universel"]}
+                    typingSpeed={75}
+                    pauseDuration={1500}
+                    showCursor={true}
+                    cursorCharacter="|"
+                    startOnVisible={true}
+                    loop={false}
+                    textColors={[BUTTON_TEXT_GRAY]}
+                  />
                 </h3>
 
                 <div className="space-y-2 text-gray-600 text-[13px] sm:text-[14px] leading-[18px] sm:leading-[20px] mb-6 md:mb-8">
@@ -201,33 +187,19 @@ export function SolutionsSection() {
 
             <div className="flex-1">
               <h3
-                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6"
-                style={{ color: BRAND_PRIMARY }}
+                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6 font-bold"
+                style={{ color: BUTTON_TEXT_GRAY }}
               >
-                <span className="font-normal">
-                  <TextType
-                    text={["Lahalex "]}
-                    typingSpeed={75}
-                    pauseDuration={1500}
-                    showCursor={true}
-                    cursorCharacter="|"
-                    startOnVisible={true}
-                    loop={false}
-                    textColors={[BRAND_PRIMARY]}
-                  />
-                </span>
-                <span className="font-bold">
-                  <TextType
-                    text={["Avocat"]}
-                    typingSpeed={75}
-                    pauseDuration={1500}
-                    showCursor={true}
-                    cursorCharacter="|"
-                    startOnVisible={true}
-                    loop={false}
-                    textColors={[BRAND_PRIMARY]}
-                  />
-                </span>
+                <TextType
+                  text={["Lahalex Avocat"]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  showCursor={true}
+                  cursorCharacter="|"
+                  startOnVisible={true}
+                  loop={false}
+                  textColors={[BUTTON_TEXT_GRAY]}
+                />
               </h3>
 
               <p className="text-gray-600 text-[13px] sm:text-[14px] md:text-[15px] leading-[20px] sm:leading-[24px] md:leading-[30px] mb-6 md:mb-8">
@@ -398,33 +370,19 @@ export function SolutionsSection() {
 
             <div className="flex-1">
               <h3
-                className="text-[28px] md:text-[36px] leading-[1.2] mb-6"
-                style={{ color: BRAND_PRIMARY }}
+                className="text-[28px] md:text-[36px] leading-[1.2] mb-6 font-bold"
+                style={{ color: BUTTON_TEXT_GRAY }}
               >
-                <span className="font-normal">
-                  <TextType
-                    text={["Lahalex "]}
-                    typingSpeed={75}
-                    pauseDuration={1500}
-                    showCursor={true}
-                    cursorCharacter="|"
-                    startOnVisible={true}
-                    loop={false}
-                    textColors={[BRAND_PRIMARY]}
-                  />
-                </span>
-                <span className="font-bold">
-                  <TextType
-                    text={["Commissaire de justice"]}
-                    typingSpeed={75}
-                    pauseDuration={1500}
-                    showCursor={true}
-                    cursorCharacter="|"
-                    startOnVisible={true}
-                    loop={false}
-                    textColors={[BRAND_PRIMARY]}
-                  />
-                </span>
+                <TextType
+                  text={["Lahalex Commissaire de justice"]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  showCursor={true}
+                  cursorCharacter="|"
+                  startOnVisible={true}
+                  loop={false}
+                  textColors={[BUTTON_TEXT_GRAY]}
+                />
               </h3>
 
               <p className="text-gray-600 text-[14px] md:text-[15px] leading-[24px] md:leading-[30px] mb-8">
