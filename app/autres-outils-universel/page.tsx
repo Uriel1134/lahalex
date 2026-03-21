@@ -400,6 +400,14 @@ export default function UniverselPage() {
         </section>
       </main>
 
+      <section className="bg-white py-6 sm:py-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center font-bold text-gray-700 text-lg sm:text-xl">
+            Ainsi que bien d&apos;autres fonctionnalités innovantes à découvrir.
+          </p>
+        </div>
+      </section>
+
       <Footer />
 
       <style jsx global>{`
