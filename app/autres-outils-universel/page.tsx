@@ -282,7 +282,7 @@ export default function UniverselPage() {
                 utilite:
                   "Suivez tous les événements scientifiques et professionnels importants sans faille.",
                 avantage:
-                  "Rattrapez facilement ceux que vous avez manqués grâce aux comptes rendus détaillés et pleins d’autres outils à découvrir.",
+                  "Rattrapez facilement ceux que vous avez manqués grâce aux comptes rendus détaillés.",
                 reverse: false,
               },
             ].map((tool, i) => (

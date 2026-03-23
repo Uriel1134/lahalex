@@ -23,35 +23,35 @@ const heroSlides = [
     alt: "Base de données Économie et Gestion",
     title: "BASE DE DONNÉES ÉCONOMIE ET GESTION",
     description:
-      "Finance, comptabilité, management, entrepreneuriat, marketing, fiscalité et analyse de gestion.",
+      "Economie, Finance, comptabilité, management, marketing, entrepreneuriat.",
   },
   {
     image: "/images/carousel-image-stim.png",
     alt: "Base de données STIM",
     title: "BASE DE DONNÉES STIM",
     description:
-      "Sciences, technologie, ingénierie, mathématiques, informatique, recherche et innovation.",
+      "Sciences, technologie, ingénierie, mathématiques(Mathématiques, physique, chimie, informatique, IA, robotique, data science, ingénierie, technologies émergentes).",
   },
   {
     image: "/images/universel-laptop.png",
     alt: "Base de données Droit",
     title: "BASE DE DONNÉES DROIT",
     description:
-      "Jurisprudence, doctrine, législation, contrats, procédures, actes et veille juridique.",
+      "Droit public, droit privé, droit OHADA, droit constitutionnel, droit coutumier, droit international, jurisprudences, doctrine, textes officiels",
   },
   {
     image: "/images/carousel-image-agro.png",
     alt: "Base de données Agriculture",
     title: "BASE DE DONNÉES AGRICULTURE",
     description:
-      "Agronomie, production végétale, élevage, environnement, sécurité alimentaire et développement rural.",
+      "Agronomie, élevage,  agroalimentaire, agroécologie, développement rural, sécurité alimentaire, innovation agricole.",
   },
   {
     image: "/images/carousel-image-2.png",
     alt: "Base de données Médecine",
     title: "BASE DE DONNÉES MÉDECINE",
     description:
-      "Médecine, pharmacie, physiologie, santé publique, clinique, diagnostic et recherche biomédicale.",
+      "Anatomie, physiologie, Microbiologie.",
   },
 ];
 
