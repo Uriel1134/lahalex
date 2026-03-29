@@ -111,7 +111,7 @@ export function SolutionsSection() {
                     Une <strong>base de données documentaire pluridisciplinaire</strong> de référence.
                   </p>
                   <p>
-                    <strong>Base de données documentaire couvrant le droit, la médecine et l’économie</strong> :
+                    <strong>Base de données documentaire</strong> :
                     législation, jurisprudence, doctrine, publications scientifiques et analyses spécialisées.
                   </p>
                   <p>
