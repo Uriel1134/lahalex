@@ -44,7 +44,7 @@ export function HeroSection() {
             <p className="text-lg sm:text-xl md:text-3xl text-black font-sf-pro font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 mt-6 [word-spacing:20px]">
               Expertise unifiée en bases de <br className="hidden lg:block" />
               données documentaire et logiciels <br className="hidden lg:block" />
-              métiers pour le <span className="text-[#770D28] font-gobold">DROIT</span>, la <span className="text-[#770D28] font-gobold">MÉDECINE</span> et
+              métiers pour le <span className="text-[#770D28] font-gobold">DROIT</span>, la <span className="text-[#770D28] font-gobold">SCIENCES DE LA SANTE</span> et
               l'<span className="text-[#770D28] font-gobold">ÉCONOMIE</span>.
             </p>
           </div>

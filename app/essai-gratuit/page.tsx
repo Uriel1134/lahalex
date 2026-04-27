@@ -558,7 +558,7 @@ export default function EssaiGratuit() {
                             className="mt-1 h-4 w-4 text-[#770D28] border-gray-300 rounded focus:ring-[#770D28]"
                           />
                           <label htmlFor="notaire" className="text-sm font-medium text-gray-700 cursor-pointer">
-                            Lahalex Universel - Médecine
+                            Lahalex Universel - Sciences de la santé
                           </label>
                         </div>
                         

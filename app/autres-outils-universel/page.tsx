@@ -213,7 +213,7 @@ export default function UniverselPage() {
               {
                 number: "2",
                 title: "Fiches de méthode",
-                desc: "Des guides pratiques conçus pour maîtriser les exigences académiques et professionnelles en droit, médecine et économie. Elles couvrent des formats essentiels comme le cas pratique, le commentaire d'arrêt, la dissertation, l'analyse de cas cliniques, les études économiques, ainsi que la rédaction de rapports et d'autres écrits professionnels.",
+                desc: "Des guides pratiques conçus pour maîtriser les exigences académiques et professionnelles en droit, Sciences de la santé et économie. Elles couvrent des formats essentiels comme le cas pratique, le commentaire d'arrêt, la dissertation, l'analyse de cas cliniques, les études économiques, ainsi que la rédaction de rapports et d'autres écrits professionnels.",
                 utilite:
                   "Renforce les compétences méthodologiques, structure le raisonnement professionnel dans votre discipline.",
                 avantage:
@@ -233,7 +233,7 @@ export default function UniverselPage() {
               {
                 number: "4",
                 title: "Articles scientifiques",
-                desc: "Lahalex vous accompagne dans tous vos défis professionnels grâce à des contenus d'experts reconnus en droit, médecine et économie : actualités en temps réel, articles de référence, formation continue et analyses commentées.",
+                desc: "Lahalex vous accompagne dans tous vos défis professionnels grâce à des contenus d'experts reconnus en droit, Sciences de la santé et économie : actualités en temps réel, articles de référence, formation continue et analyses commentées.",
                 utilite:
                   "Approfondissement des enjeux professionnels, construction d'argumentaires solides et pluridisciplinaires.",
                 avantage:
@@ -243,7 +243,7 @@ export default function UniverselPage() {
               {
                 number: "5",
                 title: "Rencontres scientifique",
-                desc: "Agenda récapitulatif des séminaires, colloques et conférences en droit, médecine et économie à ne pas manquer, avec la mise à disposition d'un compte rendu pour chaque événement manqué.",
+                desc: "Agenda récapitulatif des séminaires, colloques et conférences en droit, Sciences de la santé et économie à ne pas manquer, avec la mise à disposition d'un compte rendu pour chaque événement manqué.",
                 utilite:
                   "Suivez tous les événements scientifiques et professionnels importants sans faille.",
                 avantage:
