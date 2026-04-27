@@ -12,24 +12,22 @@ if (typeof window !== "undefined") {
 }
 
 export default function UniverselPage() {
-  // Refs pour les animations GSAP
   const mainRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  // Animations GSAP spectaculaires - style lahalex-universel
   useEffect(() => {
     if (typeof window === "undefined") return
 
     const ctx = gsap.context(() => {
-      // Animation du titre principal - effet bounce spectaculaire
-      gsap.fromTo(".autres-title",
+      gsap.fromTo(
+        ".autres-title",
         { opacity: 0, y: 100, scale: 0.5 },
         { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "bounce.out" }
       )
 
-      // Animation des images avec rotation
-      gsap.fromTo(".autres-image",
+      gsap.fromTo(
+        ".autres-image",
         { opacity: 0, y: 100, rotation: -30 },
         {
           opacity: 1,
@@ -45,7 +43,6 @@ export default function UniverselPage() {
         }
       )
 
-      // Animation du contenu avec ScrollTrigger
       if (contentRef.current) {
         gsap.fromTo(
           contentRef.current,
@@ -54,7 +51,7 @@ export default function UniverselPage() {
             y: 150,
             scale: 0.8,
             rotation: -5,
-            transformOrigin: "center center"
+            transformOrigin: "center center",
           },
           {
             opacity: 1,
@@ -71,8 +68,7 @@ export default function UniverselPage() {
           }
         )
 
-        // Animation des éléments de contenu en cascade avec effets spectaculaires
-        const contentItems = contentRef.current.querySelectorAll('.content-item')
+        const contentItems = contentRef.current.querySelectorAll(".content-item")
         gsap.fromTo(
           contentItems,
           {
@@ -80,7 +76,7 @@ export default function UniverselPage() {
             y: 80,
             scale: 0.7,
             rotation: 10,
-            transformOrigin: "center bottom"
+            transformOrigin: "center bottom",
           },
           {
             opacity: 1,
@@ -105,20 +101,47 @@ export default function UniverselPage() {
   }, [])
 
   return (
-    <div ref={mainRef} className="flex flex-col min-h-screen bg-white font-sf-pro relative overflow-hidden">
+    <div
+      ref={mainRef}
+      className="flex flex-col min-h-screen bg-white font-sf-pro relative overflow-hidden"
+    >
       <Header />
 
       {/* Effets de particules flottantes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-[#770D28]/10 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-[#770D28]/8 rounded-full animate-drift" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-[#770D28]/12 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-[#770D28]/10 rounded-full animate-drift" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-[#770D28]/15 rounded-full animate-orbit" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-[#770D28]/12 rounded-full animate-drift" style={{ animationDelay: '0.8s' }}></div>
-        <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-[#770D28]/10 rounded-full animate-orbit" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-[#770D28]/8 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>
+        <div className="absolute top-20 left-10 w-2 h-2 bg-[#C8A96B]/10 rounded-full animate-float"></div>
+        <div
+          className="absolute top-40 right-20 w-3 h-3 bg-[#C8A96B]/8 rounded-full animate-drift"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute bottom-32 left-1/4 w-1 h-1 bg-[#C8A96B]/12 rounded-full animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 right-1/3 w-2 h-2 bg-[#C8A96B]/10 rounded-full animate-drift"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
+        <div
+          className="absolute top-1/3 left-1/3 w-1 h-1 bg-[#C8A96B]/15 rounded-full animate-orbit"
+          style={{ animationDelay: "1.5s" }}
+        ></div>
+        <div
+          className="absolute top-2/3 right-1/4 w-2 h-2 bg-[#C8A96B]/8 rounded-full animate-float"
+          style={{ animationDelay: "2.5s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/2 w-1 h-1 bg-[#C8A96B]/12 rounded-full animate-drift"
+          style={{ animationDelay: "0.8s" }}
+        ></div>
+        <div
+          className="absolute top-1/4 right-1/2 w-1 h-1 bg-[#C8A96B]/10 rounded-full animate-orbit"
+          style={{ animationDelay: "3s" }}
+        ></div>
+        <div
+          className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-[#C8A96B]/8 rounded-full animate-float"
+          style={{ animationDelay: "1.2s" }}
+        ></div>
       </div>
 
       {/* Retour */}
@@ -127,7 +150,7 @@ export default function UniverselPage() {
           <div className="flex items-center space-x-2 text-sm">
             <a
               href="/lahalex-universel"
-              className="flex items-center text-gray-600 hover:text-[#770D28] transition-colors"
+              className="flex items-center text-gray-500 hover:text-[#C8A96B] transition-colors"
             >
               <svg
                 className="w-4 h-4 mr-2"
@@ -153,21 +176,24 @@ export default function UniverselPage() {
         <section className="bg-white py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Content */}
               <div className="order-2 lg:order-1">
-                <h1 ref={titleRef} className="autres-title font-gobold text-3xl sm:text-4xl lg:text-5xl text-[#770D28] mb-6 lg:mb-8 leading-tight">
+                <h1
+                  ref={titleRef}
+                  className="autres-title font-gobold text-3xl sm:text-4xl lg:text-5xl text-gray-700 mb-6 lg:mb-8 leading-tight"
+                >
                   Autres outils
                 </h1>
+
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="/essai-gratuit"
-                    className="autres-button inline-block bg-[#770D28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#5a0a1f] transition-colors"
+                    className="autres-button inline-block bg-[#C8A96B] text-gray-800 px-8 py-3 rounded-lg font-medium hover:bg-[#b8934f] transition-colors"
                   >
                     Demandez un devis
                   </a>
                   <a
                     href="/nous-contacter"
-                    className="autres-button inline-block border-2 border-[#770D28] text-[#770D28] px-8 py-3 rounded-lg font-medium hover:bg-[#770D28] hover:text-white transition-colors"
+                    className="autres-button inline-block border-2 border-[#C8A96B] text-gray-600 px-8 py-3 rounded-lg font-medium hover:bg-[#C8A96B] hover:text-gray-800 transition-colors"
                   >
                     Demandez une démonstration
                   </a>
@@ -182,32 +208,41 @@ export default function UniverselPage() {
         {/* Description */}
         <section className="bg-white py-8 sm:py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-8">
-              Cette section de notre plateforme a été conçue comme un <strong>espace de
-                référence indispensable</strong>, tant pour les <strong>professionnels</strong>
-              (juristes, professionnels de santé, économistes, entreprises) que
-              pour les <strong>étudiants et chercheurs</strong>. Elle regroupe des <strong>ressources fiables</strong>,
-              rigoureusement sélectionnées, permettant de <strong>réviser, consolider,
-                approfondir</strong> ou vérifier rapidement une notion, sans quitter
-              l&apos;environnement numérique de travail.
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
+              Cette section de notre plateforme a été conçue comme un{" "}
+              <strong className="text-gray-700">espace de référence indispensable</strong>, tant pour les{" "}
+              <strong className="text-gray-700">professionnels</strong>
+              {" "}(juristes, professionnels de santé, économistes, entreprises) que
+              pour les <strong className="text-gray-700">étudiants et chercheurs</strong>. Elle regroupe des{" "}
+              <strong className="text-gray-700">ressources fiables</strong>, rigoureusement sélectionnées,
+              permettant de <strong className="text-gray-700">réviser, consolider, approfondir</strong> ou
+              vérifier rapidement une notion, sans quitter l&apos;environnement
+              numérique de travail.
             </p>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
-              Chaque outil a été pensé pour répondre à un <strong>besoin concret,
-                quotidien et stratégique</strong> dans la maîtrise de votre <strong>domaine d&apos;expertise</strong>.
+
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-medium">
+              Chaque outil a été pensé pour répondre à un{" "}
+              <strong className="text-gray-700">besoin concret, quotidien et stratégique</strong> dans la
+              maîtrise de votre <strong className="text-gray-700">domaine d&apos;expertise</strong>.
             </p>
           </div>
         </section>
 
         {/* Tools Sections */}
         <section className="bg-white py-8 sm:py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
+          <div
+            ref={contentRef}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20"
+          >
             {[
               {
                 number: "1",
                 title: "Fiches de synthèse",
                 desc: "Des synthèses claires, structurées et directement exploitables sur les principales notions juridiques, médicales et économiques. Elles s'appuient sur des cas concrets, avec des références législatives, réglementaires, scientifiques et académiques pertinentes. Chaque fiche est accompagnée de QCM pour tester vos connaissances.",
-                utilite: "Aide-mémoire rapide, support de révision ou d'enseignement dans tous les domaines professionnels.",
-                avantage: "Clarté, gain de temps, accès immédiat à l'essentiel dans votre domaine d'expertise.",
+                utilite:
+                  "Aide-mémoire rapide, support de révision ou d'enseignement dans tous les domaines professionnels.",
+                avantage:
+                  "Clarté, gain de temps, accès immédiat à l'essentiel dans votre domaine d'expertise.",
                 reverse: false,
               },
               {
@@ -253,30 +288,42 @@ export default function UniverselPage() {
             ].map((tool, i) => (
               <div
                 key={i}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center`}
+                className="content-item grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
               >
                 {/* Image */}
                 <div
-                  className={`h-64 sm:h-80 lg:h-96 rounded-lg relative ${tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
-                    }`}
+                  className={`h-64 sm:h-80 lg:h-96 rounded-lg relative ${
+                    tool.reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
+                  }`}
                 >
                   <Image
-                    src={`/images/${tool.number === "1" ? "autre-outil" : tool.number === "2" ? "autre-outil-2" : tool.number === "3" ? "autre-outil-3" : tool.number === "4" ? "autre-outil-4" : tool.number === "5" ? "rencontres-juridiques" : "autre-outil"}.png`}
+                    src={`/images/${
+                      tool.number === "1"
+                        ? "autre-outil"
+                        : tool.number === "2"
+                        ? "autre-outil-2"
+                        : tool.number === "3"
+                        ? "autre-outil-3"
+                        : tool.number === "4"
+                        ? "autre-outil-4"
+                        : tool.number === "5"
+                        ? "rencontres-juridiques"
+                        : "autre-outil"
+                    }.png`}
                     alt={tool.title}
                     width={800}
                     height={450}
                     className="autres-image w-full h-full object-contain"
                     style={{
-                      filter: 'drop-shadow(0 6px 12px rgba(119, 13, 40, 0.6)) drop-shadow(0 12px 24px rgba(119, 13, 40, 0.4))',
-                      borderRadius: '12px'
+                      filter:
+                        "drop-shadow(0 6px 12px rgba(200, 169, 107, 0.35)) drop-shadow(0 12px 24px rgba(200, 169, 107, 0.18))",
+                      borderRadius: "12px",
                     }}
                   />
-                  {/* QCM Magnifying Glass for Tool 1 */}
+
                   {tool.number === "1" && (
                     <div className="absolute -right-6 top-1/2 -translate-y-2/2 w-28 h-28 sm:w-36 sm:h-36">
-                      {/* Magnifying glass circle */}
-                      <div className="relative w-full h-full rounded-full border-8 border-[#770D28] bg-white shadow-2xl overflow-hidden">
-                        {/* QCM Preview Image inside magnifying glass */}
+                      <div className="relative w-full h-full rounded-full border-8 border-[#C8A96B] bg-white shadow-2xl overflow-hidden">
                         <div className="absolute inset-2 flex items-center justify-center">
                           <Image
                             src="/images/qcm-preview.png"
@@ -286,56 +333,61 @@ export default function UniverselPage() {
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        {/* Glass shine effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent rounded-full pointer-events-none"></div>
                       </div>
-                      {/* Magnifying glass handle */}
-                      <div className="absolute bottom-0 right-0 w-12 h-16 bg-[#770D28] rounded-b-full transform translate-y-8 translate-x-2 rotate-45 shadow-lg"></div>
+                      <div className="absolute bottom-0 right-0 w-12 h-16 bg-[#C8A96B] rounded-b-full transform translate-y-8 translate-x-2 rotate-45 shadow-lg"></div>
                     </div>
                   )}
                 </div>
 
                 {/* Content */}
                 <div
-                  className={`flex items-start space-x-4 ${tool.reverse
-                    ? "order-1 lg:order-2"
-                    : "order-2 lg:order-1"
-                    }`}
+                  className={`flex items-start space-x-4 ${
+                    tool.reverse ? "order-1 lg:order-2" : "order-2 lg:order-1"
+                  }`}
                 >
-                  <div className="w-12 h-12 bg-[#770D28] text-white rounded-full flex items-center justify-center font-gobold text-xl flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#C8A96B] text-gray-800 rounded-full flex items-center justify-center font-gobold text-xl flex-shrink-0">
                     {tool.number}
                   </div>
+
                   <div>
-                    <h3 className="font-gobold text-xl sm:text-2xl text-gray-900 mb-4">
+                    <h3 className="font-gobold text-xl sm:text-2xl text-gray-700 mb-4">
                       {tool.title} :
                     </h3>
-                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+
+                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
                       {tool.desc}
                     </p>
+
                     <div className="space-y-4">
-                      <div className="bg-[#770D28]/5 p-4 rounded-lg">
+                      <div className="bg-[#C8A96B]/10 border border-[#C8A96B]/20 p-4 rounded-lg">
                         <div className="flex items-start space-x-3">
-                          <div className="w-6 h-6 bg-[#770D28] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
+                          <div className="w-6 h-6 bg-[#C8A96B] text-gray-800 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
                             U
                           </div>
                           <div>
-                            <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
+                            <span className="font-semibold text-gray-700 text-sm uppercase tracking-wide block mb-1">
                               Utilité
                             </span>
-                            <span className="text-gray-700 text-sm leading-relaxed">{tool.utilite}</span>
+                            <span className="text-gray-600 text-sm leading-relaxed">
+                              {tool.utilite}
+                            </span>
                           </div>
                         </div>
                       </div>
-                      <div className="bg-[#770D28]/5 p-4 rounded-lg">
+
+                      <div className="bg-[#C8A96B]/10 border border-[#C8A96B]/20 p-4 rounded-lg">
                         <div className="flex items-start space-x-3">
-                          <div className="w-6 h-6 bg-[#770D28] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
+                          <div className="w-6 h-6 bg-[#C8A96B] text-gray-800 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
                             A
                           </div>
                           <div>
-                            <span className="font-semibold text-[#770D28] text-sm uppercase tracking-wide block mb-1">
+                            <span className="font-semibold text-gray-700 text-sm uppercase tracking-wide block mb-1">
                               Avantage
                             </span>
-                            <span className="text-gray-700 text-sm leading-relaxed">{tool.avantage}</span>
+                            <span className="text-gray-600 text-sm leading-relaxed">
+                              {tool.avantage}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -348,44 +400,63 @@ export default function UniverselPage() {
         </section>
       </main>
 
+      <section className="bg-white py-6 sm:py-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center font-bold text-gray-700 text-lg sm:text-xl">
+            Ainsi que bien d&apos;autres fonctionnalités innovantes à découvrir.
+          </p>
+        </div>
+      </section>
+
       <Footer />
 
       <style jsx global>{`
-        /* Classes pour les animations GSAP - style lahalex-universel */
         .autres-image {
           opacity: 0;
         }
 
-        /* Animations pour les particules flottantes */
         @keyframes float {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) rotate(0deg); 
+          0%,
+          100% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
             opacity: 0.3;
           }
-          25% { 
-            transform: translateY(-20px) translateX(10px) rotate(90deg); 
+          25% {
+            transform: translateY(-20px) translateX(10px) rotate(90deg);
             opacity: 0.8;
           }
-          50% { 
-            transform: translateY(-10px) translateX(-15px) rotate(180deg); 
+          50% {
+            transform: translateY(-10px) translateX(-15px) rotate(180deg);
             opacity: 0.5;
           }
-          75% { 
-            transform: translateY(-30px) translateX(5px) rotate(270deg); 
+          75% {
+            transform: translateY(-30px) translateX(5px) rotate(270deg);
             opacity: 0.7;
           }
         }
 
         @keyframes drift {
-          0% { transform: translateX(0px) translateY(0px); }
-          33% { transform: translateX(30px) translateY(-20px); }
-          66% { transform: translateX(-20px) translateY(10px); }
-          100% { transform: translateX(0px) translateY(0px); }
+          0% {
+            transform: translateX(0px) translateY(0px);
+          }
+          33% {
+            transform: translateX(30px) translateY(-20px);
+          }
+          66% {
+            transform: translateX(-20px) translateY(10px);
+          }
+          100% {
+            transform: translateX(0px) translateY(0px);
+          }
         }
 
         @keyframes orbit {
-          0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
-          100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+          0% {
+            transform: rotate(0deg) translateX(50px) rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg) translateX(50px) rotate(-360deg);
+          }
         }
 
         .animate-float {
