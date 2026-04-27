@@ -112,7 +112,7 @@ const JOBS: Job[] = [
   },
   {
     id: "juriste-articles",
-    poste: "Rédacteur d'articles(droit, médecine, agriculture, économie, stim)",
+    poste: "Rédacteur d'articles(droit, Sciences de la santé, agriculture, économie, stim)",
     secteur: "Édition juridique / Communication juridique",
     pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:

@@ -44,7 +44,7 @@ export function HeroSection() {
               données documentaire et logiciels <br className="hidden lg:block" />
               métiers pour le{" "}
               <span className="text-[#D4C89A] font-gobold">DROIT</span>, la{" "}
-              <span className="text-[#D4C89A] font-gobold">MÉDECINE</span>,
+              <span className="text-[#D4C89A] font-gobold">SCIENCES DE LA SANTÉ</span>,
               l&apos;<span className="text-[#D4C89A] font-gobold">ÉCONOMIE</span>,
               l&apos;<span className="text-[#D4C89A] font-gobold">AGRICULTURE</span> et <span className="text-[#D4C89A] font-gobold">STIM</span>.
             </p>
