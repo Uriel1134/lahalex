@@ -48,10 +48,10 @@ const heroSlides = [
   },
   {
     image: "/images/carousel-image-2.png",
-    alt: "Base de données SCIENCE DE LA SANTE",
-    title: "BASE DE DONNÉES SCIENCE DE LA SANTE",
-    description:
-      "Anatomie, physiologie, Microbiologie.",
+    alt: "Base de données SCIENCES DE LA SANTÉ",
+    title: "BASE DE DONNÉES SCIENCES DE LA SANTÉ",
+    // description:
+    //   "Anatomie, physiologie, Microbiologie.",
   },
 ];
 
