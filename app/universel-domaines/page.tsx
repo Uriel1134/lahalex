@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 
 const domaines = [
   {
-    title: "Droit",
+    title: "Sciences juridiques",
     link: "https://universel.lahalex.com/login",
     logo: "/images/lahalex-universel.png",
     bgColor: "#770d28",
@@ -18,7 +18,7 @@ const domaines = [
     buttonHoverText: "#770d28",
   },
   {
-    title: "Agriculture",
+    title: "Sciences agricoles",
     link: "https://science-agro.lahalex.com/login",
     logo: "/images/lahalex-universel agro.png",
     bgColor: "#3d1f1e",
@@ -40,7 +40,7 @@ const domaines = [
     buttonHoverText: "#ffffff",
   },
   {
-    title: "Économie et Gestion",
+    title: "Sciences de l'économie et de la gestion",
     link: "https://science-eco.lahalex.com/login",
     logo: "/images/lahalex-universel eco.png",
     bgColor: "#002546",
@@ -51,7 +51,7 @@ const domaines = [
     buttonHoverText: "#002546",
   },
   {
-    title: "Sciences de la Santé",
+    title: "Sciences de la santé",
     link: "https://science-sante.lahalex.com/login",
     logo: "/images/lahalex-universel sante.png",
     bgColor: "#00453D",

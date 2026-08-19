@@ -426,8 +426,8 @@ export default function QuiSommesNous() {
             exigences des environnements professionnels et académiques.
           </p>
           <p className="text-gray-700 text-lg leading-8 mb-4">
-            Nos expertises s’inscrivent particulièrement dans les domaines du droit,
-            de la Sciences de la santé et des sciences économiques, où l’accès à une information rigoureuse, actualisée et
+            Nos expertises s’inscrivent particulièrement dans les domaines des sciences juridiques,
+            des sciences de la santé et des sciences de l’économie et de la gestion, où l’accès à une information rigoureuse, actualisée et
             exploitable est essentiel. À travers nos bases de données spécialisées et nos logiciels métiers,
             nous accompagnons les praticiens, chercheurs, enseignants, étudiants et décideurs dans leurs
             activités quotidiennes.

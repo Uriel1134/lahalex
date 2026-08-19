@@ -112,7 +112,7 @@ const JOBS: Job[] = [
   },
   {
     id: "juriste-articles",
-    poste: "Rédacteur d'articles(droit, Sciences de la santé, agriculture, économie, stim)",
+    poste: "Rédacteur d'articles(sciences juridiques, Sciences de la santé, sciences agricoles, sciences de l'économie et de la gestion, stim)",
     secteur: "Édition juridique / Communication juridique",
     pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:
@@ -225,7 +225,7 @@ const JOBS: Job[] = [
   },
   {
     id: "analyste-veille",
-    poste: "Chargé de veille(droit, agriculture, économie, santé, STIM)",
+    poste: "Chargé de veille(sciences juridiques, sciences agricoles, sciences de l'économie et de la gestion, sciences de la santé, STIM)",
     secteur: "Droit & Technologies de l'information",
     pays: "Bénin, Togo, Sénégal, Niger, Côte d'Ivoire",
     resume:

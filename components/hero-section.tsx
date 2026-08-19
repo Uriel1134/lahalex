@@ -42,11 +42,11 @@ export function HeroSection() {
             <p className="text-lg sm:text-xl md:text-3xl text-gray-600 font-sf-pro font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 mt-6 [word-spacing:20px]">
               Expertise unifiée en bases de <br className="hidden lg:block" />
               données documentaire et logiciels <br className="hidden lg:block" />
-              métiers pour le{" "}
-              <span className="text-[#D4C89A] font-gobold">DROIT</span>, la{" "}
+              métiers pour les{" "}
+              <span className="text-[#D4C89A] font-gobold">SCIENCES JURIDIQUES</span>, les{" "}
               <span className="text-[#D4C89A] font-gobold">SCIENCES DE LA SANTÉ</span>,
-              l&apos;<span className="text-[#D4C89A] font-gobold">ÉCONOMIE</span>,
-              l&apos;<span className="text-[#D4C89A] font-gobold">AGRICULTURE</span> et <span className="text-[#D4C89A] font-gobold">STIM</span>.
+              les <span className="text-[#D4C89A] font-gobold">SCIENCES DE L&apos;ÉCONOMIE ET DE LA GESTION</span>,
+              les <span className="text-[#D4C89A] font-gobold">SCIENCES AGRICOLES</span> et <span className="text-[#D4C89A] font-gobold">STIM</span>.
             </p>
           </div>
 

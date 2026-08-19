@@ -20,8 +20,8 @@ const BRAND_SOFT_LIGHT = "rgba(212, 200, 154, 0.10)";
 const heroSlides = [
   {
     image: "/images/carousel-image-3.png",
-    alt: "Base de données Économie et Gestion",
-    title: "BASE DE DONNÉES ÉCONOMIE ET GESTION",
+    alt: "Base de données Sciences de l'économie et de la gestion",
+    title: "BASE DE DONNÉES SCIENCES DE L'ÉCONOMIE ET DE LA GESTION",
     description:
       "Economie, Finance, comptabilité, management, marketing, entrepreneuriat.",
   },
@@ -34,15 +34,15 @@ const heroSlides = [
   },
   {
     image: "/images/universel-laptop.png",
-    alt: "Base de données Droit",
-    title: "BASE DE DONNÉES DROIT",
+    alt: "Base de données Sciences juridiques",
+    title: "BASE DE DONNÉES SCIENCES JURIDIQUES",
     description:
       "Droit public, droit privé, droit OHADA, droit constitutionnel, droit coutumier, droit international, jurisprudences, doctrine, textes officiels",
   },
   {
     image: "/images/carousel-image-agro.png",
-    alt: "Base de données Agriculture",
-    title: "BASE DE DONNÉES AGRICULTURE",
+    alt: "Base de données Sciences agricoles",
+    title: "BASE DE DONNÉES SCIENCES AGRICOLES",
     description:
       "Agronomie, élevage,  agroalimentaire, agroécologie, développement rural, sécurité alimentaire, innovation agricole.",
   },
@@ -397,7 +397,7 @@ export default function LahalexUniverselPage() {
               <p className="hero-subtitle text-gray-700 text-base sm:text-lg mb-8 leading-relaxed max-w-[680px]">
                 Pensée pour accompagner les professionnels, étudiants et chercheurs en{" "}
                 <strong>
-                  Droit, Agriculture, STIM, Économie et Sciences de la Santé
+                  Sciences juridiques, Sciences agricoles, STIM, Sciences de l&apos;économie et de la gestion et Sciences de la santé
                 </strong>
                 . Que vous soyez juriste, économiste, professionnel de santé,
                 entreprise ou institution, LahaLex Universel vous donne un accès

@@ -570,7 +570,7 @@ export default function EssaiGratuit() {
                             className="mt-1 h-4 w-4 text-[#C8A96B] border-gray-300 rounded focus:ring-[#C8A96B]"
                           />
                           <label htmlFor="universel" className="text-sm font-medium text-gray-700 cursor-pointer">
-                            Lahalex Universel - Droit
+                            Lahalex Universel - Sciences juridiques
                           </label>
                         </div>
 
@@ -585,7 +585,7 @@ export default function EssaiGratuit() {
                             className="mt-1 h-4 w-4 text-[#C8A96B] border-gray-300 rounded focus:ring-[#C8A96B]"
                           />
                           <label htmlFor="avocat" className="text-sm font-medium text-gray-700 cursor-pointer">
-                            Lahalex Universel - Économie
+                            Lahalex Universel - Sciences de l'économie et de la gestion
                           </label>
                         </div>
 
