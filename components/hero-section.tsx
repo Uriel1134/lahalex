@@ -46,7 +46,7 @@ export function HeroSection() {
               <span className="text-[#D4C89A] font-gobold">SCIENCES JURIDIQUES</span>, les{" "}
               <span className="text-[#D4C89A] font-gobold">SCIENCES DE LA SANTÉ</span>,
               les <span className="text-[#D4C89A] font-gobold">SCIENCES DE L&apos;ÉCONOMIE ET DE LA GESTION</span>,
-              les <span className="text-[#D4C89A] font-gobold">SCIENCES AGRICOLES</span> et <span className="text-[#D4C89A] font-gobold">STIM</span>.
+              les <span className="text-[#D4C89A] font-gobold">SCIENCES AGRONOMIQUES</span> et <span className="text-[#D4C89A] font-gobold">STIM</span>.
             </p>
           </div>
 

@@ -41,8 +41,8 @@ const heroSlides = [
   },
   {
     image: "/images/carousel-image-agro.png",
-    alt: "Base de données Sciences agricoles",
-    title: "BASE DE DONNÉES SCIENCES AGRICOLES",
+    alt: "Base de données Sciences agronomiques",
+    title: "BASE DE DONNÉES SCIENCES AGRONOMIQUES",
     description:
       "Agronomie, élevage,  agroalimentaire, agroécologie, développement rural, sécurité alimentaire, innovation agricole.",
   },
@@ -397,7 +397,7 @@ export default function LahalexUniverselPage() {
               <p className="hero-subtitle text-gray-700 text-base sm:text-lg mb-8 leading-relaxed max-w-[680px]">
                 Pensée pour accompagner les professionnels, étudiants et chercheurs en{" "}
                 <strong>
-                  Sciences juridiques, Sciences agricoles, STIM, Sciences de l&apos;économie et de la gestion et Sciences de la santé
+                  Sciences juridiques, Sciences agronomiques, STIM, Sciences de l&apos;économie et de la gestion et Sciences de la santé
                 </strong>
                 . Que vous soyez juriste, économiste, professionnel de santé,
                 entreprise ou institution, LahaLex Universel vous donne un accès

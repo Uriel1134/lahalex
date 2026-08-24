@@ -18,7 +18,7 @@ const domaines = [
     buttonHoverText: "#770d28",
   },
   {
-    title: "Sciences agricoles",
+    title: "Sciences agronomiques",
     link: "https://science-agro.lahalex.com/login",
     logo: "/images/lahalex-universel agro.png",
     bgColor: "#3d1f1e",
