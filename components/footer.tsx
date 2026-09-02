@@ -286,7 +286,7 @@ export function Footer() {
             </Link>
 
             <span className="uppercase">
-              COPYRIGHT © 2025 LAHALEX - TOUS DROITS RÉSERVÉS
+              COPYRIGHT © {new Date().getFullYear()} LAHALEX - TOUS DROITS RÉSERVÉS
             </span>
           </div>
         </div>
