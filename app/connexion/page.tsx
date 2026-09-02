@@ -374,7 +374,7 @@ function ConnexionContent() {
           <a className="hover:underline" href="/conditions-generales" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>Termes et conditions</a>
           <a className="hover:underline" href="/politique-confidentialite" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>Politique de confidentialité</a>
         </div>
-        <p className="mt-4" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>© LAHALEX {currentSolution.title} 2025</p>
+        <p className="mt-4" style={{ fontFamily: '"SF Pro Regular", sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400', letterSpacing: 'normal', color: '#770D28' }}>© LAHALEX {currentSolution.title} {new Date().getFullYear()}</p>
       </footer>
     </div>
   )
