@@ -352,8 +352,8 @@ export default function LahalexPlagixPage() {
                 <Image
                   src="/images/plagix/accueil.png"
                   alt="Interface Lahalex Plagix"
-                  width={600}
-                  height={400}
+                  width={1284}
+                  height={816}
                   priority
                   className="hero-image w-full h-auto object-cover"
                 />

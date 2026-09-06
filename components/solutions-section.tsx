@@ -93,8 +93,8 @@ export function SolutionsSection() {
                 <Image
                   src="/images/plagix/accueil.png"
                   alt="Lahalex Plagix Détecteur Antiplagiat"
-                  width={540}
-                  height={340}
+                  width={1284}
+                  height={816}
                   className="w-full h-auto object-contain rounded-[20px]"
                 />
               </video>
