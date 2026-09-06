@@ -73,6 +73,112 @@ export function SolutionsSection() {
         </h2>
 
         <div className="space-y-8 md:space-y-16">
+          {/* Lahalex Plagix */}
+          <div
+            className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12"
+            style={{ backgroundColor: BRAND_SECONDARY }}
+          >
+            <div className="w-full lg:w-[420px] xl:w-[480px] 2xl:w-[540px] rounded-[20px] overflow-hidden shadow-md">
+              <video
+                src="/videos/plagix.mp4"
+                poster="/images/plagix/accueil.png"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto object-cover rounded-[20px]"
+              >
+                <source src="/videos/plagix.mp4" type="video/mp4" />
+                <source src="/images/plagix/video.mp4" type="video/mp4" />
+                <Image
+                  src="/images/plagix/accueil.png"
+                  alt="Lahalex Plagix Détecteur Antiplagiat"
+                  width={540}
+                  height={340}
+                  className="w-full h-auto object-contain rounded-[20px]"
+                />
+              </video>
+            </div>
+
+            <div className="flex-1">
+              <h3
+                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] mb-4 md:mb-6 font-bold"
+                style={{ color: BUTTON_TEXT_GRAY }}
+              >
+                <TextType
+                  text={["Lahalex Plagix"]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  showCursor={true}
+                  cursorCharacter="|"
+                  startOnVisible={true}
+                  loop={false}
+                  textColors={[BUTTON_TEXT_GRAY]}
+                />
+              </h3>
+
+              <div className="space-y-2 text-gray-600 text-[13px] sm:text-[14px] leading-[18px] sm:leading-[20px] mb-6 md:mb-8">
+                <p>
+                  La plateforme souveraine de détection de plagiat et de contrôle de l’intégrité académique, développée par LAHALEX. Analysez vos mémoires, thèses, articles scientifiques et documents institutionnels avec une rigueur absolue.
+                </p>
+                <p>
+                  <strong>Base académique multi-sources</strong>
+                </p>
+                <p>
+                  <strong>Moteur N-grams,</strong> détection de paraphrases et similarités sémantiques
+                </p>
+                <p>
+                  <strong>Moteur OCR avancé</strong> pour PDF scannés et photographies de documents
+                </p>
+                <p>
+                  <strong>Détecteur d’intelligence artificielle</strong> (ChatGPT, LLM) &amp; détection cross-langue
+                </p>
+                <p>
+                  <strong>Rapports certifiés PDF</strong> avec calcul officiel des seuils décisionnels
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                <Button
+                  variant="outline"
+                  className="rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] bg-transparent transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY}`,
+                    color: BUTTON_TEXT_GRAY,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
+                    e.currentTarget.style.color = "#ffffff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = BUTTON_TEXT_GRAY;
+                  }}
+                  onClick={() => (window.location.href = "/lahalex-plagix")}
+                >
+                  En savoir plus
+                </Button>
+
+                <Button
+                  className="rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] transition-opacity"
+                  style={{
+                    backgroundColor: BRAND_PRIMARY,
+                    color: BUTTON_TEXT_GRAY,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = "0.9";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = "1";
+                  }}
+                  onClick={() => (window.location.href = "/nous-contacter")}
+                >
+                  Demandez une démo
+                </Button>
+              </div>
+            </div>
+          </div>
+
           {/* Lahalex Universel */}
           <div className="solution-card relative">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">

@@ -23,6 +23,10 @@ const MOBILE_MENU_BORDER = "rgba(107, 114, 128, 0.18)"
 // Structure du menu VOS BESOINS avec routes spécifiques vers les sous-rubriques
 const vosBesoinsMenu = [
   {
+    title: "Détecteur antiplagiat",
+    submenu: [{ title: "Lahalex Plagix", href: "/lahalex-plagix" }],
+  },
+  {
     title: "Recherche documentaire",
     submenu: [{ title: "Lahalex Universel", href: "/recherche-juridique-universel" }],
   },
@@ -437,6 +441,13 @@ export function Header() {
                 >
                   <div className="py-2">
                     <Link
+                      href="/lahalex-plagix"
+                      className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors"
+                      style={{ color: BRAND_TEXT }}
+                    >
+                      Lahalex Plagix
+                    </Link>
+                    <Link
                       href="/lahalex-universel"
                       className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors"
                       style={{ color: BRAND_TEXT }}
@@ -539,6 +550,13 @@ export function Header() {
                 {mobileSolutionsOpen && (
                   <div className="mt-4 ml-4 space-y-4">
                     <a
+                      href="/lahalex-plagix"
+                      className="block text-lg hover:opacity-70 transition-opacity font-gobold"
+                      style={{ color: MOBILE_MENU_SUBTEXT }}
+                    >
+                      Lahalex Plagix
+                    </a>
+                    <a
                       href="/lahalex-universel"
                       className="block text-lg hover:opacity-70 transition-opacity font-gobold"
                       style={{ color: MOBILE_MENU_SUBTEXT }}
@@ -584,6 +602,21 @@ export function Header() {
 
                 {mobileVosBesoinsOpen && (
                   <div className="mt-4 space-y-4">
+                    <div>
+                      <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
+                        Détecteur antiplagiat
+                      </div>
+                      <div className="ml-4 space-y-1">
+                        <a
+                          href="/lahalex-plagix"
+                          className="block text-base hover:opacity-70 transition-opacity"
+                          style={{ color: MOBILE_MENU_SUBTEXT }}
+                        >
+                          Lahalex Plagix
+                        </a>
+                      </div>
+                    </div>
+
                     <div>
                       <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
                         Recherche documentaire
