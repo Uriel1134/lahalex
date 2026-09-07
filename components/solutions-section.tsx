@@ -73,7 +73,7 @@ export function SolutionsSection() {
         </h2>
 
         <div className="space-y-8 md:space-y-16">
-          {/* Lahalex Plagix */}
+          {/* Plagix */}
           <div
             className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12"
             style={{ backgroundColor: BRAND_SECONDARY }}
@@ -92,7 +92,7 @@ export function SolutionsSection() {
                 <source src="/images/plagix/video.mp4" type="video/mp4" />
                 <Image
                   src="/images/plagix/accueil.png"
-                  alt="Lahalex Plagix Détecteur Antiplagiat"
+                  alt="Plagix Détecteur Anti-plagiat"
                   width={1284}
                   height={816}
                   className="w-full h-auto object-contain rounded-[20px]"
@@ -106,7 +106,7 @@ export function SolutionsSection() {
                 style={{ color: BUTTON_TEXT_GRAY }}
               >
                 <TextType
-                  text={["Lahalex Plagix"]}
+                  text={["Plagix"]}
                   typingSpeed={75}
                   pauseDuration={1500}
                   showCursor={true}
@@ -131,7 +131,7 @@ export function SolutionsSection() {
                   <strong>Moteur OCR avancé</strong> pour PDF scannés et photographies de documents
                 </p>
                 <p>
-                  <strong>Détecteur d’intelligence artificielle</strong> (ChatGPT, LLM) &amp; détection cross-langue
+                  <strong>Détecteur d’intelligence artificielle</strong> &amp; détection cross-langue
                 </p>
                 <p>
                   <strong>Rapports certifiés PDF</strong> avec calcul officiel des seuils décisionnels

@@ -68,7 +68,7 @@ const plagixModules = [
   {
     title: "Détecteur de contenus générés par IA",
     description:
-      "Identification avancée des textes rédigés par modèles de langage (ChatGPT, Claude, Gemini). Analyse heuristique locale combinant burstiness, entropie lexicale, répétitions et marqueurs stylistiques, complétée par des détecteurs spécialisés.",
+      "Identification avancée des textes rédigés par modèles de langage et intelligence artificielle. Analyse heuristique locale combinant burstiness, entropie lexicale, répétitions et marqueurs stylistiques, complétée par des détecteurs spécialisés.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -213,24 +213,6 @@ export default function LahalexPlagixPage() {
           },
         }
       );
-
-      gsap.fromTo(
-        ".service-button",
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "bounce.out",
-          stagger: 0.2,
-          delay: 0.8,
-          scrollTrigger: {
-            trigger: ".service-card",
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
     }, servicesRef);
 
     return () => ctx.revert();
@@ -250,8 +232,7 @@ export default function LahalexPlagixPage() {
         }
         .service-card,
         .service-icon,
-        .service-title,
-        .service-button {
+        .service-title {
           opacity: 0;
         }
       `}</style>
@@ -266,7 +247,7 @@ export default function LahalexPlagixPage() {
                 className="hero-title font-gobold text-3xl sm:text-4xl lg:text-5xl mb-6 lg:mb-8 leading-tight"
                 style={{ color: BRAND_TEXT }}
               >
-                LAHALEX PLAGIX
+                PLAGIX
               </h1>
 
               <div className="space-y-6 mb-8">
@@ -303,7 +284,7 @@ export default function LahalexPlagixPage() {
                       className="hero-bullet w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0"
                       style={{ backgroundColor: BRAND_PRIMARY_DARK }}
                     ></span>
-                    Détecteur d’intelligence artificielle (ChatGPT, LLM) &amp; détection cross-langue
+                    Détecteur d’intelligence artificielle &amp; détection cross-langue
                   </li>
                   <li className="flex items-start">
                     <span
@@ -351,7 +332,7 @@ export default function LahalexPlagixPage() {
               <div className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                 <Image
                   src="/images/plagix/accueil.png"
-                  alt="Interface Lahalex Plagix"
+                  alt="Interface Plagix"
                   width={1284}
                   height={816}
                   priority
@@ -403,30 +384,9 @@ export default function LahalexPlagixPage() {
                 </h3>
 
                 {/* Description */}
-                <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed flex-1">
+                <p className="service-description text-gray-700 text-sm leading-relaxed flex-1">
                   {mod.description}
                 </p>
-
-                {/* Bouton d'action */}
-                <div className="text-right mt-auto">
-                  <a
-                    href="/nous-contacter"
-                    className="service-button px-5 py-2 rounded-lg text-sm font-medium transition-colors inline-block"
-                    style={{
-                      border: `1px solid ${BRAND_PRIMARY_DARK}`,
-                      color: BRAND_TEXT,
-                      backgroundColor: "transparent",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = "transparent";
-                    }}
-                  >
-                    En savoir plus
-                  </a>
-                </div>
               </div>
             ))}
           </div>

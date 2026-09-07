@@ -23,8 +23,8 @@ const MOBILE_MENU_BORDER = "rgba(107, 114, 128, 0.18)"
 // Structure du menu VOS BESOINS avec routes spécifiques vers les sous-rubriques
 const vosBesoinsMenu = [
   {
-    title: "Détecteur antiplagiat",
-    submenu: [{ title: "Lahalex Plagix", href: "/lahalex-plagix" }],
+    title: "Détecteur Anti-plagiat",
+    submenu: [{ title: "Plagix", href: "/lahalex-plagix" }],
   },
   {
     title: "Recherche documentaire",
@@ -445,7 +445,7 @@ export function Header() {
                       className="block px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-gobold uppercase hover:bg-gray-50 transition-colors"
                       style={{ color: BRAND_TEXT }}
                     >
-                      Lahalex Plagix
+                      Plagix
                     </Link>
                     <Link
                       href="/lahalex-universel"
@@ -554,7 +554,7 @@ export function Header() {
                       className="block text-lg hover:opacity-70 transition-opacity font-gobold"
                       style={{ color: MOBILE_MENU_SUBTEXT }}
                     >
-                      Lahalex Plagix
+                      Plagix
                     </a>
                     <a
                       href="/lahalex-universel"
@@ -604,7 +604,7 @@ export function Header() {
                   <div className="mt-4 space-y-4">
                     <div>
                       <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
-                        Détecteur antiplagiat
+                        Détecteur Anti-plagiat
                       </div>
                       <div className="ml-4 space-y-1">
                         <a
@@ -612,7 +612,7 @@ export function Header() {
                           className="block text-base hover:opacity-70 transition-opacity"
                           style={{ color: MOBILE_MENU_SUBTEXT }}
                         >
-                          Lahalex Plagix
+                          Plagix
                         </a>
                       </div>
                     </div>
