@@ -562,6 +562,21 @@ export default function EssaiGratuit() {
                         <div className="flex items-start space-x-3">
                           <input
                             type="checkbox"
+                            id="plagix"
+                            name="solutions"
+                            value="plagix"
+                            checked={formData.solutions.includes("plagix")}
+                            onChange={handleInputChange}
+                            className="mt-1 h-4 w-4 text-[#C8A96B] border-gray-300 rounded focus:ring-[#C8A96B]"
+                          />
+                          <label htmlFor="plagix" className="text-sm font-medium text-gray-700 cursor-pointer">
+                            Plagix - Détecteur anti-plagiat
+                          </label>
+                        </div>
+
+                        <div className="flex items-start space-x-3">
+                          <input
+                            type="checkbox"
                             id="universel"
                             name="solutions"
                             value="universel"

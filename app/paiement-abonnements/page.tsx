@@ -11,10 +11,11 @@ import {
   Building2,
   GraduationCap,
   BookOpen,
+  ShieldCheck,
 } from "lucide-react"
 
 export default function PaiementAbonnements() {
-  const [activeTab, setActiveTab] = useState("universel")
+  const [activeTab, setActiveTab] = useState("plagix")
   const [isAnnual, setIsAnnual] = useState(false)
   const [selectedDiscount, setSelectedDiscount] = useState<number | null>(null)
 
@@ -31,6 +32,7 @@ export default function PaiementAbonnements() {
   const BRAND_SOFT_STRONG = "rgba(212, 200, 154, 0.20)"
 
   const tabs = [
+    { id: "plagix", label: "Plagix", icon: ShieldCheck },
     { id: "universel", label: "Lahalex Universel", icon: Globe },
     { id: "avocat", label: "Lahalex Avocat", icon: Scale },
     { id: "notaire", label: "Lahalex Notaire", icon: FileText },
@@ -187,12 +189,12 @@ export default function PaiementAbonnements() {
           {/* Tabs */}
           <div ref={tabsRef} className="flex justify-center mb-16">
             <div className="bg-white/80 backdrop-blur-md rounded-2xl p-2 shadow-2xl border border-white/20 w-full max-w-6xl">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`tab-button group relative px-4 py-3 rounded-xl font-medium transition-all duration-500 ease-out flex items-center justify-center gap-2 ${
+                    className={`tab-button group relative px-3 py-3 rounded-xl font-medium transition-all duration-500 ease-out flex items-center justify-center gap-2 ${
                       activeTab === tab.id
                         ? "text-black shadow-xl transform scale-105"
                         : "text-gray-600 hover:text-black hover:bg-white/50 hover:scale-105"
@@ -205,8 +207,8 @@ export default function PaiementAbonnements() {
                         : undefined
                     }
                   >
-                    <tab.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                    <span className="text-sm font-medium whitespace-nowrap">{tab.label}</span>
+                    <tab.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 flex-shrink-0" />
+                    <span className="text-xs xl:text-sm font-medium whitespace-nowrap">{tab.label}</span>
                     {activeTab === tab.id && (
                       <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 rounded-xl"></div>
                     )}
@@ -215,6 +217,177 @@ export default function PaiementAbonnements() {
               </div>
             </div>
           </div>
+
+          {activeTab === "plagix" && (
+            <div ref={cardsRef} className="pricing-content">
+              {/* Header */}
+              <div
+                className="animated-header rounded-3xl shadow-2xl mb-12 overflow-hidden relative"
+                style={{
+                  background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent"></div>
+                <div className="relative p-8 text-center" style={{ color: BRAND_TEXT }}>
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <ShieldCheck className="w-6 h-6" style={{ color: BRAND_TEXT }} />
+                    </div>
+                    <h2 className="text-3xl font-sf-pro font-bold">Plagix</h2>
+                  </div>
+                  <p className="text-black/80 text-lg">
+                    Plateforme souveraine de détection de plagiat et de contrôle de l’intégrité académique
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {/* Student */}
+                <div className="pricing-card group relative bg-white rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-700 ease-out flex flex-col h-full">
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    style={{ backgroundColor: BRAND_SOFT }}
+                  ></div>
+                  <div
+                    className="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16"
+                    style={{ backgroundColor: BRAND_SOFT_MEDIUM }}
+                  ></div>
+                  <div className="relative p-6 lg:p-8 flex-1 flex flex-col">
+                    <div className="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+                      <div
+                        className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-lg"
+                        style={{ backgroundColor: BRAND_PRIMARY }}
+                      >
+                        <GraduationCap className="w-6 h-6 lg:w-8 lg:h-8" style={{ color: BRAND_TEXT }} />
+                      </div>
+                      <div>
+                        <h4 className="font-sf-pro text-lg lg:text-xl text-gray-900 font-bold">
+                          Étudiant(es)/Doctorant(es)
+                        </h4>
+                        <div
+                          className="w-12 h-1 rounded-full mt-2"
+                          style={{ backgroundColor: BRAND_PRIMARY }}
+                        ></div>
+                      </div>
+                    </div>
+                    <div className="flex-1 mb-6">
+                      <p className="text-gray-600 font-sf-pro text-lg">
+                        Vérification préventive de mémoires, thèses et rapports académiques. Justificatif obligatoire.
+                      </p>
+                    </div>
+                    <div className="mt-auto">
+                      <a
+                        href="/nous-contacter"
+                        className="w-full text-black py-4 rounded-2xl font-medium hover:shadow-xl inline-block text-center font-sf-pro transition-all duration-300 ease-out transform hover:scale-105 active:scale-95 relative overflow-hidden group"
+                        style={{
+                          background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
+                        }}
+                      >
+                        <span className="relative z-10">Demandez un devis</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Enseignants / Chercheurs */}
+                <div className="pricing-card group relative bg-white rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-700 ease-out flex flex-col h-full">
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    style={{ backgroundColor: BRAND_SOFT }}
+                  ></div>
+                  <div
+                    className="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16"
+                    style={{ backgroundColor: BRAND_SOFT_MEDIUM }}
+                  ></div>
+                  <div className="relative p-6 lg:p-8 flex-1 flex flex-col">
+                    <div className="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+                      <div
+                        className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-lg"
+                        style={{ backgroundColor: BRAND_PRIMARY }}
+                      >
+                        <Scale className="w-6 h-6 lg:w-8 lg:h-8" style={{ color: BRAND_TEXT }} />
+                      </div>
+                      <div>
+                        <h4 className="font-sf-pro text-lg lg:text-xl text-gray-900 font-bold">
+                          Enseignants / Chercheurs
+                        </h4>
+                        <div
+                          className="w-12 h-1 rounded-full mt-2"
+                          style={{ backgroundColor: BRAND_PRIMARY }}
+                        ></div>
+                      </div>
+                    </div>
+                    <div className="flex-1 mb-6">
+                      <p className="text-gray-600 font-sf-pro text-lg">
+                        Contrôle des soumissions, articles scientifiques, analyse sémantique, OCR et détection IA.
+                      </p>
+                    </div>
+                    <div className="mt-auto">
+                      <a
+                        href="/nous-contacter"
+                        className="w-full text-black py-4 rounded-2xl font-medium hover:shadow-xl inline-block text-center font-sf-pro transition-all duration-300 ease-out transform hover:scale-105 active:scale-95 relative overflow-hidden group"
+                        style={{
+                          background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
+                        }}
+                      >
+                        <span className="relative z-10">Demandez un devis</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Institutions */}
+                <div className="pricing-card group relative bg-white rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-700 ease-out flex flex-col h-full">
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    style={{ backgroundColor: BRAND_SOFT }}
+                  ></div>
+                  <div
+                    className="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16"
+                    style={{ backgroundColor: BRAND_SOFT_MEDIUM }}
+                  ></div>
+                  <div className="relative p-6 lg:p-8 flex-1 flex flex-col">
+                    <div className="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+                      <div
+                        className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-lg"
+                        style={{ backgroundColor: BRAND_PRIMARY }}
+                      >
+                        <BookOpen className="w-6 h-6 lg:w-8 lg:h-8" style={{ color: BRAND_TEXT }} />
+                      </div>
+                      <div>
+                        <h4 className="font-sf-pro text-lg lg:text-xl text-gray-900 font-bold">
+                          Établissements d'enseignement supérieur &amp; Institutions
+                        </h4>
+                        <div
+                          className="w-12 h-1 rounded-full mt-2"
+                          style={{ backgroundColor: BRAND_PRIMARY }}
+                        ></div>
+                      </div>
+                    </div>
+                    <div className="flex-1 mb-6">
+                      <p className="text-gray-600 font-sf-pro text-lg">
+                        Déploiement institutionnel, intégration LMS/API, rapports certifiés avec seuils décisionnels officiels.
+                      </p>
+                    </div>
+                    <div className="mt-auto">
+                      <a
+                        href="/nous-contacter"
+                        className="w-full text-black py-4 rounded-2xl font-medium hover:shadow-xl inline-block text-center font-sf-pro transition-all duration-300 ease-out transform hover:scale-105 active:scale-95 relative overflow-hidden group"
+                        style={{
+                          background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
+                        }}
+                      >
+                        <span className="relative z-10">Demandez un devis</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {activeTab === "universel" && (
             <div ref={cardsRef} className="pricing-content">
