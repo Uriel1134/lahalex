@@ -145,7 +145,7 @@ export function SolutionsSection() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 flex-wrap">
                 <Button
                   variant="outline"
                   className="rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] bg-transparent transition-colors"
@@ -177,6 +177,26 @@ export function SolutionsSection() {
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.opacity = "1";
+                  }}
+                  onClick={() => (window.location.href = "/essai-gratuit")}
+                >
+                  Demandez un devis
+                </Button>
+
+                <Button
+                  variant="outline"
+                  className="rounded-[30px] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-[14px] sm:text-[16px] bg-transparent transition-colors"
+                  style={{
+                    border: `1px solid ${BRAND_PRIMARY}`,
+                    color: BUTTON_TEXT_GRAY,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND_PRIMARY;
+                    e.currentTarget.style.color = "#ffffff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = BUTTON_TEXT_GRAY;
                   }}
                   onClick={() => (window.location.href = "/nous-contacter")}
                 >

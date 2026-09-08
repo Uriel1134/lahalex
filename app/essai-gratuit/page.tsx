@@ -62,7 +62,7 @@ export default function EssaiGratuit() {
     try {
       // Prepare form data for FormSubmit
       const submitData = new FormData();
-      submitData.append("_subject", "Nouvelle demande d'essai gratuit - Lahalex");
+      submitData.append("_subject", "Nouvelle demande d'essai gratuit / devis - Lahalex");
       submitData.append("_captcha", "false");
       submitData.append("_template", "table");
       submitData.append("nom", formData.nom);
@@ -265,10 +265,10 @@ export default function EssaiGratuit() {
           {/* Titre principal */}
           <h1
             ref={titleRef}
-            className="hero-title font-gobold text-4xl sm:text-5xl lg:text-2xl text-center lg:text-left mb-4"
+            className="hero-title font-gobold text-4xl sm:text-5xl lg:text-3xl text-center lg:text-left mb-4"
             style={{ color: "#4B5563" }}
           >
-            ESSAI GRATUIT
+            ESSAI GRATUIT &amp; DEMANDE DE DEVIS
           </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
