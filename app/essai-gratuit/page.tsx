@@ -470,6 +470,7 @@ export default function EssaiGratuit() {
                           <option value="notaire">Notaire</option>
                           <option value="commissaire">Commissaire de justice</option>
                           <option value="etudiant">Étudiant</option>
+                          <option value="enseignant">Enseignant / Chercheur</option>
                           <option value="autre">Autre</option>
                         </select>
                       </div>

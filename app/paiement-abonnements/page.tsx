@@ -241,8 +241,8 @@ export default function PaiementAbonnements() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {/* Student */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+                {/* Étudiant */}
                 <div className="pricing-card group relative bg-white rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-700 ease-out flex flex-col h-full">
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -261,8 +261,8 @@ export default function PaiementAbonnements() {
                         <GraduationCap className="w-6 h-6 lg:w-8 lg:h-8" style={{ color: BRAND_TEXT }} />
                       </div>
                       <div>
-                        <h4 className="font-sf-pro text-lg lg:text-xl text-gray-900 font-bold">
-                          Étudiant(es)/Doctorant(es)
+                        <h4 className="font-sf-pro text-xl lg:text-2xl text-gray-900 font-bold">
+                          Étudiant
                         </h4>
                         <div
                           className="w-12 h-1 rounded-full mt-2"
@@ -270,10 +270,18 @@ export default function PaiementAbonnements() {
                         ></div>
                       </div>
                     </div>
-                    <div className="flex-1 mb-6">
-                      <p className="text-gray-600 font-sf-pro text-lg">
-                        Vérification préventive de mémoires, thèses et rapports académiques. Justificatif obligatoire.
+                    <div className="flex-1 mb-6 space-y-3">
+                      <p className="text-gray-700 font-sf-pro text-base leading-relaxed">
+                        Analyse préventive et contrôle de conformité anti-plagiat pour mémoires, thèses, rapports de stage et travaux universitaires avant soumission.
                       </p>
+                      <p className="text-gray-600 font-sf-pro text-sm leading-relaxed">
+                        Détection fine des similarités sémantiques, détection des paraphrases et repérage des contenus générés par IA.
+                      </p>
+                      <div className="pt-2">
+                        <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 text-gray-700">
+                          Justificatif de scolarité obligatoire
+                        </span>
+                      </div>
                     </div>
                     <div className="mt-auto">
                       <a
@@ -290,55 +298,7 @@ export default function PaiementAbonnements() {
                   </div>
                 </div>
 
-                {/* Enseignants / Chercheurs */}
-                <div className="pricing-card group relative bg-white rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-700 ease-out flex flex-col h-full">
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{ backgroundColor: BRAND_SOFT }}
-                  ></div>
-                  <div
-                    className="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16"
-                    style={{ backgroundColor: BRAND_SOFT_MEDIUM }}
-                  ></div>
-                  <div className="relative p-6 lg:p-8 flex-1 flex flex-col">
-                    <div className="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
-                      <div
-                        className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-lg"
-                        style={{ backgroundColor: BRAND_PRIMARY }}
-                      >
-                        <Scale className="w-6 h-6 lg:w-8 lg:h-8" style={{ color: BRAND_TEXT }} />
-                      </div>
-                      <div>
-                        <h4 className="font-sf-pro text-lg lg:text-xl text-gray-900 font-bold">
-                          Enseignants / Chercheurs
-                        </h4>
-                        <div
-                          className="w-12 h-1 rounded-full mt-2"
-                          style={{ backgroundColor: BRAND_PRIMARY }}
-                        ></div>
-                      </div>
-                    </div>
-                    <div className="flex-1 mb-6">
-                      <p className="text-gray-600 font-sf-pro text-lg">
-                        Contrôle des soumissions, articles scientifiques, analyse sémantique, OCR et détection IA.
-                      </p>
-                    </div>
-                    <div className="mt-auto">
-                      <a
-                        href="/nous-contacter"
-                        className="w-full text-black py-4 rounded-2xl font-medium hover:shadow-xl inline-block text-center font-sf-pro transition-all duration-300 ease-out transform hover:scale-105 active:scale-95 relative overflow-hidden group"
-                        style={{
-                          background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
-                        }}
-                      >
-                        <span className="relative z-10">Demandez un devis</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Institutions */}
+                {/* Enseignant */}
                 <div className="pricing-card group relative bg-white rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-700 ease-out flex flex-col h-full">
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -357,8 +317,8 @@ export default function PaiementAbonnements() {
                         <BookOpen className="w-6 h-6 lg:w-8 lg:h-8" style={{ color: BRAND_TEXT }} />
                       </div>
                       <div>
-                        <h4 className="font-sf-pro text-lg lg:text-xl text-gray-900 font-bold">
-                          Établissements d'enseignement supérieur &amp; Institutions
+                        <h4 className="font-sf-pro text-xl lg:text-2xl text-gray-900 font-bold">
+                          Enseignant
                         </h4>
                         <div
                           className="w-12 h-1 rounded-full mt-2"
@@ -366,10 +326,18 @@ export default function PaiementAbonnements() {
                         ></div>
                       </div>
                     </div>
-                    <div className="flex-1 mb-6">
-                      <p className="text-gray-600 font-sf-pro text-lg">
-                        Déploiement institutionnel, intégration LMS/API, rapports certifiés avec seuils décisionnels officiels.
+                    <div className="flex-1 mb-6 space-y-3">
+                      <p className="text-gray-700 font-sf-pro text-base leading-relaxed">
+                        Évaluation académique, vérification des travaux d'étudiants, devoirs, mémoires, thèses et articles scientifiques.
                       </p>
+                      <p className="text-gray-600 font-sf-pro text-sm leading-relaxed">
+                        Rapports certifiés PDF avec scores de similarité, exclusion des citations normées, détection cross-langue et analyse IA.
+                      </p>
+                      <div className="pt-2">
+                        <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 text-gray-700">
+                          Accès enseignant / chercheur
+                        </span>
+                      </div>
                     </div>
                     <div className="mt-auto">
                       <a
