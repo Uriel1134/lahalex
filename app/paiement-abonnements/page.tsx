@@ -387,7 +387,7 @@ export default function PaiementAbonnements() {
                         Déploiement institutionnel complet pour universités, grandes écoles, instituts et écoles doctorales.
                       </p>
                       <p className="text-gray-600 font-sf-pro text-sm leading-relaxed">
-                        Intégration aux plateformes pédagogiques (LMS/Moodle), gestion multi-départements, rapports certifiés avec seuils décisionnels officiels et archivage souverain.
+                        Intégration aux plateformes pédagogiques, gestion multi-départements, rapports certifiés avec seuils décisionnels officiels et archivage souverain.
                       </p>
                       <div className="pt-2">
                         <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 text-gray-700">
