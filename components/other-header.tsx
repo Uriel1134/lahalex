@@ -23,7 +23,7 @@ const MOBILE_MENU_BORDER = "rgba(107, 114, 128, 0.22)";
 // Structure du menu VOS BESOINS
 const vosBesoinsMenu = [
   {
-    title: "Détecteur Anti-plagiat",
+    title: "Détecteur anti-plagiat",
     submenu: [{ title: "Plagix", href: "/lahalex-plagix" }],
   },
   {
@@ -552,7 +552,7 @@ export function Header() {
                   <div className="mt-4 space-y-4">
                     <div>
                       <div className="text-lg font-semibold mb-2" style={{ color: MOBILE_MENU_TEXT }}>
-                        Détecteur Anti-plagiat
+                        Détecteur anti-plagiat
                       </div>
                       <div className="ml-4 space-y-1">
                         <a

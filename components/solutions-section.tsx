@@ -92,7 +92,7 @@ export function SolutionsSection() {
                 <source src="/images/plagix/video.mp4" type="video/mp4" />
                 <Image
                   src="/images/plagix/accueil.png"
-                  alt="Plagix Détecteur Anti-plagiat"
+                  alt="Plagix Détecteur anti-plagiat"
                   width={1284}
                   height={816}
                   className="w-full h-auto object-contain rounded-[20px]"
