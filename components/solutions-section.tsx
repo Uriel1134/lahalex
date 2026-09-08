@@ -75,9 +75,16 @@ export function SolutionsSection() {
         <div className="space-y-8 md:space-y-16">
           {/* Plagix */}
           <div
-            className="solution-card flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12"
+            className="solution-card relative flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8 lg:gap-16 rounded-[20px] p-4 sm:p-6 md:p-8 lg:p-12"
             style={{ backgroundColor: BRAND_SECONDARY }}
           >
+            {/* Badge Nouveau */}
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-7 lg:right-8 z-20">
+              <span className="inline-flex items-center px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider bg-red-600 text-white shadow-md">
+                Nouveau
+              </span>
+            </div>
+
             <div className="w-full lg:w-[420px] xl:w-[480px] 2xl:w-[540px] rounded-[20px] overflow-hidden shadow-md">
               <video
                 src="/videos/plagix.mp4"
