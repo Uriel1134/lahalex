@@ -24,7 +24,7 @@ export default function FAQPage() {
                 />
               </div>
 
-              <a href="https://lahalexantiplagiat.com">
+              <a href="https://plagix.lahalex.com/">
                 <button className="border border-white text-white px-6 py-2 rounded-full bg-transparent hover:bg-white hover:text-[#5A5A5A] transition">
                   Connexion
                 </button>
