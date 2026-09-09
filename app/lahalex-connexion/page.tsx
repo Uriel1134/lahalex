@@ -12,21 +12,41 @@ export default function FAQPage() {
 
       <section className="relative py-20 bg-[#FCF8F3]">
         <div className="container mx-auto px-4 flex flex-col items-center gap-12">
-          {/* PREMIER CARD AU MILIEU */}
-          <div className="bg-[#5A5A5A] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
-            <div className="mb-8 flex items-center justify-center">
-              <img
-                src="/images/Lahalex_universel1.png"
-                alt="Lahalex Universel"
-                className="w-44 h-auto object-contain mix-blend-lighten"
-              />
+          {/* CARTES DU HAUT (PLAGIX & LAHALEX UNIVERSEL) CENTRÉES */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+            {/* Carte Plagix */}
+            <div className="bg-[#5A5A5A] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
+              <div className="mb-8 flex items-center justify-center h-44">
+                <img
+                  src="/images/plagix-logo.png"
+                  alt="Plagix"
+                  className="w-48 h-auto object-contain"
+                />
+              </div>
+
+              <a href="https://lahalexantiplagiat.com">
+                <button className="border border-white text-white px-6 py-2 rounded-full bg-transparent hover:bg-white hover:text-[#5A5A5A] transition">
+                  Connexion
+                </button>
+              </a>
             </div>
 
-            <Link href="/universel-domaines">
-              <button className="border border-white text-white px-6 py-2 rounded-full bg-transparent hover:bg-white hover:text-[#5A5A5A] transition">
-                Connexion
-              </button>
-            </Link>
+            {/* Carte Lahalex Universel */}
+            <div className="bg-[#5A5A5A] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
+              <div className="mb-8 flex items-center justify-center h-44">
+                <img
+                  src="/images/Lahalex_universel1.png"
+                  alt="Lahalex Universel"
+                  className="w-44 h-auto object-contain mix-blend-lighten"
+                />
+              </div>
+
+              <Link href="/universel-domaines">
+                <button className="border border-white text-white px-6 py-2 rounded-full bg-transparent hover:bg-white hover:text-[#5A5A5A] transition">
+                  Connexion
+                </button>
+              </Link>
+            </div>
           </div>
 
           {/* LES 3 AUTRES CARDS EN BAS SUR LA MEME LIGNE */}

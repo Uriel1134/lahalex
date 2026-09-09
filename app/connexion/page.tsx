@@ -40,6 +40,12 @@ function ConnexionContent() {
       title: "COMMISSAIRE DE JUSTICE",
       subtitle: "Centralisez le droit, simplifiez la justice",
       welcomeText: "Bienvenue sur LAHALEX COMMISSAIRE DE JUSTICE"
+    },
+    plagix: {
+      logo: "/images/plagix-logo.png",
+      title: "PLAGIX",
+      subtitle: "Plateforme de détection de plagiat et de contrôle de l'intégrité académique",
+      welcomeText: "Bienvenue sur PLAGIX"
     }
   }
 
