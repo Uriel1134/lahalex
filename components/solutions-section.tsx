@@ -86,25 +86,14 @@ export function SolutionsSection() {
             </div>
 
             <div className="w-full lg:w-[420px] xl:w-[480px] 2xl:w-[540px] rounded-[20px] overflow-hidden shadow-md">
-              <video
-                src="/videos/plagix.mp4"
-                poster="/images/plagix/accueil.png"
-                autoPlay
-                loop
-                muted
-                playsInline
+              <Image
+                src="/images/plagix/accueil.png"
+                alt="Plagix Détecteur anti-plagiat"
+                width={1284}
+                height={816}
+                priority
                 className="w-full h-auto object-cover rounded-[20px]"
-              >
-                <source src="/videos/plagix.mp4" type="video/mp4" />
-                <source src="/images/plagix/video.mp4" type="video/mp4" />
-                <Image
-                  src="/images/plagix/accueil.png"
-                  alt="Plagix Détecteur anti-plagiat"
-                  width={1284}
-                  height={816}
-                  className="w-full h-auto object-contain rounded-[20px]"
-                />
-              </video>
+              />
             </div>
 
             <div className="flex-1">
