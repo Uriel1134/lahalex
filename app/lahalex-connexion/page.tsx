@@ -12,8 +12,8 @@ export default function FAQPage() {
 
       <section className="relative py-20 bg-[#FCF8F3]">
         <div className="container mx-auto px-4 flex flex-col items-center gap-12">
-          {/* CARTES DU HAUT (PLAGIX & LAHALEX UNIVERSEL) CENTRÉES */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+          {/* CARTES DU HAUT (PLAGIX, LAHALEX UNIVERSEL & PARTENAIRE) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 place-items-center">
             {/* Carte Plagix */}
             <div className="bg-[#5A5A5A] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
               <div className="mb-8 flex items-center justify-center h-44">
@@ -47,6 +47,28 @@ export default function FAQPage() {
                 </button>
               </Link>
             </div>
+
+            {/* Carte Partenaire */}
+            <div className="bg-[#5A5A5A] rounded-xl shadow-lg p-10 flex flex-col items-center justify-center w-72 h-80">
+              <div className="mb-8 flex flex-col items-center justify-center h-44">
+                <img
+                  src="/images/logo-lahalex.png"
+                  alt="Lahalex"
+                  className="w-40 h-auto object-contain mb-3"
+                />
+                <div className="flex items-center gap-2">
+                  <span className="text-[#D4C89A] text-xs font-semibold tracking-widest">|||</span>
+                  <span className="text-white text-sm font-bold tracking-widest uppercase">PARTENAIRE</span>
+                  <span className="text-[#D4C89A] text-xs font-semibold tracking-widest">|||</span>
+                </div>
+              </div>
+
+              <a href="https://partners.lahalex.com/login">
+                <button className="border border-white text-white px-6 py-2 rounded-full bg-transparent hover:bg-white hover:text-[#5A5A5A] transition">
+                  Connexion
+                </button>
+              </a>
+            </div>
           </div>
 
           {/* LES 3 AUTRES CARDS EN BAS SUR LA MEME LIGNE */}
@@ -58,7 +80,7 @@ export default function FAQPage() {
                 alt="Lahalex Avocat"
                 className="w-40 h-40 mb-8 object-contain"
               />
-              <a href="https://avocat.lahalex.com">
+              <a href="https://avocat.lahalex.com/login">
                 <button className="border border-white text-white px-6 py-2 rounded-full bg-transparent hover:bg-white hover:text-[#770D28] transition">
                   Connexion
                 </button>
@@ -72,7 +94,7 @@ export default function FAQPage() {
                 alt="Lahalex Notaire"
                 className="w-40 h-40 mb-8 object-contain"
               />
-              <a href="/connexion?solution=notaire">
+              <a href="https://notaire.lahalex.com/login">
                 <button className="border border-white text-white px-6 py-2 rounded-full bg-transparent hover:bg-white hover:text-[#770D28] transition">
                   Connexion
                 </button>
@@ -86,7 +108,7 @@ export default function FAQPage() {
                 alt="Lahalex Commissaire de Justice"
                 className="w-40 h-40 mb-8 object-contain"
               />
-              <a href="/connexion?solution=commissaire">
+              <a href="https://commissaire-justice.lahalex.com/login">
                 <button className="border border-white text-white px-6 py-2 rounded-full bg-transparent hover:bg-white hover:text-[#770D28] transition">
                   Connexion
                 </button>
