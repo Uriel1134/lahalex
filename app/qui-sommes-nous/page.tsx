@@ -437,8 +437,8 @@ export default function QuiSommesNous() {
           </p>
         </div>
         <Image
-          src="/images/qui-sommes-nous.png"
-          alt="Réunion"
+          src="/images/qui-sommes-nous-accueil.jpg"
+          alt="Hall d'accueil LAHALEX"
           width={650}
           height={450}
           className="vision-image rounded-xl object-cover"
