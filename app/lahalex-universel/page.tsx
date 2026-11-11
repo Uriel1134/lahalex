@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BookOpen, ChevronsRight, LayoutGrid, Radar, Search } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,8 +15,72 @@ const BRAND_PRIMARY = "#D4C89A";
 const BRAND_PRIMARY_DARK = "#B4AB6B";
 const BRAND_TEXT = "#111111";
 const BRAND_BG = "#FFFFFF";
-const BRAND_SOFT = "rgba(212, 200, 154, 0.15)";
-const BRAND_SOFT_LIGHT = "rgba(212, 200, 154, 0.10)";
+
+// Fond de la section : sert aussi à « découper » l'encoche des cartes.
+const SERVICES_BG = "#F7F5EE";
+
+// Habillage de chaque carte (fond, textes, icône, bouton dans l'encoche).
+const cardThemes = [
+  {
+    card: "bg-white text-[#111111] border border-black/[0.06]",
+    desc: "text-gray-500",
+    icon: "text-[#111111]",
+    button: "bg-white text-[#111111] border border-black/10 hover:bg-[#F1EEE3]",
+    deco: "border-black/[0.04]",
+  },
+  {
+    card: "bg-[#D4C89A] text-[#111111]",
+    desc: "text-[#111111]/70",
+    icon: "text-[#111111]",
+    button: "bg-[#D4C89A] text-[#111111] hover:bg-[#C9BC86]",
+    deco: "border-white/40",
+  },
+  {
+    card: "bg-[#1F1F1F] text-white",
+    desc: "text-white/65",
+    icon: "text-[#D4C89A]",
+    button: "bg-[#1F1F1F] text-white hover:bg-black",
+    deco: "border-[#D4C89A]/15",
+  },
+  {
+    card: "bg-[#B4AB6B] text-[#111111]",
+    desc: "text-[#111111]/75",
+    icon: "text-[#111111]",
+    button: "bg-[#B4AB6B] text-[#111111] hover:bg-[#A69D5E]",
+    deco: "border-white/30",
+  },
+];
+
+const services = [
+  {
+    icon: Search,
+    title: "Recherche avancée",
+    description:
+      "Notre outil de recherche avancée permet d'exploiter de façon structurée et intelligente un vaste ensemble de contenus spécialisés.",
+    href: "/recherche-juridique-universel",
+  },
+  {
+    icon: BookOpen,
+    title: "Bibliothèque numérique",
+    description:
+      "Notre bibliothèque numérique est une plateforme en ligne dédiée à la consultation d'un vaste ensemble d'ouvrages et de documents numériques.",
+    href: "/bibliotheque-numerique-universel",
+  },
+  {
+    icon: Radar,
+    title: "Veille journalière",
+    description:
+      "Notre veille journalière est un dispositif structuré de surveillance, de collecte, d'analyse et de diffusion continue d'informations spécialisées.",
+    href: "/veille-juridique-universel",
+  },
+  {
+    icon: LayoutGrid,
+    title: "Autres outils",
+    description:
+      "Cette section de notre plateforme a été conçue comme un espace de référence indispensable pour les professionnels, chercheurs et institutions.",
+    href: "/autres-outils-universel",
+  },
+];
 
 const heroSlides = [
   {
@@ -62,11 +127,9 @@ export default function LahalexUniverselPage() {
   const autoPlayRef = useRef<number | null>(null);
 
   const imageWrapRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const rightTextBoxRef = useRef<HTMLDivElement>(null);
   const activeIndexRef = useRef(0);
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [displayedSlideIndex, setDisplayedSlideIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const showSlide = (nextIndex: number, immediate = false) => {
@@ -109,39 +172,19 @@ export default function LahalexUniverselPage() {
 
       activeIndexRef.current = nextIndex;
       setActiveIndex(nextIndex);
-      setDisplayedSlideIndex(nextIndex);
       setIsAnimating(false);
-
-      if (rightTextBoxRef.current) {
-        gsap.set(rightTextBoxRef.current, { opacity: 1, y: 0 });
-      }
 
       return;
     }
 
     activeIndexRef.current = nextIndex;
     setActiveIndex(nextIndex);
-    setDisplayedSlideIndex(nextIndex);
 
     const tl = gsap.timeline({
       onComplete: () => {
         setIsAnimating(false);
       },
     });
-
-    if (rightTextBoxRef.current) {
-      tl.fromTo(
-        rightTextBoxRef.current,
-        { opacity: 0, y: 16 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.65,
-          ease: "power2.out",
-        },
-        0
-      );
-    }
 
     if (currentEl && currentEl !== nextEl) {
       tl.to(
@@ -215,12 +258,6 @@ export default function LahalexUniverselPage() {
           { opacity: 0, y: 10 },
           { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" },
           "-=0.15"
-        )
-        .fromTo(
-          ".hero-right-text-box",
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          "-=0.45"
         )
         .fromTo(
           ".hero-image-stage",
@@ -354,8 +391,6 @@ export default function LahalexUniverselPage() {
     restartAutoplay();
   };
 
-  const currentSlide = heroSlides[displayedSlideIndex];
-
   return (
     <div
       ref={pageRef}
@@ -369,7 +404,6 @@ export default function LahalexUniverselPage() {
         .hero-subtitle,
         .hero-button,
         .hero-dots,
-        .hero-right-text-box,
         .hero-image-stage,
         .service-card,
         .service-icon,
@@ -382,13 +416,13 @@ export default function LahalexUniverselPage() {
 
       <section
         ref={heroRef}
-        className="bg-white py-12 sm:py-16 lg:py-20 overflow-hidden"
+        className="bg-white pt-12 pb-10 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-14 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <h1
-                className="hero-title font-gobold text-4xl sm:text-5xl lg:text-6xl mb-6 lg:mb-8 leading-tight"
+                className="hero-title font-gobold text-4xl sm:text-5xl xl:text-6xl mb-6 lg:mb-8 leading-tight"
                 style={{ color: BRAND_TEXT }}
               >
                 LAHALEX UNIVERSEL
@@ -404,9 +438,9 @@ export default function LahalexUniverselPage() {
                 simplifié, intelligent et innovant à l'information spécialisée.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-6">
                 <button
-                  className="hero-button px-8 py-3 rounded-xl font-medium transition-colors text-black"
+                  className="hero-button px-5 py-3 rounded-xl font-medium whitespace-nowrap transition-colors text-black"
                   style={{
                     background: `linear-gradient(to right, ${BRAND_PRIMARY}, ${BRAND_PRIMARY_DARK})`,
                   }}
@@ -416,7 +450,7 @@ export default function LahalexUniverselPage() {
                 </button>
 
                 <button
-                  className="hero-button px-8 py-3 rounded-xl font-medium transition-colors"
+                  className="hero-button px-5 py-3 rounded-xl font-medium whitespace-nowrap transition-colors"
                   style={{
                     border: `2px solid ${BRAND_PRIMARY_DARK}`,
                     color: BRAND_TEXT,
@@ -454,47 +488,58 @@ export default function LahalexUniverselPage() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 flex flex-col items-center lg:items-end">
-              <div
-                ref={rightTextBoxRef}
-                className="hero-right-text-box w-full max-w-[620px] mb-6 rounded-2xl border px-5 py-4"
-                style={{
-                  borderColor: "rgba(180, 171, 107, 0.28)",
-                  backgroundColor: "rgba(212, 200, 154, 0.08)",
-                }}
-              >
-                <p
-                  className="text-sm sm:text-base font-semibold uppercase mb-2"
-                  style={{ color: BRAND_PRIMARY_DARK }}
-                >
-                  {currentSlide.title}
-                </p>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  {currentSlide.description}
-                </p>
-              </div>
+            <div className="order-1 lg:order-2">
+              {/*
+                Toutes les slides sont empilées dans la même cellule de grille :
+                la scène prend la hauteur de la plus haute, sans hauteur fixe.
+              */}
+              <div className="hero-image-stage relative grid">
+                {heroSlides.map((slide, index) => {
+                  const nextSlide = heroSlides[(index + 1) % heroSlides.length];
+                  return (
+                    <div
+                      key={index}
+                      ref={(el) => {
+                        imageWrapRefs.current[index] = el;
+                      }}
+                      className="relative col-start-1 row-start-1 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6"
+                      style={{
+                        opacity: 0,
+                        visibility: "hidden",
+                      }}
+                    >
+                      <img
+                        src={slide.image}
+                        alt={slide.alt}
+                        className="w-full sm:w-[65%] sm:scale-110 shrink-0 h-auto object-contain select-none pointer-events-none drop-shadow-[0_18px_30px_rgba(0,0,0,0.18)]"
+                        draggable={false}
+                      />
 
-              <div className="hero-image-stage relative w-full max-w-[760px] h-[320px] sm:h-[370px] lg:h-[420px]">
-                {heroSlides.map((slide, index) => (
-                  <div
-                    key={index}
-                    ref={(el) => {
-                      imageWrapRefs.current[index] = el;
-                    }}
-                    className="absolute inset-0 flex items-start justify-center"
-                    style={{
-                      opacity: 0,
-                      visibility: "hidden",
-                    }}
-                  >
-                    <img
-                      src={slide.image}
-                      alt={slide.alt}
-                      className="w-full max-w-[620px] h-auto object-contain select-none pointer-events-none drop-shadow-[0_18px_30px_rgba(0,0,0,0.18)]"
-                      draggable={false}
-                    />
-                  </div>
-                ))}
+                      <div className="min-w-0 sm:flex-1">
+                        <p
+                          className="font-gobold uppercase text-2xl sm:text-[1.6rem] xl:text-3xl leading-[1.1] mb-3"
+                          style={{ color: BRAND_PRIMARY_DARK }}
+                        >
+                          {slide.title}
+                        </p>
+                        {slide.description && (
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {slide.description}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Ordinateur suivant qui dépasse sur le bord droit de l'écran (rogné par la section) */}
+                      <img
+                        src={nextSlide.image}
+                        alt=""
+                        aria-hidden="true"
+                        className="hidden lg:block absolute top-1/2 left-[calc(100%+2.5rem)] w-[65%] scale-110 max-w-none -translate-y-1/2 select-none pointer-events-none drop-shadow-[0_18px_30px_rgba(0,0,0,0.18)]"
+                        draggable={false}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -503,259 +548,86 @@ export default function LahalexUniverselPage() {
 
       <section
         ref={servicesRef}
-        className="relative py-16 sm:py-20 lg:py-24 overflow-hidden"
+        className="relative pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 overflow-hidden"
+        style={{ backgroundColor: SERVICES_BG }}
       >
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(135deg, ${BRAND_PRIMARY_DARK}, ${BRAND_PRIMARY})`,
-          }}
-        />
-
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div
-                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                style={{ backgroundColor: BRAND_SOFT }}
-              >
-                <svg
-                  className="w-6 h-6"
-                  style={{ color: BRAND_TEXT }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
-
-              <h3
-                className="service-title text-lg mb-4 font-semibold"
-                style={{ color: BRAND_TEXT }}
-              >
-                Recherche avancée
-              </h3>
-
-              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Notre outil de recherche avancée permet d'exploiter de façon
-                structurée et intelligente un vaste ensemble de contenus
-                spécialisés.
+          <div className="mb-10 lg:mb-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 lg:items-end">
+            <div>
+              <p className="mb-4 flex items-center gap-2 text-xs sm:text-sm font-medium text-[#111111]">
+                <span className="text-[#B4AB6B] text-base leading-none">✱</span>
+                Nos services
               </p>
-
-              <div className="flex-1" />
-
-              <div className="text-right mt-auto">
-                <button
-                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors"
-                  style={{
-                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
-                    color: BRAND_TEXT,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                  onClick={() =>
-                    (window.location.href = "/recherche-juridique-universel")
-                  }
-                >
-                  En savoir plus
-                </button>
-              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold leading-[1.15] tracking-tight text-[#111111]">
+                Des outils essentiels pour votre réussite professionnelle
+              </h2>
             </div>
+            <p className="text-sm sm:text-base leading-relaxed text-gray-500 lg:max-w-md lg:justify-self-end">
+              Rechercher, lire, suivre l&apos;actualité et approfondir : quatre
+              outils intégrés pensés pour les professionnels, étudiants et
+              chercheurs de tous les domaines.
+            </p>
+          </div>
 
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div
-                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                style={{ backgroundColor: BRAND_SOFT }}
-              >
-                <svg
-                  className="w-6 h-6"
-                  style={{ color: BRAND_TEXT }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                  />
-                </svg>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              const theme = cardThemes[index % cardThemes.length];
+              return (
+                <div key={service.title} className="service-card h-full">
+                  <a
+                    href={service.href}
+                    className={`group relative flex h-full min-h-[300px] flex-col overflow-hidden rounded-[22px] px-6 pt-6 pb-24 lg:px-7 lg:pt-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(17,17,17,0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B4AB6B] ${theme.card}`}
+                  >
+                    {/* Cercles décoratifs */}
+                    <span
+                      className={`pointer-events-none absolute -bottom-20 -right-20 h-44 w-44 rounded-full border-16 transition-transform duration-500 group-hover:scale-110 ${theme.deco}`}
+                    />
+                    <span
+                      className={`pointer-events-none absolute -bottom-8 -right-8 h-20 w-20 rounded-full border-12 ${theme.deco}`}
+                    />
 
-              <h3
-                className="service-title text-lg mb-4 font-semibold"
-                style={{ color: BRAND_TEXT }}
-              >
-                Bibliothèque pluridisciplinaire
-              </h3>
+                    <Icon
+                      className={`service-icon mb-10 h-9 w-9 ${theme.icon}`}
+                      strokeWidth={1.5}
+                    />
 
-              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Notre bibliothèque pluridisciplinaire est une plateforme en ligne
-                dédiée à la consultation d'un vaste ensemble d'ouvrages et de
-                documents numériques.
-              </p>
+                    <h3 className="service-title mb-3 text-lg font-semibold leading-snug">
+                      {service.title}
+                    </h3>
 
-              <div className="flex-1" />
+                    <p className={`service-description relative text-sm leading-relaxed ${theme.desc}`}>
+                      {service.description}
+                    </p>
 
-              <div className="text-right mt-auto">
-                <button
-                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors"
-                  style={{
-                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
-                    color: BRAND_TEXT,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                  onClick={() =>
-                    (window.location.href =
-                      "/bibliotheque-numerique-universel")
-                  }
-                >
-                  En savoir plus
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div
-                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                style={{ backgroundColor: BRAND_SOFT }}
-              >
-                <svg
-                  className="w-6 h-6"
-                  style={{ color: BRAND_TEXT }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16l3-1m-3 1l-3-1"
-                  />
-                </svg>
-              </div>
-
-              <h3
-                className="service-title text-lg mb-4 font-semibold"
-                style={{ color: BRAND_TEXT }}
-              >
-                Veille journalière
-              </h3>
-
-              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Notre veille journalière est un dispositif structuré de
-                surveillance, de collecte, d'analyse et de diffusion continue
-                d'informations spécialisées.
-              </p>
-
-              <div className="flex-1" />
-
-              <div className="text-right mt-auto">
-                <button
-                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors"
-                  style={{
-                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
-                    color: BRAND_TEXT,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                  onClick={() =>
-                    (window.location.href = "/veille-juridique-universel")
-                  }
-                >
-                  En savoir plus
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div
-                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                style={{ backgroundColor: BRAND_SOFT }}
-              >
-                <svg
-                  className="w-6 h-6"
-                  style={{ color: BRAND_TEXT }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-
-              <h3
-                className="service-title text-lg mb-4 font-semibold"
-                style={{ color: BRAND_TEXT }}
-              >
-                Autres outils
-              </h3>
-
-              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Cette section de notre plateforme a été conçue comme un espace de
-                référence indispensable pour les professionnels, chercheurs et
-                institutions.
-              </p>
-
-              <div className="flex-1" />
-
-              <div className="text-right mt-auto">
-                <button
-                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors"
-                  style={{
-                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
-                    color: BRAND_TEXT,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                  onClick={() =>
-                    (window.location.href = "/autres-outils-universel")
-                  }
-                >
-                  En savoir plus
-                </button>
-              </div>
-            </div>
+                    {/* Encoche en bas à gauche qui accueille le bouton */}
+                    <div
+                      className="absolute bottom-0 left-0 rounded-tr-[20px] pt-2.5 pr-2.5"
+                      style={{ backgroundColor: SERVICES_BG }}
+                    >
+                      <span
+                        className="pointer-events-none absolute bottom-full left-0 h-5 w-5"
+                        style={{
+                          background: `radial-gradient(circle at 100% 0, transparent 19.5px, ${SERVICES_BG} 20px)`,
+                        }}
+                      />
+                      <span
+                        className="pointer-events-none absolute bottom-0 left-full h-5 w-5"
+                        style={{
+                          background: `radial-gradient(circle at 100% 0, transparent 19.5px, ${SERVICES_BG} 20px)`,
+                        }}
+                      />
+                      <span
+                        className={`service-button inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-colors ${theme.button}`}
+                      >
+                        En savoir plus
+                        <ChevronsRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
