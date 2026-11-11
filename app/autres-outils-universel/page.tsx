@@ -400,11 +400,44 @@ export default function UniverselPage() {
         </section>
       </main>
 
-      <section className="bg-white py-6 sm:py-8 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center font-bold text-gray-700 text-lg sm:text-xl">
-            Ainsi que bien d&apos;autres fonctionnalités innovantes à découvrir.
-          </p>
+      <section className="bg-white pt-4 pb-12 sm:pt-6 sm:pb-16 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl border border-[#C8A96B]/40 bg-gradient-to-br from-[#2B2B2B] via-[#1F1F1F] to-[#2E2818] px-6 py-8 sm:px-12 sm:py-10 text-center shadow-[0_12px_40px_rgba(0,0,0,0.18)]">
+            {/* Halos décoratifs */}
+            <div className="pointer-events-none absolute -top-20 -left-20 h-48 w-48 rounded-full bg-[#C8A96B]/25 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-20 -right-20 h-48 w-48 rounded-full bg-[#C8A96B]/20 blur-3xl" />
+
+            <div className="relative">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#C8A96B]/15 ring-1 ring-[#C8A96B]/50">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#C8A96B"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
+                  <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z" />
+                </svg>
+              </div>
+
+              <div className="mb-4 flex items-center justify-center gap-3">
+                <span className="h-px w-8 sm:w-12 bg-[#C8A96B]/60" />
+                <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-[#C8A96B]">
+                  Et ce n&apos;est pas tout
+                </span>
+                <span className="h-px w-8 sm:w-12 bg-[#C8A96B]/60" />
+              </div>
+
+              <p className="font-bold text-white text-lg sm:text-2xl leading-snug">
+                Ainsi que bien d&apos;autres fonctionnalités{" "}
+                <span className="text-[#D9BE85]">innovantes</span> à découvrir.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
