@@ -270,7 +270,7 @@ export default function RecherchePage() {
 
                 <div className="recherche-image overflow-hidden mb-8">
                   <Image
-                    src="/images/recherche-section-1.png"
+                    src="/images/recherche-section-1-zenbook.png"
                     alt="Interface de recherche avec résultats"
                     width={1200}
                     height={600}
@@ -292,7 +292,7 @@ export default function RecherchePage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="recherche-image overflow-hidden">
                     <Image
-                      src="/images/recherche-section-2.png"
+                      src="/images/recherche-section-2-codes.png"
                       alt="Codes juridiques et interface"
                       width={1400}
                       height={500}

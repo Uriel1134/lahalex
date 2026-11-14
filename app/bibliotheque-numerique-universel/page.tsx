@@ -229,15 +229,15 @@ export default function BibliothequePage() {
           className="animate-fade-in-up"
           style={{ animationDelay: "0.3s" }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-[3.5fr_2fr] gap-0 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[3.5fr_2fr] gap-8 lg:gap-12 items-start">
             {/* Image gauche */}
-            <div className="bibliotheque-image-secondary h-[400px] sm:h-[500px] lg:h-[950px] overflow-hidden">
+            <div className="bibliotheque-image-secondary overflow-hidden">
               <Image
-                src="/images/bibliotheque-numerique.png"
+                src="/images/bibliotheque-numerique-zenbook.png"
                 alt="Interface bibliothèque numérique"
-                width={1300}
-                height={950}
-                className="w-full h-full object-contain"
+                width={2237}
+                height={1283}
+                className="w-full h-auto object-contain"
                 style={{
                   filter: `drop-shadow(0 6px 12px ${BRAND_GLOW_STRONG}) drop-shadow(0 12px 24px ${BRAND_GLOW_MEDIUM})`,
                   borderRadius: "12px",
@@ -246,13 +246,13 @@ export default function BibliothequePage() {
             </div>
 
             {/* Image droite */}
-            <div className="bibliotheque-image-secondary h-[350px] sm:h-[450px] lg:h-[800px] overflow-hidden">
+            <div className="bibliotheque-image-secondary overflow-hidden">
               <Image
                 src="/images/bibliotheque-numerique-2.png"
                 alt="Interface bibliothèque numérique"
-                width={1000}
-                height={800}
-                className="w-full h-full object-contain"
+                width={4172}
+                height={3264}
+                className="w-full h-auto object-contain"
                 style={{
                   filter: `drop-shadow(0 6px 12px ${BRAND_GLOW_STRONG}) drop-shadow(0 12px 24px ${BRAND_GLOW_MEDIUM})`,
                   borderRadius: "12px",
@@ -264,7 +264,7 @@ export default function BibliothequePage() {
 
         {/* Texte */}
         <div
-          className="sm:-mt-60 lg:-mt-60 lg:mb-10 animate-fade-in-up"
+          className="mt-8 lg:mt-10 lg:mb-10 animate-fade-in-up"
           style={{ animationDelay: "0.5s" }}
         >
           <div ref={contentRef} className="max-w-4xl mx-auto">

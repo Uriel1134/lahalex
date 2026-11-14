@@ -304,7 +304,7 @@ export default function VeilleJuridiquePage() {
                     </p>
                   </div>
                   <Image
-                    src="/images/veille-nouvelle.png"
+                    src="/images/veille-nouvelle-zenbook.png"
                     alt="Interface veille juridique"
                     width={800}
                     height={600}
@@ -325,7 +325,7 @@ export default function VeilleJuridiquePage() {
                     </p>
                   </div>
                   <Image
-                    src="/images/veille-nouvelle.png"
+                    src="/images/veille-nouvelle-zenbook.png"
                     alt="Interface veille juridique"
                     width={1200}
                     height={800}
