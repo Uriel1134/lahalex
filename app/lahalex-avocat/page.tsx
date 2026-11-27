@@ -4,6 +4,8 @@ import { Footer } from "@/components/footer";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ChartColumn, Lightbulb, Pencil } from "lucide-react";
+import { ServiceCardsSection, type ServiceCardItem } from "@/components/service-cards-section";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,8 +15,30 @@ const BRAND_PRIMARY = "#D4C89A";
 const BRAND_PRIMARY_DARK = "#B4AB6B";
 const BRAND_TEXT = "#111111";
 const BRAND_BG = "#FFFFFF";
-const BRAND_SOFT = "rgba(212, 200, 154, 0.15)";
-const BRAND_SOFT_LIGHT = "rgba(212, 200, 154, 0.10)";
+
+const services: ServiceCardItem[] = [
+  {
+    icon: ChartColumn,
+    title: "Gestion simplifiée de votre cabinet",
+    description:
+      "Prenez le contrôle total de votre cabinet avec un module pensé pour les professionnels du droit exigeants. Suivi des dossiers,...",
+    href: "/gestion-cabinet-avocat",
+  },
+  {
+    icon: Pencil,
+    title: "Rédaction d'actes juridiques assistées et avancées",
+    description:
+      "Gagnez en efficacité, en rigueur et en sécurité grâce au module Rédaction de LahaLex Avocat :...",
+    href: "/redaction-actes-avocat",
+  },
+  {
+    icon: Lightbulb,
+    title: "Outil d'assistance IA dédié à l'optimisation de vos activités",
+    description:
+      "Boostez votre efficacité juridique avec l'assistant IA intégré à notre logiciel.",
+    href: "/assistance-ia-avocat",
+  },
+];
 
 export default function LahalexAvocatPage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -147,7 +171,7 @@ export default function LahalexAvocatPage() {
       `}</style>
 
       {/* Hero Section */}
-      <section ref={heroRef} className="bg-white py-12 sm:py-16 lg:py-20">
+      <section ref={heroRef} className="bg-white pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20 lg:pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Content */}
@@ -201,7 +225,7 @@ export default function LahalexAvocatPage() {
               <img
                 src="/images/lahalex-avocat-2.png"
                 alt="Illustration LahaLex Avocat"
-                className="hero-image h-64 sm:h-80 lg:h-96 w-full max-w-md object-contain"
+                className="hero-image w-full max-w-md h-auto object-contain"
                 loading="lazy"
               />
             </div>
@@ -210,178 +234,12 @@ export default function LahalexAvocatPage() {
       </section>
 
       {/* Services Cards Section */}
-      <section ref={servicesRef} className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <div
-          className="services-bg absolute inset-0"
-          style={{
-            background: `linear-gradient(135deg, ${BRAND_PRIMARY_DARK}, ${BRAND_PRIMARY})`,
-          }}
-        ></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {/* Gestion simplifiée de votre cabinet */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div
-                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                style={{ backgroundColor: BRAND_SOFT }}
-              >
-                <svg
-                  className="w-6 h-6"
-                  style={{ color: BRAND_TEXT }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  ></path>
-                </svg>
-              </div>
-
-              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
-                Gestion simplifiée de votre cabinet
-              </h3>
-
-              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Prenez le contrôle total de votre cabinet avec un module pensé pour les professionnels du droit
-                exigeants. Suivi des dossiers,...
-              </p>
-
-              <div className="flex-1"></div>
-
-              <div className="text-right mt-auto">
-                <a
-                  href="/gestion-cabinet-avocat"
-                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors inline-block"
-                  style={{
-                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
-                    color: BRAND_TEXT,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                >
-                  En savoir plus
-                </a>
-              </div>
-            </div>
-
-            {/* Rédaction d'actes */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div
-                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                style={{ backgroundColor: BRAND_SOFT }}
-              >
-                <svg
-                  className="w-6 h-6"
-                  style={{ color: BRAND_TEXT }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                  ></path>
-                </svg>
-              </div>
-
-              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
-                Rédaction d'actes juridiques assistées et avancées
-              </h3>
-
-              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Gagnez en efficacité, en rigueur et en sécurité grâce au module Rédaction de LahaLex Avocat :...
-              </p>
-
-              <div className="flex-1"></div>
-
-              <div className="text-right mt-auto">
-                <a
-                  href="/redaction-actes-avocat"
-                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors inline-block"
-                  style={{
-                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
-                    color: BRAND_TEXT,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                >
-                  En savoir plus
-                </a>
-              </div>
-            </div>
-
-            {/* Outil d'assistance IA */}
-            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg service-card flex flex-col h-full">
-              <div
-                className="service-icon w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                style={{ backgroundColor: BRAND_SOFT }}
-              >
-                <svg
-                  className="w-6 h-6"
-                  style={{ color: BRAND_TEXT }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  ></path>
-                </svg>
-              </div>
-
-              <h3 className="service-title font-sf-pro text-lg mb-4" style={{ color: BRAND_TEXT }}>
-                Outil d'assistance IA dédié à l'optimisation de vos activités
-              </h3>
-
-              <p className="service-description text-gray-700 text-sm mb-6 leading-relaxed">
-                Boostez votre efficacité juridique avec l'assistant IA intégré à notre logiciel.
-              </p>
-
-              <div className="flex-1"></div>
-
-              <div className="text-right mt-auto">
-                <a
-                  href="/assistance-ia-avocat"
-                  className="service-button px-6 py-2 rounded-lg text-sm font-medium transition-colors inline-block"
-                  style={{
-                    border: `1px solid ${BRAND_PRIMARY_DARK}`,
-                    color: BRAND_TEXT,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND_SOFT_LIGHT;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                >
-                  En savoir plus
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceCardsSection
+        ref={servicesRef}
+        title="Des outils essentiels pour votre réussite professionnelle"
+        intro="Gérer, rédiger et optimiser : trois modules intégrés pensés pour les avocats et les professionnels du droit exigeants."
+        services={services}
+      />
 
       <Footer />
     </div>
